@@ -1,0 +1,24 @@
+@mixin placement($width, $top, $left){
+    width: $width;
+    top: $top;
+    left: $left;
+}
+
+@mixin dimensions($width, $height, $rad){
+    width: $width;
+    height: $height;
+    border-radius: $rad;
+}
+
+@mixin font($size, ){
+    width: $width;
+    height: $height;
+    border-radius: $rad;
+}
+
+@mixin fontSettings($color, $size, $weight, $line){
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $line;
+}

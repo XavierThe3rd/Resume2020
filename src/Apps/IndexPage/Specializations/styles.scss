@@ -1,0 +1,20 @@
+@import '../../sass/settings.scss';
+@import '../../sass/generics.scss';
+@import '../../sass/tools.scss';
+
+.special_holder {
+    padding: 100px 200px;
+    width: 100%;
+    @media(max-width: 1350px) {
+        padding: 75px 150px;
+    }
+    @media(max-width: 1150px) {
+        padding: 75px 100px;
+    }
+    @media(max-width: 1000px) {
+        padding: 75px 75px;
+    }
+    @media(max-width: 600px){
+        padding: 5px 5px;
+    }
+}

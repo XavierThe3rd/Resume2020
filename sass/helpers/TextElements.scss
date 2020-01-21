@@ -1,0 +1,56 @@
+@font-face {font-family: "SF Sports Night NS"; src: url("//db.onlinewebfonts.com/t/283a1d7f683cacb77880d65a36e4661c.eot"); src: url("//db.onlinewebfonts.com/t/283a1d7f683cacb77880d65a36e4661c.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/283a1d7f683cacb77880d65a36e4661c.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/283a1d7f683cacb77880d65a36e4661c.woff") format("woff"), url("//db.onlinewebfonts.com/t/283a1d7f683cacb77880d65a36e4661c.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/283a1d7f683cacb77880d65a36e4661c.svg#SF Sports Night NS") format("svg"); }
+
+h1 ,h2, h3, h4, p, a, div, button{
+    z-index: 2;
+    text-decoration: none;
+    margin: 0;
+}
+
+h1 ,h2{
+    font-family: 'SF Sports Night NS';
+}
+
+h3, h4, p, a, div, button{
+    font-family: 'Open Sans', "Catamaran", "Helvetica Neue", "Helvetica", "Arial", sans-serif;;
+}
+
+@mixin fontSettings($size, $weight, $line){
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $line;
+}
+
+h1{
+    @include fontSettings(56px, 600, 1);
+
+    @media(max-width: 600px){
+        font-size: 42px;
+    }
+}
+
+h2{
+    @include fontSettings(44px, 600, 1);
+    @media(max-width: 600px){
+        font-size: 36px;
+    }
+}
+
+h3{
+    @include fontSettings(34px, 400, 1.5);
+}
+
+h4{
+    @include fontSettings(24px, 600, 1);
+}
+
+a{
+    @include fontSettings(24px, 300, 2);
+}
+
+p{
+    @include fontSettings(22px, 400, 1.5);
+}
+
+button span{
+    @include fontSettings(20px, 400, 1.5);
+}

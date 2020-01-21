@@ -1,0 +1,48 @@
+@import './animations.scss';
+
+.project_card, .image_png {
+    @include dimensions(300px, 425px, 5px);
+}
+
+.project_card {
+    margin: 20px;
+
+    .image_png {
+        padding: 0px 0 68px;
+    }
+
+    .divider {
+        @include dimensions(300px, 362px, 0px);
+    }
+
+    h1{
+        @include fontSettings($pureWhite, 38px, 200, 1.1);
+        z-index:1;
+    }
+
+    p{
+        @include fontSettings($pureWhite, 20px, 300, 1);
+        margin: 0 0 10px;
+    }
+    h3{
+        @include fontSettings($primeOrange, 16px, 400, 1);
+    } 
+}
+
+@media(max-width: 1350px){
+    .project_card, .project_card .image_png {
+        @include dimensions(245px, 335px, 5px);
+        p{
+            font-size: 16px;
+        }
+        h3{
+            font-size: 14px;
+        } 
+    }
+}
+
+@media (max-width: 600px) {
+    .project_card h2 {
+        margin-bottom: 20px;
+    }
+}

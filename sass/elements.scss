@@ -1,0 +1,55 @@
+.abs {
+    position: absolute;
+}
+
+.fix {
+    position: fixed;
+}
+
+.sticky{
+    position: sticky;
+}
+
+.rel {
+    position: relative;
+}
+
+//------positions------//
+
+//------flex------//
+
+.flex {
+    display: flex;
+}
+
+.j-center {
+    justify-content: center;
+}
+
+.a-center {
+    align-items: center;
+}
+
+.btw { 
+    justify-content: space-between;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.end {
+    align-items: flex-end;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.wrap{
+    flex-wrap: wrap;
+}
+
+.point{
+    cursor: pointer;
+}

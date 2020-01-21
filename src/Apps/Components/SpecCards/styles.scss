@@ -1,0 +1,114 @@
+@import '../../sass/generics.scss';
+@import '../../sass/settings.scss';
+@import '../../sass/tools.scss';
+
+.spec_card, .screen_holder, .screen_holder div {
+    @include dimensions(450px, 300px, 10px);
+}
+
+.spec_card {
+    box-shadow: $pureBlack 0 1px 10px 0px;
+    transition: all 0.35s linear;
+    margin: 20px;
+    p, span, div, h1 {
+        transition: all 0.35s linear;
+    }
+    .text_holder {
+        padding: 50px;
+    }
+    .screen_holder div{
+        padding: 70px;   
+        
+        h1 {
+            @include fontSettings($pureWhite, 32px, 400, 1);
+            margin-right: 12px;
+        }
+        svg {
+            width: 50px;
+        }
+    }
+    p {
+        @include fontSettings($pureWhite, 24px, 300, 1.25);
+        opacity: 0;
+        transform: scale(0)
+    }
+    .screen {
+        @include dimensions(50em, 30em, 0);
+    }
+    &:hover{
+        box-shadow: $primeOrange 3px 1px 30px 0px;
+        transform: scale(1.025);
+        .screen_holder div {
+            transform: translateY(95px);
+            opacity: 0;
+            
+        }
+        .screen {
+            transform: translate(75%, 40%)rotate(-35deg);
+        }
+        p {
+            opacity: 1;
+            transform: scale(1)
+        }       
+    }
+}
+
+@media(max-width: 1400px){
+    .spec_card, .screen_holder, .screen_holder div {
+        @include dimensions(365px, 240px, 10px);
+    }
+    .spec_card {
+        .text_holder {
+            padding: 25px;
+        }
+        p {
+            font-size: 18px;
+        }
+        &:hover{
+            .screen_holder div {
+                transform: translateY(70px)
+            }
+        }
+    }
+}
+
+@media(max-width: 950px){
+    .spec_card, .screen_holder, .screen_holder div {
+        @include dimensions(100%, 300px, 10px);
+    }
+    .spec_card {
+        .text_holder {
+            padding: 50px;
+        }
+        p {
+            font-size: 24px;
+        }
+        &:hover{
+            .screen_holder div {
+                transform: translateY(90px)
+            }
+        }
+    }
+}
+
+@media(max-width: 600px){
+    .spec_card, .screen_holder, .screen_holder div {
+        @include dimensions(100%, 200px, 10px);
+    }
+    .spec_card {
+        .text_holder {
+            padding: 20px;
+        }
+        .screen_holder div {
+            padding: 25px;   
+        }
+        p {
+            font-size: 20px;
+        }
+        &:hover{
+            .screen_holder div {
+                transform: translateY(60px)
+            }
+        }
+    }
+}
