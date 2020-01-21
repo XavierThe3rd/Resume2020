@@ -2,7 +2,7 @@ import React from "react";
 import  './styles.scss'
 import SpecCards from '../../Components/SpecCards/SpecCards.jsx'
 
-const Specializations = ()=> {
+const Specializations = ({Margin})=> {
     let specData = [
         {
             index: 1,
@@ -30,7 +30,7 @@ const Specializations = ()=> {
         },
     ]
 
-    return <div className="special_holder wrp-c">
+    return <div className="special_holder wrp-c" style={{marginTop: Margin}}>
     {specData.map(hit => {
     return <SpecCards 
         Index={hit.index}

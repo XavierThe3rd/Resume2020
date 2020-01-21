@@ -54,7 +54,8 @@ const ProjectCard = ({Image, Title, Project, Type, Color, Desc, Click, Click2})=
 
     let toInner = (e)=>{
         if (e.currentTarget.classList.contains('b-off')){
-            setHover(true) | setButton(true)
+            setHover(true)
+            setButton(true)
             setTimeout(()=> setClass(true),10)
         }else {
             setClass(false) 

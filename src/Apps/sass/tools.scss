@@ -16,6 +16,13 @@
     border-radius: $rad;
 }
 
+@mixin border($color, $size){
+    border-color: $color;
+    box-sizing: border-box;
+    border-width: $size;
+    border-style: solid;
+}
+
 @mixin fontSettings($color, $size, $weight, $line){
     color: $color;
     font-size: $size;

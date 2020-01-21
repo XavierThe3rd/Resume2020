@@ -1,5 +1,8 @@
+@import './Apps/sass/tools.scss';
+@import './Apps/sass/settings.scss';
+
 html, body{
-    background: #262626;
+    background: $primeBack;
     height: 100%;
     margin: 0;
 }
@@ -40,3 +43,25 @@ button {
     outline: none;
     background: none;
 }
+
+main {
+	padding: 100px 300px;
+	@media(max-width: 1650px) {
+		padding: 100px 200px;
+    }
+    @media(max-width: 1350px) {
+        padding: 75px 150px;
+    }
+    @media(max-width: 1150px) {
+        padding: 75px 100px;
+    }
+    @media(max-width: 1000px) {
+        padding: 75px 75px;
+    }
+    @media(max-width: 600px){
+        padding: 5px 5px;
+    }
+}
+
+
+

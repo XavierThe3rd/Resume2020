@@ -4,7 +4,7 @@ import styles from './styles.scss'
 import ProjectPiece from "../../Components/portfolioCards/portfolioPiece.jsx";
 
 
-const FeaturedWork = ()=> {
+const FeaturedWork = ({Margin})=> {
 
       let cardData=[
         {
@@ -32,7 +32,7 @@ const FeaturedWork = ()=> {
         {
           index: 3,
           image: '../images/Heelys.png',
-          title: 'Heely’s\n Comeback',
+          title: 'Heely’s\n Comeback',
           desc: "A college webpage design project created in react",
           project: "Web App",
           type: "JS",
@@ -43,7 +43,7 @@ const FeaturedWork = ()=> {
       ]
 
       return (
-        <div className="featured_holder row">
+        <div className="featured_holder row" style={{marginTop: Margin}}>
           {cardData.map(hit => {
           return <ProjectPiece
               Class={`featured_cards`}

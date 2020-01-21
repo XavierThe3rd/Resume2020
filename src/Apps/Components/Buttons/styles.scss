@@ -1,0 +1,15 @@
+@import '../../sass/generics.scss';
+@import '../../sass/settings.scss';
+@import '../../sass/tools.scss';
+
+.prime_button {
+    cursor: pointer;
+    @include dimensions(250px, 75px, 5px);
+    @include fontSettings($pureWhite, 36px, 400, 1);
+    @include border($pureWhite, 2px);
+
+    &:hover {
+        color: $primeOrange;
+        border-color: $primeOrange;
+    }
+}

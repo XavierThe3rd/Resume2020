@@ -1,0 +1,31 @@
+@import '../../sass/generics.scss';
+@import '../../sass/settings.scss';
+@import '../../sass/tools.scss';
+
+.intro-off {
+	transform: translateX(-70%);
+}
+
+.intro-on {
+	transform: translateX(0%);
+}
+
+.intro {
+	transition: all 1.5s ease-in-out;
+	width: 80%;
+	padding: 100px 300px ;
+
+	h1{
+		@include fontSettings($pureWhite, 48px, 300, 1);
+		margin-bottom: 20px
+	}
+	p {
+		@include fontSettings($pureWhite, 24px, 300, 1.5);
+		margin-bottom: 30px
+	}
+
+	img {
+		width: 500px;
+		margin-bottom: 30px;
+	}
+}

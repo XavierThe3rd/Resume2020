@@ -3,7 +3,7 @@
 @import '../../sass/tools.scss';
 
 .spec_card, .screen_holder, .screen_holder div {
-    @include dimensions(450px, 300px, 10px);
+    @include dimensions(450px, 300px, 5px);
 }
 
 .spec_card {

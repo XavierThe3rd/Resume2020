@@ -3,7 +3,6 @@
 @import '../../sass/generics.scss';
 
 .featured_holder{
-    padding: 100px 200px;
     justify-content: space-between;
 
     .featured_cards {
@@ -23,16 +22,9 @@
             }
         }
     }
-    @media(max-width: 1350px) {
-        padding: 75px 150px;
-    }
-    @media(max-width: 1150px) {
-        padding: 75px 100px;
-    }
-    @media(max-width: 1000px) {
-        padding: 75px 75px;
-        flex-wrap: wrap;
 
+    @media(max-width: 1000px) {
+        flex-wrap: wrap;
         .featured_cards{
             &:nth-child(3){
                 margin: 20px auto;
@@ -40,7 +32,6 @@
         }
     }
     @media(max-width: 700px) {
-        padding: 50px 25px;
         justify-content: center;
     }
 }
