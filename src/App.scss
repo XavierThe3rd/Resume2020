@@ -3,8 +3,17 @@
 
 html, body{
     background: $primeBack;
-    height: 100%;
+    transition: all 0.35s ease-out;
+    //width: 100%;
+    //height:100%;
+    overflow-x: hidden;
     margin: 0;
+    //transform: translateY(50px);
+
+    #rootD, main {
+        overflow: hidden;
+    }
+    
 }
 
 @font-face {

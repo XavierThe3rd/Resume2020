@@ -72,7 +72,7 @@ const ProjectCard = ({Image, Title, Project, Type, Color, Desc, Click, Click2})=
         onMouseLeave={window.innerWidth > 1065 ? ()=>setClass(false) |  setTimeout(()=> setHover(false),350):null} 
         style={project_card_styles}>
         <span className="image_png flx--e abs" style={image_png_styles}>
-          <img src={Image} className="abs"/>
+          <img className="abs" src={Image} alt='none'/>
           <span className="screen flex abs" style={screen_styles}/>
         </span>
         <div className="divider" style={divider_styles}>

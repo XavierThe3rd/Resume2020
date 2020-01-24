@@ -39,7 +39,8 @@ const FeaturedWork = ({Margin})=> {
           color: styles.reactJS,
 
           name: "Heelys"
-        }
+        },
+        
       ]
 
       return (

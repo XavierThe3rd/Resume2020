@@ -4,6 +4,10 @@
 
 .featured_holder{
     justify-content: space-between;
+    width: 96.75%;
+    padding: 140px 70px;
+    margin: 10px auto 20px;    
+    background: rgba(0, 0, 0, 0) linear-gradient(110deg, rgb(255, 38, 67) 0%, rgb(97, 0, 255) 90%) repeat scroll 0% 0%;
 
     .featured_cards {
         &:nth-child(1){

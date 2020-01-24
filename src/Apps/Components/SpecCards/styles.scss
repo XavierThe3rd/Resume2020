@@ -2,14 +2,17 @@
 @import '../../sass/settings.scss';
 @import '../../sass/tools.scss';
 
-.spec_card, .screen_holder, .screen_holder div {
-    @include dimensions(450px, 300px, 5px);
+.spec_card {
+    @include dimensions(47.85%, 300px, 5px);
+}
+.screen_holder, .screen_holder div{
+    @include dimensions(100%, 300px, 5px);
 }
 
 .spec_card {
     box-shadow: $pureBlack 0 1px 10px 0px;
     transition: all 0.35s linear;
-    margin: 20px;
+    margin: 10px;
     p, span, div, h1 {
         transition: all 0.35s linear;
     }
@@ -54,8 +57,11 @@
 }
 
 @media(max-width: 1400px){
-    .spec_card, .screen_holder, .screen_holder div {
-        @include dimensions(365px, 240px, 10px);
+    .spec_card{
+        @include dimensions(46.85%, 240px, 10px);
+    }
+    .screen_holder, .screen_holder div {
+        height: 240px;
     }
     .spec_card {
         .text_holder {
