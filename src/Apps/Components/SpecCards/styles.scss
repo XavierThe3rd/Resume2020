@@ -2,11 +2,11 @@
 @import '../../sass/settings.scss';
 @import '../../sass/tools.scss';
 
-.spec_card {
-    @include dimensions(47.85%, 300px, 5px);
+.spec_card, .screen_holder, .screen_holder div {
+    @include dimensions(47.85%, 300px, 10px);
 }
-.screen_holder, .screen_holder div{
-    @include dimensions(100%, 300px, 5px);
+.screen_holder, .screen_holder div {
+    @include dimensions(100%, 300px, 10px);
 }
 
 .spec_card {
@@ -22,7 +22,7 @@
     .screen_holder div{
         padding: 70px;   
         
-        h1 {
+        h2 {
             @include fontSettings($pureWhite, 32px, 400, 1);
             margin-right: 12px;
         }
@@ -41,11 +41,12 @@
     &:hover{
         box-shadow: $primeOrange 3px 1px 30px 0px;
         transform: scale(1.025);
+         
         .screen_holder div {
             transform: translateY(95px);
             opacity: 0;
-            
-        }
+        } 
+        
         .screen {
             transform: translate(75%, 40%)rotate(-35deg);
         }
@@ -57,11 +58,8 @@
 }
 
 @media(max-width: 1400px){
-    .spec_card{
-        @include dimensions(46.85%, 240px, 10px);
-    }
-    .screen_holder, .screen_holder div {
-        height: 240px;
+    .spec_card, .screen_holder, .screen_holder div {
+        @include dimensions(365px, 240px, 10px);
     }
     .spec_card {
         .text_holder {

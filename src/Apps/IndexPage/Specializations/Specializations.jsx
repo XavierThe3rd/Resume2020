@@ -1,8 +1,11 @@
 import React from "react";
-import  './styles.scss'
+import  style from './styles.scss'
 import SpecCards from '../../Components/SpecCards/SpecCards.jsx'
+import comps from '../../Components/Buttons/buttons.jsx'
 
 const Specializations = ({Margin})=> {
+    
+
     let specData = [
         {
             index: 1,
@@ -30,15 +33,18 @@ const Specializations = ({Margin})=> {
         },
     ]
 
-    return <div className="special_holder wrp-c" style={{marginTop: Margin}}>
-    {specData.map(hit => {
-    return <SpecCards 
-        Index={hit.index}
-        Title={hit.title}
-        Image={hit.image}
-        Para={hit.para}
-        />
-    })}
+    return <div className="special_holder column">
+        <comps.Title Color={style.conColor}>Providing Skills In...</comps.Title>
+        <div className="wrp-c">
+            {specData.map(hit => {
+            return <SpecCards 
+                Index={hit.index}
+                Title={hit.title}
+                Image={hit.image}
+                Para={hit.para}
+                />
+            })}
+        </div>
     </div>
 }
 

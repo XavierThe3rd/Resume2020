@@ -3,11 +3,11 @@
 @import '../../sass/generics.scss';
 
 .featured_holder{
+    padding: 100px 200px;
     justify-content: space-between;
-    width: 96.75%;
-    padding: 140px 70px;
-    margin: 10px auto 20px;    
-    background: rgba(0, 0, 0, 0) linear-gradient(110deg, rgb(255, 38, 67) 0%, rgb(97, 0, 255) 90%) repeat scroll 0% 0%;
+    background: $bkColor;
+    margin: 10px auto 20px;
+    width: 98%;
 
     .featured_cards {
         &:nth-child(1){
@@ -26,9 +26,16 @@
             }
         }
     }
-
+    @media(max-width: 1750px) {
+        padding: 75px 50px;
+    }
+    @media(max-width: 1150px) {
+        padding: 75px 100px;
+    }
     @media(max-width: 1000px) {
+        padding: 75px 75px;
         flex-wrap: wrap;
+
         .featured_cards{
             &:nth-child(3){
                 margin: 20px auto;
@@ -36,6 +43,7 @@
         }
     }
     @media(max-width: 700px) {
+        padding: 50px 25px;
         justify-content: center;
     }
 }

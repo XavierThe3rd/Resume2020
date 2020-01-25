@@ -3,5 +3,16 @@
 @import '../../sass/tools.scss';
 
 .special_holder {
-    width: 100%;
+    padding: 100px 200px;
+    background: $bkColor;
+    width: 98%;
+    margin: 0 auto;
+
+    h1 {
+        margin: 50px 0 20px 100px;
+    }
+
+    @media(max-width: 1750px) {
+        padding: 75px 50px;
+    }
 }

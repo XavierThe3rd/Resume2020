@@ -17,7 +17,7 @@ const SpecCards = ({Index, Title, Image, Para})=>{
             <div className='flx-c-c' style={{
               zIndex: 3
             }}>
-            <h1>{Title}</h1>
+            <h2>{Title}</h2>
               <SVG src={Image}/>
             </div>
             <span className="screen abs" style={{

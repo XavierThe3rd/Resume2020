@@ -1,0 +1,12 @@
+@import '../sass/settings.scss';
+@import '../sass/generics.scss';
+@import '../sass/tools.scss';
+
+
+header {
+    margin: 0 0 10px;
+    svg {
+        width: 700px;
+        margin: 0 0 50px;
+    }
+}

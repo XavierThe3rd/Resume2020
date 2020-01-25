@@ -51,6 +51,12 @@
     align-items: flex-end;
 }
 
+.column--c {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .flx-c-c {
     display: flex;
     justify-content: center;

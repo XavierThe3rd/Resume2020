@@ -6,16 +6,16 @@
 .intro {
 	transition: all 1.5s ease-in-out;
 	box-shadow: $pureBlack 0 1px 10px 0px;
-	margin: 10px 20px;
-	width: 97%;
-	padding: 100px 300px ;
+	margin: 10px auto;
+	width: 98%;
+	padding: 100px 300px;
 
 	h1{
-		@include fontSettings($pureWhite, 48px, 300, 1);
+		@include fontSettings($primeBack, 48px, 300, 1);
 		margin-bottom: 20px
 	}
 	p {
-		@include fontSettings($pureWhite, 24px, 300, 1.5);
+		@include fontSettings($conColor, 24px, 300, 1.5);
 		margin-bottom: 30px
 	}
 
@@ -23,8 +23,13 @@
 		width: 500px;
 		margin-bottom: 30px;
 	}
+
+	@media(max-width: 1750px) {
+		padding: 100px 140px;
+	}
+	
 	@media(max-width: 1650px) {
-		padding: 100px 200px;
+		padding: 100px 130px;
     }
     @media(max-width: 1350px) {
         padding: 75px 150px;
