@@ -1,6 +1,6 @@
 import React from "react";
 
-let SmallHamburger =({Click, Class})=>{
+let SmallHamburger =(props)=>{
 
     let button_styles = {
         cursor: 'pointer',
@@ -8,21 +8,21 @@ let SmallHamburger =({Click, Class})=>{
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        width: 65,
-        height: 65,
+        width: props.bWidth,
+        height: props.bHeight,
     }
 
     let span_styles = {
         background: '#ffffff',
-        width: 30,
-        height: 3,
+        width: props.sWidth,
+        height: props.sHeight,
         borderRadius: 1.5,
-        margin: '3px 0'
+        margin: props.sMarg
     }
 
     let total = [1, 2, 3]
 
-    return <button className={Class} style={button_styles} onClick={Click}>
+    return <button className={props.Class} style={button_styles} onClick={props.Click}>
         {total.map(total => <span key={total} style={span_styles}></span> )}
     </button>
 }

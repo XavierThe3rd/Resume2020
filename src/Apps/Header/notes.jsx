@@ -67,7 +67,7 @@ const Navigation = (props)=> {
 }
 
 
-export default class Header extends React.Component {
+class Header extends React.Component {
     constructor(props) {
         super(props);
         this.state = {setNav: false, setScroll: false, setMobile: false};
@@ -107,12 +107,11 @@ export default class Header extends React.Component {
             <header className="flx-c-c" style={{height: 500}} ref={this.scrollDown}>
                 <span ref ={this.onResize}/>
                 <h1 style={{
-                    color: '#ff2643',
+                    color: '#fff',
                     position: 'absolute',
-                    left: 350,
-                    top: 430,
-                    fontWeight: 600,
-                    fontSize: 58
+                    left: 90,
+                    top: 400,
+                    fontSize: 72
                 }}
                 >Home</h1>
                 <Button
@@ -123,9 +122,9 @@ export default class Header extends React.Component {
                         openNav(!navState) 
                         setTimeout(()=> navClass(!navDefine),50)
                     }}
-                    Width={100 }
-                    Top={ 50 }
-                    Right={ 350 }
+                    Width={150 }
+                    Top={ 100 }
+                    Right={ 100 }
                     Content={()=>(<Hamburger/>)}
                 />
                 {/*{this.state.setMobile ?
@@ -139,6 +138,3 @@ export default class Header extends React.Component {
         )
     }
 }
-
-
-

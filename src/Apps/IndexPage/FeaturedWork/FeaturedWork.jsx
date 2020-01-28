@@ -44,7 +44,9 @@ const FeaturedWork = ({Margin})=> {
       ]
 
       return (
-        <div className="featured_holder row" style={{marginTop: Margin}}>
+        <div className="featured column">
+          <h1 style={{color: styles.pureWhite}}>Featured Works</h1>
+          <div className="featured_holder row">
           {cardData.map(hit => {
           return <ProjectPiece
               Class={`featured_cards`}
@@ -57,6 +59,7 @@ const FeaturedWork = ({Margin})=> {
               Color={hit.color}
               Name={hit.name}
             />})}
+          </div>
         </div>
     );  
 }

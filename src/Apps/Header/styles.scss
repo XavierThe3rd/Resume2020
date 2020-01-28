@@ -4,9 +4,71 @@
 
 
 header {
-    margin: 0 0 10px;
+    margin: 0 0 0px;
+    height: 500px;
     svg {
-        width: 700px;
-        margin: 0 0 50px;
+        //width: 700px;
+        //margin: 0 0 50px;
+        z-index: -1;
+        //transform: scale(5)
     }
+    nav{
+        //background: $pureBlack;
+        transition: all 0.25s linear;
+        z-index: 4;
+        //@include border($borderGrey, 0 0 1px 0);
+        //box-shadow: 0 0px 10px 0;
+    }
+
+    .padder, .screen {@include dimensions(100%, 90px, 0)}
+
+    .screen {
+        //@include border($borderGrey, 0 0 1px 0);
+        background: $pureBlack;
+        z-index: -1;
+        left:0;
+    }
+
+    nav, ul{ width: 100%}
+
+
+    .ul-desk {
+        //padding: 0 320px;
+        //@include border($primePurple, 0 0 1px 0);
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        li{
+            a {
+                @include fontSettings($pureWhite, 32px, 400, 1.25);
+                text-transform: uppercase;
+
+                &:hover {
+                    color: $primeOrange;
+                }
+            }
+            &:nth-child(1) {
+                margin: 0px 30px 10px 50px;
+                //float: left
+            }
+            @for $i from 2 through 4 {
+                &:nth-child(#{$i}) {
+                    margin: 30px 30px 10px;
+                    //float: left
+                }
+            }
+            &:nth-child(5) {
+                margin: 0px 100px 10px 30px;
+                //float: right
+            }
+        }
+    }     
 }
+
+.f-nav {
+    background: $pureBlack;
+    top: 0
+}
+.a-nav {top: 410px}
+.nav-down {transform: translateY(0px)}
+.nav-up {transform: translateY(-90px)}

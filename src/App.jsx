@@ -11,48 +11,9 @@ import Header from './Apps/Header/header.jsx';
 //import {smoothScroll} from './smoothScroll.js'
 
 const App = ()=> {
-    //smoothScroll()
- 
-/*
-    let sp = window.pageYOffset
-    window.addEventListener('wheel', function(e) {
-    e.preventDefault()
-    
-     
-      function easer(t,b,c,d) {
-        return c * (t /= d) * t + b;
-        //return c * (t /= d) * (t - 2) + b;
-    };
-    let deltaY = e.deltaY; 
-      let frame =()=> {
-        deltaY < 0 ? sp-- : sp++
-        let st = sp
-        deltaY < 0 ? st-- : st++
-        //document.querySelector("body").style.transform = 'translateY('+ -sp +'px)'
-        //if(document.querySelector("body").style.transform > 'translateY(0px)'){
-          //document.querySelector("body").style.transform = 'translateY(0px)'
-        //}
-        window.scrollTo(0, (st))
-        //let wind= (a, b, c, d)=> window.scrollTo(0, (st/1.5) + easer(a, b, c, d))
-        //wind(st/1.5, 200, 1, 500)
-        setTimeout(()=> {
-          clearInterval(id)
-          //wind(st/2, st/2, st/2, st/2)
-        },300)
-      }
-      let id = setInterval(frame, 1) 
-  }, {passive: false})
-  
-
-  /*let i = 1
-  let count = ()=>{
-    console.log(i)
-    return i++
-  }
-  setInterval(count, 500)*/
-  
-  
-
+  localStorage.setItem('myCat', 'Tom')
+  var cat = localStorage.getItem('myCat');
+  console.log(cat)
   return(
     <main>
       <Canvas/>
@@ -67,7 +28,9 @@ const App = ()=> {
           >Learn More!</comps.Button>
         </ContentBox>
         <Specializations/>
+      </section>
         <FeaturedWork/>
+      <section>
         <ContentBox Background={styles.bkColor} Align= 'center'>
           <comps.Title Color={styles.conColor}>Interned At...</comps.Title>
           <img src='../images/QintelLogo.png' alt='none'/>
@@ -76,7 +39,7 @@ const App = ()=> {
             Click ={()=>console.log('button was clicked')}
           >Learn More!</comps.Button>
         </ContentBox>
-      </section>
+        </section>
     </main>
   )
 }

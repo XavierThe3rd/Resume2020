@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import ProjectCard from './portfolioCards.jsx';
 import PieceInfo from './portfolioInfo.jsx'
 
+
+
 const ProjectPiece = ({Image, Class, Index, Title, Project, Type, Color, Desc, Name})=>{
     const [infoState, setInfo] = useState(false)
     const [displayState, setDisplay] = useState(false)

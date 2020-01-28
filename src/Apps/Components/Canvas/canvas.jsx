@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from  'prop-types'
+import SVG from 'react-inlinesvg';
 import resizeDetector from 'element-resize-detector'
 
 export default class Canvas extends React.Component {
@@ -47,9 +48,10 @@ export default class Canvas extends React.Component {
         let { className } = this.props
         window.addEventListener('scroll', ()=> {
             let can = document.getElementById('canvas')
+            let svg = document.getElementById('Logo')
             let st = window.pageYOffset
             can.style.transform = 'translateY('+ st/-10 +'px)'
-            console.log(st)
+            svg.style.opacity = 1 - st/500
         })
         
         return (
@@ -61,6 +63,15 @@ export default class Canvas extends React.Component {
                 left: 0,
                 zIndex: -1
             }}>
+                <SVG src={`../../../images/Logo.svg`} id={`Logo`} style={{
+                    position: 'fixed',
+                    width: '42%',
+                    top: 32,
+                    left: 150,
+                    //right: 0,
+                    //margin: '0 auto',
+                    zIndex: 2
+                }}/>
                 <canvas ref={ref => (this._bottom = ref)} style={{
                 position: 'fixed',
             }}/>

@@ -15,16 +15,16 @@ html, body{
     }
     
     section {
-        //background: #fff;
-        padding: 100px 300px;
+        background: $bkColor;
+        padding: 100px 350px 25px;
         @media(max-width: 1650px) {
-            padding: 100px 200px;
+            padding: 100px 250px 25px;
         }
         @media(max-width: 1350px) {
             padding: 75px 150px;
         }
         @media(max-width: 1150px) {
-            padding: 75px 100px;
+            padding: 75px 200px;
         }
         @media(max-width: 1000px) {
             padding: 75px 75px;
@@ -62,8 +62,13 @@ h1, h2, h3, h4, p, a, button{
     margin: 0;
 }
 
-div, span, section, main, h1, h2, h3, h4, p, a, button{
+div, span, section, main, h1, h2, h3, h4, p, a, button, ul, nav{
     box-sizing: border-box;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
 }
 
 button {

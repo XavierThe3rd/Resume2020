@@ -2,12 +2,18 @@
 @import '../../sass/settings.scss';
 @import '../../sass/generics.scss';
 
-.featured_holder{
-    padding: 100px 200px;
-    justify-content: space-between;
+.featured {
+    padding: 100px 350px 25px;
     background: $bkColor;
+    //left: 0;
     margin: 10px auto 20px;
-    width: 98%;
+    width: 100%;
+    background: none;
+
+    .featured_holder {
+        justify-content: space-between;
+        margin: 20px 0 30px;
+    }
 
     .featured_cards {
         &:nth-child(1){
@@ -26,8 +32,12 @@
             }
         }
     }
-    @media(max-width: 1750px) {
-        padding: 75px 50px;
+    
+    @media(max-width: 1650px) {
+        padding: 100px 250px 25px;
+    }
+    @media(max-width: 1350px) {
+        padding: 75px 150px;
     }
     @media(max-width: 1150px) {
         padding: 75px 100px;
@@ -42,8 +52,10 @@
             }
         }
     }
-    @media(max-width: 700px) {
-        padding: 50px 25px;
-        justify-content: center;
+    @media(max-width: 700px){
+        .featured_holder {
+            padding: 50px 25px;
+            justify-content: center;
+        }
     }
 }

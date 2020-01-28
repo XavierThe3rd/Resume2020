@@ -1,0 +1,86 @@
+@import '../sass/settings.scss';
+@import '../sass/generics.scss';
+@import '../sass/tools.scss';
+
+
+.hamburger{
+    width: 45px;
+    height: 32px;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    span{
+        position: relative;
+        width:45px;
+        height: 5px;
+        background: $primePink;
+    }
+}
+
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:12px;
+    z-index: 5;
+    transition: all 0.35s ease-in-out;
+    //box-shadow: $primePurple 0 0 0 0;
+    //background: radial-gradient(circle, $opacPurple -0%, $clearPurple 70%);
+
+    svg{
+        animation: rotCircle 3s infinite linear;
+
+        circle, path{
+            stroke: $primePink;
+            fill: none;
+            stroke-miterlimit: 10;
+            stroke-width: 3px;
+            transform-origin: 50% 50%;
+        }
+        
+
+
+        circle{
+            stroke-dasharray: 150,15,70,60,100,30;
+            animation: rotOuter 6s infinite linear;
+        }
+        
+        path{
+            stroke-dasharray: 100,15,50,50,70,20;
+            animation: rotInner 6s infinite linear;
+        }
+    } 
+    
+    &:hover{
+        //background: radial-gradient(circle, $opacOrange -0%, $clearOrange 70%);
+        //box-shadow: $primeOrange 0 0 0 0;
+        span{
+            background: $primeOrange;
+        }
+        svg{
+            circle, path{
+                stroke: $primeOrange
+            }
+        }
+    }
+}
+
+@keyframes rotOuter{
+    from{
+        transform: rotate(0deg)
+    }
+    to{
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes rotInner{
+    from{
+        transform: rotate(0deg)translate(12.5%, 12.5%)
+    }
+    to{
+        transform: rotate(-360deg)translate(12.5%, 12.5%)
+    }
+}

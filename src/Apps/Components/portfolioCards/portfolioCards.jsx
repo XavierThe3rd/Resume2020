@@ -2,11 +2,22 @@ import React, { useState } from "react";
 import styles from './styles/styles.scss';
 import SmallHamburger from "../Hamburgers/smallHamburger.jsx";
 
+
+
+
 const ProjectCard = ({Image, Title, Project, Type, Color, Desc, Click, Click2})=>{
     const [hoverState, setHover] = useState(false)
+    localStorage.setItem('hover', hoverState)
+    localStorage.setItem('true', setHover)
+    
     const [widthState, setWidth] = useState(false)
     const [buttonState, setButton] = useState(false)
     const [classState, setClass] = useState(false)
+
+    var hover = localStorage.getItem('hover');
+    var t = localStorage.getItem('true');
+
+    console.log(hover)
 
     let project_card_styles = {
         cursor: 'pointer',
@@ -68,8 +79,8 @@ const ProjectCard = ({Image, Title, Project, Type, Color, Desc, Click, Click2})=
     return(
       <div className={`project_card column ${classState? `pc-on` : 'pc-off'}`}
         onClick={Click}
-        onMouseEnter={window.innerWidth > 1065 ? ()=>setHover(true) | setTimeout(()=> setClass(true),10):null} 
-        onMouseLeave={window.innerWidth > 1065 ? ()=>setClass(false) |  setTimeout(()=> setHover(false),350):null} 
+        onMouseEnter={window.innerWidth > 1065 ? ()=>t | setTimeout(()=> setClass(true),10):null} 
+        onMouseLeave={window.innerWidth > 1065 ? ()=>setClass(false) |  setTimeout(()=> t,350):null} 
         style={project_card_styles}>
         <span className="image_png flx--e abs" style={image_png_styles}>
           <img className="abs" src={Image} alt='none'/>
@@ -79,11 +90,14 @@ const ProjectCard = ({Image, Title, Project, Type, Color, Desc, Click, Click2})=
             {widthState ? <SmallHamburger 
                 Class={`${buttonState? `b-on`: `b-off`}`}
                 Click={toInner}
+                bWidth={65}
+                bWidth={65}
+                sWidth={30}
             />: null}
         </div>
         <h1 style={title_styles}>{Title}</h1>
         <div className="inner_text column" style={inner_text_styles} onClick={Click2}>
-        {hoverState ? <span className="column" style={hover_span_styles}>
+        {hover ? <span className="column" style={hover_span_styles}>
             <p>{Desc}</p>
             <h3>CLICK TO LEARN MORE</h3>
             </span>: null}

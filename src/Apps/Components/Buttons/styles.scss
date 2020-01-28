@@ -15,4 +15,5 @@
 
 h1 {
     @include fontSettings($primeBack, 48px, 300, 1);
+    margin-bottom: 20px;
 }

@@ -2,10 +2,7 @@ import React from 'react'
 import styles from './styles.scss'
 import SVG from 'react-inlinesvg';
 
-const SpecCards = ({Index, Title, Image, Para})=>{  
-      
-
-      
+const SpecCards = ({Index, Title, Image, Para})=>{   
       return (
         <div key={Index}  className='spec_card flex' style={{
           cursor: 'pointer',

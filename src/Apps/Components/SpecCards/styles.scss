@@ -13,7 +13,10 @@
     box-shadow: $pureBlack 0 1px 10px 0px;
     transition: all 0.35s linear;
     margin: 10px;
-    p, span, div, h1 {
+    p, h1, div {
+        transition: all 0.25s linear;
+    }
+    span {
         transition: all 0.35s linear;
     }
     .text_holder {
