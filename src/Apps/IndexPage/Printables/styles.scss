@@ -1,0 +1,14 @@
+@import '../../sass/tools.scss';
+@import '../../sass/settings.scss';
+@import '../../sass/generics.scss';
+
+
+.prints {
+    h1{
+        margin: 150px 0 40px 100px;
+    }
+    li{
+        margin-top: 100px;
+        width: 100%;
+    }
+}

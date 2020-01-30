@@ -15,11 +15,11 @@
         position: relative;
         width:45px;
         height: 5px;
-        background: $primePink;
+        background: $pureWhite;
     }
 }
 
-button{
+.nav{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,7 +33,7 @@ button{
         animation: rotCircle 3s infinite linear;
 
         circle, path{
-            stroke: $primePink;
+            stroke: $pureWhite;
             fill: none;
             stroke-miterlimit: 10;
             stroke-width: 3px;

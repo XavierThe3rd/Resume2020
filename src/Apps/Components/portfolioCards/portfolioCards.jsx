@@ -35,7 +35,6 @@ const ProjectCard = ({Image, Title, Project, Type, Color, Desc, Click, Click2})=
         padding: '0 20px',
         zIndex: 1,
         transition: 'all 0.35s linear',
-        background: 'linear-gradient(0deg, rgba(97,0,255,1) 0%, rgba(251,150,94,0) 100%)'
     }
 
     let divider_styles = {
@@ -73,14 +72,14 @@ const ProjectCard = ({Image, Title, Project, Type, Color, Desc, Click, Click2})=
             setTimeout(()=> setHover(false) | setButton(false),350)
         } 
     }
-    window.addEventListener('load', ()=> window.innerWidth < 1065 ? setWidth(true) : setWidth(false))
-    window.addEventListener('resize', ()=> window.innerWidth < 1065 ? setWidth(true) : setWidth(false))
+    //window.addEventListener('load', ()=> window.innerWidth < 1065 ? setWidth(true) : setWidth(false))
+    //window.addEventListener('resize', ()=> window.innerWidth < 1065 ? setWidth(true) : setWidth(false))
 
     return(
       <div className={`project_card column ${classState? `pc-on` : 'pc-off'}`}
         onClick={Click}
-        onMouseEnter={window.innerWidth > 1065 ? ()=>t | setTimeout(()=> setClass(true),10):null} 
-        onMouseLeave={window.innerWidth > 1065 ? ()=>setClass(false) |  setTimeout(()=> t,350):null} 
+        onMouseEnter={()=>t | setTimeout(()=> setClass(true),10)} 
+        onMouseLeave={()=>setClass(false) |  setTimeout(()=> t,350)} 
         style={project_card_styles}>
         <span className="image_png flx--e abs" style={image_png_styles}>
           <img className="abs" src={Image} alt='none'/>

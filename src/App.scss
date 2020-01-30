@@ -1,22 +1,23 @@
 @import './Apps/sass/tools.scss';
 @import './Apps/sass/settings.scss';
 
-html, body{
+body{
     background: none;
     transition: all 0.35s ease-out;
-    //width: 100%;
-    //height:100%;
+    width: 100%;
+    height:100%;
     overflow-x: hidden;
+    background: #252528;
     margin: 0;
     //transform: translateY(50px);
 
-    #rootD, main {
+    #rootD {
         overflow: hidden;
+        //padding: 100px 300px 25px;
     }
     
     section {
-        background: $bkColor;
-        padding: 100px 350px 25px;
+        padding: 100px 300px 25px;
         @media(max-width: 1650px) {
             padding: 100px 250px 25px;
         }
@@ -24,13 +25,13 @@ html, body{
             padding: 75px 150px;
         }
         @media(max-width: 1150px) {
-            padding: 75px 200px;
+            padding: 75px 100px;
         }
         @media(max-width: 1000px) {
             padding: 75px 75px;
         }
         @media(max-width: 600px){
-            padding: 5px 5px;
+            padding: 20px 20px;
         }
     }
 }
@@ -57,12 +58,12 @@ html, body{
 }
 
 
-h1, h2, h3, h4, p, a, button{
+h1, h2, h3, h4, p, a, button, label, input, span {
     font-family: proxima_nova_rgregular;
     margin: 0;
 }
 
-div, span, section, main, h1, h2, h3, h4, p, a, button, ul, nav{
+div, span, section, main, h1, h2, h3, h4, p, a, button, ul, nav, option, input, label {
     box-sizing: border-box;
 }
 
@@ -71,10 +72,12 @@ ul {
     padding: 0;
 }
 
-button {
+button, input, textarea{
     border: none;
     outline: none;
     background: none;
+    resize: none;
+    cursor: pointer;
 }
 
 main {

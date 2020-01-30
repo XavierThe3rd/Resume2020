@@ -3,12 +3,16 @@
 @import '../../sass/generics.scss';
 
 .featured {
-    padding: 100px 350px 25px;
+    padding: 100px 300px 25px;
     background: $bkColor;
     //left: 0;
     margin: 10px auto 20px;
     width: 100%;
     background: none;
+
+    h1 {
+        margin-left: 100px;
+    }
 
     .featured_holder {
         justify-content: space-between;
@@ -44,18 +48,33 @@
     }
     @media(max-width: 1000px) {
         padding: 75px 75px;
-        flex-wrap: wrap;
+        .featured_holder{flex-wrap: wrap}
 
-        .featured_cards{
+        .featured_cards {
+            &:nth-child(1){
+                img {  
+                    @include placement(650px, -50px, 0px)
+                    }
+                }
+            &:nth-child(2){
+                img {
+                    @include placement(800px, -76px, -47px)
+                }
+            }
             &:nth-child(3){
-                margin: 20px auto;
+                img{
+                    @include placement(622px, 0, 0)
+                }
             }
         }
     }
     @media(max-width: 700px){
         .featured_holder {
-            padding: 50px 25px;
+            //padding: 50px 25px;
             justify-content: center;
         }
+    }
+    @media(max-width: 600px){
+        padding: 20px 20px;
     }
 }

@@ -45,6 +45,15 @@
     display: flex;
     justify-content: center;
 }
+.flx-e {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.flx--c {
+    display: flex;
+    align-items: center;
+}
 
 .flx--e {
     display: flex;
@@ -55,6 +64,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.column--e {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.column-b-e {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 
 .flx-c-c {
@@ -85,3 +107,11 @@
     position: fixed;
 }
 
+.max-w {
+    width: 100%;
+}
+
+.max-wh {
+    width: 100%;
+    height: 100%;
+}

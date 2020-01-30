@@ -1,0 +1,105 @@
+@import '../sass/settings.scss';
+@import '../sass/generics.scss';
+@import '../sass/tools.scss';
+
+footer{
+
+    h1 {
+        margin: 150px 0 40px 100px;
+    }
+
+    li {
+        margin: 20px 0 20px;
+
+        &:hover {
+
+            a {color: $primeOrange}
+            svg {fill: $primeOrange}
+        }
+    }
+
+    .wing_holder {
+        width: 600px;
+        margin-right: -100px;
+    }
+
+    span {
+        width: 100%;
+        margin-top: 100px;
+        padding: 20px 0;
+        text-align: center;
+        @include border($pureWhite, 3px 0 0);
+        @include fontSettings($pureWhite, 22px, 300, 1.5);
+    }
+
+    padding: 100px 300px 25px;
+    @media(max-width: 1650px) {
+        padding: 100px 250px 25px;
+    }
+    @media(max-width: 1350px) {
+        padding: 75px 150px;
+    }
+    @media(max-width: 1150px) {
+        padding: 75px 100px;
+    }
+    @media(max-width: 1000px) {
+        padding: 75px 75px;
+    }
+    @media(max-width: 600px){
+        padding: 20px 20px;
+    }
+}
+
+.inp_hold {
+    height: 52px;
+    margin: 20px 0;
+
+    label {
+        @include fontSettings($pureWhite, 32px, 600, 1);
+        width: 125px;
+        height: 52px;
+        @include border($pureWhite, 0 0 3px 0);
+    }
+    input {
+        width: 77%;
+        height: 52px;
+        padding: 0 10px 0 25px;
+        @include fontSettings($pureWhite, 24px, 300, 1);
+        @include border($pureWhite, 0 0 3px 0);
+        float: right;
+
+        &:focus {
+            @include border($primeOrange, 0 0 3px 0);
+            color: $primeOrange;
+
+            ~label {
+                @include border($primeOrange, 0 0 3px 0);
+                //color: $primeOrange;
+            }
+        }
+    }
+}
+
+
+.text_hold {
+    height: 300px;
+    margin: 20px 0;
+
+    label {
+        @include fontSettings($pureWhite, 32px, 600, 1);
+        width: 30%;
+    }
+
+    textarea {
+        margin: 20px 0;
+        padding: 25px;
+        @include dimensions(100%, 300px, 10px);
+        @include fontSettings($pureWhite, 20px, 300, 1.5);
+        @include border($pureWhite, 3px 3px 3px 3px);
+
+        &:focus {
+            @include border($primeOrange, 3px);
+            color: $primeOrange;
+        }
+    }
+}

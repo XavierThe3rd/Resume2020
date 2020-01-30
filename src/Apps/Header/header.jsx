@@ -8,15 +8,8 @@ import SmallHamburger from '../Components/Hamburgers/smallHamburger.jsx'
 let get = new headerData()
 
 
-const Link = (props)=> {
-    let list_styles={
-        listStyle: 'none',
-        cursor: 'pointer'
-    }
-    return <li style={list_styles} key={props.key}><a src={props.too}>{props.name}</a></li>
-}
 
-const HeaderList = (props)=> {
+/*const HeaderList = (props)=> {
     return <nav className={`flx-b abs a-nav padder`} style={{top: 300}}> 
         <ul className={`padder ul-desk ${props.Class}`}>
             {get.navTags.map(get =>{ return <Link too={`#`} name={get.tag} key={get.index}/>})}
@@ -30,6 +23,23 @@ const scrollRot = (x, y)=> {
       obj.style.transform = 'rotate('+ window.pageYOffset/y +'deg)'
     })
   }
+
+
+
+const Navigation = (props)=> {
+    return <nav className={`flx-b fix f-nav padder ${props.Change}`}> 
+        <SVG className= "abs" src='../../../images/Wings.svg' style={{
+            left: 50,
+            top: 0,
+            bottom: 0,
+            margin: `auto 0`,
+            width: 120,
+            zIndex: 2
+        }}
+        />
+        <ul className={props.Class}>{get.navTags.map(hit =>{ return <Link too={`#`} name={hit.tag} key={hit.index}/>})}</ul>                
+    </nav>
+}*/
 
 const Button = ({Id, Class, Click,Content, Position, Ref, Width, Margin, Left, Right, Top})=> {
     return <button 
@@ -50,22 +60,6 @@ const Hamburger = ()=> {
         <span></span><span></span><span></span>
     </div>
 }
-
-const Navigation = (props)=> {
-    return <nav className={`flx-b fix f-nav padder ${props.Change}`}> 
-        <SVG className= "abs" src='../../../images/Wings.svg' style={{
-            left: 50,
-            top: 0,
-            bottom: 0,
-            margin: `auto 0`,
-            width: 120,
-            zIndex: 2
-        }}
-        />
-        <ul className={props.Class}>{get.navTags.map(hit =>{ return <Link too={`#`} name={hit.tag} key={hit.index}/>})}</ul>                
-    </nav>
-}
-
 
 export default class Header extends React.Component {
     constructor(props) {
@@ -91,7 +85,8 @@ export default class Header extends React.Component {
             }else {
                 this.setState({setScroll: false})
                 this.setState({setNav: false})
-                document.getElementById('screenId').style.opacity= st/400
+                //document.getElementById('screenId').style.opacity= st/400
+                document.getElementById('hTag').style.opacity = 1 - st/400
             }
         }
     }
@@ -106,17 +101,17 @@ export default class Header extends React.Component {
         return(
             <header className="flx-c-c" style={{height: 500}} ref={this.scrollDown}>
                 <span ref ={this.onResize}/>
-                <h1 style={{
-                    color: '#ff2643',
-                    position: 'absolute',
-                    left: 350,
-                    top: 430,
+                <h1 id="hTag" style={{
+                    color: '#ffffff',
+                    position: 'fixed',
+                    left: 305,
+                    top: 100,
                     fontWeight: 600,
-                    fontSize: 58
+                    fontSize: 32
                 }}
                 >Home</h1>
                 <Button
-                    Class="down"
+                    Class="nav"
                     Id="navButtonId"
                     Position={"fixed"} 
                     Click={()=> {
@@ -125,16 +120,9 @@ export default class Header extends React.Component {
                     }}
                     Width={100 }
                     Top={ 50 }
-                    Right={ 350 }
+                    Right={ 290 }
                     Content={()=>(<Hamburger/>)}
                 />
-                {/*{this.state.setMobile ?
-                this.state.setNav ? 
-                <Navigation Class={`ul-mobile`} Change={this.state.setScroll ? `nav-up`:`nav-down`}/>
-                :<HeaderList Class={`ul-mobile`}/>
-                :this.state.setNav ? 
-                <Navigation Class={`ul-desk`} Change={this.state.setScroll ? `nav-up`:`nav-down`}/>
-                :<HeaderList Class={`ul-desk`}/>}*/}
             </header>
         )
     }

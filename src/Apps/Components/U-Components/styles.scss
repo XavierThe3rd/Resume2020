@@ -13,7 +13,22 @@
     }
 }
 
-h1 {
-    @include fontSettings($primeBack, 48px, 300, 1);
+.h1 {
+    @include fontSettings($primeBack, 56px, 400, 1);
     margin-bottom: 20px;
+}
+
+.h2 {
+    @include fontSettings('inherit', 40px, 300, 1);
+    margin: 20px 0;
+}
+
+.h3 {
+    @include fontSettings('inherit', 32px, 300, 1);
+}
+
+.li {
+    a {
+        @include fontSettings($pureWhite, 32px, 300, 1)
+    }
 }

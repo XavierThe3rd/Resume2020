@@ -19,7 +19,7 @@ const SpecCards = ({Index, Title, Image, Para})=>{
             </div>
             <span className="screen abs" style={{
               right: 0,
-              bottom: 0,
+              bottom: -20,
               background: 'linear-gradient(325deg, rgb(97, 0, 255) 10%, rgba(97, 0, 255, 0) 80%)',
             }}/>
           </div>

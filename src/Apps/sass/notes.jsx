@@ -15,12 +15,9 @@ import { Document, Page } from 'react-pdf';
 import { getThemeProps } from '@material-ui/styles';
 import Printables from './Apps/IndexPage/Printables/printables.jsx';
 import dataStore from './localData.js'
-import './options.scss'
-import Footer from './Apps/Footer/footer.jsx';
 //import {smoothScroll} from './smoothScroll.js'
 
 dataStore()
-
 
 const App = ()=> {
   return(
@@ -50,9 +47,8 @@ const App = ()=> {
         </ContentBox>
         <Printables/>
       </section>
-      <Footer/>
     </main>
-      )
+  )
 }
 
-export default App
+//export default App

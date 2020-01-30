@@ -3,7 +3,7 @@
 @import '../../sass/tools.scss';
 
 .spec_card, .screen_holder, .screen_holder div {
-    @include dimensions(47.85%, 300px, 10px);
+    @include dimensions(48.85%, 300px, 10px);
 }
 .screen_holder, .screen_holder div {
     @include dimensions(100%, 300px, 10px);
@@ -12,7 +12,7 @@
 .spec_card {
     box-shadow: $pureBlack 0 1px 10px 0px;
     transition: all 0.35s linear;
-    margin: 10px;
+    //margin: 10px;
     p, h1, div {
         transition: all 0.25s linear;
     }
@@ -39,10 +39,10 @@
         transform: scale(0)
     }
     .screen {
-        @include dimensions(50em, 30em, 0);
+        @include dimensions(60em, 30em, 0);
     }
     &:hover{
-        box-shadow: $primeOrange 3px 1px 30px 0px;
+        box-shadow: $primeOrange 3px 1px 10px 0px;
         transform: scale(1.025);
          
         .screen_holder div {
@@ -61,15 +61,9 @@
 }
 
 @media(max-width: 1400px){
-    .spec_card, .screen_holder, .screen_holder div {
-        @include dimensions(365px, 240px, 10px);
-    }
     .spec_card {
         .text_holder {
             padding: 25px;
-        }
-        p {
-            font-size: 18px;
         }
         &:hover{
             .screen_holder div {
@@ -79,8 +73,11 @@
     }
 }
 
-@media(max-width: 950px){
-    .spec_card, .screen_holder, .screen_holder div {
+@media(max-width: 1050px){
+    .featured_cards {
+        margin: 30px 0;
+    }
+    .spec_card, .screen_holder, .screen_holder div, .featured_cards {
         @include dimensions(100%, 300px, 10px);
     }
     .spec_card {
