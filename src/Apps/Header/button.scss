@@ -3,6 +3,15 @@
 @import '../sass/tools.scss';
 
 
+.button-off{
+    transform: translateX(0px)
+}
+
+.button-on{
+    transform: translateX(200px)
+}
+
+
 .hamburger{
     width: 45px;
     height: 32px;
@@ -26,11 +35,34 @@
     padding:12px;
     z-index: 5;
     transition: all 0.35s ease-in-out;
+    right: 290px;
+    top: 50px;
+    @media(max-width: 1650px) {
+        right: 240px;
+    }
+    @media(max-width: 1350px) {
+        right: 140px;
+    }
+    @media(max-width: 1150px) {
+        right: 90px;
+    }
+    @media(max-width: 1000px) {
+        right: 65px;
+    }
+    @media(max-width: 600px){
+        right: 10px;
+        top: 10px;
+    }
     //box-shadow: $primePurple 0 0 0 0;
     //background: radial-gradient(circle, $opacPurple -0%, $clearPurple 70%);
 
     svg{
         animation: rotCircle 3s infinite linear;
+        width: 100px;
+        
+        @media(max-width: 600px){
+            width: 70px;
+        }
 
         circle, path{
             stroke: $pureWhite;

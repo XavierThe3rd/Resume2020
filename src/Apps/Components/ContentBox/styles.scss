@@ -7,17 +7,15 @@
 	transition: all 1.5s ease-in-out;
 	//box-shadow: $pureBlack 0 1px 10px 0px;
 	margin: 0;
+	border-radius: 10px;
 	padding: 50px 100px;
 	width: 100%;
 	box-shadow: $pureBlack 0 1px 10px 0px;
 
-	h1{
-		@include fontSettings($primeBack, 48px, 300, 1);
-		margin-bottom: 20px
-	}
+
 	p {
 		@include fontSettings($conColor, 24px, 300, 1.5);
-		margin-bottom: 30px
+		margin-bottom: 30px;
 	}
 
 	img {
@@ -29,9 +27,10 @@
 		width: 100%;
     }
     @media(max-width: 600px){
-		padding: 50px 30px;
+		padding: 50px 20px;
+		border-radius: 0;
 		p {
-			font-size: 18px;
+			font-size: 20px;
 		}
 		
 		img {

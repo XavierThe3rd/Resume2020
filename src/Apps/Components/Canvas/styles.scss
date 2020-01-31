@@ -1,7 +1,23 @@
 
 #canvas {
-    svg{
-        width: 42%;
-        top: 32px;
+
+
+    #Logo {
+        width: 650px;
+        top: 150px;
+        left: 115px;
+        @media (max-width: 1650px) {
+            top: 170px;
+            left: 70px;
+        }
+        @media (max-width: 1350px) {
+            top: 100px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+        @media (max-width: 600px) {
+            width: 375px;
+        }
     }
 }

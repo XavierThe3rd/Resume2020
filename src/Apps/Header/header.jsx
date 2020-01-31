@@ -64,7 +64,7 @@ const Hamburger = ()=> {
 export default class Header extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {setNav: false, setScroll: false, setMobile: false};
+        this.state = {setNav: false, setScroll: false, setMobile: false, setMove: false};
         this.scrollDown=this.scrollDown.bind(this);
         this.onResize=this.onResize.bind(this);
     }
@@ -74,9 +74,10 @@ export default class Header extends React.Component {
         let nextScroll = 0 
         onscroll = ()=>{
             let st = window.pageYOffset 
+            window.pageYOffset > 300 ? this.setState({setMove: true}) : this.setState({setMove: false})
+            
             if(window.pageYOffset > 500){ 
                 //this.setState({setNav: true})
-  
                 if (st >= lastScroll) this.setState({setScroll: true}) 
                 else if (st < nextScroll) this.setState({setScroll: false}) 
                 lastScroll = st <= 100 ? 100 : st
@@ -99,28 +100,25 @@ export default class Header extends React.Component {
     render(){ 
         //localStorage.setItem('scroll', this.state.setScroll)    
         return(
-            <header className="flx-c-c" style={{height: 500}} ref={this.scrollDown}>
+            <header className="flx-b" ref={this.scrollDown}>
                 <span ref ={this.onResize}/>
                 <h1 id="hTag" style={{
                     color: '#ffffff',
                     position: 'fixed',
-                    left: 305,
-                    top: 100,
+                    //left: 305,
+                    //top: 100,
                     fontWeight: 600,
                     fontSize: 32
                 }}
                 >Home</h1>
                 <Button
-                    Class="nav"
+                    Class={`nav ${this.state.setMove ? 'button-on' : 'button-off'}`}
                     Id="navButtonId"
                     Position={"fixed"} 
                     Click={()=> {
                         openNav(!navState) 
                         setTimeout(()=> navClass(!navDefine),50)
                     }}
-                    Width={100 }
-                    Top={ 50 }
-                    Right={ 290 }
                     Content={()=>(<Hamburger/>)}
                 />
             </header>

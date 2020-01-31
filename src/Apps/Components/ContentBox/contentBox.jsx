@@ -5,7 +5,6 @@ import React, {useState} from "react";
 const ContentBox = (props) => {
 
     let intro_styles = {
-        borderRadius: 10,
         alignItems: props.Align,
         background: props.Background,
     }

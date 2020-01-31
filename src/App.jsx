@@ -1,25 +1,19 @@
 import styles from './App.scss';
 import './options.scss';
 //import styles from './Apps/sass/settings.scss'
-import React, {useState} from "react";
+import React from "react";
 import './Apps/sass/generics.scss'
 import nl2br from 'react-newline-to-break';
 import FeaturedWork from './Apps/IndexPage/FeaturedWork/FeaturedWork.jsx';
 import Specializations from './Apps/IndexPage/Specializations/Specializations.jsx';
 import ContentBox from './Apps/Components/ContentBox/contentBox.jsx';
 import comps from './Apps/Components/U-Components/u-components.jsx';
-import Option from './Apps/Components/Options/options.jsx'
 import Canvas from './Apps/Components/Canvas/canvas.jsx';
 import Header from './Apps/Header/header.jsx';
-import { Document, Page } from 'react-pdf';
-import { getThemeProps } from '@material-ui/styles';
 import Printables from './Apps/IndexPage/Printables/printables.jsx';
-import dataStore from './localData.js'
 import './options.scss'
 import Footer from './Apps/Footer/footer.jsx';
 //import {smoothScroll} from './smoothScroll.js'
-
-dataStore()
 
 
 const App = ()=> {

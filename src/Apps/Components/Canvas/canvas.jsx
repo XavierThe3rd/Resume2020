@@ -1,6 +1,7 @@
 import React from 'react'
 //import PropTypes from  'prop-types'
 import SVG from 'react-inlinesvg';
+import './styles.scss'
 //import resizeDetector from 'element-resize-detector'
 
 export default class Canvas extends React.Component {
@@ -27,14 +28,10 @@ export default class Canvas extends React.Component {
                 
                 <SVG src={`../../../images/Logo.svg`} id={`Logo`} style={{
                     position: 'fixed',
-                    width: '40%',
-                    top: 150,
-                    left: 115,
-                    right: 0,
                     //margin: '0 auto',
                     zIndex: 2
                 }}/>
-                <SVG src={`../../../images/MiddleRock.svg`} id={`Logo`} style={{
+                <SVG src={`../../../images/MiddleRock.svg`} style={{
                     position: 'fixed',
                     width: '20%',
                     top: 150,
