@@ -55,7 +55,7 @@ footer{
     margin: 20px 0;
 
     label {
-        @include fontSettings($pureWhite, 32px, 600, 1);
+        @include fontSettings($pureWhite, 28px, 400, 1);
         width: 125px;
         height: 52px;
         @include border($pureWhite, 0 0 3px 0);
@@ -86,7 +86,7 @@ footer{
     margin: 20px 0;
 
     label {
-        @include fontSettings($pureWhite, 32px, 600, 1);
+        @include fontSettings($pureWhite, 28px, 400, 1);
         width: 30%;
     }
 

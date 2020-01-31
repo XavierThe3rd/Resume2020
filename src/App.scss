@@ -66,9 +66,12 @@ body{
 	font-style: normal;
 }
 
+h1 {
+    font-family: "Azonix", "Catamaran", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
 
-h1, h2, h3, h4, button, label, input, span {
-    font-family: proxima_nova_regular, "Catamaran", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+h2, h3, h4, button, label, input, span {
+    font-family: "Open Sans", "Catamaran", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     margin: 0;
 }
 

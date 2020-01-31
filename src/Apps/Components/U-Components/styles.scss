@@ -20,10 +20,10 @@
 }
 
 .h1 {
-    @include fontSettings($primeBack, 56px, 600, 1);
+    @include fontSettings($primeBack, 56px, 300, 1.25);
     margin-bottom: 20px;
     @media(max-width: 600px){
-        font-size: 28px;
+        font-size: 36px;
     }
 }
 

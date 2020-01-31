@@ -76,5 +76,11 @@
     }
     @media(max-width: 600px){
         padding: 20px 20px;
+        h1 {
+            margin: 0px;
+        }
+        .featured_holder {
+            margin: 0px;
+        }
     }
 }
