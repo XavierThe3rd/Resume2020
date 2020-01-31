@@ -13,10 +13,12 @@ import Header from './Apps/Header/header.jsx';
 import Printables from './Apps/IndexPage/Printables/printables.jsx';
 import './options.scss'
 import Footer from './Apps/Footer/footer.jsx';
-//import {smoothScroll} from './smoothScroll.js'
+import {smoothScroll} from './smoothScroll.js'
 
+smoothScroll()
 
 const App = ()=> {
+  
   return(
     <main>
       <Canvas/>

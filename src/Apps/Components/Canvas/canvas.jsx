@@ -19,7 +19,7 @@ export default class Canvas extends React.Component {
             <div id="canvas" ref={ref => (this._container = ref)} className={className} style={{
                 position: 'fixed',
                 width: '100%',
-                height: '80em',
+                height: '100em',
                 background: 'linear-gradient(180deg, rgba(44,48,56,1) 0%, rgba(26,27,30,1) 100%)',
                 top: 0,
                 left: 0,

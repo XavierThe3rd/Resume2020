@@ -25,9 +25,9 @@ export const smoothScroll = () =>{
         if (scrollY) {     
             view = $window.height();      
             if (deltaY < 0 || detail > 0)
-                root = (root + view) >= $document.height() ? root : root += 100;
+                root = (root + view) >= $document.height() ? root : root += 200;
             if (deltaY > 0 || detail < 0)
-                root = root <= 0 ? 0 : root -= 100;
+                root = root <= 0 ? 0 : root -= 120;
                 $body.stop().animate({
                     scrollTop: root   
                 }, 1000, 'default', function() {     
