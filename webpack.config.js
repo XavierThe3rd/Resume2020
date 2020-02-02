@@ -25,31 +25,21 @@ module.exports = ({ mode } = { mode: "production" }) => {
             },
             module: {
                 rules: [
-                    {
-                        test: /\.(png|jpe?g|gif)$/,
-                        loader: 'react-native-web-image-loader?name=[name].[ext]&scalings[@2x]=2&scalings[-3x]=3'
-                    },
 
                     {
                         test: /\.(js|jsx)$/,
                         exclude: /node_modules/,
                         loader: "babel-loader"
-                    },
-
-                    {
-                        test: /\.svg$/,
-                        loader: 'svg-inline-loader'
-                    },
-
-                    {
-                        test: /\.(png|jpe?g|gif)$/,
-                        loader: 'react-native-web-image-loader?name=[hash].[ext]'
-                    },
-                    
+                    },                
                     {
                     test: /\.json$/,
                     loader: 'json-loader'
                     },
+                    { 
+                    test: /\.(woff|woff2|eot|ttf|otf)$/, 
+                    loader: 'url-loader?limit=100000' 
+
+                    }
                 ],
                 
             },

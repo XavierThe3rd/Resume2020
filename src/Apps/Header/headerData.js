@@ -1,31 +1,35 @@
-const headerData= ()=> {
-    const Logo = '../../../images/Logo.svg'
-    const navTags = [ 
+//import {useState} from 'react'
+
+//import {useLocalState} from '../../localStorage.jsx'
+
+
+export const headerData = () => {
+    const Links = [ 
         {
             index: 1,
-            tag: 'home',
+            tag: 'HOME',
+            class: 'index'
         },
         {
             index: 2,
-            tag: 'about',
+            tag: 'ABOUT',
         },
         {
             index: 3,
-            tag: 'portfolio',
+            tag: 'PORTFOLIO',
+            class: 'portfolio'
         },
         {
             index: 4,
-            tag: 'code',
+            tag: 'CODE',
         },
         {
             index: 5,
-            tag: 'contact',
+            tag: 'CONTACT',
         },
     ]
+      
     return{
-        navTags,
-        Logo
+        Links,
     }
 }
-
-export default headerData

@@ -8,15 +8,11 @@
     @include fontSettings($primeBack, 36px, 400, 1);
     @include border($primeBack, 2px);
 
-    &:hover {
-        background: $primeOrange;
-    }
-
+    &:hover { background: $primeOrange }
     @media(max-width: 600px){
         @include dimensions(200px, 60px, 5px);
         font-size: 24px;
     }
-    
 }
 
 .h1 {
@@ -29,15 +25,82 @@
 
 .h2 {
     @include fontSettings('inherit', 40px, 300, 1);
-    margin: 20px 0;
+    @media(max-width: 600px) {
+        font-size: 32px;
+    }
 }
 
-.h3 {
-    @include fontSettings('inherit', 32px, 300, 1);
-}
+.h3 { @include fontSettings('inherit', 32px, 300, 1) }
 
 .li {
-    a {
-        @include fontSettings($pureWhite, 32px, 300, 1)
+    a  {@include fontSettings($pureWhite, 32px, 300, 1) }
+    @media(max-width: 1000px) {
+       a { font-size: 24px } 
+    }
+}
+
+.inp_hold {
+    height: 52px;
+    margin: 20px 0;
+
+    label {
+        @include fontSettings($pureWhite, 28px, 400, 1);
+        width: 125px;
+        height: 52px;
+        @include border($pureWhite, 0 0 3px 0);
+    }
+    input {
+        width: 77%;
+        height: 52px;
+        padding: 0 10px 0 25px;
+        @include fontSettings($pureWhite, 24px, 300, 1);
+        @include border($pureWhite, 0 0 3px 0);
+        float: right;
+
+        &:focus {
+            @include border($primeOrange, 0 0 3px 0);
+            color: $primeOrange;
+
+            ~label {
+                @include border($primeOrange, 0 0 3px 0);
+                //color: $primeOrange;
+            }
+        }
+    }
+    @media(max-width: 600px) {
+        label { font-size: 22px }
+        input { font-size: 20px }
+        margin: 0;
+    }
+}
+
+.text_hold {
+    height: 300px;
+    margin: 20px 0;
+
+    label {
+        @include fontSettings($pureWhite, 28px, 400, 1);
+        width: 50%;
+    }
+
+    textarea {
+        margin: 20px 0;
+        padding: 25px;
+        @include dimensions(100%, 300px, 10px);
+        @include fontSettings($pureWhite, 20px, 300, 1.5);
+        @include border($pureWhite, 3px 3px 3px 3px);
+
+        &:focus {
+            @include border($primeOrange, 3px);
+            color: $primeOrange;
+        }
+    }
+    @media(max-width: 600px) {
+        height: 200px;
+        label { font-size: 22px }
+        textarea { 
+            font-size: 18px;
+            height: 200px;
+        }
     }
 }

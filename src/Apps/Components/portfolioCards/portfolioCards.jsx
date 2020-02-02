@@ -1,7 +1,7 @@
+/* eslint-disable no-unused-expressions */
 import React, { useState } from "react";
 import styles from './styles/styles.scss';
-import SmallHamburger from "../Hamburgers/smallHamburger.jsx";
-
+import SVG from 'react-inlinesvg';
 
 
 
@@ -13,7 +13,7 @@ const ProjectCard = ({Image, Title, Project, Type, Color, Desc, Click, Click2})=
 
     let project_card_styles = {
         cursor: 'pointer',
-        transition: 'all 0.35s ease-in-out',
+        transition: 'all 0.35s linear',
         //overflow: 'hidden',
     }
 
@@ -40,7 +40,7 @@ const ProjectCard = ({Image, Title, Project, Type, Color, Desc, Click, Click2})=
     let inner_text_styles = {
         background: styles.primePurple,
         zIndex: 1,
-        transition: 'all 0.2s linear'
+        transition: 'all 0.35s linear'
     }
 
     let hover_span_styles = {
@@ -52,18 +52,14 @@ const ProjectCard = ({Image, Title, Project, Type, Color, Desc, Click, Click2})=
         zIndex: 3,
     }
 
-    let toInner = (e)=>{
-        if (e.currentTarget.classList.contains('b-off')){
-            setHover(true)
-            setButton(true)
-            setTimeout(()=> setClass(true),10)
-        }else {
-            setClass(false) 
-            setTimeout(()=> setHover(false) | setButton(false),350)
-        } 
+    let toInner = ()=>{
+        hoverState===false ? setHover(true) | setTimeout(()=> setClass(true),10) 
+        : setClass(false) | setTimeout(()=> setHover(false),350)
     }
-    //window.addEventListener('load', ()=> window.innerWidth < 1065 ? setWidth(true) : setWidth(false))
-    //window.addEventListener('resize', ()=> window.innerWidth < 1065 ? setWidth(true) : setWidth(false))
+
+    ["resize", "load"].forEach(event => window.addEventListener(event, ()=> {
+        window.innerWidth < 1000 ? setWidth(true) : setWidth(false)
+    }))
 
     return(
       <div className={`project_card column ${classState? `pc-on` : 'pc-off'}`}
@@ -75,25 +71,22 @@ const ProjectCard = ({Image, Title, Project, Type, Color, Desc, Click, Click2})=
           <img className="abs" src={Image} alt='none'/>
           <span className="screen flex abs" style={screen_styles}/>
         </span>
-        <div className="divider" style={divider_styles}>
-            {widthState ? <SmallHamburger 
-                Class={`${buttonState? `b-on`: `b-off`}`}
-                Click={toInner}
-                bWidth={65}
-                bWidth={65}
-                sWidth={30}
-            />: null}
-        </div>
-        <h1 style={title_styles}>{Title}</h1>
+        <span className="divider" style={divider_styles}/>
+        <h2 style={title_styles}>{Title}</h2>
         <div className="inner_text column" style={inner_text_styles} onClick={Click2}>
-        {hoverState ? <span className="column" style={hover_span_styles}>
+        {hoverState ? <span className="column abs" style={hover_span_styles}>
             <p>{Desc}</p>
-            <h3>CLICK TO LEARN MORE</h3>
+            <h4>CLICK TO LEARN MORE</h4>
             </span>: null}
         </div>
-        <span className="lower_span row-b" style={lower_span_styles}>
-            <h2 style={{color: Color}}>{Project}</h2><h2 style={{color: Color}}>{Type}</h2>
-        </span>
+        <div className="column--c">
+            <span className="lower_span row-b abs" style={lower_span_styles}>
+                <h3 style={{color: Color}}>{Project}</h3><h3 style={{color: Color}}>{Type}</h3>
+            </span>
+            {widthState ? <button onClick={toInner}>
+                <SVG src="../../../../images/Arrow.svg"/>
+            </button>: null}
+        </div>
       </div>
     )
 }

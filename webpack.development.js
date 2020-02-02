@@ -8,7 +8,11 @@ module.exports = () => ({
         {
           test: /\.sa?css$/,
           use: ["style-loader", "css-loader", "sass-loader"]
-        }
+        },
+        {
+          test: /\.svg$/,
+          loader: 'svg-inline-loader'
+      },  
       ]
     }
   });

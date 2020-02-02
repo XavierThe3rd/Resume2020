@@ -22,7 +22,13 @@ module.exports = () => ({
             {
                 test: /\.sa?css$/,
                 use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
-            }
+            },
+            {
+                test: /\.(png|jpe?g|gif|pdf|svg)$/,
+                use: [
+                    'file-loader'
+                ],
+            },
         ]
     },
     plugins: [new MiniCssExtractPlugin()]

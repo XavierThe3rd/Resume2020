@@ -1,4 +1,7 @@
 import styles from './styles.scss'
+import Xaragosa from '../../../../images/Xaragosa.png'
+import Dictionary from '../../../../images/TypeDictionary.png'
+import Heelys from '../../../../images/Heelys.png'
 
 const Data = () => {
     let heading = 'Featured Works'
@@ -6,19 +9,18 @@ const Data = () => {
     let cardData=[
         {
           index: 1,
-          image: '../images/Xaragosa.png',
-          title: 'Xaragosa \n the Dragon',
+          image: Xaragosa,
+          title: 'Xaragosa the Dragon',
           desc: "A college graphic design project created in photoshop",
           project: "Art Piece",
           type: "PS",
           color: styles.adobePS,
-
           name: "Xaragosa"
         },
         {
           index: 2,
-          image: '../images/TypeDictionary.png',
-          title: 'Type \n Dictionary',
+          image: Dictionary,
+          title: 'Type Dictionary',
           desc: "A college booklet dictionary project created in indesign",
           project: "Booklet Piece",
           type: "ID",
@@ -28,8 +30,8 @@ const Data = () => {
         },
         {
           index: 3,
-          image: '../images/Heelys.png',
-          title: 'Heely’s\n Comeback',
+          image: Heelys,
+          title: 'Heely’s Comeback',
           desc: "A college webpage design project created in react",
           project: "Web App",
           type: "JS",

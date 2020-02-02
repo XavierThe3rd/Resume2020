@@ -3,9 +3,28 @@
 .project_card, .image_png {
     @include dimensions(300px, 425px, 10px);
 }
+.lower_span {
+    width: 300px;
+    height: 60px;
+}
 
 .project_card {
     margin: 0px;
+
+    button {
+        z-index: 4;
+        position: absolute;
+        margin-top: -20px;
+        width: 100%;
+        background: #6100ff;
+        border-radius: 0 0 10px 10px;
+        svg{
+            width: 65px;
+            height: 65px;
+            color: $pureWhite;
+            transition: all 0.35s linear;
+        }
+    }
 
     .screen {
         background: linear-gradient(0deg, rgba(97,0,255,1) 15%, rgba(97,0,255,0) 100%)
@@ -19,25 +38,33 @@
         @include dimensions(300px, 362px, 0px);
     }
 
-    h1{
+    h2{
         @include fontSettings($pureWhite, 38px, 200, 1.1);
-        margin: 0 0 10px 20px;
+        margin: 0 60px 10px 20px;
         z-index: 1;
+    }
+    h3 {
+        font-size: 24px;
     }
 
     p{
-        @include fontSettings($pureWhite, 18px, 300, 1.25);
-        margin: 0 0 10px;
+        @include fontSettings($pureWhite, 24px, 300, 1.25);
+        margin: 0 0 20px;
     }
-    h3{
-        @include fontSettings($primeOrange, 16px, 400, 1);
+    h4{
+        @include fontSettings($primeOrange, 20px, 400, 1);
     } 
     .inner_text {
-        padding: 20px 20px 0;
+        border-radius: 0 0 10px 10px;
+        span {
+            padding: 20px;
+        }   
     }
     .lower_span {
-        padding: 0 20px 25px;
+        align-items: center;
+        padding: 0 20px;
         border-radius: 0 0 10px 10px;
+        bottom: 0;
     }
 }
 
@@ -47,9 +74,15 @@
         p{
             font-size: 16px;
         }
-        h3{
+        h2 {
+            margin: 0 20px 10px 20px;
+        }
+        h4{
             font-size: 14px;
         } 
+        .lower_span {
+            width: 245px;
+        }
     }
 }
 
@@ -57,16 +90,25 @@
     .project_card, .project_card .image_png {
         @include dimensions(100%, 335px, 5px);
 
-        h1{margin-bottom: 0}
-
+        h2{
+            margin-bottom: 0;
+            text-align: center;
+        }
+        h3 {
+            font-size: 32px;
+        }
         .screen {
             background: linear-gradient(0deg, rgba(97,0,255,1) 15%, rgba(251,150,94,0) 100%)
         }
         p{
             font-size: 22px;
         }
-        h3{
+        h4{
             font-size: 20px;
+        }
+        .lower_span {
+            width: 100%;
+            align-items: flex-start;
         } 
     }
 }
@@ -74,13 +116,13 @@
 
 @media (max-width: 600px) {
     .project_card {
-        h1 {
-            margin: 0 0 5px 0;
+        h2 {
+            margin: 0 20px 5px;
             text-align: center;
             font-size: 48px;
         }
-        h2 {
-            font-size: 32px;
+        .inner_text span {
+            padding: 18px;
         }
     }
 }

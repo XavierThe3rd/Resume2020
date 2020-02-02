@@ -21,6 +21,9 @@
         color: $pureWhite;
         padding: 0;
     }
+    @media (max-width: 600px) {
+        padding: 0px 10px 0px 20px;
+    }
 }
 
 .op-off {
@@ -36,5 +39,8 @@
     .obj-holder{
         height: 500px;
         transition: all 0.35s ease-in-out 0.35s;
+        @media (max-width: 1085px) {
+            height: 60px;
+        }
     }
 }

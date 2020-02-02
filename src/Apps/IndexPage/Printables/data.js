@@ -1,3 +1,4 @@
+import PDF from '../../../../images/TestPDF.pdf'
 
 const Data= ()=> {
     const heading = 'Printed Documents'
@@ -5,25 +6,25 @@ const Data= ()=> {
         {
             index: 1,
             title: 'Resume',
-            search: '../../../images/TestPDF.pdf',
+            search: PDF,
             name: 'Test Resume File Here'
         },
         {
             index: 2,
             title: 'Portfolio',
-            search: '../../../images/TestPDF.pdf',
+            search: PDF,
             name: 'Test Resume File Here'
         },
         {
             index: 3,
             title: 'Degrees',
-            search: '../../../images/TestPDF.pdf',
+            search: PDF,
             name: 'Test Resume File Here'
         },
         {
             index: 4,
             title: 'Other',
-            search: '../../../images/TestPDF.pdf',
+            search: PDF,
             name: 'Test Resume File Here'
         },
     ]

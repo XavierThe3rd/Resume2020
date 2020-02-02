@@ -1,130 +1,196 @@
-import React, {useState} from 'react'
-import './styles.scss'
-import'./button.scss'
-import headerData from './headerData.js'
-import SVG from 'react-inlinesvg';
-import SmallHamburger from '../Components/Hamburgers/smallHamburger.jsx'
-
-let get = new headerData()
+import React, {useState, useEffect } from 'react'
+import styles from './styles.scss'
+import {HeaderData} from './headerData.js'
+import NavButton from '../Components/NavButton/navButton.jsx'
+import comps from '../Components/U-Components/u-components.jsx'
 
 
-
-/*const HeaderList = (props)=> {
-    return <nav className={`flx-b abs a-nav padder`} style={{top: 300}}> 
-        <ul className={`padder ul-desk ${props.Class}`}>
-            {get.navTags.map(get =>{ return <Link too={`#`} name={get.tag} key={get.index}/>})}
-        </ul>
-    </nav>
-}
-
-const scrollRot = (x, y)=> {
-    let obj = document.getElementById(x)
-    document.getElementById("rootD").addEventListener("scroll", ()=>{
-      obj.style.transform = 'rotate('+ window.pageYOffset/y +'deg)'
-    })
-  }
-
-
-
-const Navigation = (props)=> {
-    return <nav className={`flx-b fix f-nav padder ${props.Change}`}> 
-        <SVG className= "abs" src='../../../images/Wings.svg' style={{
-            left: 50,
-            top: 0,
-            bottom: 0,
-            margin: `auto 0`,
-            width: 120,
-            zIndex: 2
-        }}
-        />
-        <ul className={props.Class}>{get.navTags.map(hit =>{ return <Link too={`#`} name={hit.tag} key={hit.index}/>})}</ul>                
-    </nav>
-}*/
-
-const Button = ({Id, Class, Click,Content, Position, Ref, Width, Margin, Left, Right, Top})=> {
-    return <button 
-            id={Id} 
-            className={Class}
-            onClick={Click}
-            style={{position: Position, margin: Margin, left: Left, right: Right, top: Top}}>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 239.9 239.9" ref={Ref} style={{width: Width}}>
-            <circle cx="120" cy="120" r="118.5"/>
-            <path d="M134.8,167.3A88.9,88.9,0,1,1,167.3,45.9,88.9,88.9,0,0,1,134.8,167.3Z"/>
-        </svg>
-        {Content()}
-    </button> 
-}
-
-const Hamburger = ()=> {
-    return <div className="hamburger">
-        <span></span><span></span><span></span>
-    </div>
-}
 
 export default class Header extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {setNav: false, setScroll: false, setMobile: false, setMove: false};
-        this.scrollDown=this.scrollDown.bind(this);
-        this.onResize=this.onResize.bind(this);
+        this.state = {
+            setScroll: false, 
+            setMobile: false, 
+            setMove: false, 
+            setClass: false, 
+            setNav: false,
+            setRight: false
+        };
     }
    
-    scrollDown(){
-        let lastScroll = 100
+    componentDidMount(){
+        let lastScroll = 0
         let nextScroll = 0 
         onscroll = ()=>{
             let st = window.pageYOffset 
-            window.pageYOffset > 300 ? this.setState({setMove: true}) : this.setState({setMove: false})
-            
-            if(window.pageYOffset > 500){ 
-                //this.setState({setNav: true})
-                if (st >= lastScroll) this.setState({setScroll: true}) 
-                else if (st < nextScroll) this.setState({setScroll: false}) 
-                lastScroll = st <= 100 ? 100 : st
-                setTimeout(()=>{nextScroll = st <= 100 ? 100 : st - 100}, 100)  
-            
-            }else {
-                this.setState({setScroll: false})
-                this.setState({setNav: false})
-                //document.getElementById('screenId').style.opacity= st/400
-                document.getElementById('hTag').style.opacity = 1 - st/400
+            if(window.innerWidth < 600){
+                if(window.pageYOffset > 500){ 
+                    document.getElementById("screenId").style.opacity= 1
+                    if (st >= lastScroll) this.setState({setScroll: true}) 
+                    else if (st < nextScroll) this.setState({setScroll: false}) 
+                    lastScroll = st <= 100 ? 100 : st
+                    setTimeout(()=>{nextScroll = st <= 100 ? 100 : st - 100}, 100)   
+                }else {
+                    this.setState({setRight: false, setScroll: false})
+                    document.getElementById("screenId").style.opacity= 0 + st/500 
+                }
+            } else {
+                document.getElementById('hTag').style.opacity = 1 - st/300
+                window.pageYOffset > 300 ? this.setState({setMove: true})
+                : this.setState({setMove: false})
+                
             }
         }
-    }
-    onResize(){
-        window.addEventListener('resize', ()=> {
-            (window.innerWidth < 900) ? this.setState({setMobile: true}) : this.setState({setMobile: false})
-        })
+
+        ["resize", "load"].forEach(event => window.addEventListener(event, ()=> {
+            window.innerWidth < 600 ? this.setState({setMobile: true}) : this.setState({setMobile: false})
+        }))
     }
 
-    render(){ 
-        //localStorage.setItem('scroll', this.state.setScroll)    
+    render(){   
+        let get = new HeaderData()
+        
         return(
-            <header className="flx-b" ref={this.scrollDown}>
-                <span ref ={this.onResize}/>
-                <h1 id="hTag" style={{
-                    color: '#ffffff',
-                    position: 'fixed',
-                    //left: 305,
-                    //top: 100,
-                    fontWeight: 600,
-                    fontSize: 32
-                }}
-                >Home</h1>
-                <Button
-                    Class={`nav ${this.state.setMove ? 'button-on' : 'button-off'}`}
-                    Id="navButtonId"
-                    Position={"fixed"} 
-                    Click={()=> {
-                        openNav(!navState) 
-                        setTimeout(()=> navClass(!navDefine),50)
+            <header className={`column ${this.state.setClass? `nav-on` : `nav-off`}`}>
+                <nav id={`navId`}className={`flx-b-c fix
+                    ${this.state.setScroll ? `nav-up`: `nav-down`}`}
+                    style={{
+                        right:0,
+                        width: '100%'
                     }}
-                    Content={()=>(<Hamburger/>)}
-                />
+                >
+                    {this.state.setMobile ?<span className="screen abs max-w" id="screenId" style={{
+                        height: 72,
+                        right: 0,
+                        opacity: 0,
+                    }}/>: null}
+                    <h1 id="hTag" style={{zIndex: 2}}>Home</h1>
+                    <NavButton
+                        Class={`nav ${this.state.setMove ? 'button-on' : 'button-off'}`}
+                        Id="navButtonId"
+                        Click={()=> {
+                            let nav = document.getElementById("navId")
+                            let htag = nav.querySelector("h1")
+                            if(this.state.setNav===false){
+                                nav.style.zIndex = 5
+                                window.innerWidth > 600 ? htag.style.opacity= 0 : htag.style.opacity= 1
+                                this.setState({setNav: true}) 
+                                setTimeout(()=> this.setState({setClass: true}),50)
+                            } else if (this.state.setNav===true) {
+                                this.setState({setClass: false})
+                                window.innerWidth < 600 ? htag.style.opacity= 1 : htag.style.opacity= 0
+                                setTimeout(()=>{
+                                this.setState({setNav: false})
+                                window.innerWidth > 600 ? nav.style.zIndex = 0 : nav.style.zIndex = 5
+                                }, 500)
+                            }
+                        }}
+                    />
+                </nav>
+                {this.state.setNav ? <ul className= {`fix`} style={{
+                        width:'100%',
+                        top: 0,
+                        left: 0,
+                    }}>
+                        {get.Links.map(hit=> {
+                            return <comps.Link key={hit.index} click={hit.click}>{hit.tag}</comps.Link>
+                        })}
+                    </ul>
+                    :null}
             </header>
         )
     }
 }
 
+
+/*
+let get = new HeaderData()
+
+const Header = ()=> {
+    let[scrollState, setScroll] = useState(false)
+    let[mobileState, setMobile] = useState(false)
+    let[moveState, setMove] = useState(false)
+    let[classState, setClass] = useState(false)
+    let[navState, setNav] = useState(false)
+
+   
+    useEffect(() => {
+        let lastScroll = 0
+        let nextScroll = 0 
+        onscroll = ()=>{
+            let st = window.pageYOffset 
+            if(window.innerWidth < 600){
+                if(window.pageYOffset > 500){ 
+                    document.getElementById("screenId").style.opacity= 1
+                    if (st >= lastScroll) setScroll(true)
+                    else if (st < nextScroll) setScroll(false) 
+                    lastScroll = st <= 100 ? 100 : st
+                    setTimeout(()=>{nextScroll = st <= 100 ? 100 : st - 100}, 100)   
+                }else {
+                    setScroll(false)
+                    document.getElementById("screenId").style.opacity= 0 + st/500 
+                }
+            } else {
+                document.getElementById('hTag').style.opacity = 1 - st/300
+                window.pageYOffset > 300 ? setMove(true): setMove(false)
+            }
+        }
+        ["resize", "load"].forEach(event => window.addEventListener(event, ()=> {
+            window.innerWidth < 600 ? setMobile(true) : setMobile(false)
+        }))
+    })
+   
+    return(
+    <header className={`column ${classState ? `nav-on` : `nav-off`}`}>
+        <nav id={`navId`}className={`flx-b-c fix
+            ${scrollState ? `nav-up`: `nav-down`}`}
+            style={{
+                right:0,
+                width: '100%'
+            }}
+        >
+            {mobileState ?<span className="screen abs max-w" id="screenId" style={{
+                height: 72,
+                right: 0,
+                opacity: 0,
+            }}/>: null}
+            <h1 id="hTag" style={{zIndex: 2}}>Home</h1>
+            <NavButton
+                Class={`nav ${moveState ? 'button-on' : 'button-off'}`}
+                Id="navButtonId"
+                Click={()=> {
+                    let nav = document.getElementById("navId")
+                    let htag = nav.querySelector("h1")
+                    if(navState===false){
+                        nav.style.zIndex = 5
+                        window.innerWidth > 600 ? htag.style.opacity= 0 : htag.style.opacity= 1
+                        setNav(true)
+                        setTimeout(()=> setClass(true),50)
+                    } else if (navState===true) {
+                        setClass(false)
+                        window.innerWidth < 600 ? htag.style.opacity= 1 : htag.style.opacity= 0
+                        setTimeout(()=>{
+                        setNav(false)
+                        window.innerWidth > 600 ? nav.style.zIndex = 0 : nav.style.zIndex = 5
+                        }, 500)
+                    }
+                }}
+            />
+        </nav>
+        {this.state.setNav ? <ul className= {`fix`} style={{
+                width:'100%',
+                top: 0,
+                left: 0,
+            }}>
+                {get.Links.map(hit=> {
+                    return <comps.Link key={hit.index} click={hit.click}>{hit.tag}</comps.Link>
+                })}
+            </ul>
+            :null}
+    </header>
+    )
+}
+*/
 
 

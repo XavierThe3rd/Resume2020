@@ -1,10 +1,8 @@
 import React from "react";
-import nl2br from 'react-newline-to-break';
 import styles from './styles.scss'
 import ProjectPiece from "../../Components/portfolioCards/portfolioPiece.jsx";
 import get from './data.js'
 import comps from "../../Components/U-Components/u-components.jsx";
-import { style } from "@material-ui/system";
 
 
 const FeaturedWork = ()=> {
@@ -17,7 +15,7 @@ const FeaturedWork = ()=> {
               Class={`featured_cards`}
               Index={hit.index}
               Image={hit.image}
-              Title= {nl2br(hit.title)}
+              Title= {hit.title}
               Desc={hit.desc}
               Project={hit.project}
               Type={hit.type}

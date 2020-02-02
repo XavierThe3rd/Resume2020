@@ -1,54 +1,36 @@
-import styles from './App.scss';
-import './options.scss';
+import './App.scss';
 //import styles from './Apps/sass/settings.scss'
-import React from "react";
-import './Apps/sass/generics.scss'
-import nl2br from 'react-newline-to-break';
-import FeaturedWork from './Apps/IndexPage/FeaturedWork/FeaturedWork.jsx';
-import Specializations from './Apps/IndexPage/Specializations/Specializations.jsx';
-import ContentBox from './Apps/Components/ContentBox/contentBox.jsx';
-import comps from './Apps/Components/U-Components/u-components.jsx';
-import Canvas from './Apps/Components/Canvas/canvas.jsx';
+import React, {useState} from "react";
+//import './Apps/sass/generics.scss'
 import Header from './Apps/Header/header.jsx';
-import Printables from './Apps/IndexPage/Printables/printables.jsx';
-import './options.scss'
+import Canvas from './Apps/Components/Canvas/canvas.jsx';
 import Footer from './Apps/Footer/footer.jsx';
-import {smoothScroll} from './smoothScroll.js'
+import Index from './Apps/indexPage.jsx';
+import Portfolio from './Apps/portfolioPage.jsx'
+import comps from './Apps/Components/U-Components/u-components.jsx';
 
-smoothScroll()
 
 const App = ()=> {
+  let [indexState, setIndex] = useState(true)
+  let [portState, setPort] = useState(false)
   
   return(
     <main>
       <Canvas/>
-      <Header/>
-      <section>
-        <ContentBox Background={'linear-gradient(306deg, rgba(97,0,255,1) 0%, rgba(255,38,67,1) 100%)'}>
-          <comps.Title Color={styles.conColor}>{'Provinding Bold Intuitive Design and Programming'}</comps.Title>
-          <p>{'Based in the city of pittsburgh, for the past 2 years I have been aquiring my degree in Graphic Design while also accumulating a vast knowledge of front-end & backend programming skills on my own accord. Now finished I look forward to finally providing my skills to you and your company.'}</p>
-          <comps.Button
-            Click ={()=>console.log('button was clicked')}
-            Color={styles.conColor}
-          >Learn More!</comps.Button>
-        </ContentBox>
-        <Specializations/>
-      </section>
-        <FeaturedWork/>
-      <section>
-        <ContentBox Background={'linear-gradient(306deg, rgba(97,0,255,1) 0%, rgba(255,38,67,1) 100%)'} Align= 'center'>
-          <comps.Title Color={styles.conColor}>Interned At...</comps.Title>
-          <img src='../images/QintelLogo.png' alt='none'/>
-          <comps.Button
-            Color={styles.conColor}
-            Click ={()=>console.log('button was clicked')}
-          >Learn More!</comps.Button>
-        </ContentBox>
-        <Printables/>
-      </section>
+      <Header>
+        <comps.Link click={()=>setIndex(true)|setPort(false)}>Home</comps.Link>
+        <comps.Link click={()=>setPort(true)|setIndex(false)}>About</comps.Link>
+        <comps.Link click={()=>setPort(true)|setIndex(false)}>Portfolio</comps.Link>
+        <comps.Link click={()=>setPort(true)|setIndex(false)}>Code</comps.Link>
+        <comps.Link click={()=>setPort(true)|setIndex(false)}>Contact</comps.Link>
+      </Header>
+      {indexState ? <Index /> :null}
+      {portState ? <Portfolio/> : null}
       <Footer/>
     </main>
-      )
+    )
 }
+
+
 
 export default App

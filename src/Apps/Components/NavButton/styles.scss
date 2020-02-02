@@ -1,6 +1,6 @@
-@import '../sass/settings.scss';
-@import '../sass/generics.scss';
-@import '../sass/tools.scss';
+@import '../../sass/settings.scss';
+@import '../../sass/generics.scss';
+@import '../../sass/tools.scss';
 
 
 .button-off{
@@ -8,64 +8,63 @@
 }
 
 .button-on{
-    transform: translateX(200px)
+    transform: translateX(200px);
+
+    @media(max-width: 1350px) {
+        transform: translateX(112px);
+    }
+    @media(max-width: 1150px) {
+        transform: translateX(100px);
+    }
+    @media(max-width: 1000px) {
+        transform: translateX(87px);
+    }
+    @media(max-width: 600px) {
+        transform: translateX(0px);
+    }
 }
 
 
 .hamburger{
-    width: 45px;
-    height: 32px;
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
+    @include dimensions(45px, 32px, 0);
+
     span{
-        position: relative;
-        width:45px;
-        height: 5px;
         background: $pureWhite;
+        position: relative;
+        @include dimensions(45px, 5px, 0);
     }
 }
 
 .nav{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    //background: radial-gradient(circle, rgba(97,0,255,1) 0%, rgba(97,0,255,0) 75%);
+    //background: radial-gradient(circle, rgba(255,38,67,1) 0%, rgba(255,38,67,0) 75%);
     padding:12px;
     z-index: 5;
     transition: all 0.35s ease-in-out;
-    right: 290px;
-    top: 50px;
-    @media(max-width: 1650px) {
-        right: 240px;
+    @media(max-width: 600px) {
+        @include dimensions(45px, 32px, 0);
+        padding: 0;
     }
-    @media(max-width: 1350px) {
-        right: 140px;
-    }
-    @media(max-width: 1150px) {
-        right: 90px;
-    }
-    @media(max-width: 1000px) {
-        right: 65px;
-    }
-    @media(max-width: 600px){
-        right: 10px;
-        top: 10px;
-    }
-    //box-shadow: $primePurple 0 0 0 0;
-    //background: radial-gradient(circle, $opacPurple -0%, $clearPurple 70%);
-
+    
     svg{
         animation: rotCircle 3s infinite linear;
         width: 100px;
+        stroke: $pureWhite;
+
+        @media(max-width: 1350px) {
+            width: 75px;
+        }
         
-        @media(max-width: 600px){
-            width: 70px;
+        @media(max-width: 1000px){
+            opacity: 0;
+            //display: none;
+        }
+
+        @media(max-width: 600px) {
+            display: none;
         }
 
         circle, path{
-            stroke: $pureWhite;
             fill: none;
             stroke-miterlimit: 10;
             stroke-width: 3px;

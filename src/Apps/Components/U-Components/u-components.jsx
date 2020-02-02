@@ -35,10 +35,10 @@ const Comps = ()=>{
             listStyle: 'none',
             cursor: 'pointer'
         }
-        return <li style={list_styles} 
-            className="li"
+        return <li style={list_styles} id= {props.Id} 
+            className={`li ${props.Class}`}
             key={props.key}>
-            <a href={props.too}>{props.children}</a>
+            <a href={props.too} value={props.Value} onClick={props.click}>{props.children}</a>
         </li>
     }
 
@@ -53,13 +53,30 @@ const Comps = ()=>{
       </object>
     }
 
+    const Input = (props) => {
+        return  <div className="inp_hold max-w" style={{height: 52}}>
+          <input type="text"/>
+          <label className="flx--c abs">{props.children}</label>
+        </div>
+      }
+      
+      const TextArea = (props) => {
+        return <div className="text_hold column max-w">
+          <label className="flx--c">{props.children}</label>
+          <textarea />
+        </div>
+      }
+    
+
     return {
         Button: Button,
         Title: Title,
         Header: Header,
         SubHeader : SubHeader,
         Embed : Embed,
-        Link : Link
+        Link : Link,
+        Input : Input,
+        TextArea : TextArea
     }
 }
 

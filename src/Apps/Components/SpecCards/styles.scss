@@ -13,30 +13,23 @@
     box-shadow: $pureBlack 0 1px 10px 0px;
     transition: all 0.35s linear;
     //margin: 10px;
-    p, h1, div {
-        transition: all 0.25s linear;
-    }
-    span {
-        transition: all 0.35s linear;
-    }
-    .text_holder {
+    p, h1, div { transition: all 0.25s linear }
+    span { transition: all 0.35s linear }
+    .text_holder { 
         padding: 50px;
+        transform: scale(0)
     }
     .screen_holder div{
         padding: 70px;   
-        
         h2 {
             @include fontSettings($pureWhite, 32px, 400, 1);
             margin-right: 12px;
         }
-        svg {
-            width: 50px;
-        }
+        svg { width: 50px }
     }
     p {
         @include fontSettings($pureWhite, 24px, 300, 1.25);
         opacity: 0;
-        transform: scale(0)
     }
     .screen {
         @include dimensions(60em, 30em, 0);
@@ -49,14 +42,9 @@
             transform: translateY(95px);
             opacity: 0;
         } 
-        
-        .screen {
-            transform: translate(75%, 40%)rotate(-35deg);
-        }
-        p {
-            opacity: 1;
-            transform: scale(1)
-        }       
+        .screen { transform: translate(75%, 40%)rotate(-35deg) }
+        .text_holder { transform: scale(1) }
+        p { opacity: 1 }       
     }
 }
 
@@ -75,18 +63,14 @@
 
 @media(max-width: 1050px){
     .featured_cards {
-        margin: 30px 0;
+        margin: 65px 0;
     }
     .spec_card, .screen_holder, .screen_holder div, .featured_cards {
         @include dimensions(100%, 300px, 10px);
     }
     .spec_card {
-        .text_holder {
-            padding: 50px;
-        }
-        p {
-            font-size: 24px;
-        }
+        .text_holder { padding: 50px }
+        p { font-size: 24px }
         &:hover{
             .screen_holder div {
                 transform: translateY(90px)
