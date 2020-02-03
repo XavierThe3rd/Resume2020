@@ -8,7 +8,6 @@ import SVG from 'react-inlinesvg';
 const ProjectCard = ({Image, Title, Project, Type, Color, Desc, Click, Click2})=>{
     const [hoverState, setHover] = useState(false)
     const [widthState, setWidth] = useState(false)
-    const [buttonState, setButton] = useState(false)
     const [classState, setClass] = useState(false)
 
     let project_card_styles = {

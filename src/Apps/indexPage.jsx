@@ -22,7 +22,7 @@ const Index = ()=> {
             </ContentBox>
             <Specializations/>
         </section>
-            <FeaturedWork/>
+        <FeaturedWork/>
         <section>
             <ContentBox Background={'linear-gradient(306deg, rgba(97,0,255,1) 0%, rgba(255,38,67,1) 100%)'} Align= 'center'>
             <comps.Title Color={styles.conColor}>Interned At...</comps.Title>
@@ -38,3 +38,5 @@ const Index = ()=> {
     )
 }
 export default Index
+
+

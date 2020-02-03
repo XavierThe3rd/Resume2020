@@ -5,6 +5,10 @@
 .nav-down {transform: translateY(0)}
 .nav-up {transform: translateY(-72px)}
 
+.active {
+    color: $primeOrange;
+}
+
 .nav-off {
     button {
         span {

@@ -4,6 +4,7 @@ const webpackMerge = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const modeConfiguration = env => require(`./webpack.${env}`)(env);
 
+
 module.exports = ({ mode } = { mode: "production" }) => {
     console.log(`mode is: ${mode}`);
 
@@ -47,7 +48,13 @@ module.exports = ({ mode } = { mode: "production" }) => {
                 new HtmlWebpackPlugin({
                     template: "./public/index.html"
                 }),
-                new webpack.HotModuleReplacementPlugin()
+                new webpack.HotModuleReplacementPlugin(),
+                new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+                new webpack.DefinePlugin({
+                    'process.env': {
+                      'NODE_ENV': JSON.stringify('production')
+                    }
+                }),
             ]
         },
         modeConfiguration(mode)

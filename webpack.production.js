@@ -5,18 +5,34 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 module.exports = () => ({
     devtool: "nosource-source-map",
     output: {
-        filename: "production.js"
+        filename: "production.js",
     },
     optimization: {
+        
         minimizer: [
             new UglifyJsPlugin({
                 cache: true,
                 parallel: true,
-                sourceMap: true // set to true if you want JS source maps for css
+                sourceMap: true ,// set to true if you want JS source maps for css
+                uglifyOptions: {
+                    warnings: false,
+                    parse: {},
+                    compress: {},
+                    mangle: true, // Note `mangle.properties` is `false` by default.
+                    output: null,
+                    toplevel: false,
+                    nameCache: null,
+                    ie8: false,
+                    keep_fnames: false,
+                  },
+
+                
+                
             }),
-            new OptimizeCSSAssetsPlugin({})
+            new OptimizeCSSAssetsPlugin({}),
         ]
     },
+    
     module: {
         rules: [
             {
@@ -31,5 +47,10 @@ module.exports = () => ({
             },
         ]
     },
-    plugins: [new MiniCssExtractPlugin()]
+    plugins: [
+        new MiniCssExtractPlugin(),
+    ]
 });
+
+
+

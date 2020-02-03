@@ -13,11 +13,17 @@ header {
         box-shadow: 0 2px 4px 0px;
         background: #22252a;
     }
+    .screen::before {
+        content: '';
+        position: absolute;
+        background: #22252a;
+        @include dimensions(100%, 52px, 0);
+        top: -52px;
+    }
     ul {
         background: #22252a;
         z-index:4;
-        .li {
-            width: 100%;
+        li {
             text-align: center;
             &:nth-child(1) { margin-top: 200px }
             a {
@@ -48,12 +54,28 @@ header {
             z-index: 5;
         }
         h1 { margin: 10px 0 0 }
-        ul .li {
+        ul li {
         &:nth-child(1) { margin-top: 120px }
             a {
                 line-height: 1.75;
             }
         }     
+    }
+    padding: 100px 300px 0;
+    @media(max-width: 1650px) {
+        padding: 100px 250px 0;
+    }
+    @media(max-width: 1350px) {
+        padding: 100px 150px 0;
+    }
+    @media(max-width: 1150px) {
+        padding: 100px 100px 0;
+    }
+    @media(max-width: 1000px) {
+        padding: 100px 75px 0;
+    }
+    @media(max-width: 600px){
+        padding: 100px 20px 0;
     }
 }
 

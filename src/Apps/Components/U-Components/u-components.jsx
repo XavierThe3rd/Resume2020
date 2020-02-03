@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import './styles.scss'
 
 const Comps = ()=>{
@@ -37,8 +37,8 @@ const Comps = ()=>{
         }
         return <li style={list_styles} id= {props.Id} 
             className={`li ${props.Class}`}
-            key={props.key}>
-            <a href={props.too} value={props.Value} onClick={props.click}>{props.children}</a>
+            key={props.Key}>
+            <a href={props.Ref} value={props.Value} onClick={props.click}>{props.children}</a>
         </li>
     }
 
