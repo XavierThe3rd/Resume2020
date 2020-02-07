@@ -4,10 +4,10 @@
 
 .nav-down {transform: translateY(0)}
 .nav-up {transform: translateY(-72px)}
-
-.active {
-    color: $primeOrange;
-}
+.list-in li a {opacity: 1; transition: none}
+.list-out li a {opacity: 0; transition: all 0.25s linear}
+.h-in {opacity: 1; transition: all 0.45s linear }
+.h-out {opacity: 0; transition: all 0.45s linear}
 
 .nav-off {
     button {
@@ -104,4 +104,20 @@
     100%{transform: translateY(0)}
 }
 
-
+.load {
+    transition: all 0.5s ease-in-out;
+    width: 300px;
+}
+.load-out {
+    opacity: 0;
+    transform: rotate(0deg);
+}
+.load-on {
+    opacity: 1;
+    transform: rotate(0deg);
+    @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+            transform: rotate(72deg * $i);
+        }
+    }
+}

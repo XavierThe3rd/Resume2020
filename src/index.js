@@ -9,12 +9,7 @@ const rootId = document.getElementById("rootD");
 ReactDOM.render(<App/>, rootId);
 
 serviceWorker.unregister();
-if (module.hot && process.env.NODE_ENV === "development") {
-    module.hot.accept("./App.jsx", () => {
-      const NextApp = require("./App.jsx").default;
-      ReactDOM.render(<App/>, rootId);
-    });
-}
+  
 
 /*
 import React from "react";

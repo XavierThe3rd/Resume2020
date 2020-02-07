@@ -1,3 +1,8 @@
+import barA from '../../../images/BarA.svg'
+import barB from '../../../images/BarB.svg'
+import barC from '../../../images/BarC.svg'
+import barD from '../../../images/BarD.svg'
+import barE from '../../../images/BarE.svg'
 
 export const headerData = () => {
     const indexPage = [ 
@@ -22,6 +27,8 @@ export const headerData = () => {
         {
             index: 4,
             tag: 'CONTACT',
+            ref: "#",
+            cls: 'contact'
         },
     ]
 
@@ -47,6 +54,8 @@ export const headerData = () => {
         {
             index: 4,
             tag: 'CONTACT',
+            ref: "#",
+            cls: 'contact'
         },
     ]
 
@@ -72,6 +81,8 @@ export const headerData = () => {
         {
             index: 4,
             tag: 'CONTACT',
+            ref: "#",
+            cls: 'contact'
         },
     ]
 
@@ -97,14 +108,19 @@ export const headerData = () => {
         {
             index: 4,
             tag: 'CONTACT',
+            ref: "#",
+            cls: 'contact'
         },
     ]
+
+    const bars= [barA, barB, barC, barD, barE]
     
       
     return{
         indexPage,
         aboutPage,
         portPage,
-        codePage
+        codePage,
+        bars
     }
 }

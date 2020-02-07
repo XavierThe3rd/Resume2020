@@ -12,7 +12,7 @@ const Footer = () => {
         <footer className="column">
             <comps.Title Color={styles.conColor}>Contact...</comps.Title>
             <div className="form_holder flex">
-                <form className="column">
+                <form className="column" autoComplete="off">
                     <comps.Header Color={styles.conColor}>Contact Form</comps.Header>
                     <comps.Input>Name :</comps.Input>
                     <comps.Input>Email :</comps.Input>

@@ -29,6 +29,12 @@
     justify-content: center;
 }
 
+.wrp-e {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
 
 .row-b {
     display: flex;
@@ -42,6 +48,10 @@
 }
 
 .flx-c {
+    display: flex;
+    justify-content: center;
+}
+.flx-c-c {
     display: flex;
     justify-content: center;
 }

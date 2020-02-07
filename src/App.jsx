@@ -12,24 +12,30 @@ import Portfolio from './Apps/portfolioPage.jsx';
 import Code from './Apps/codePage.jsx';
 import {BrowserRouter as Router, Route, Switch, Link, Redirect, BrowserRouter} from "react-router-dom";
 //import comps from './Apps/Components/U-Components/u-components.jsx';
+import { createBrowserHistory } from "history";
+
 
 
 
 const App = ()=> {
-  
+  const appHistory = createBrowserHistory();
+  appHistory.push('/Portfolio');
+  window.scrollTo(0, 0)
   return(
     <BrowserRouter>
         <Canvas/>
         <Header></Header>
-          <Switch>
-              <Route exact path="/Home" component={Index} />
-              <Route path="/About" component={About} />
-              <Route path="/Portfolio" component={Portfolio} />
-              <Route path="/Code" component={Code} />
-          </Switch>
+            <Switch>
+                <Route  history={appHistory} exact path="/Home" component={Index} />
+                <Route path="/About" component={About} />
+                <Route path="/Portfolio" component={Portfolio} />
+                <Route path="/Code" component={Code} />
+            </Switch>
         <Footer/>
     </BrowserRouter>
     )
 }
+
+
 
 export default App

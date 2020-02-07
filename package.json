@@ -21,7 +21,9 @@
     "react-dom": "^16.9.0",
     "react-newline-to-break": "^1.0.6",
     "react-pdf": "^4.1.0",
+    "react-resize-detector": "^4.2.1",
     "react-router-dom": "^5.1.2",
+    "react-router-last-location": "^2.0.1",
     "react-scripts": "3.1.1",
     "react-scroll": "^1.7.16",
     "react-use-localstorage": "^3.4.1",
@@ -35,7 +37,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "webpack": "webpack",
-    "start": "webpack-dev-server --hot --host 192.168.2.103", 
+    "start": "webpack-dev-server --hot --host 192.168.1.23",
     "dev": "webpack-dev-server --mode development",
     "prod": "npm run webpack -- --env.mode production",
     "watch": "webpack --progress -d --config webpack.config.js --watch"
