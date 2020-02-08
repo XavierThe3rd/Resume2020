@@ -1,0 +1,65 @@
+@import '../sass/settings.scss';
+@import'../sass/generics.scss';
+
+.fade-in-r {
+    animation: in-r 0.39s ease-in-out;
+    animation-fill-mode: forwards;
+}
+.fade-out-r {
+    animation: out-r 0.39s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.fade-in-l {
+    animation: in-l 0.39s ease-in-out;
+    animation-fill-mode: forwards;
+}
+.fade-out-l {
+    animation: out-l 0.39s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes in-l {
+    0% {
+        transform: translate(200px, 0) scale(0.95);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes in-r {
+    0% {
+        transform: translate(-200px, 0) scale(0.95);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes out-l {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(200px, 0) scale(0.95);
+        opacity: 0;
+    }
+}
+
+@keyframes out-r {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-200px, 0) scale(0.95);
+        opacity: 0;
+    }
+}
+

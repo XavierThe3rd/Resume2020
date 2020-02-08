@@ -94,7 +94,9 @@ export default class Header extends React.Component {
         let toLinks = (cls, name, i, a, p, c) => {
             if(ct.classList.contains(cls)) {
                 nav.style.opacity = 0
-                setTimeout(()=> nav.style.zIndex = 0 , 450)
+                setTimeout(()=> {
+                    if(window.innerWidth > 600)nav.style.zIndex = 0
+                }, 450)
                 setTimeout(() => {
                     nav.style.opacity = 1
                     htag.innerHTML = name

@@ -1,7 +1,7 @@
-import styles from './sass/settings.scss'
-import Xaragosa from '../../images/Xaragosa.png'
-import Dictionary from '../../images/TypeDictionary.png'
-import Heelys from '../../images/Heelys.png'
+import styles from '../sass/settings.scss'
+import Xaragosa from '../../../images/Xaragosa.png'
+import Dictionary from '../../../images/TypeDictionary.png'
+import Heelys from '../../../images/Heelys.png'
 
 
 const cardData = () => {

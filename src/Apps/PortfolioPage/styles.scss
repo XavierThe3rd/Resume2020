@@ -1,0 +1,46 @@
+@import './placement.scss';
+@import './animations.scss';
+
+.port_holder {
+    margin: 100px 0 0;
+    border-style: solid;
+    border-color: #515151;
+    border-width: 1px;
+    padding: 60px 0;
+    background: #000000a8;
+
+    .switch_holder {
+        height: 300px;
+    }
+}
+
+.port_box {
+    padding: 0;
+    
+}
+
+
+.port_card {
+    margin: 20px;
+
+    @media(max-width: 1800px) {
+        // /margin: 20px 0;
+    }
+
+    @media(max-width: 600px) {
+        margin: 0, 0 100px 0;
+    }
+}
+
+
+.button_holder {
+    button {
+      @include dimensions(250px, 100px, 10px);
+      background: linear-gradient(306deg, rgba(97,0,255,1) 0%, rgba(255,38,67,1) 100%);
+      margin: 50px 10px 0;
+
+      &:hover {
+        box-shadow: $primeOrange 0px 1px 10px 0px;
+      }
+    }
+}
