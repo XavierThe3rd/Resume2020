@@ -5,11 +5,12 @@ const ContentBox = (props) => {
     let intro_styles = {
         alignItems: props.Align,
         background: props.Background,
-        position: props.Pos
+        position: props.Pos,
+        height: props.Height
     }
     
     return(
-        <div className={`intro column ${props.Class}`} style={intro_styles}>
+        <div className={`column ${props.Class}`} style={intro_styles}>
             {props.children}
         </div>
     )   

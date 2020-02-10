@@ -1,0 +1,15 @@
+.index_header_out {
+    margin: 50px 100px 20px 100px;
+
+    @media(max-width: 1060px) {
+        margin: 50px 50px 20px;
+    }
+
+    @media(max-width: 600px) {
+        margin: 50px 0 20px;
+    }
+}
+
+.index_headers_in {
+    //margin: 50px 0 20px 100px;
+}

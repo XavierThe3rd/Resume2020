@@ -28,7 +28,7 @@
         svg { width: 50px }
     }
     p {
-        @include fontSettings($pureWhite, 24px, 300, 1.25);
+        @include fontSettings($pureWhite, 28px, 400, 1.25);
         opacity: 0;
     }
     .screen {
@@ -63,7 +63,7 @@
 
 @media(max-width: 1050px){
     .featured_cards {
-        margin: 65px 0;
+        margin: 0px 0 100px;
     }
     .spec_card, .screen_holder, .screen_holder div, .featured_cards {
         @include dimensions(100%, 300px, 10px);

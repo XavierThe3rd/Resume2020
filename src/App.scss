@@ -16,13 +16,6 @@ body{
         //padding: 100px 300px 25px;
     }
 
-    .index_box {
-        border-radius: 10px;
-        padding: 50px 100px;
-        @media(max-width: 600px){
-            padding: 0 20px;
-        }
-    }
     
     section, nav, .port_page {
         padding: 0px 300px ;
@@ -45,9 +38,16 @@ body{
         }
     }
     
-    nav, .port_page {
+    nav {
         @media(max-width: 600px){
             padding: 0 20px;
+        }
+    }
+
+    .port_page {
+        @media(max-width: 600px){
+            padding: 0;
+            margin-top: -300px;
         }
     }
 }
@@ -84,15 +84,16 @@ body{
 
 h1 {
     font-family: "Azonix", "Catamaran", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    margin: 0;
 }
 
 h2, h3, h4, button, label, input, span {
-    font-family: "Open Sans", "Catamaran", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-family: 'proxima_nova_rgregular', "Catamaran", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     margin: 0;
 }
 
 p, a, input, textarea {
-    font-family: "Open Sans", "Catamaran", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-family: "proxima_nova_rgregular", "Catamaran", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     margin: 0; 
     text-decoration: none;
 }

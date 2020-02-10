@@ -123,7 +123,7 @@ export default class Header extends React.Component {
 
     render(){   
         return(
-            <header className={`column ${this.state.setClass? `nav-on` : `nav-off`}`}>
+            <header className={`column ${this.state.setClass? `nav-on` : `nav-off`} ${this.props.PageSwitch}`}>
                 {this.state.setLoad ? this.state.barData.map(hit => {
                 return <SVG src={hit.bar} className={`load fix ${this.state.setLclass ? `load-on` : `load-out`}`} style={{
                     left:0, 

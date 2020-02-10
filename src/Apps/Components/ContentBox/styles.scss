@@ -7,33 +7,40 @@
 	transition: all 1.5s ease-in-out;
 	//box-shadow: $pureBlack 0 1px 10px 0px;
 	background: $gradientColor;
-	margin: 0;
+	margin: 40px 0 0;
 	width: 100%;
+	padding: 100px;
 	box-shadow: $pureBlack 0 1px 10px 0px;
 
 	p {
-		@include fontSettings($conColor, 24px, 300, 1.5);
-		margin-bottom: 30px;
+		@include fontSettings($conColor, 28px, 400, 1.5);
+		//margin-bottom: 30px;
 	}
 
 	img {
 		width: 500px;
-		margin-bottom: 30px;
+		//margin-bottom: 30px;
 	}
 
     @media(max-width: 1060px) {
 		width: 100%;
+		padding: 75px 50px;
 	}
 	
     @media(max-width: 600px){
-		padding: 0px 20px 50px;
+		padding: 50px 20px;
 		border-radius: 0;
 		p {
-			font-size: 20px;
+			font-size: 23px;
 		}
 		
 		img {
 			width: 300px;
 		}
     }
+}
+
+.portbox {
+	//height: 50px;
+	background: $gradientColor;
 }

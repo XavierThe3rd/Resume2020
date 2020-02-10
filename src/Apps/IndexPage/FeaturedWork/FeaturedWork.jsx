@@ -8,7 +8,7 @@ import comps from "../../Components/U-Components/u-components.jsx";
 const FeaturedWork = ()=> {
       return (
         <div className="featured column">
-          <comps.Title Color={styles.conColor}>{get.heading}</comps.Title>
+          <comps.Title Color={styles.conColor} Class="index_header_out">{get.heading}</comps.Title>
           <div className="featured_holder row">
           {get.cardData.map(hit => {
           return <ProjectPiece

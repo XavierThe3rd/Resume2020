@@ -15,7 +15,7 @@ const Printables = () => {
     });
     return (
         <div className="prints column">
-            <comps.Title Color={styles.pureWhite}>{get.heading}</comps.Title>
+            <comps.Title Color={styles.pureWhite} Class="index_header_out">{get.heading}</comps.Title>
             {get.options.map(hit => {
                 return (
                 <Option Key={hit.index} Title={hit.title}>

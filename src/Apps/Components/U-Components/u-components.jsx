@@ -13,7 +13,7 @@ const Comps = ()=>{
     }
 
     const Title = (props)=> {  
-        return <h1 className="h1" style={{
+        return <h1 className={`h1 ${props.Class}`} style={{
             color: props.Color,
         }}>{props.children}</h1>
     }

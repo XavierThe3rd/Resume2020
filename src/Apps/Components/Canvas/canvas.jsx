@@ -32,7 +32,6 @@ const Canvas = ()=> {
                 position: 'fixed',
                 width: '100%',
                 height: '100em',
-                background: '#0c0c0d',
                 top: 0,
                 left: 0,
                 zIndex: -1
