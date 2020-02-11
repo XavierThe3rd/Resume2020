@@ -19,7 +19,7 @@ import { createBrowserHistory } from "history";
 
 const App = ()=> {
   const appHistory = createBrowserHistory();
-  appHistory.push('/Home');
+  appHistory.push('/Portfolio');
   window.scrollTo(0, 0)
   return(
     <BrowserRouter>

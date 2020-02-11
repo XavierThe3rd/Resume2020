@@ -34,13 +34,43 @@
 
 
 .button_holder {
+    margin: 50px 0 0;
     button {
-      @include dimensions(250px, 100px, 10px);
-      background: linear-gradient(306deg, rgba(97,0,255,1) 0%, rgba(255,38,67,1) 100%);
-      margin: 50px 10px 0;
+        margin: 10px;
+        @include dimensions(100px, 50px, 0px);
 
-      &:hover {
-        box-shadow: $primeOrange 0px 1px 10px 0px;
-      }
+        svg {
+            @include dimensions(50px, 50px, 0px);
+            .cls-1{
+                fill: $primePink;
+            }
+        }
+        &:hover {
+            svg .cls-1{
+                fill: $primeOrange;
+                box-shadow: $primeOrange 0px 1px 10px 0px;          
+            }
+        }
+        &:nth-child(1) {
+            svg {
+                transform: rotate(90deg)
+            }
+        }
+        &:last-child {
+            svg {
+                transform: rotate(-90deg)
+            }
+        }
     }
+
+    input {
+        @include dimensions(20px, 20px, 10px);
+        margin: 0px 5px;
+        color: transparent;
+        &:hover {
+            background: $primeOrange;
+        }
+    }
+    .inp-off {background: $primePurple}
+    .inp-on {background: $primePink}
 }

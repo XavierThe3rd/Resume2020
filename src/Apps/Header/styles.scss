@@ -1,5 +1,63 @@
 @import './animations.scss';
 
+#Logo {
+    width: 750px;
+    top: 30px;
+    z-index: -1;
+    //left: 115px;
+    //top: 250px;
+    //left: 300px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+@media (max-width: 1650px) {
+    #Logo {
+        width: 565px;
+        top: 95px;
+        //top: 250px;
+        //left: 250px;
+    }
+}
+@media (max-width: 1350px) {
+    #Logo {
+        
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+}
+@media (max-width: 600px) {
+    #Logo {
+        top: 90px;
+        width: 365px;
+    }
+}
+
+.heading {
+    z-index: -1;
+    position: absolute;
+    top: 275px;
+    width:100%;
+    text-align: center;
+    left: 0;
+    padding: 20px;
+    right: 0;
+    margin: 0 auto;
+    h1 {
+        line-height: 1.25;
+        font-size: 28px;
+        font-weight: 300;
+        margin: 5px 0;
+
+        &:nth-child(1) {
+            color: #ffffff;
+        }
+        &:nth-child(2) {
+            color: #ff2643;
+        }
+    }
+}
 
 header {
     margin: 0 0 0px;

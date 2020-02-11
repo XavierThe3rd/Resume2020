@@ -74,7 +74,7 @@ const cardData = () => {
         {
         index: 7,
         image: Xaragosa,
-        title: 'Xaragosa the Dragon',
+        title: 'X',
         desc: "A college graphic design project created in photoshop",
         project: "Art Piece",
         type: "PS",
@@ -84,7 +84,7 @@ const cardData = () => {
         {
         index: 8,
         image: Dictionary,
-        title: 'Type Dictionary',
+        title: 'T',
         desc: "A college booklet dictionary project created in indesign",
         project: "Booklet Piece",
         type: "ID",
@@ -95,7 +95,7 @@ const cardData = () => {
         {
         index: 9,
         image: Heelys,
-        title: 'Heely’s Comeback',
+        title: 'H',
         desc: "A college webpage design project created in react",
         project: "Web App",
         type: "JS",
@@ -107,7 +107,7 @@ const cardData = () => {
         {
         index: 10,
         image: Xaragosa,
-        title: 'Xaragosa the Dragon',
+        title: 'X',
         desc: "A college graphic design project created in photoshop",
         project: "Art Piece",
         type: "PS",
@@ -117,7 +117,7 @@ const cardData = () => {
         {
         index: 11,
         image: Dictionary,
-        title: 'Type Dictionary',
+        title: 'T',
         desc: "A college booklet dictionary project created in indesign",
         project: "Booklet Piece",
         type: "ID",
@@ -128,7 +128,7 @@ const cardData = () => {
         {
         index: 12,
         image: Heelys,
-        title: 'Heely’s Comeback',
+        title: 'H',
         desc: "A college webpage design project created in react",
         project: "Web App",
         type: "JS",

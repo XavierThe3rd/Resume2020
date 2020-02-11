@@ -11,20 +11,15 @@ import './styles.scss'
 //import resizeDetector from 'element-resize-detector'
 
 const Canvas = ()=> {
-        let [windowState, setWindow] = useState(false)
 
-        useEffect(() => 
-            ["resize", "load"].forEach(event => window.addEventListener(event, ()=> {
-                window.innerWidth < 600 ? setWindow(true) : setWindow(false)
-            }))
-        );
+       
     
         window.addEventListener('scroll', ()=> {
             let can = document.getElementById('canvas')
-            let clas = document.getElementsByClassName("opac-this")
+            //let clas = document.getElementsByClassName("opac-this")
             let st = window.pageYOffset
             can.style.transform = 'translateY('+ st/-10 +'px)'
-            for(let i=0; i < clas.length; i++) clas[i].style.opacity = 1 - st/400
+            //for(let i=0; i < clas.length; i++) clas[i].style.opacity = 1 - st/400
         })
         
         return (
@@ -36,13 +31,6 @@ const Canvas = ()=> {
                 left: 0,
                 zIndex: -1
             }}>
-                {windowState ? <span className="opac-this" id="lower">
-                    <h1>Providing Bold Intuitive Design and Programming</h1>
-                    <h1>Scroll Down to Learn More</h1>
-                </span>: null}
-                <SVG className="opac-this" src={Logo} id={`Logo`} style={{
-                    zIndex: 2
-                }}/>
                 <SVG src={MiddleRock} style={{
                     width: '20%',
                     top: 150,

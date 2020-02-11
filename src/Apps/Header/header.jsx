@@ -8,6 +8,7 @@ import barC from '../../../images/BarC.svg'
 import barD from '../../../images/BarD.svg'
 import barE from '../../../images/BarE.svg'
 import SVG from 'react-inlinesvg';
+import Logo from '../../../images/Logo.svg'
 import { Link } from 'react-router-dom';
 
 let get = new headerData()
@@ -29,6 +30,7 @@ export default class Header extends React.Component {
             setCode: false,
             setUl: false,
             setLoad: false,
+            setHome : false,
             barData: [
                 {bar: barA},
                 {bar: barB},
@@ -47,6 +49,11 @@ export default class Header extends React.Component {
 
         onscroll = ()=>{
             let st = window.pageYOffset 
+            let clas = document.getElementsByClassName("opac-this")
+            for(let i=0; i < clas.length; i++){
+                clas[i].style.opacity = 1 - st/400
+                clas[i].style.transform = 'translateY('+ st/-10 +'px)'
+            }
             if(window.innerWidth < 600){
                 if(window.pageYOffset > 500){ 
                     document.getElementById("screenId").style.opacity= 1
@@ -66,6 +73,7 @@ export default class Header extends React.Component {
         }
         ["resize", "load"].forEach(event => window.addEventListener(event, ()=> {
             window.innerWidth < 600 ? this.setState({setMobile: true}) : this.setState({setMobile: false})
+            window.location.pathname === '/Home' ? this.setState({setHome: true }) : this.setState({setHome: false })
         }))
     }
 
@@ -90,7 +98,7 @@ export default class Header extends React.Component {
     loadTime(e) {
         let ct = e.currentTarget
         let nav = document.getElementById("navId")
-        let htag = document.getElementById('hTag')
+        let htag = document.getElementById('hTag') 
         let toLinks = (cls, name, i, a, p, c) => {
             if(ct.classList.contains(cls)) {
                 nav.style.opacity = 0
@@ -116,14 +124,14 @@ export default class Header extends React.Component {
             toLinks("about", "ABOUT", false, true, false, false)
             toLinks("port", "PORTFOLIO", false, false, true, false)
             toLinks("code","CODE", false, false, false, true)
-        
+            setTimeout(() => window.location.pathname === '/Home' ? this.setState({setHome: true }) : this.setState({setHome: false}), 1500)
         setTimeout(() => this.setState({setUl: false, setLoad: false, setNav: false}),2000)
         return ct
     }
 
     render(){   
         return(
-            <header className={`column ${this.state.setClass? `nav-on` : `nav-off`} ${this.props.PageSwitch}`}>
+            <header className={`column ${this.state.setClass? `nav-on` : `nav-off`} ${this.props.PageSwitch}`}>         
                 {this.state.setLoad ? this.state.barData.map(hit => {
                 return <SVG src={hit.bar} className={`load fix ${this.state.setLclass ? `load-on` : `load-out`}`} style={{
                     left:0, 
@@ -136,6 +144,11 @@ export default class Header extends React.Component {
                 }}/>
                 }): null
                 }
+                <SVG className="opac-this fix" src={Logo} id={`Logo`}/>
+                {this.state.setHome && this.state.setMobile ? <span className="opac-this heading fix" id="lower">
+                    <h1>Providing Bold Intuitive Design and Programming</h1>
+                    <h1>Scroll Down to Learn More</h1>
+                </span>: null}
                 <nav id={`navId`}className={`flx-b-c fix
                     ${this.state.setScroll ? `nav-up`: `nav-down`}`}
                     style={{
