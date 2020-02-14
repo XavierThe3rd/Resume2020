@@ -1,11 +1,8 @@
-@import './placement.scss';
 @import './animations.scss';
 
 .port_holder {
     margin: 0px 0 0;
-    border-style: solid;
-    border-color: #515151;
-    border-width: 1px;
+    @include border($borderGrey, 1px);
     padding: 60px 0;
     background: #000000a8;
 
@@ -23,18 +20,17 @@
 .port_card {
     margin: 20px;
 
-    @media(max-width: 1800px) {
-        // /margin: 20px 0;
+    @media(max-width: 1300px) {
+        margin: 5px;
     }
-
-    @media(max-width: 600px) {
-        margin: 0 20px 100px;
+    @media(max-width: 1000px) {
+        margin: 0 20px 110px;
     }
 }
 
 
 .button_holder {
-    margin: 50px 0 0;
+    margin: 20px 0 0;
     button {
         margin: 10px;
         @include dimensions(100px, 50px, 0px);
@@ -65,7 +61,7 @@
 
     input {
         @include dimensions(20px, 20px, 10px);
-        margin: 0px 5px;
+        margin: 0px 10px;
         color: transparent;
         &:hover {
             background: $primeOrange;

@@ -52,7 +52,7 @@ const ProjectCard = ({Image, Title, Project, Type, Color, Desc, Click, Click2})=
     }
 
     let toInner = ()=>{
-        hoverState===false ? setClass(true) | setTimeout(()=> setHover(true),10) 
+        classState===false ? setHover(true) | setTimeout(()=> setClass(true),10) 
         : setClass(false) | setTimeout(()=> setHover(false),350)
     }
 

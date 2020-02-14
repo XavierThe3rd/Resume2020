@@ -6,7 +6,8 @@ const ContentBox = (props) => {
         alignItems: props.Align,
         background: props.Background,
         position: props.Pos,
-        height: props.Height
+        height: props.Height,
+        margin: props.Margin
     }
     
     return(

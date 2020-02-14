@@ -17,12 +17,16 @@
     }
     svg {
         transition: all 0.2s ease-in-out;
-        @include dimensions(70px, 70px, 0);
+        @include dimensions(40px, 65px, 0);
         color: $pureWhite;
         padding: 0;
     }
     @media (max-width: 600px) {
         padding: 0px 10px 0px 20px;
+
+        svg {
+            @include dimensions(30px, 50px, 0);
+        }
     }
 }
 

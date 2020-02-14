@@ -4,9 +4,8 @@
 
 
 .prints {
-    h1{
-        
-    }
+    //@include border($borderGrey, 0px 1px 0);
+    //background: #000000a8;
 
     li{
         margin: 5px 0;
@@ -15,7 +14,10 @@
     }
 
     @media(max-width: 600px) {
-        padding: 20px;
+        @include border($borderGrey, 0px 1px 0);
+        background: none;
+        border-style: none;
+        padding: 0 20px;
         h1 {
            // margin: 50px 0 30px;
         }

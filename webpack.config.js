@@ -20,8 +20,8 @@ module.exports = ({ mode } = { mode: "production" }) => {
                 historyApiFallback: true           
             },
             output: {
-                publicPath: "/",
-                path: path.resolve(__dirname, "build"),
+                publicPath: "./",
+                path: path.resolve(__dirname, "Resume"),
                 filename: "bundled.js"
             },
             module: {

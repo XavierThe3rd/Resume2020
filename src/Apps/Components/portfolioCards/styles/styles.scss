@@ -4,8 +4,7 @@
     @include dimensions(300px, 425px, 10px);
 }
 .lower_span {
-    width: 300px;
-    height: 60px;
+    @include dimensions(300px, 60px, 0);
 }
 
 .project_card {
@@ -14,24 +13,28 @@
     button {
         z-index: 4;
         position: absolute;
-        margin-top: -20px;
+        margin-top: 0px;
         width: 100%;
-        background: #6100ff;
+        background: $primePurple;
         border-radius: 0 0 10px 10px;
         svg{
-            width: 65px;
-            height: 65px;
+            @include dimensions(50px, 50px, 0px);
             color: $pureWhite;
             transition: all 0.5s ease-in-out;
         }
     }
 
     .screen {
-        background: linear-gradient(0deg, rgba(97,0,255,1) 15%, rgba(97,0,255,0) 100%)
+        background: $linearFade;
     }
 
     .image_png {
         padding: 0px 0 60px;
+        img {
+            width: 500px;
+            top: 0;
+            left: 0;
+        }
     }
 
     .divider {
@@ -68,7 +71,7 @@
     }
 }
 
-@media(max-width: 1350px){
+@media(max-width: 1500px){
     .project_card, .project_card .image_png {
         @include dimensions(245px, 335px, 5px);
         p{
@@ -88,14 +91,19 @@
 
 @media(max-width: 1000px){
     .project_card, .project_card .image_png {
-        @include dimensions(100%, 335px, 5px);
+        @include dimensions(100%, 335px, 5px 5px 0 0);
+
+        img {
+            width: 800px;
+        }
 
         h2{
             margin-bottom: 0;
-            text-align: center;
+            font-size: 54px;
+            //text-align: center;
         }
         h3 {
-            font-size: 32px;
+            font-size: 36px;
         }
         .screen {
             background: linear-gradient(0deg, rgba(97,0,255,1) 15%, rgba(251,150,94,0) 100%)
@@ -108,18 +116,26 @@
         }
         .lower_span {
             width: 100%;
-            align-items: flex-start;
+            align-items: center;
+            border-radius: 0 0 0px 0px;
         } 
     }
 }
 
 
 @media (max-width: 600px) {
-    .project_card {
+    .project_card, .project_card .image_png {
+        img {
+            width: 400px;
+        }
+    
         h2 {
-            margin: 0 20px 5px;
-            text-align: center;
-            font-size: 48px;
+            margin: 0 50px 5px 20px;
+            //text-align: center;
+            font-size: 52px;
+        }
+        h3 {
+            font-size: 32px;
         }
         .inner_text span {
             padding: 18px;

@@ -11,7 +11,6 @@ import './indexStyles.scss'
 
 const Index = ()=> {
     return(
-    <div>
         <section>
             <ContentBox Class="intro">
                 <comps.Title Color={styles.conColor} Class="index_header_in">{'Provinding Bold Intuitive Design and Programming'}</comps.Title>
@@ -22,16 +21,13 @@ const Index = ()=> {
                 >Learn More!</comps.Button>*/}
             </ContentBox>
             <Specializations/>
-        </section>
-        <FeaturedWork/>
-        <section>
+            <FeaturedWork/>
             <ContentBox Class="intro" Background={'linear-gradient(306deg, rgba(97,0,255,1) 0%, rgba(255,38,67,1) 100%)'} Align= 'center'>
             <comps.Title Color={styles.conColor} Class="index_header_in">Interned At...</comps.Title>
             <img src={Qintel} alt='none'/>
             </ContentBox>
             <Printables/>
         </section>
-    </div>
     )
 }
 export default Index

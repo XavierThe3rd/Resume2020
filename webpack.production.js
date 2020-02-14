@@ -1,6 +1,7 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const path = require("path");
 
 module.exports = () => ({
     devtool: "nosource-source-map",
@@ -41,9 +42,13 @@ module.exports = () => ({
             },
             {
                 test: /\.(png|jpe?g|gif|pdf|svg)$/,
-                use: [
-                    'file-loader'
-                ],
+                use: [{
+                    loader: 'file-loader',
+                    options: { 
+                        limit: 8000, // Convert images < 8kb to base64 strings
+                        name: 'images/[name].[ext]'
+                    } 
+                }],
             },
         ]
     },

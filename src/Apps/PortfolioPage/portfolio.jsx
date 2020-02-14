@@ -1,10 +1,10 @@
+/* eslint-disable no-unused-expressions */
 import styles from './styles.scss' 
-import React, {useReducer, useState} from 'react'
+import React, {useReducer, useState, useRef, useEffect} from 'react'
 import ProjectPiece from '../Components/portfolioCards/portfolioPiece.jsx'
 import portfolio from './data.js'
 import Arrow from '../../../images/arrow.svg'
 import SVG from 'react-inlinesvg';
-import ContentBox from '../Components/ContentBox/contentBox.jsx';
 
 
 const counter = (state, action) => {
@@ -24,15 +24,18 @@ const initial = {count: 1};
 
 const PrimePortfolio = ()=> {
   const [countState, setCount] = useReducer(counter, initial);
-  const [outStateR, setOutR] = useState(false)
-  const [outStateL, setOutL] = useState(false)
-  const [inStateR, setInR] = useState(false)
-  const [inStateL, setInL] = useState(false)
+  const scrollView = useRef(null);
+  const [outStateR, setOutR] = useState(null)
+  const [outStateL, setOutL] = useState(null)
+  const [inStateR, setInR] = useState(null)
+  const [inStateL, setInL] = useState(null)
+  const [mobileState, setMobile] = useState(true)
+
   let val = portfolio.cardDataA.map( hit => hit.index)
   let total = Number.isInteger(val.length/6) ? val.slice(0, val.length/6) : val.slice(0, (val.length/6)+1)
- 
+
   let cardComp = (dec, inc) => {
-    return <div id="holderId" className={`wrp-c 
+    return <div className={`wrp-c 
     ${outStateR ? `fade-out-l`: inStateR ? `fade-in-r` : null} 
     ${outStateL ? `fade-out-r`: inStateL ? `fade-in-l` : null}`}>
       {portfolio.cardDataA.map(hit => {
@@ -50,50 +53,55 @@ const PrimePortfolio = ()=> {
       }})}
     </div>
   }
-  let countDown = () => {
-    if(countState.count >= 2) {
-      setOutR(true)
-      setTimeout(()=> setCount({type:'decrement'}), 400)
-      setTimeout(()=> {setOutR(false); setInR(true)}, 400)
-      setTimeout(()=> {setInR(false)}, 800)
-    }
+  let countProp = (typ, a, b) => {
+      setOutR(a); setOutL(b)
+      scrollView.current.scrollIntoView({behavior:'smooth'})
+      setTimeout(()=> setCount({type:typ}), 400)
+      setTimeout(()=> {setOutR(false); setInR(a); setOutL(false); setInL(b)}, 400)
+      setTimeout(()=> {setInR(false); setInL(false)}, 800)
   }
+
+  let countDown = () => {
+    if(countState.count >= 2)
+    countProp('decrement', true, false)
+  }
+
   let countUp = () => {
-    if(countState.count <= (total.length-1)){
-      setOutL(true)
-      setTimeout(()=> setCount({type:'increment'}), 400)
-      setTimeout(()=> {setOutL(false); setInL(true)}, 400)
-      setTimeout(()=> {setInL(false)}, 800)
-    }
+    if(countState.count <= (total.length-1))
+    countProp('increment', false, true)
   }
 
   let currentCount = e => {
     let ct = e.currentTarget
-    setOutL(true)
     setTimeout(() => countState.count=ct.value | null, 0, ct)
-    setTimeout(() => setCount({type:'current'}), 400, ct)
-    setTimeout(()=> {setOutL(false); setInL(true)}, 400)
-    setTimeout(()=> {setInL(false)}, 800)
+    countProp('current', false, true)
     return ct
   }
 
+  useEffect(()=>{
+    ["resize", "load"].forEach(event => window.addEventListener(event, ()=> {
+      window.innerWidth < 1000 ? setMobile(false) : setMobile(true)
+    }))
+  })
+
   return <div>
-        <div className="port_holder column">
-            {val.map(hit=> {
-              if(countState.count=== hit) return cardComp([(hit * 6) -5] , [hit * 6])
-            })}
+        <div className="port_holder column" ref={scrollView}>
+            {mobileState ? val.map(hit=> {
+                if(countState.count=== hit) return cardComp([(hit * 6) -5] , [hit * 6])
+            }): cardComp(1,100)}
             <div className="button_holder flx-c-c">
-                <div className="button_holder flx-b-c">
-                <button onClick={countDown}><SVG src={Arrow}/></button>
-                {total.map(hit => { return <input value={hit} type='button'
-                  className={countState.count === hit ? 'inp-on' : 'inp-off'}
-                  onClick={currentCount}
-                />})}
-                <button onClick={countUp}><SVG src={Arrow}/></button>
-                </div>
+                {mobileState ?<div className="button_holder flx-b-c">
+                  <button onClick={countDown}><SVG src={Arrow}/></button>
+                  { total.map(hit => { return <input value={hit} type='button'
+                    className={countState.count === hit ? 'inp-on' : 'inp-off'}
+                    onClick={currentCount}
+                  />})}
+                  <button onClick={countUp}><SVG src={Arrow}/></button>
+                </div>: null}
             </div>
         </div>
     </div>
 }
+
 
 export default PrimePortfolio

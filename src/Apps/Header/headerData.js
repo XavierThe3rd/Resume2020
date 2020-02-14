@@ -20,12 +20,6 @@ export const headerData = () => {
         },
         {
             index: 3,
-            tag: 'CODE',
-            ref: "/Code",
-            cls: 'code'
-        },
-        {
-            index: 4,
             tag: 'CONTACT',
             ref: "#",
             cls: 'contact'
@@ -47,12 +41,6 @@ export const headerData = () => {
         },
         {
             index: 3,
-            tag: 'CODE',
-            ref: "/Code",
-            cls: 'code'
-        },
-        {
-            index: 4,
             tag: 'CONTACT',
             ref: "#",
             cls: 'contact'
@@ -74,12 +62,6 @@ export const headerData = () => {
         },
         {
             index: 3,
-            tag: 'CODE',
-            ref: "/Code",
-            cls: 'code'
-        },
-        {
-            index: 4,
             tag: 'CONTACT',
             ref: "#",
             cls: 'contact'

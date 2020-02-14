@@ -1,6 +1,21 @@
 import React from 'react'
+let comp = window.getComputedStyle(gear[i]).getPropertyValue('transform')
+let split = comp.split('(')[1].split(')')[0].split(',')
+let a = split[0]
+let b = split[1]
+let current = Math.round(Math.atan2(a,b) * (180/Math.PI))
+if(a && b < 0){ current += 360}
 
-
+                {/*<div className="flx-c abs" style={{marginTop: 126, width: '100%'}}>
+                    <SVG src={GearQ} className="gear-quarter1 gear abs"/>
+                    <SVG src={GearW} className="gear-whole gear abs"/>
+                    <SVG src={GearQ} className="gear-quarter2 gear abs"/>
+                    <SVG src={GearH} className="gear-half-right gear abs"/>
+                    <SVG src={GearH} className="gear-half-left gear abs"/>
+                    <SVG src={GearH} className="gear-half-bottom gear abs"/>
+                    <SVG src={GearQ} className="gear-quarter3 gear abs"/>
+                </div>*/}
+                
 let canva = (e) =>{
     var $ = e.getContext('2d'),
     w = e.width = innerWidth,

@@ -9,7 +9,6 @@ import comps from './Components/U-Components/u-components.jsx'
 const Portfolio = ()=> {
 
   return<div className="port_page">
-
       <ContentBox Class='portbox' Height={5}></ContentBox>
      <PrimePortfolio/>
      <ContentBox Class='portbox' Height={5}></ContentBox>

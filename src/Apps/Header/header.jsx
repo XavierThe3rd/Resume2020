@@ -67,7 +67,7 @@ export default class Header extends React.Component {
                 }
             } else {
                 document.getElementById('hTag').style.opacity = 1 - st/300
-                window.pageYOffset > 300 ? this.setState({setMove: true})
+                window.pageYOffset > 100 ? this.setState({setMove: true})
                 : this.setState({setMove: false})       
             }
         }
@@ -108,7 +108,7 @@ export default class Header extends React.Component {
                 setTimeout(() => {
                     nav.style.opacity = 1
                     htag.innerHTML = name
-                    this.setState({setIndex: i, setAbout: a, setPort: p, setCode: c})
+                    this.setState({setIndex: i, setAbout: a, setPort: p})
                     window.scrollTo(0, 0);
                 }, 500, ct)
             }
@@ -120,10 +120,9 @@ export default class Header extends React.Component {
         setTimeout(()=> this.setState({setLclass: false}), 750)
         setTimeout(()=> this.setState({setClass: false}), 1250)
         
-            toLinks("home", "HOME", true, false, false, false)
-            toLinks("about", "ABOUT", false, true, false, false)
-            toLinks("port", "PORTFOLIO", false, false, true, false)
-            toLinks("code","CODE", false, false, false, true)
+            toLinks("home", "HOME", true, false, false)
+            toLinks("about", "ABOUT", false, true, false)
+            toLinks("port", "PORTFOLIO", false, false, true)
             setTimeout(() => window.location.pathname === '/Home' ? this.setState({setHome: true }) : this.setState({setHome: false}), 1500)
         setTimeout(() => this.setState({setUl: false, setLoad: false, setNav: false}),2000)
         return ct
@@ -144,7 +143,7 @@ export default class Header extends React.Component {
                 }}/>
                 }): null
                 }
-                <SVG className="opac-this fix" src={Logo} id={`Logo`}/>
+                <SVG className="opac-this fix" src={'../../../images/Logo.svg'} id={`Logo`}/>
                 {this.state.setHome && this.state.setMobile ? <span className="opac-this heading fix" id="lower">
                     <h1>Providing Bold Intuitive Design and Programming</h1>
                     <h1>Scroll Down to Learn More</h1>
@@ -180,8 +179,6 @@ export default class Header extends React.Component {
                         }): this.state.setAbout ? get.aboutPage.map(hit=> {
                             return <li key={hit.index}><Link to={hit.ref} className={hit.cls} onClick={this.loadTime}>{hit.tag}</Link></li>
                         }): this.state.setPort ? get.portPage.map(hit=> {
-                            return <li key={hit.index}><Link to={hit.ref} className={hit.cls} onClick={this.loadTime}>{hit.tag}</Link></li>
-                        }): this.state.setCode ? get.codePage.map(hit=> {
                             return <li key={hit.index}><Link to={hit.ref} className={hit.cls} onClick={this.loadTime}>{hit.tag}</Link></li>
                         }): null
                     }

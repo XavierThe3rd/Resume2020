@@ -24,3 +24,10 @@
     font-weight: $weight;
     line-height: $line;
 }
+
+@mixin gearSettings($widheight, $rot, $margin){
+    width: $widheight;
+    height: $widheight;
+    transform: rotate($rot);
+    margin: $margin;
+}

@@ -1,10 +1,6 @@
-@mixin canvasPos() {
-
-}
-
-
+@import './gears.scss';
 #canvas {
-    background: #1a1a1c;
+    background: #050507;
 
     span {
         position: absolute;
