@@ -4,8 +4,10 @@
 
 
 .prints {
-    //@include border($borderGrey, 0px 1px 0);
-    //background: #000000a8;
+    @include border($borderGrey, 1px);
+    background: #000000a8;
+    margin: 20px 0;
+    padding: 0 100px 50px;
 
     li{
         margin: 5px 0;

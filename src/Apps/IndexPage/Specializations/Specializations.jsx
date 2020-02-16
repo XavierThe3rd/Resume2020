@@ -7,7 +7,6 @@ import get from './data.js'
 const Specializations = ()=> {
     
     return <div className="special_holder column">
-        <comps.Title Color={style.conColor} Class='index_header_out'>{get.heading}</comps.Title>
         <div className="wrp-b">
             {get.specData.map(hit => {
             return <SpecCards 

@@ -12,13 +12,14 @@ import './indexStyles.scss'
 const Index = ()=> {
     return(
         <section>
-            <ContentBox Class="intro">
-                <comps.Title Color={styles.conColor} Class="index_header_in">{'Provinding Bold Intuitive Design and Programming'}</comps.Title>
+            <ContentBox Class="intro intro_top">
+                <comps.Title Color={styles.conColor}>{'Provinding Bold Intuitive Design and Programming'}</comps.Title>
                 <p>{'Based in the city of pittsburgh, for the past 2 years I have been aquiring my degree in Graphic Design while also accumulating a vast knowledge of front-end & backend programming skills on my own accord. Now finished I look forward to finally providing my skills to you and your company.'}</p>
                 {/*<comps.Button
                     Click ={()=>console.log('button was clicked')}
                     Color={styles.conColor}
                 >Learn More!</comps.Button>*/}
+                <comps.Title Color={styles.conColor} Class='index_header_out'>{'Providing Skills In'}</comps.Title>
             </ContentBox>
             <Specializations/>
             <FeaturedWork/>

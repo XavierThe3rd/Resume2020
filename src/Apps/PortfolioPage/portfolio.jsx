@@ -3,7 +3,7 @@ import styles from './styles.scss'
 import React, {useReducer, useState, useRef, useEffect} from 'react'
 import ProjectPiece from '../Components/portfolioCards/portfolioPiece.jsx'
 import portfolio from './data.js'
-import Arrow from '../../../images/arrow.svg'
+import Arrow from '../../../images/Arrow.svg'
 import SVG from 'react-inlinesvg';
 
 
