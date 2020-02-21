@@ -1,10 +1,9 @@
 /* eslint-disable no-unused-expressions */
 import styles from './styles.scss' 
 import React, {useReducer, useState, useRef, useEffect} from 'react'
-import ProjectPiece from '../Components/portfolioCards/portfolioPiece.jsx'
+import ProjectPiece from '../../Components/portfolioCards/portfolioPiece.jsx'
 import portfolio from './data.js'
-import Arrow from '../../../images/Arrow.svg'
-import SVG from 'react-inlinesvg';
+import SliderNav from '../../Components/SliderNav/sliderNav.jsx'
 
 
 const counter = (state, action) => {
@@ -35,13 +34,14 @@ const PrimePortfolio = ()=> {
   let total = Number.isInteger(val.length/6) ? val.slice(0, val.length/6) : val.slice(0, (val.length/6)+1)
 
   let cardComp = (dec, inc) => {
-    return <div className={`wrp-c 
+    return <div className={`port_wrap flex
     ${outStateR ? `fade-out-l`: inStateR ? `fade-in-r` : null} 
     ${outStateL ? `fade-out-r`: inStateL ? `fade-in-l` : null}`}>
       {portfolio.cardDataA.map(hit => {
         if(hit.index >= dec && hit.index <= inc){
         return <ProjectPiece
-          Class={`featured_cards port_card`}
+          OuterClass={`port_card_holder`}
+          Class={`port_card_set`}
           Index={hit.index}
           Image={hit.image}
           Title= {hit.title}
@@ -89,16 +89,13 @@ const PrimePortfolio = ()=> {
             {mobileState ? val.map(hit=> {
                 if(countState.count=== hit) return cardComp([(hit * 6) -5] , [hit * 6])
             }): cardComp(1,100)}
-            <div className="button_holder flx-c-c">
-                {mobileState ?<div className="button_holder flx-b-c">
-                  <button onClick={countDown}><SVG src={Arrow}/></button>
-                  { total.map(hit => { return <input value={hit} type='button'
-                    className={countState.count === hit ? 'inp-on' : 'inp-off'}
-                    onClick={currentCount}
-                  />})}
-                  <button onClick={countUp}><SVG src={Arrow}/></button>
-                </div>: null}
-            </div>
+            <SliderNav
+              Down={countDown}
+              Up={countUp}
+              Data={total}
+              Current={currentCount}
+              Counter={countState.count}
+            />
         </div>
     </div>
 }

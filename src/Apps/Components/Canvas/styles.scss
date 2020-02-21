@@ -1,6 +1,7 @@
 @import './gears.scss';
 #canvas {
-    background: #050507;
+    //background: #050507;
+    background: $primeBackground;
 
     span {
         position: absolute;
@@ -29,18 +30,9 @@
 
     svg {
         position: absolute;
+        fill: $offBack
     }
 
-    #Logo {
-        width: 750px;
-        top: 30px;
-        //left: 115px;
-        //top: 250px;
-        //left: 300px;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-    }
     .dragon {
         width: 80%;
         //opacity: 0.13;
@@ -48,28 +40,8 @@
         left: 300px;
         z-index: 1;
     }
-    @media (max-width: 1650px) {
-        #Logo {
-            width: 565px;
-            top: 95px;
-            //top: 250px;
-            //left: 250px;
-        }
-    }
-    @media (max-width: 1350px) {
-        #Logo {
-            
-            left: 0;
-            right: 0;
-            margin: 0 auto;
-        }
-    }
-    @media (max-width: 600px) {
-        #Logo {
-            top: 90px;
-            width: 365px;
-        }
 
+    @media (max-width: 600px) {
         .dragon {
             //opacity: '0.25';
             top: 250px;

@@ -5,7 +5,7 @@ import SVG from 'react-inlinesvg';
 
 
 
-const ProjectCard = ({Image, Title, Project, Type, Color, Desc, Click, Click2})=>{
+const ProjectCard = (props)=>{
     const [hoverState, setHover] = useState(false)
     const [widthState, setWidth] = useState(false)
     const [classState, setClass] = useState(false)
@@ -61,28 +61,28 @@ const ProjectCard = ({Image, Title, Project, Type, Color, Desc, Click, Click2})=
     }))
 
     return(
-      <div className={`project_card column ${classState? `pc-on` : 'pc-off'}`}
-        onClick={Click}
+      <div className={`project_card column ${props.Class} ${classState? `pc-on` : 'pc-off'}`}
+        onClick={props.Click}
         onMouseEnter={()=>setHover(true) | setTimeout(()=> setClass(true),10)} 
         onMouseLeave={()=>setClass(false) |  setTimeout(()=> setHover(false),350)} 
         style={project_card_styles}>
-        <span className="image_png flx--e abs" style={image_png_styles}>
-          <img className="abs" src={Image} alt='none'/>
+        <span className={`image_png flx--e abs ${props.Class}`} style={image_png_styles}>
+          <img className={`abs`} src={props.Image} alt='none'/>
           <span className="screen flex abs" style={screen_styles}/>
         </span>
         <span className="divider" style={divider_styles}/>
-        <h2 style={title_styles}>{Title}</h2>
-        <div className="inner_text column" style={inner_text_styles} onClick={Click2}>
+        <h2 style={title_styles}>{props.Title}</h2>
+        <div className="inner_text column" style={inner_text_styles} onClick={props.Click2}>
         {hoverState ? <span className="column abs" style={hover_span_styles}>
-            <p>{Desc}</p>
+            <p>{props.Desc}</p>
             <h4>CLICK TO LEARN MORE</h4>
             </span>: null}
         </div>
         <div className="column--c">
             <span className="lower_span row-b abs" style={lower_span_styles}>
-                <h3 style={{color: Color}}>{Project}</h3><h3 style={{color: Color}}>{Type}</h3>
+                <h3 style={{color: props.Color}}>{props.Project}</h3><h3 style={{color: props.Color}}>{props.Type}</h3>
             </span>
-            {widthState ? <button onClick={toInner}>
+            {widthState ? <button className="abs" onClick={toInner}>
                 <SVG src="../../../../images/Arrow.svg"/>
             </button>: null}
         </div>

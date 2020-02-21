@@ -4,61 +4,16 @@
 
 .gear {
     transition: all 0.5s ease-out;
-}
-.gear-whole {
-    @include gearSettings(300px, 0deg, 0px auto)
-}
-
-.gear-quarter1 {
-    @include gearSettings(75px, 35deg, -127px 0 0 145px);         
-}
-
-.gear-quarter2 {
-    @include gearSettings(75px, 0deg, 286px 0 0 53px);         
-}
-
-.gear-quarter3 {
-    @include gearSettings(75px, 0deg, 430px 0 0 -65px);       
-}
-
-.gearmid-whole {
-    @include gearSettings(300px, 0deg, -9px 0 0 0px); 
-}
-
-.gear-half1{
-    @include gearSettings(150px, -1deg, 231px 0 0 179px);          
-}
-
-.gear-half2{
-    @include gearSettings(150px, 0deg, 276px 0 0 -164px);       
-}
-
-.gear-half3{
-    @include gearSettings(150px, 0deg, -170px 0 0 -123px);    
-}
-
-.gear-quarter1res{
-    @include gearSettings(75px, 0deg, 269px 0 0 72px);   
-}
-
-.gear-quarter2res{
-    @include gearSettings(75px, 0deg, 162px 0 0 171px);
-}
-
-.gear-quarter3res{
-    @include gearSettings(75px, 35deg, 399px 0 0 -101px);
-}
-
-.gear-whole-x{
-    @include gearSettings(300px, 0deg, 460px 0 0 150px)
-}
-
-.gear-half-v{
-    @include gearSettings(150px, 0deg, -94px 225px 0);
-}
-
-.gear-quarter-w{
-    @include gearSettings(75px, 35deg, -53px 0px 0 -195px);
+    &:nth-child(1){@include gearSettings(75px, 35deg, -127px 0 0 145px)}
+    &:nth-child(2){@include gearSettings(75px, 0deg, 269px 0 0 72px)}
+    &:nth-child(3){@include gearSettings(75px, 0deg, 162px 0 0 171px)}
+    &:nth-child(4){@include gearSettings(75px, 35deg, 399px 0 0 -101px)}
+    &:nth-child(5){@include gearSettings(150px, -1deg, 231px 0 0 179px)}
+    &:nth-child(6){@include gearSettings(150px, 0deg, 276px 0 0 -164px)}
+    &:nth-child(7){@include gearSettings(150px, 0deg, -94px 225px 0)}
+    &:nth-child(8){@include gearSettings(300px, 0deg, -9px 0 0 0px)}
+    &:nth-child(9){@include gearSettings(150px, 0deg, -170px 0 0 -123px)}
+    &:nth-child(10){@include gearSettings(75px, 35deg, -53px 0px 0 -195px)}
 }
 
 

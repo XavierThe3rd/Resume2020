@@ -1,36 +1,10 @@
-@import './animations.scss';
-
-.port_holder {
-    margin: 0px 0 0;
-    @include border($borderGrey, 1px);
-    padding: 60px 0;
-    background: #000000a8;
-
-    .switch_holder {
-        height: 300px;
-    }
-}
-
-.port_box {
-    padding: 0;
-    
-}
-
-
-.port_card {
-    margin: 20px;
-
-    @media(max-width: 1300px) {
-        margin: 5px;
-    }
-    @media(max-width: 1000px) {
-        margin: 0 20px 110px;
-    }
-}
-
+@import '../../sass/generics.scss';
+@import '../../sass/settings.scss';
+@import '../../sass/tools.scss';
 
 .button_holder {
-    margin: 20px 0 0;
+    width: 300px;
+    margin: 20px auto 0;
     button {
         margin: 10px;
         @include dimensions(100px, 50px, 0px);
@@ -39,6 +13,7 @@
             @include dimensions(50px, 50px, 0px);
             .cls-1{
                 fill: $primePink;
+                transition: all 0.15s linear;
             }
         }
         &:hover {
@@ -61,6 +36,7 @@
 
     input {
         @include dimensions(20px, 20px, 10px);
+        transition: all 0.15s linear;
         margin: 0px 10px;
         color: transparent;
         &:hover {

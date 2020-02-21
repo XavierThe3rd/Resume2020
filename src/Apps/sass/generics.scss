@@ -87,6 +87,13 @@
     justify-content: center;
 }
 
+.column-c-c {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .column-b {
     display: flex;
     flex-direction: column;

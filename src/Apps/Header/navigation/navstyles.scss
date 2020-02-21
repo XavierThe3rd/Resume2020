@@ -1,0 +1,44 @@
+@import '../../sass/settings.scss';
+@import '../../sass/generics.scss';
+@import '../../sass/tools.scss';
+
+
+.navi {
+    padding: 175px 300px 0;
+    transition: all 0.35s ease-in-out;
+    top: 0; 
+    h1 {
+        @include fontSettings($pureWhite, 32px, 600, 1);
+        margin: 0;
+    }
+    .screen {
+        @include border($borderGrey, 0 0 1px 0);
+        box-shadow: 0 2px 4px 0px;
+        background: $primeBackground;
+    }
+    .screen::before {
+        content: '';
+        position: absolute;
+        background: $primeBackground;
+        @include dimensions(100%, 52px, 0);
+        top: -52px;
+    }
+}
+@media(max-width: 1350px) {
+    nav { top: 50px }
+}
+@media(max-width: 1150px) {   
+    nav { 
+        //height: 72px;
+        z-index: 5;
+        top: 0;
+        padding: 0 40px;
+        
+    }
+    h1 { margin: 10px 0 0 }
+    @media(max-width: 600px) { 
+        nav {
+            padding: 0 20px;
+        }
+    }     
+}

@@ -9,13 +9,7 @@
         height: 100%;
     }
     .inner_text{
-        height: 75px;
-        @media (max-width: 1350px) {
-            height: 115px;
-        }
-        @media (max-width: 1000px) {
-            height: 150px;
-        }
+        height: 100px;
     }
     h4, p {
         transition: all 0.15s linear;

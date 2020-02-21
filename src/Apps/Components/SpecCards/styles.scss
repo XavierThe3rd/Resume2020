@@ -1,89 +1,40 @@
-@import '../../sass/generics.scss';
-@import '../../sass/settings.scss';
-@import '../../sass/tools.scss';
-
-.spec_card, .screen_holder, .screen_holder div {
-    @include dimensions(48.85%, 300px, 10px);
-}
-.screen_holder, .screen_holder div {
-    @include dimensions(100%, 300px, 10px);
-}
+@import './animations.scss';
 
 .spec_card {
     box-shadow: $pureBlack 0 1px 10px 0px;
-    transition: all 0.35s linear;
-    //margin: 10px;
-    p, h1, div { transition: all 0.25s linear }
-    span { transition: all 0.35s linear }
     .text_holder { 
-        padding: 50px;
-        transform: scale(0)
+        padding: 25px 
     }
-    .screen_holder div{
-        padding: 70px;   
+    .screen_holder div{  
         h2 {
             @include fontSettings($pureWhite, 32px, 400, 1);
             margin-right: 12px;
         }
-        svg { width: 50px }
+        svg { 
+            width: 50px 
+        }
     }
-    p {
-        @include fontSettings($pureWhite, 28px, 400, 1.25);
-        opacity: 0;
+    p { 
+        @include fontSettings($pureWhite, 24px, 400, 1.25) 
     }
-    .screen {
-        @include dimensions(60em, 30em, 0);
+    .screen { 
+        @include dimensions(60em, 30em, 0) 
     }
-    &:hover{
-        box-shadow: $primeOrange 3px 1px 10px 0px;
-        transform: scale(1.025);
-         
-        .screen_holder div {
-            transform: translateY(95px);
-            opacity: 0;
+
+    @media(max-width: 1450px){ 
+        p { 
+            font-size: 22px 
         } 
-        .screen { transform: translate(75%, 40%)rotate(-35deg) }
-        .text_holder { transform: scale(1) }
-        p { opacity: 1 }       
     }
-}
-
-@media(max-width: 1400px){
-    .spec_card {
-        .text_holder {
-            padding: 25px;
+    @media(max-width: 1000px){
+        .featured_cards { 
+            margin: 0px 0 100px 
         }
-        &:hover{
-            .screen_holder div {
-                transform: translateY(70px)
-            }
-        }
+        p { 
+            font-size: 26px 
+        }  
     }
-}
-
-@media(max-width: 1000px){
-    .featured_cards {
-        margin: 0px 0 100px;
-    }
-    .spec_card, .screen_holder, .screen_holder div, .featured_cards {
-        @include dimensions(100%, 300px, 10px);
-    }
-    .spec_card {
-        .text_holder { padding: 50px }
-        p { font-size: 24px }
-        &:hover{
-            .screen_holder div {
-                transform: translateY(90px)
-            }
-        }
-    }
-}
-
-@media(max-width: 600px){
-    .spec_card, .screen_holder, .screen_holder div {
-        @include dimensions(100%, 200px, 10px);
-    }
-    .spec_card {
+    @media(max-width: 600px){
         .text_holder {
             padding: 20px;
         }
@@ -93,10 +44,5 @@
         p {
             font-size: 20px;
         }
-        &:hover{
-            .screen_holder div {
-                transform: translateY(60px)
-            }
-        }
-    }
+    }   
 }

@@ -36,12 +36,12 @@
 }
 
 .nav{
-    //background: radial-gradient(circle, rgba(97,0,255,1) 0%, rgba(97,0,255,0) 75%);
-    //background: radial-gradient(circle, rgba(255,38,67,1) 0%, rgba(255,38,67,0) 75%);
-    padding:12px;
+    //align-self:flex-start;
+    //padding:12px; //!important
     z-index: 5;
     transition: all 0.35s ease-in-out;
-    @media(max-width: 600px) {
+    @media(max-width: 1150px) {
+        //margin: 20px 0 0;
         @include dimensions(45px, 32px, 0);
         padding: 0;
     }
@@ -55,12 +55,7 @@
             width: 75px;
         }
         
-        @media(max-width: 1000px){
-            opacity: 0;
-            //display: none;
-        }
-
-        @media(max-width: 600px) {
+        @media(max-width: 1150px) {
             display: none;
         }
 
