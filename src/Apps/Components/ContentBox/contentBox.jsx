@@ -11,7 +11,7 @@ const ContentBox = (props) => {
     }
     
     return(
-        <div className={`column ${props.Class}`} style={intro_styles}>
+        <div className={`column box ${props.Class}`} style={intro_styles}>
             {props.children}
         </div>
     )   

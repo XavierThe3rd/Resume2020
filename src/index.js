@@ -1,12 +1,23 @@
-
+/* eslint-disable no-undef */
+import {createStore, applyMiddleware} from 'redux'
+import thunk from 'redux-thunk'
+import reducer from './reducers'
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App.jsx";
+import {Provider} from 'react-redux'
 import * as serviceWorker from "./serviceWorker";
+
+let store = createStore(reducer, applyMiddleware(thunk))
+//if (module.hot) module.hot.accept('index', ()=> store.replaceReducer(reducer))
 
 const rootId = document.getElementById("rootD");
 
-ReactDOM.render(<App/>, rootId);
+ReactDOM.render(
+  <Provider store={store}>
+    <App/>
+  </Provider>
+, rootId);
 
 serviceWorker.unregister();
   

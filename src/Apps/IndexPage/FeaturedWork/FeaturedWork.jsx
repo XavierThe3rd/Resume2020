@@ -5,14 +5,14 @@ import get from './data.js'
 import comps from "../../Components/U-Components/u-components.jsx";
 
 
-const FeaturedWork = ()=> {
+const FeaturedWork = (props)=> {
       return (
-        <div className="featured column">
+        <div className={`featured column ${props.Class}`}>
           <comps.Title Color={styles.conColor}>{get.heading}</comps.Title>
-          <div className="featured_holder flx-c">
+          <div className="featured_holder flex">
           {get.cardData.map(hit => {
           return <ProjectPiece
-              Class={`featured_cards`}
+              Class={`featured_card_set`}
               Index={hit.index}
               Image={hit.image}
               Title= {hit.title}

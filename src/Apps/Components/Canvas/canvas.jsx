@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import React, {useState, useEffect, useRef} from 'react'
 
 import SVG from 'react-inlinesvg';
@@ -14,24 +15,28 @@ import './styles.scss'
 
 const Canvas = ()=> {
     let [mobileState, setMobile] = useState(false)
+    let [scrollState, setScroll] = useState(false)
     let canRef = useRef(null);
 
     useEffect(()=>{
         ["resize", "load"].forEach(event => window.addEventListener(event, ()=> {
-          window.innerWidth > 600 ? setMobile(false) : setMobile(true)
+          window.innerWidth >= 1150 ? setMobile(false) : setMobile(true) | setScroll(true)
         }))
 
         if(mobileState===true){
             window.addEventListener('scroll', ()=> {
                 let st = window.pageYOffset
                 let gear = document.getElementsByClassName("gear")
-                for(let i=0; i < gear.length; i++){
-                    if(i < 4){gear[i].style.transform = 'rotate('+ (st/-2) +'deg)'}
-                    if(i < 7 && i > 3)gear[i].style.transform = 'rotate('+ (st/4) +'deg)'
-                    if(i < 9 && i > 6)gear[i].style.transform = 'rotate('+ (st/8) +'deg)'
-                    if(i === 9)gear[i].style.transform = 'rotate('+ (st/-4) +'deg)'
-                    if(i === 10)gear[i].style.transform = 'rotate('+ (st/2) +'deg)'
-                }
+                if(window.pageYOffset < 1000){
+                    setScroll(true)
+                    for(let i=0; i < gear.length; i++){
+                        if(i < 4){gear[i].style.transform = 'rotate('+ (st/-2) +'deg)'}
+                        if(i < 7 && i > 3)gear[i].style.transform = 'rotate('+ (st/4) +'deg)'
+                        if(i === 7)gear[i].style.transform = 'rotate('+ (st/8) +'deg)'
+                        if(i === 8)gear[i].style.transform = 'rotate('+ (st/-4) +'deg)'
+                        if(i === 9)gear[i].style.transform = 'rotate('+ (st/2) +'deg)'
+                    }
+                } else setScroll(false)
             })
         }else {
             window.addEventListener('scroll', ()=> {
@@ -49,7 +54,8 @@ const Canvas = ()=> {
             can.style.transform = 'translateY('+ st/-10 +'px)'
             //for(let i=0; i < clas.length; i++) clas[i].style.opacity = 1 - st/400
         })*/
-        
+
+        let gearData = [GearQ,GearQS,GearQ,GearQ,GearH,GearH,GearH,GearW,GearH,GearQ]        
         return (
             mobileState ? <div ref={canRef} style={{
                 position: 'fixed',
@@ -59,17 +65,7 @@ const Canvas = ()=> {
                 zIndex: -1
             }}>
                 <div className="flx-c abs" style={{marginTop: 126, width: '100%'}}>
-                    <SVG src={GearQ} className="gear-quarter1 gear abs"/>
-                    <SVG src={GearQS} className="gear-quarter1res gear abs"/>
-                    <SVG src={GearQ} className="gear-quarter2res gear abs"/>
-                    <SVG src={GearQ} className="gear-quarter3res gear abs"/>
-                    <SVG src={GearH} className="gear-half1 gear abs"/>
-                    <SVG src={GearH} className="gear-half2 gear abs"/>
-                    <SVG src={GearH} className="gear-half-v gear abs"/>
-                    <SVG src={GearW} className="gearmid-whole gear abs"/>
-                    <SVG src={GearW} className="gear-whole-x gear abs"/>
-                    <SVG src={GearH} className="gear-half3 gear abs"/>
-                    <SVG src={GearQ} className="gear-quarter-w gear abs"/>          
+                    {scrollState ? gearData.map(hit=> <SVG src={hit} className="gear abs"/>) : null}         
                 </div>
             </div>
             :<div id="canvas" ref={canRef} style={{

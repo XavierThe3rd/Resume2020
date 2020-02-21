@@ -9,13 +9,13 @@ export const headerData = () => {
         {
             index: 1,
             tag: 'ABOUT',
-            ref: "/About",
+            ref: "/Resume/About",
             cls: 'about'
         },
         {
             index: 2,
             tag: 'PORTFOLIO',
-            ref: "/Portfolio",
+            ref: "/Resume/Portfolio",
             cls: 'port'
         },
         {
@@ -30,13 +30,13 @@ export const headerData = () => {
         {
             index: 1,
             tag: 'HOME',
-            ref: "/Home",
+            ref: "/Resume/Home",
             cls: 'home'
         },
         {
             index: 2,
             tag: 'PORTFOLIO',
-            ref: "/Portfolio",
+            ref: "/Resume/Portfolio",
             cls: 'port'
         },
         {
@@ -51,13 +51,13 @@ export const headerData = () => {
         {
             index: 1,
             tag: 'HOME',
-            ref: "/Home",
+            ref: "/Resume/Home",
             cls: 'home'
         },
         {
             index: 2,
             tag: 'ABOUT',
-            ref: "/About",
+            ref: "/Resume/About",
             cls: 'about'
         },
         {

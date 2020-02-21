@@ -1,85 +1,118 @@
-import React from 'react'
-import PropTypes from  'prop-types'
-import resizeDetector from 'element-resize-detector'
+window.addEventListener("resize", resize, false);
 
-export default class Canvas extends React.Component {
-    static propTypes = {
-        className: this.PropTypes.string,
-        background: this.PropTypes.string,
-        numberOrbs: PropTypes.number,
-        maxVelocity: PropTypes.number,
-        orbRadius: PropTypes.number,
-        minProximity: PropTypes.number,
-        initialColorAngle: PropTypes.number,
-        colorFrequency: PropTypes.number,
-        colorAngleIncrement: PropTypes.number,
-        globalAlpha: PropTypes.number,
+var numPoints = 50;
+var numFlames = 100;
+var speed = new MinMax(2, 4);
+var hueRange = new MinMax(100, 180);
+var curvedFlame = false;
+
+var speedMultiplier = 1.3;
+var alphaMultiplier = 1.9;
+var heightMultiplier = 0.4;
+
+var flames = [];
+
+function MinMax(min, max) {
+  this.min = min;
+  this.max = max;
+  this.range = max - min;
+
+  this.rand = function() {
+    return random() * this.range + this.min;
+  };
+}
+
+function Flame() {
+  this.points = [];
+  for (var i = 0; i < numPoints; i++) {
+    this.points.push(new Point());
+  }
+  this.points.sort(function(p1, p2) {
+    return p1.x - p2.x;
+  });
+}
+
+Flame.prototype.tick = function() {
+  for (var i = 0; i < this.points.length; i++) {
+    this.points[i].tick();
+  }
+};
+
+function Point() {
+  this.x = random();
+  this.y = height - random() * height * heightMultiplier;
+  this.speed = speed.rand();
+}
+
+Point.prototype.tick = function() {
+  this.y -= this.speed * speedMultiplier;
+  if (this.y < height - height * heightMultiplier) this.y = height;
+};
+
+function setup() {
+  createCanvas();
+  colorMode(HSB, 164, 28, 38, 150);
+  ellipseMode(CENTER);
+  blendMode(ADD);
+  resize();
+
+  {
+    //GUI stuff
+    var gui = new dat.GUI();
+    var flameController = gui.add(this, "numFlames", 0, 150);
+    var pointController = gui.add(this, "numPoints", 0, 0);
+    gui.add(this, "speedMultiplier", 1, 5);
+    gui.add(this, "alphaMultiplier", 0, 3);
+    var heightController = gui.add(this, "heightMultiplier", 0, 1);
+    gui.add(this, "curvedFlame");
+
+    gui.close();
+
+    flameController.onChange(init);
+    pointController.onChange(init);
+    heightController.onChange(init);
+  } //--GUI stuff--
+
+  init();
+}
+
+function init() {
+  flames = [];
+
+  for (var i = 0; i < numFlames; i++) {
+    flames.push(new Flame());
+  }
+}
+
+function draw() {
+  clear();
+  background(0);
+  noStroke();
+  for (var i = 50; i < flames.length; i++) {
+    var hue = i / flames.length * hueRange.range + hueRange.min;
+    console.log(hue);
+    fill(hue, 100, 100, 100 / flames.length * alphaMultiplier);
+
+    //see link below for vertex reference
+    //https://p5js.org/reference/#group-Shape
+    beginShape();
+    vertex(0, height);
+
+    var flame = flames[i];
+
+    for (var j = 0; j < flame.points.length; j++) {
+      var p = flame.points[j];
+      if (curvedFlame) curveVertex(p.x * width, p.y);
+      else vertex(p.x * width, p.y);
     }
 
-    static defaultProps = {
-        className: '',
-        background: '#000000',
-        numberOrbs: 80, //change total Orbs
-        maxVelocity: 1.75, //change total Velocity
-        orbRadius: 1, //change orb radius
-        minProximity: 70, // change closeness
-        initialColorAngle: 7, //initial angle of color
-        colorFrequency: 0.3, //change frequency at which color changes
-        colorAngleIncrement: 0.009, //change increment of angle
-        globalAlpha: 0.01 //???
-    }
+    flame.tick();
 
-    _detector = resizeDetector({
-        strategy: 'scroll'
-    })
+    vertex(width, height);
+    endShape(CLOSE);
+  }
+}
 
-    _width = 0
-    _height = 0
-    _bottom = null
-    _top = null
-    _lincxt = null
-    _cxt = null
-    _animationFrame = null
-    _orbs = null
-    _interval = null
-
-    render() {
-        let { className } = this.props
-        
-        return (
-            <div ref={ref => (this._container = ref)} className={className}>
-                <canvas ref={ref => (this._bottom = ref)}/>
-                <canvas ref={ref => (this._top = ref)}/>
-            </div>
-        )
-    }
-
-    componentDidMount() {
-        this.linecxt = this._top.getContext('2d')
-        this.cxt = this._bottom.getContext('2d')
-        this._interval = setInterval(this._resize, 100000) 
-        this._detector.listenTo(this._container, this._resize)
-        this._resize()
-    }
-
-    componentWillUnmount() {
-        clearInterval(this._interval)
-        this._detector.uninstall(this._container) 
-    }
-
-    _resize = () => {  
-        let styles = getComputedStyle(this._container)
-        this._width = parseFloat(styles.width)
-        this._height = parseFloat(styles.height)
-        this._setup()
-    }
-
-    _setup = () => {
-        this._top.width = this._width
-        this._top.height = this._height
-        this._bottom.width = this._width
-        this._bottom.height = this._height
-
-        this.fillBackground(this._cxt)
-    }
+function resize() {
+  resizeCanvas(window.innerWidth, window.innerHeight);
 }

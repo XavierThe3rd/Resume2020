@@ -1,21 +1,22 @@
 import React from 'react'
 import styles from './styles.scss'
 import SVG from 'react-inlinesvg';
+import { PropTypes } from 'mobx-react';
 
-const SpecCards = ({Index, Title, Image, Para})=>{   
+const SpecCards = (props)=>{   
       return (
-        <div key={Index}  className='spec_card flex' style={{
+        <div key={props.Index}  className={`spec_card flex ${props.SpecClass}`} style={{
           cursor: 'pointer',
           background: styles.primePink,
         }}>
-          <div className='screen_holder flx-c-c rel' style={{
+          <div className={`screen_holder flx-c-c rel ${props.HoldClass}`} style={{
             overflow: 'hidden',
           }}>
-            <div className='flx-c-c' style={{
+            <div className={`flx-c-c ${props.HoldClass}`} style={{
               zIndex: 3
             }}>
-            <h2>{Title}</h2>
-              <SVG src={Image}/>
+            <h2>{props.Title}</h2>
+              <SVG src={props.Image}/>
             </div>
             <span className="screen abs" style={{
               right: 0,
@@ -24,7 +25,7 @@ const SpecCards = ({Index, Title, Image, Para})=>{
             }}/>
           </div>
           <span className="text_holder abs">
-            <p>{Para}</p>
+            <p>{props.Para}</p>
           </span>
         </div>
     );

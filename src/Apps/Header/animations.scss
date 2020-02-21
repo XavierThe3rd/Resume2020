@@ -3,13 +3,14 @@
 @import '../sass/tools.scss';
 
 .nav-down {transform: translateY(0)}
-.nav-up {transform: translateY(-72px)}
+.nav-up {transform: translateY(-70px)}
 .list-in li a {opacity: 1; transition: none}
 .list-out li a {opacity: 0; transition: all 0.25s linear}
 .h-in {opacity: 1; transition: all 0.45s linear }
 .h-out {opacity: 0; transition: all 0.45s linear}
 
 .nav-off {
+    height: 72px; //!important
     button {
         span {
             animation-duration: 0.35s;
@@ -36,6 +37,7 @@
 }
 
 .nav-on {
+    height: 100%; //!important
     button {
         span {
             animation-duration: 0.35s;
@@ -119,5 +121,9 @@
         &:nth-child(#{$i}) {
             transform: rotate(72deg * $i);
         }
+    }
+    &:nth-child(6) {
+        position: absolute;
+        width: 100px;
     }
 }
