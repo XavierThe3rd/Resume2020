@@ -3,7 +3,10 @@
 @import '../../sass/tools.scss';
 
 .special_holder {
-
+    
+    .intro_graphic {
+        width: 15%;
+    }
 
     .spec_card_set {
         @include dimensions(48.85%, 300px, 10px);

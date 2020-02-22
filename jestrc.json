@@ -1,0 +1,17 @@
+/*{
+    "presets": "jest-puppeteer",
+    "testURL": "http://localhost:9000/",
+    "globalSetup": "<rootDir>/tests/setup.js",
+    "globalTeardown": "<rootDir>/tests/teardown.js",
+    "moduleFileExtensions": [
+        "js",
+        "json",
+        "jsx",
+        "scss"
+    ],
+    "setupFiles": [
+        "<rootDir>/node_modules/regenerator-runtime/runtime"
+    ], "collectCoverageFrom": [
+        "src/**//*.{js,jsx}"
+    ]
+}*/

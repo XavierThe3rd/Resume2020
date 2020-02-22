@@ -4,6 +4,7 @@
 
 .prime_button {
     cursor: pointer;
+    margin-top: 40px;
     @include dimensions(250px, 75px, 5px);
     @include fontSettings($primeBack, 36px, 400, 1);
     @include border($primeBack, 2px);

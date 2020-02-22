@@ -9,9 +9,22 @@
     }
 }
 
+.intro_graphic {
+    width: 35%;
+    margin-bottom: 40px;
+}
+
 .index_holders {
-    margin: 20px 0;
-    padding: 60px 100px;
+    //margin: 20px 0;
+    //height: 100%;
+    justify-content: center;
+    padding: 100px 400px;
+
+	img {
+        width: 700px;
+        margin-bottom: 40px;
+    }
+    
     @media(max-width: 1535px){
         padding: 60px 50px;
     }
@@ -24,7 +37,7 @@
 }
 
 .index_borders {
-    @include border($borderGrey, 1px);
+    @include border($borderGrey, 0 1px 1px 1px);
     background: $primeBackOpac;
     @media(max-width: 1150px) {
         @include border(none, 0px);
@@ -36,5 +49,19 @@ section {
     @media(max-width: 1150px) {
         @include border($borderGrey, 1px);
         background: $primeBackOpac;
+    }
+}
+
+.spec-height {
+    justify-content: center;
+    padding: 100px 400px;
+    @media(max-width: 1535px){
+        padding: 60px 50px;
+    }
+    @media(max-width: 1150px) {
+        margin: 0;
+    }
+    @media(max-width: 600px){
+        padding: 60px 20px;
     }
 }

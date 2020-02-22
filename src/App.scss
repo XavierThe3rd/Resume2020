@@ -5,23 +5,30 @@ div, span, section, main, h1, h2, h3, h4, p, a, button, ul, nav, option, input, 
     box-sizing: border-box;
 }
 
+html, body {
+    width: 100%;
+    height:100%;
+}
+
 body{
     background: none;
     transition: all 0.35s ease-out;
-    width: 100%;
-    height:100%;
     overflow-x: hidden;
     background: $primeBackground;
     margin: 0;
     //transform: translateY(50px);
 
     #rootD {
-        overflow: hidden;
+        //overflow: hidden;
+        height: 100%;
         //padding: 100px 300px 25px;
     }
 
+    .box {
+        padding: 100px, 300px;
+    }
     
-    section, nav, .port_page {
+    nav, .port_page {
         padding: 0px 300px ;
         @media(max-width: 1650px) {
             padding: 0px 250px;
