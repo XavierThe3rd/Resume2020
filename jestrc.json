@@ -1,4 +1,4 @@
-/*{
+{
     "presets": "jest-puppeteer",
     "testURL": "http://localhost:9000/",
     "globalSetup": "<rootDir>/tests/setup.js",
@@ -14,4 +14,4 @@
     ], "collectCoverageFrom": [
         "src/**//*.{js,jsx}"
     ]
-}*/
+}

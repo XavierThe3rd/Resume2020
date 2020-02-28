@@ -11,6 +11,7 @@ import barB from '../../images/BarB.svg'
 import barC from '../../images/BarC.svg'
 import barD from '../../images/BarD.svg'
 import barE from '../../images/BarE.svg'
+import TheX from '../../images/TheX.svg'
 
 const structure = {
   indexState: true,
@@ -18,7 +19,7 @@ const structure = {
   portState: false,
   load: false,
   linkclass: false,
-  bars: [barA, barB, barC, barD, barE],
+  bars: [barA, barB, barC, barD, barE, TheX],
 
   index: [
     {

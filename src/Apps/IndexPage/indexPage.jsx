@@ -13,8 +13,8 @@ import SVG from 'react-inlinesvg'
 
 const Index = () => {
   return (
-    <section style={{ height: '100%' }}>
-      <ContentBox Class="index_holders" Height={'100%'}>
+    <section>
+      <ContentBox Class="index_holders">
         {/*<SVG className="intro_graphic" src={DragonG}/>*/}
         {
           <comps.Title Color={styles.conColor}>
@@ -33,7 +33,7 @@ const Index = () => {
           Learn More!
         </comps.Button>
       </ContentBox>
-      <Specializations Class="spec-height index_borders" />
+      <Specializations Class="index_holders index_borders" />
       <FeaturedWork Class="index_holders index_borders" />
       <ContentBox
         Class="index_holders"
@@ -56,7 +56,6 @@ const Index = () => {
         </comps.Button>
       </ContentBox>
       <Printables Class="index_holders index_borders" />
-      <Footer />
     </section>
   )
 }

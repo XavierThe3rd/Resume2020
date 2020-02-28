@@ -11,6 +11,7 @@ const Loader = ({
   setIndex,
   setAbout,
   setPort,
+  setZ,
   index,
   about,
   port,
@@ -19,12 +20,14 @@ const Loader = ({
   portState,
   setHome,
   setLoad,
+  setScroll,
   load,
   setLClass,
   linkclass,
   bars
 }) => {
   let loadTime = e => {
+    setScroll(true)
     let ct = e.currentTarget
     let toLinks = (cls, name, i, a, p) => {
       if (ct.classList.contains(cls)) {
@@ -50,17 +53,19 @@ const Loader = ({
     toLinks('home', 'HOME', true, false, false)
     toLinks('about', 'ABOUT', false, true, false)
     toLinks('port', 'PORTFOLIO', false, false, true)
-    setTimeout(
-      () =>
-        window.location.pathname === '/Resume/Home'
-          ? setHome(true)
-          : setHome(false),
-      1500
-    )
+    setTimeout(() => {
+      setScroll(false)
+      if (window.location.pathname === '/Resume/Home') {
+        setHome(true)
+      } else {
+        setHome(false)
+      }
+    }, 1500)
     setTimeout(() => {
       setLoad(false)
       setNav(false)
       setClass(false)
+      setZ(0)
     }, 2000)
     return ct
   }
@@ -76,7 +81,6 @@ const Loader = ({
               right: 0,
               top: 0,
               bottom: 0,
-              width: 300,
               zIndex: 6,
               margin: 'auto'
             }}

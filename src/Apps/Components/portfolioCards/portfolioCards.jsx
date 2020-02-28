@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-expressions */
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
+import Arrow from '../../../../images/Arrow.svg'
 import styles from './styles/styles.scss'
 import SVG from 'react-inlinesvg'
 
@@ -7,6 +8,7 @@ const ProjectCard = props => {
   const [hoverState, setHover] = useState(false)
   const [widthState, setWidth] = useState(false)
   const [classState, setClass] = useState(false)
+  let loadRef = useRef([Arrow])
 
   let project_card_styles = {
     cursor: 'pointer',
@@ -53,11 +55,7 @@ const ProjectCard = props => {
       : setClass(false) | setTimeout(() => setHover(false), 350)
   }
 
-  ;['resize', 'load'].forEach(event =>
-    window.addEventListener(event, () => {
-      window.innerWidth < 1000 ? setWidth(true) : setWidth(false)
-    })
-  )
+  useEffect(() => (window.innerWidth < 1000 ? setWidth(true) : setWidth(false)))
 
   return (
     <div
@@ -99,7 +97,11 @@ const ProjectCard = props => {
         </span>
         {widthState ? (
           <button className="abs" onClick={toInner}>
-            <SVG src="../../../../images/Arrow.svg" />
+            {
+              //loadRef.current.map(item => (
+              <SVG src={Arrow} />
+              //))}
+            }
           </button>
         ) : null}
       </div>

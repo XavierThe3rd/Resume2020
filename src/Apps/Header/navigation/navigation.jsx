@@ -3,89 +3,81 @@ import React, { useEffect, useRef } from 'react'
 import './navstyles.scss'
 import NavButton from '../../Components/NavButton/navButton.jsx'
 import Loader from '../Loader/loader-container'
+import { onResize } from '../../../utilities/globalUtilities'
+import SVG from 'react-inlinesvg'
 
-const Navigation = ({
-  setNav,
-  navState,
-  setClass,
-  classState,
-  setMobile,
-  mobileState,
-  ScrollClassA,
-  ScrollClassB,
-  setHtag,
-  setHome
-}) => {
-  let navRef = useRef(null)
+const Navigation = props => {
+  let {
+    setNav,
+    navState,
+    setClass,
+    classState,
+    setMobile,
+    mobileState,
+    zind,
+    scroll,
+    move,
+    setHtag,
+    setHome,
+    tohome,
+    setZ,
+    opac,
+    htag,
+    step
+  } = props
 
-  useEffect(() => {
-    ;['resize', 'load'].forEach(event =>
-      window.addEventListener(event, () => {
-        window.innerWidth >= 1150 ? setMobile(false) : setMobile(true)
-      })
-    )
-  })
+  useEffect(() => onResize(props, 1150))
 
   let openNav = () => {
     if (navState === false) {
-      navRef.current.style.zIndex = 5
+      setZ(5)
       setNav(true)
       setTimeout(() => setClass(true), 50)
     } else if (navState === true) {
       setClass(false)
       setTimeout(() => {
         setNav(false)
-        if (window.innerWidth >= 1150) {
-          navRef.current.style.zIndex = 0
-        }
-      }, 500)
+        if (window.innerWidth >= 1150) setZ(0)
+      }, 1000)
     }
   }
 
   return (
     <nav
-      ref={navRef}
       className={`navi flx-b-c fix
-            ${ScrollClassA}
-            ${classState ? `nav-on` : `nav-off`}
+            ${`${scroll ? `nav-up` : `nav-down`}`}
         `}
-      style={{
-        right: 0,
-        width: '100%'
-      }}
+      style={{ zIndex: mobileState ? 5 : zind }}
     >
+      {mobileState ? (
+        <SVG
+          className={`nav_svg`}
+          src={'../../../images/Logo.svg'}
+          style={{ opacity: tohome ? 0 - opac : 1 }}
+        />
+      ) : (
+        <h1
+          className="page"
+          style={{
+            zIndex: zind + 1,
+            opacity: opac
+          }}
+        >
+          {htag}
+        </h1>
+      )}
       {mobileState ? (
         <span
           className="screen abs max-w"
           id="screenId"
-          style={{
-            height: 144,
-            top: -72,
-            right: 0,
-            opacity: 0
-          }}
+          style={{ opacity: tohome ? -opac : 1 }}
         />
       ) : null}
-      <br />
-      <NavButton Class={ScrollClassB} Id="navButtonId" Click={openNav} />
-      {navState ? (
-        <ul
-          className={`fix column`}
-          style={{
-            width: '100%',
-            top: 0,
-            left: 0
-          }}
-        >
-          <Loader
-            setNav={setNav}
-            setClass={setClass}
-            setHtag={setHtag}
-            setHome={setHome}
-          />
-          }
-        </ul>
-      ) : null}
+
+      <NavButton
+        Class={`nav ${move ? 'button-on' : 'button-off'}`}
+        Click={openNav}
+      />
     </nav>
   )
 }

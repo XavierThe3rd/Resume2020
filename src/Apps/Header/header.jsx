@@ -5,149 +5,137 @@ import styles from './styles.scss'
 //import Wings from '../../../images/Wings.svg'
 import SVG from 'react-inlinesvg'
 import Navigation from './navigation/nav-container'
+import Loader from './Loader/loader-container'
+import { onResize } from '../../utilities/globalUtilities'
 
 //let get = new headerData()
 
-const Header = ({
-  htag,
-  setHtag,
-  setHome,
-  tohome,
-  setMove,
-  move,
-  setScroll,
-  scroll
-}) => {
+const Header = props => {
+  let {
+    htag,
+    zind,
+    setOpac,
+    setHtag,
+    setHome,
+    setNav,
+    setClass,
+    tohome,
+    setMove,
+    move,
+    setScroll,
+    scroll,
+    opac,
+    setZ,
+    step,
+    setStep,
+    classState,
+    navState,
+    mobileState
+  } = props
+
   let lsRef = useRef(0)
   let nsRef = useRef(0)
+  let opacRef = useRef(null)
 
   useEffect(() => {
-    onscroll = () => {
+    window.addEventListener('load', () => {
+      setStep(true)
+      if (window.pageYOffset < 600) {
+        setOpac(0)
+        document.getElementById('spanId').style.opacity = 1
+      }
+    })
+    window.onscroll = () => {
       let st = window.pageYOffset
-      let clas = document.getElementsByClassName('opac-this')
-      for (let i = 0; i < clas.length; i++) {
-        clas[i].style.opacity = 1 - st / 400
-        clas[i].style.transform = 'translateY(' + st / -10 + 'px)'
-      }
+      let scrollSettings = (pagey, opacit) => {
+        if (!navState) {
+          if (window.innerWidth <= 1150) {
+            if (tohome == true) setOpac(1 - st / 200)
+            if (window.pageYOffset > pagey) {
+              setStep(false)
+              if (st >= lsRef.current) setScroll(true)
+              else if (st < nsRef.current) setScroll(false)
 
-      if (window.innerWidth <= 1150) {
-        if (window.pageYOffset > 500) {
-          document.getElementById('screenId').style.opacity = 1
-          if (st >= lsRef.current) setScroll(true)
-          else if (st < nsRef.current) setScroll(false)
-          lsRef.current = st
-          setTimeout(() => {
-            nsRef.current = st - 100
-          }, 100)
-        } else {
-          //document.getElementById("screenId").style.opacity= 0 + st/500
+              setTimeout(() => {
+                lsRef.current = st
+              }, 100)
+              setTimeout(() => {
+                nsRef.current = st - 50
+              }, 100)
+            } else {
+              setStep(true)
+              setScroll(false)
+            }
+          } else {
+            setOpac(1 - st / opacit)
+            window.pageYOffset > 800 ? setStep(false) : setStep(true)
+            window.pageYOffset > 500 ? setMove(true) : setMove(false)
+            opacRef.current.style.transform = 'translateY(' + st / -8 + 'px)'
+          }
         }
-      } else {
-        //document.getElementById('hTag').style.opacity = 1 - st/300
-        window.pageYOffset > 100 ? setMove(true) : setMove(false)
       }
+      if (tohome == true) {
+        scrollSettings(500, 500)
+      } else scrollSettings(72, 200)
     }
-    ;['resize', 'load'].forEach(event =>
-      window.addEventListener(event, () => {
-        //window.innerWidth <= 1150 ? setMobile(true) | setLogo(false) : setMobile(false) | setLogo(true)
-        //window.location.pathname === '/Resume/Home' ? setHome(true) : setHome(false)
-      })
-    )
+    onResize(props, 1150)
   })
 
   return (
-    <header className={`column`}>
-      <div className="heading opac-this fix column" id="lower">
-        <h1 className="page">{htag}</h1>
-        <SVG className="opac-this" src={'../../../images/Logo.svg'} />
-        {tohome ? (
-          <div className="column">
-            <h1>Providing Bold Intuitive Design and Programming</h1>
-            <h1>Scroll Down to Learn More</h1>
-          </div>
-        ) : null}
-      </div>
+    <header
+      className={`column ${classState ? `nav-on` : `nav-off`} ${
+        tohome ? `index_header` : `other_header`
+      }`}
+    >
+      {step && (!mobileState || tohome) ? (
+        <div
+          ref={opacRef}
+          className="heading fix column"
+          //style={{ opacity: opac }}
+        >
+          <span id={`spanId`} style={{ opacity: opac }}>
+            <SVG src={'../../../images/Logo.svg'} />
+            {tohome ? (
+              <div className="column">
+                <h1>Providing Bold Intuitive Design and Programming</h1>
+                <h1>Scroll Down to Learn More</h1>
+              </div>
+            ) : null}
+          </span>
+        </div>
+      ) : null}
       <Navigation
-        ScrollClassA={`${scroll ? `nav-up` : `nav-down`}`}
-        ScrollClassB={`nav ${move ? 'button-on' : 'button-off'}`}
+        scroll={scroll}
+        move={move}
         setHtag={setHtag}
         setHome={setHome}
+        opac={opac}
+        setZ={setZ}
+        zind={zind}
+        setNav={setNav}
+        setClass={setClass}
+        classState={classState}
+        navState={navState}
+        htag={htag}
+        tohome={tohome}
+        step={step}
       />
+      {navState ? (
+        <ul className={`fix column`}>
+          <Loader
+            setScroll={setScroll}
+            setNav={setNav}
+            setClass={setClass}
+            setHtag={setHtag}
+            setHome={setHome}
+            setZ={setZ}
+            classState={classState}
+          />
+          }
+        </ul>
+      ) : null}
     </header>
   )
 }
 
 export default Header
-/*
-export default class Header extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            setScroll: false, 
-            setMobile: false, 
-            setMove: false, 
-            setHome : true,
-            setLogo : false,
-        };
-    }
-   
-    componentDidMount(){
-        let lastScroll = 0
-        let nextScroll = 0 
-
-        onscroll = ()=>{
-            let st = window.pageYOffset 
-            let clas = document.getElementsByClassName("opac-this")
-            for(let i=0; i < clas.length; i++){
-                clas[i].style.opacity = 1 - st/400
-                clas[i].style.transform = 'translateY('+ st/-10 +'px)'
-            }
-            
-            if(window.innerWidth <= 1150){
-                if(window.pageYOffset > 500){ 
-                    document.getElementById("screenId").style.opacity= 1
-                    if (st >= lastScroll) this.setState({setScroll: true}) 
-                    else if (st < nextScroll) this.setState({setScroll: false}) 
-                    lastScroll = st 
-                    setTimeout(()=>{nextScroll = st - 100}, 100)   
-                }else {
-                    this.setState({setRight: false, setScroll: false})
-                    document.getElementById("screenId").style.opacity= 0 + st/500 
-                }
-            } else {
-                //document.getElementById('hTag').style.opacity = 1 - st/300
-                window.pageYOffset > 100 ? this.setState({setMove: true})
-                : this.setState({setMove: false})       
-            }
-        }
-        ["resize", "load"].forEach(event => window.addEventListener(event, ()=> {
-            window.innerWidth <= 1150 ? this.setState({setMobile: true, setLogo: false}) : this.setState({setMobile: false, setLogo: true})
-            window.location.pathname === '/Resume/Home' ? this.setState({setHome: true }) : this.setState({setHome: false })
-        }))
-    }
-
-    render(){   
-        return(
-            <header className={`column  ${this.props.PageSwitch}`}>         
-                {this.state.setLogo ? <SVG className="opac-this fix" src={'../../../images/Logo.svg'} id={`Logo`}/> : null}
-                {this.state.setMobile ? <div className="opac-this heading fix column-c-c" id="lower">
-                    <SVG className="opac-this" src={'../../../images/Logo.svg'}/>
-                    {this.state.setHome ? <div className="column-c-c">
-                        <h1>Providing Bold Intuitive Design and Programming</h1>
-                        <h1>Scroll Down to Learn More</h1>
-                    </div>: null}
-                </div>: null}
-                <Navigation
-                    ScrollClassA={`${this.state.setScroll ? `nav-up`: `nav-down`}`}
-                    ScrollClassB={`nav ${this.state.setMove ? 'button-on' : 'button-off'}`}
-                />
-            </header>
-        )
-    }
-}
-
-Header.propTypes = {
-    nav: PropTypes.bool,
-    setNav: PropTypes.func
-}
-*/

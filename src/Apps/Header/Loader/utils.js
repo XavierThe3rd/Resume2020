@@ -41,9 +41,10 @@ export let toLoad = (e, props) => {
     1500
   )
   setTimeout(() => {
-    /*setUl(false)*/ props.setLoad(false)
+    props.setLoad(false)
     props.setNav(false)
-    props.setClass(false) /*setNav(false)*/
+    props.setClass(false)
+    props.setNavZ(0)
   }, 2000)
   //setTimeout(() => /*setUl(false)*/ setLoad(false) | setNav(false) | setClass(false)/*setNav(false)*/,1000)
   return ct

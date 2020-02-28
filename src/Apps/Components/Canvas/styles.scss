@@ -1,7 +1,7 @@
 @import './gears.scss';
 #canvas {
     //background: #050507;
-    background: $primeBackground;
+    //background: $primeBackground;
 
     span {
         position: absolute;
@@ -47,6 +47,16 @@
             top: 250px;
             left: -100px;
             width: 500px;
+        }
+    }
+}
+
+.canvas {
+    height: 100%;
+    img {
+        @media (max-width: 600px){
+            height: 62em;
+            left: -115px;
         }
     }
 }

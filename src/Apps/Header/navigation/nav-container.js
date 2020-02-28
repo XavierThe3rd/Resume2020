@@ -1,23 +1,19 @@
 import { connect } from 'react-redux'
 import Navigation from './navigation.jsx'
-import { setNav, setClass, setHtag } from '../../../actions/navigation.js'
+//import { setNav, setClass } from '../../../actions/navigation.js'
 import { setMobile } from '../../../actions/mobile'
 
 //let [classState, setClass] = useState(false)
 
 const mapStateToProps = state => {
   return {
-    mobileState: state.mobile.mobileState,
-    navState: state.navigation.navState,
-    classState: state.navigation.classState
+    mobileState: state.mobile.mobileState
     //htag: state.navigation.htag
   }
 }
 
 const mapDispatchToProps = {
-  setMobile: setMobile,
-  setNav: setNav,
-  setClass: setClass
+  setMobile: setMobile
   //setHtag: setHtag
 }
 

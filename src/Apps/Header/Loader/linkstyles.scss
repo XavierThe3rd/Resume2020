@@ -3,8 +3,12 @@
 @import '../../sass/tools.scss';
 
 ul {
-    background: $primeBackground;
+    @include border($borderGrey, 0 0px 1px 0px);
+    background: $navColor;
     z-index:4;
+    width: 100%;
+    top: 0;
+    left: 0;
     li {
         text-align: center;
         &:nth-child(1) { margin-top: 200px }

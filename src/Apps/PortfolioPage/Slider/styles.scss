@@ -2,12 +2,12 @@
 
 .port_holder {
     margin: 0px 0 0;
-    @include border($borderGrey, 1px);
     padding: 60px 0;
-    background: $offBack;
+    background: $primeBackOpac;
+    @include border($borderGrey, 1px 0px 0 0px);
 
     .switch_holder {
-        height: 300px;
+        height: 50%;
     }
 
     .port_wrap {
@@ -15,71 +15,35 @@
         justify-content: center;
     }
 
-    .port_card_holder {
-        margin: 20px;
-        .port_card_set {
-            @include dimensions(300px, 425px, 10px);
-            h3 { @include fontSettings($pureWhite, 26px, 400, 1.25) }
-            p { @include fontSettings($pureWhite, 26px, 300, 1.25) }
-            h4 { @include fontSettings($primeOrange, 20px, 400, 1) } 
-            h2 { @include fontSettings($pureWhite, 40px, 200, 1.1) }
-        }
-    }
-
-
-    @media(max-width: 1720px) { 
-        .port_card_holder {
-            margin: 10px;
-            .port_card_set {
-                @include dimensions(270px, 350px, 10px);
-                .inner_text span { padding: 10px 20px }
-                p { font-size: 22px }
-                h4 { font-size: 18px } 
-                h2 { font-size: 36px }
-            }
-        }
-    }
+ 
 
     @media(max-width: 1150px) {
-        margin-top: -250px;
-    }
-    
-    @media(max-width: 1000px) {
-        .port_wrap {
-            flex-direction: column;
-        }
-        .port_card_holder {
-            margin: 0 20px 0px;
-            .port_card_set {
-                @include dimensions(100%, 350px, 5px 5px 0 0px);
-                margin: 0 0 80px;
-                h2 { font-size: 56px }
-                h3 { font-size: 36px }
-                p { font-size: 32px }
-                h4 { font-size: 30px } 
-            }
-        }
-    }
-    @media(max-width: 600px) {
         margin-top: 0px;
-        .port_card_holder {
-            margin: 0 20px;
-            .port_card_set {
-                @include dimensions(100%, 350px, 5px 5px 0 0px);
-                margin: 0 0 80px;
-                h2 { font-size: 48px }
-                h3 { font-size: 32px }
-                p { font-size: 24px }
-                h4 { font-size: 22px } 
-            }
-        }
     }
-}
+}  
 
 .port_box {
     padding: 0;
-    
 }
 
+.port_holder {
+    padding: 100px 400px;
+    @media(max-width: 1650px) {
+        padding: 100px 250px;
+    }
+    @media(max-width: 1350px) {
+        padding: 100px 150px;
+    }
+    @media(max-width: 1150px) {
+        padding: 100px 100px;
+        //margin: 0;
+    }
+    @media(max-width: 1000px) {
+        padding: 100px 75px;
 
+    }
+    @media(max-width: 600px){
+        padding: 60px 20px;
+    }
+}
 

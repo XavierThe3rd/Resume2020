@@ -1,15 +1,22 @@
 import React from 'react'
-import PrimePortfolio from './Slider/portfolio.jsx'
+import styles from './styles.scss'
 import ContentBox from '../Components/ContentBox/contentBox.jsx'
-//import comps from '../Components/U-Components/u-components.jsx'
+import Footer from '../Footer/footer.jsx'
+import Printables from '../IndexPage/Printables/printables.jsx'
+import comps from '../Components/U-Components/u-components.jsx'
+import Slider from './Slider/slider-container'
 
 const Portfolio = () => {
   return (
-    <div className="port_page">
-      {/*<ContentBox Class='portbox' Height={5}></ContentBox>*/}
-      <PrimePortfolio />
-      {/*<ContentBox Class='portbox' Height={5}></ContentBox>*/}
-    </div>
+    <section className="port_page">
+      <Slider />
+      <ContentBox
+        Class="port_holders"
+        Background={styles.gradientColor}
+        Height={50}
+      ></ContentBox>
+      <Printables Class="port_holders index_borders" />
+    </section>
   )
 }
 

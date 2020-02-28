@@ -4,17 +4,34 @@
 
 
 .navi {
-    padding: 175px 300px 0;
+    padding: 175px 400px 0;
     transition: all 0.35s ease-in-out;
     top: 0; 
+    right: 0;
+    width: 100%;
+    //@include border($borderGrey, 1px 0 0px 0);
+
+    .nav_svg {
+        width: 300px;
+        z-index: 5;
+        margin: 16px 0 0px 15px;
+    }
+
     h1 {
         @include fontSettings($pureWhite, 32px, 600, 1);
-        margin: 0;
-    }
+        top: 0;
+        @media (max-width: 1150px) {
+            position: absolute;
+            margin: 25px 0px 25px 25px;
+        } 
+    }   
     .screen {
         @include border($borderGrey, 0 0 1px 0);
         box-shadow: 0 2px 4px 0px;
-        background: $primeBackground;
+        background: $navColor;
+        height: 144px;
+        top: -72px;
+        right: 0;
     }
     .screen::before {
         content: '';
@@ -23,22 +40,28 @@
         @include dimensions(100%, 52px, 0);
         top: -52px;
     }
-}
-@media(max-width: 1350px) {
-    nav { top: 50px }
-}
-@media(max-width: 1150px) {   
-    nav { 
+    button {
+        align-self: start;
+    }
+
+    @media(max-width: 1150px) {   
         //height: 72px;
         z-index: 5;
         top: 0;
         padding: 0 40px;
-        
+        button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 20px;
+        }    
     }
-    h1 { margin: 10px 0 0 }
     @media(max-width: 600px) { 
-        nav {
-            padding: 0 20px;
+        .nav_svg {
+            width: 250px;
         }
-    }     
+    } 
 }
+@media(max-width: 1350px) {
+    nav { top: 50px }
+}    

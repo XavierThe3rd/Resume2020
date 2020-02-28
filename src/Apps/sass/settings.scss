@@ -9,12 +9,13 @@ $adobeID: #ff3f94;
 $reactJS: #ffca28;
 $offWhite: #f8f5ff;
 $whiteBack: #ccc9d3;
-$borderGrey: #888888;
+$borderGrey: #36363a;
 $slateFoil: #2c3038;
 $primeBack: #051323;
 $primeGrey: #051323;
 $pureBlack: #000000;
 $pureWhite: #ffffff;
+$navColor: #111114;
 $primeBackground: #17171c;
 $primeBackOpac: #17171ca4;
 $offBack: #101013;
@@ -28,6 +29,10 @@ $conColor: #ffffff;
 
 :export { bkColor: $bkColor; }
 :export { conColor: $conColor; }
+:export { offBack: $offBack; }
+:export { primeBackOpac: $primeBackOpac; }
+:export { gradientColor: $gradientColor; }
+:export { primeBackground: $primeBackground; }
 
 
 :export { primePurple: $primePurple; }

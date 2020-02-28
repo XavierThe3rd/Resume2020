@@ -1,4 +1,4 @@
-/*import { tsExternalModuleReference, exportAllDeclaration } from "@babel/types"
+import { tsExternalModuleReference, exportAllDeclaration } from "@babel/types"
 
 describe('Application', () => {
     beforeAll(async ()=> {
@@ -9,4 +9,4 @@ describe('Application', () => {
         await page.waitFor(250)
         await exportAllDeclaration(page).toMatch('404 Not Found')
     })
-})*/
+})

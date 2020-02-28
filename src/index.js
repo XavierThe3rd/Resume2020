@@ -4,20 +4,18 @@ import thunk from 'redux-thunk'
 import reducer from './reducers'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App.jsx'
+import App from './Apps/app-container'
 import { Provider } from 'react-redux'
 import * as serviceWorker from './serviceWorker'
 
 let store = createStore(reducer, applyMiddleware(thunk))
 //if (module.hot) module.hot.accept('index', ()=> store.replaceReducer(reducer))
 
-const rootId = document.getElementById('rootD')
-
 ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  rootId
+  document.getElementById('root')
 )
 
 serviceWorker.unregister()
