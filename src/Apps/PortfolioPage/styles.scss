@@ -5,7 +5,7 @@
 .port_holders {
     //margin: 20px 0;
     //height: 100%;
-    @include border($borderGrey, 1px);
+    @include border($borderLight, 0 1px 1px 1px);
     justify-content: center;
     
 	img {
@@ -25,6 +25,7 @@
         //margin: 0;
     }
     @media(max-width: 1000px) {
+        border-color: $borderGrey;
         padding: 100px 75px;
         img {
             width: 500px;

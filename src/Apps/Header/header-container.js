@@ -9,7 +9,10 @@ import {
   setOpac,
   setZ,
   setStep,
-  setNav
+  setNav,
+  setDist,
+  setLast,
+  setNext
 } from '../../actions/header.js'
 import { setMobile } from '../../actions/mobile'
 
@@ -26,7 +29,10 @@ const mapStateToProps = state => {
     move: state.header.move,
     opac: state.header.opac,
     zind: state.header.zind,
-    step: state.header.step
+    step: state.header.step,
+    dist: state.header.dist,
+    last: state.header.last,
+    next: state.header.next
   }
 }
 
@@ -40,7 +46,10 @@ const mapDispatchToProps = {
   setZ: setZ,
   setStep: setStep,
   setNav: setNav,
-  setClass: setClass
+  setClass: setClass,
+  setDist: setDist,
+  setLast: setLast,
+  setNext: setNext
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header)

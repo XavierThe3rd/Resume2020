@@ -1,0 +1,34 @@
+@import '../../../sass/generics.scss';
+@import '../../../sass/settings.scss';
+@import '../../../sass/tools.scss';
+
+.text_hold {
+    height: 300px;
+    margin: 20px 0;
+
+    label {
+        @include fontSettings($pureWhite, 28px, 400, 1);
+        width: 50%;
+    }
+
+    textarea {
+        margin: 20px 0;
+        padding: 25px;
+        @include dimensions(100%, 300px, 10px);
+        @include fontSettings($pureWhite, 20px, 300, 1.5);
+        @include border($pureWhite, 3px 3px 3px 3px);
+
+        &:focus {
+            @include border($primeOrange, 3px);
+            color: $primeOrange;
+        }
+    }
+    @media(max-width: 600px) {
+        height: 200px;
+        label { font-size: 22px }
+        textarea { 
+            font-size: 18px;
+            height: 200px;
+        }
+    }
+}

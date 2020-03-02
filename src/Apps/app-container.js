@@ -1,17 +1,18 @@
 import { connect } from 'react-redux'
 import App from './App.jsx'
-import { setStep } from '../actions/application'
+import { setPos, smoothScroll } from '../actions/application'
 
 //let [classState, setClass] = useState(false)
 
 const mapStateToProps = state => {
   return {
-    step: state.application.step
+    pos: state.application.pos
   }
 }
 
 const mapDispatchToProps = {
-  setStep: setStep
+  setPos: setPos,
+  smoothScroll: smoothScroll
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

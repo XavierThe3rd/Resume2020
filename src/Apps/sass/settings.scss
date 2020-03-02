@@ -14,18 +14,19 @@ $slateFoil: #2c3038;
 $primeBack: #051323;
 $primeGrey: #051323;
 $pureBlack: #000000;
-$pureWhite: #ffffff;
+$pureWhite: #e1e1eb;
 $navColor: #111114;
 $primeBackground: #17171c;
-$primeBackOpac: #17171ca4;
+$primeBackOpac: #17171c;
+$borderLight: #5d5d6b;
 $offBack: #101013;
 //$primeBackground: #252530;
 
 $gradientColor: linear-gradient(306deg, rgba(97,0,255,1) 0%, rgba(255,38,67,1) 100%);
 $linearFade : linear-gradient(0deg, rgba(97,0,255,1) 15%, rgba(97,0,255,0) 100%);
 
-$bkColor: #ffffff;//radial-gradient(circle, rgba(255,100,0,0.604079131652661) 0%, rgba(190,0,255,0.38279061624649857) 100%);
-$conColor: #ffffff;
+$bkColor: #ffffff;
+$conColor: #e1e1eb;
 
 :export { bkColor: $bkColor; }
 :export { conColor: $conColor; }

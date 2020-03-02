@@ -11,6 +11,8 @@
     width: 100%;
     //@include border($borderGrey, 1px 0 0px 0);
 
+    
+
     .nav_svg {
         width: 300px;
         z-index: 5;
@@ -65,3 +67,19 @@
 @media(max-width: 1350px) {
     nav { top: 50px }
 }    
+
+nav {
+    padding: 0px 400px ;
+    @media(max-width: 1650px) {
+        padding: 0px 250px;
+    }
+    @media(max-width: 1450px) {
+        padding: 0px 150px;
+    }
+    @media(max-width: 1250px) {
+        padding: 0px 100px;
+    }
+    @media(max-width: 1150px) {
+        padding: 0px 0px;
+    }
+}

@@ -2,72 +2,48 @@
 import React, { useEffect, useState, useRef } from 'react'
 import './linkstyles.scss'
 import { Link } from 'react-router-dom'
+import { toLinks, resetPage, resetProps } from './loader-utilities'
 import SVG from 'react-inlinesvg'
 
-const Loader = ({
-  setNav,
-  setClass,
-  setHtag,
-  setIndex,
-  setAbout,
-  setPort,
-  setZ,
-  index,
-  about,
-  port,
-  indexState,
-  aboutState,
-  portState,
-  setHome,
-  setLoad,
-  setScroll,
-  load,
-  setLClass,
-  linkclass,
-  bars
-}) => {
+const Loader = props => {
+  let {
+    setNav,
+    setClass,
+    setHtag,
+    setIndex,
+    setAbout,
+    setPort,
+    setZ,
+    index,
+    about,
+    port,
+    indexState,
+    aboutState,
+    portState,
+    setHome,
+    setOpac,
+    setLoad,
+    setScroll,
+    load,
+    setLClass,
+    linkclass,
+    bars,
+    smoothScroll,
+    setStep,
+    step
+  } = props
+
   let loadTime = e => {
     setScroll(true)
-    let ct = e.currentTarget
-    let toLinks = (cls, name, i, a, p) => {
-      if (ct.classList.contains(cls)) {
-        setTimeout(() => {}, 450)
-        setTimeout(
-          () => {
-            setHtag(name)
-            ;setIndex(i) | setAbout(a) | setPort(p)
-            window.scrollTo(0, 0)
-          },
-          500,
-          ct
-        )
-      }
-      if (ct.classList.contains('contact'))
-        window.scrollTo(0, document.body.scrollHeight)
-    }
     setLoad(true)
     setTimeout(() => setLClass(true), 100)
+    toLinks(props, e, 'home', 'HOME', true, false, false, 500)
+    toLinks(props, e, 'about', 'ABOUT', false, true, false, 500)
+    toLinks(props, e, 'port', 'PORTFOLIO', false, false, true, 500)
     setTimeout(() => setLClass(false), 750)
     setTimeout(() => setClass(false), 1250)
-
-    toLinks('home', 'HOME', true, false, false)
-    toLinks('about', 'ABOUT', false, true, false)
-    toLinks('port', 'PORTFOLIO', false, false, true)
-    setTimeout(() => {
-      setScroll(false)
-      if (window.location.pathname === '/Resume/Home') {
-        setHome(true)
-      } else {
-        setHome(false)
-      }
-    }, 1500)
-    setTimeout(() => {
-      setLoad(false)
-      setNav(false)
-      setClass(false)
-      setZ(0)
-    }, 2000)
-    return ct
+    setTimeout(() => resetPage(props), 1500)
+    setTimeout(() => resetProps(props), 2000)
   }
 
   return load

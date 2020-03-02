@@ -1,3 +1,58 @@
 @import'./settings.scss';
+@import './elements.scss';
 @import'./generics.scss';
 @import'./tools.scss';
+@import'./layout.scss';
+
+
+html, body {
+    width: 100%;
+    height:100%;
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    
+    /*::-webkit-scrollbar {
+        width: 10px;
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background: #888;
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }*/
+}
+
+body{
+    background: none;
+    transition: all 0.35s ease-out;
+    overflow-x: hidden;
+    background: $primeBackground;
+    margin: 0;
+    //overflow-y: scroll;
+    //transform: translateY(50px);
+
+    #rootD {
+        //overflow: hidden;
+        height: 100%;
+        //overflow-y: scroll;
+        //padding: 100px 300px 25px;
+    }
+    
+    section { 
+        @media(max-width: 600px){
+            padding: 0px 0px;
+            @include border($borderGrey, 1px);     
+        }
+    }
+}
+
+main {
+    padding: 100px 0 0
+}

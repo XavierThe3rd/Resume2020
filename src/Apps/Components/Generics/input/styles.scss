@@ -1,0 +1,38 @@
+@import '../../../sass/generics.scss';
+@import '../../../sass/settings.scss';
+@import '../../../sass/tools.scss';
+
+.inp_hold {
+    height: 52px;
+    margin: 20px 0;
+
+    label {
+        @include fontSettings($pureWhite, 28px, 400, 1);
+        width: 125px;
+        height: 52px;
+        @include border($pureWhite, 0 0 3px 0);
+    }
+    input {
+        width: 77%;
+        height: 52px;
+        padding: 0 10px 0 25px;
+        @include fontSettings($pureWhite, 24px, 300, 1);
+        @include border($pureWhite, 0 0 3px 0);
+        float: right;
+
+        &:focus {
+            @include border($primeOrange, 0 0 3px 0);
+            color: $primeOrange;
+
+            ~label {
+                @include border($primeOrange, 0 0 3px 0);
+                //color: $primeOrange;
+            }
+        }
+    }
+    @media(max-width: 600px) {
+        label { font-size: 22px }
+        input { font-size: 20px }
+        margin: 0;
+    }
+}

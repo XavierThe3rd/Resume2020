@@ -1,15 +1,15 @@
 import React from 'react'
-import ContentBox from '../Components/ContentBox/contentBox.jsx'
-import comps from '../Components/U-Components/u-components.jsx'
+import ContentBox from '../Components/Generics/content-box/contentBox.jsx'
+import text from '../Components/Generics/text-elms/text-elms.jsx'
 import styles from '../sass/Apps.scss'
 
 const About = () => {
   return (
     <section>
       <ContentBox Class="intro" Margin={'0 0 30px'}>
-        <comps.Title Color={styles.conColor} Class="index_header_in">
+        <text.Title Color={styles.conColor} Class="index_header_in">
           {'About Tom'}
-        </comps.Title>
+        </text.Title>
         <p>
           {
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas sed sed risus pretium. Nascetur ridiculus mus mauris vitae ultricies leo integer malesuada. Mauris in aliquam sem fringilla ut. Urna neque viverra justo nec ultrices dui. Sed turpis tincidunt id aliquet risus feugiat. Tempor orci dapibus ultrices in iaculis nunc sed. Maecenas accumsan lacus vel facilisis volutpat est velit egestas. Sed velit dignissim sodales ut eu. Erat velit scelerisque in dictum non consectetur. Mus mauris vitae ultricies leo integer. Ut aliquam purus sit amet luctus venenatis lectus magna fringilla. Habitant morbi tristique senectus et. Viverra orci sagittis eu volutpat. A iaculis at erat pellentesque adipiscing commodo elit.'

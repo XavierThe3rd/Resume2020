@@ -2,12 +2,13 @@ import React from 'react'
 import styles from './styles.scss'
 import ProjectPiece from '../../Components/portfolioCards/portfolioPiece.jsx'
 import get from './data.js'
-import comps from '../../Components/U-Components/u-components.jsx'
+import text from '../../Components/Generics/text-elms/text-elms.jsx'
+import Button from '../../Components/Generics/button/button.jsx'
 
 const FeaturedWork = props => {
   return (
     <div className={`featured column ${props.Class}`}>
-      <comps.Title Color={styles.conColor}>{get.heading}</comps.Title>
+      <text.Title Color={styles.conColor}>{get.heading}</text.Title>
       <div className="featured_holder flex">
         {get.cardData.map(hit => {
           return (
@@ -25,12 +26,12 @@ const FeaturedWork = props => {
           )
         })}
       </div>
-      <comps.Button
+      <Button
         Click={() => console.log('button was clicked')}
         Color={styles.conColor}
       >
         Learn More!
-      </comps.Button>
+      </Button>
     </div>
   )
 }

@@ -7,6 +7,8 @@ import header from './header'
 import application from './application'
 import slider from './slider'
 import setCardData from './card-data'
+import setPenData from './codepen'
+import { setOptions, setPdfs } from './option'
 
 export default combineReducers({
   header,
@@ -15,5 +17,8 @@ export default combineReducers({
   mobile,
   application,
   slider,
-  setCardData
+  setCardData,
+  setPenData,
+  setOptions,
+  setPdfs
 })

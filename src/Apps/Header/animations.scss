@@ -9,16 +9,16 @@
 .h-in {opacity: 1; transition: all 0.45s linear }
 .h-out {opacity: 0; transition: all 0.45s linear}
 
-@mixin navTransitions ($delay, $add, $num, $trans, $opac, $height) {
+@mixin navTransitions ($delay, $add, $num, $trans, $opac, $left) {
     ul{
-        transition: all 0.2s linear $delay;
-        height: $height;
+        transition: all 0.35s linear $delay;
+        top: $left;
         li{
             transform: translateY($trans);
             opacity: $opac;
             @for $i from 1 through 3 {
                 &:nth-child(#{$i}) {
-                    transition: all 0.25s linear #{($add + (0.1 * $i)) * $num}s;
+                    transition: all 0.15s linear #{($add + (0.1 * $i)) * $num}s;
                 }
             }
         } 
@@ -39,12 +39,12 @@
 }
 
 .nav-off {
-    @include navTransitions(0.45s, -0.4, -1, -100px, 0, 0);
+    @include navTransitions(0.45s, -0.4, -1, -100px, 0, -100%);
     @include buttonAnimations(top-out, mid-out, bot-out);
 }
 
 .nav-on {
-    @include navTransitions(0s, 0.25, 1, 0px, 1, 100%);
+    @include navTransitions(0s, 0.25, 1, 0px, 1, 0);
     @include buttonAnimations(top-in, mid-in, bot-in)
 }
 

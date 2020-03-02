@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import comps from '../U-Components/u-components.jsx'
+import text from '../Generics/text-elms/text-elms.jsx'
 import styles from './styles.scss'
 import SVG from 'react-inlinesvg'
 import Arrow from '../../../../images/Arrow.svg'
 
 const Option = props => {
+  const { setClass, clazz } = props
   let [optionState, setOption] = useState(false)
   localStorage.setItem('optionState', optionState)
 
@@ -16,8 +17,15 @@ const Option = props => {
         optionState ? `op-on` : `op-off`
       }`}
     >
-      <button className="flx-b-c max-w" onClick={() => setOption(!optionState)}>
-        <comps.SubHeader>{props.Title}</comps.SubHeader>
+      <button
+        className="flx-b-c max-w"
+        onClick={() => {
+          setOption(!optionState)
+          setTimeout(() => setClass(!clazz), 750)
+          console.log(clazz)
+        }}
+      >
+        <text.SubHeader>{props.Title}</text.SubHeader>
         <SVG src={Arrow} />
       </button>
       <div className={`max-w obj-holder`}>

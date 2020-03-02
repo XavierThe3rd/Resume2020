@@ -7,7 +7,10 @@ import {
   SET_ZINDEX,
   SET_STEP,
   SET_NAV,
-  SET_NAVCLASS
+  SET_NAVCLASS,
+  SET_DIST,
+  LAST_SCROLL,
+  NEXT_SCROLL
 } from '../actions/z-names'
 
 export const setHtag = newKey => {
@@ -69,6 +72,27 @@ export const setNav = newBool => {
 export const setClass = newBool => {
   return {
     type: SET_NAVCLASS,
+    payload: newBool
+  }
+}
+
+export const setDist = newBool => {
+  return {
+    type: SET_DIST,
+    payload: newBool
+  }
+}
+
+export const setLast = newBool => {
+  return {
+    type: LAST_SCROLL,
+    payload: newBool
+  }
+}
+
+export const setNext = newBool => {
+  return {
+    type: NEXT_SCROLL,
     payload: newBool
   }
 }

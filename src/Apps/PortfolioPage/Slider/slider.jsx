@@ -5,6 +5,7 @@ import SliderNav from './SliderNav/sliderNav.jsx'
 import { onResize } from '../../../utilities/globalUtilities'
 import CardComp from './cardComp/cardComp.jsx'
 import ScrollComp from './cardComp/scrollComp.jsx'
+import text from '../../Components/Generics/text-elms/text-elms.jsx'
 
 const Slider = props => {
   //const scrollView = useRef(null)
@@ -36,7 +37,8 @@ const Slider = props => {
 
   return (
     <div /*style={{ height: 10442 }}*/>
-      <div className="port_holder column">
+      <div className={`port_holder column ${props.Class}`}>
+        <text.Title>My Works</text.Title>
         {!mobileState ? (
           val.map(hit => {
             if (count === hit)

@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-expressions */
 import React, { useEffect, useRef } from 'react'
 import './navstyles.scss'
-import NavButton from '../../Components/NavButton/navButton.jsx'
+import NavButton from '../../Components/nav-button/navButton.jsx'
 import Loader from '../Loader/loader-container'
 import { onResize } from '../../../utilities/globalUtilities'
 import SVG from 'react-inlinesvg'

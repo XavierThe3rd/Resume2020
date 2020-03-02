@@ -1,13 +1,13 @@
 import React from 'react'
 import style from './styles.scss'
-import SpecCards from '../../Components/SpecCards/SpecCards.jsx'
-import comps from '../../Components/U-Components/u-components.jsx'
+import SpecCards from '../../Components/spec-cards/SpecCards.jsx'
+import text from '../../Components/Generics/text-elms/text-elms.jsx'
 import get from './data.js'
 
 const Specializations = props => {
   return (
     <div className={`special_holder column ${props.Class}`}>
-      <comps.Title Color={style.conColor}>{'Providing Skills In'}</comps.Title>
+      <text.Title Color={style.conColor}>{'Providing Skills In'}</text.Title>
       <div className="wrp-c">
         {get.specData.map(hit => {
           return (

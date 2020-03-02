@@ -2,9 +2,8 @@
 
 .port_holder {
     margin: 0px 0 0;
-    padding: 60px 0;
     background: $primeBackOpac;
-    @include border($borderGrey, 1px 0px 0 0px);
+    //@include border($borderLight, 1px);
 
     .switch_holder {
         height: 50%;
@@ -26,24 +25,4 @@
     padding: 0;
 }
 
-.port_holder {
-    padding: 100px 400px;
-    @media(max-width: 1650px) {
-        padding: 100px 250px;
-    }
-    @media(max-width: 1350px) {
-        padding: 100px 150px;
-    }
-    @media(max-width: 1150px) {
-        padding: 100px 100px;
-        //margin: 0;
-    }
-    @media(max-width: 1000px) {
-        padding: 100px 75px;
-
-    }
-    @media(max-width: 600px){
-        padding: 60px 20px;
-    }
-}
 

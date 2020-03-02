@@ -7,6 +7,7 @@ import SVG from 'react-inlinesvg'
 import Navigation from './navigation/nav-container'
 import Loader from './Loader/loader-container'
 import { onResize } from '../../utilities/globalUtilities'
+import { mobileScroll, deskScroll } from './header-utilities'
 
 //let get = new headerData()
 
@@ -30,53 +31,36 @@ const Header = props => {
     setStep,
     classState,
     navState,
-    mobileState
+    mobileState,
+    smoothScroll,
+    setDist,
+    dist,
+    last,
+    next,
+    setLast,
+    setNext
   } = props
 
-  let lsRef = useRef(0)
-  let nsRef = useRef(0)
   let opacRef = useRef(null)
 
   useEffect(() => {
     window.addEventListener('load', () => {
       setStep(true)
+      setZ(0)
       if (window.pageYOffset < 600) {
         setOpac(0)
         document.getElementById('spanId').style.opacity = 1
       }
     })
     window.onscroll = () => {
-      let st = window.pageYOffset
-      let scrollSettings = (pagey, opacit) => {
-        if (!navState) {
-          if (window.innerWidth <= 1150) {
-            if (tohome == true) setOpac(1 - st / 200)
-            if (window.pageYOffset > pagey) {
-              setStep(false)
-              if (st >= lsRef.current) setScroll(true)
-              else if (st < nsRef.current) setScroll(false)
-
-              setTimeout(() => {
-                lsRef.current = st
-              }, 100)
-              setTimeout(() => {
-                nsRef.current = st - 50
-              }, 100)
-            } else {
-              setStep(true)
-              setScroll(false)
-            }
-          } else {
-            setOpac(1 - st / opacit)
-            window.pageYOffset > 800 ? setStep(false) : setStep(true)
-            window.pageYOffset > 500 ? setMove(true) : setMove(false)
-            opacRef.current.style.transform = 'translateY(' + st / -8 + 'px)'
-          }
+      setDist(window.pageYOffset)
+      if (!navState) {
+        if (mobileState) {
+          tohome == true ? mobileScroll(props, 500) : mobileScroll(props, 72)
+        } else {
+          tohome == true ? deskScroll(props, 500) : deskScroll(props, 200)
         }
       }
-      if (tohome == true) {
-        scrollSettings(500, 500)
-      } else scrollSettings(72, 200)
     }
     onResize(props, 1150)
   })
@@ -88,11 +72,7 @@ const Header = props => {
       }`}
     >
       {step && (!mobileState || tohome) ? (
-        <div
-          ref={opacRef}
-          className="heading fix column"
-          //style={{ opacity: opac }}
-        >
+        <div ref={opacRef} className="heading fix column">
           <span id={`spanId`} style={{ opacity: opac }}>
             <SVG src={'../../../images/Logo.svg'} />
             {tohome ? (
@@ -128,8 +108,12 @@ const Header = props => {
             setClass={setClass}
             setHtag={setHtag}
             setHome={setHome}
+            setOpac={setOpac}
             setZ={setZ}
             classState={classState}
+            smoothScroll={smoothScroll}
+            setStep={setStep}
+            step={step}
           />
           }
         </ul>

@@ -8,6 +8,7 @@
     background: linear-gradient(306deg, rgba(97,0,255,1) 0%, rgba(255,38,67,1) 100%);
     box-shadow: 0 2px 5px 2px;
     transition: all 0.15s linear;
+    z-index: 3;
     h3 {color: $pureWhite}
 
     &:hover {
@@ -44,7 +45,7 @@
         height: 500px;
         transition: all 0.35s ease-in-out 0.35s;
         @media (max-width: 1085px) {
-            height: 60px;
+            height: 500px;
         }
     }
 }

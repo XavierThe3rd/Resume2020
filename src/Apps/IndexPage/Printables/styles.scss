@@ -4,9 +4,24 @@
 
 
 .prints {
+    z-index: 3;
+
+    .docs {
+        transition: all 0.35s linear;
+        @include dimensions(100%, 95%, 0);
+        @include border($pureWhite, 1px)
+    }
+
     li{
         margin: 5px 0;
         width: 100%;
         text-align: center; 
     }
+}
+
+.pdf-off {
+    opacity: 0;
+}
+.pdf-on {
+    opacity: 1;
 }
