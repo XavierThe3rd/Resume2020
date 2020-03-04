@@ -22,7 +22,7 @@ module.exports = ({ mode } = { mode: "production" }) => {
                 //port: 9000           
             },
             output: {
-                publicPath: "/",
+                publicPath: "./",
                 path: path.resolve(__dirname, "Resume"),
                 filename: "bundled.js"
             },

@@ -37,6 +37,7 @@ const App = props => {
 
   useEffect(() => {
     window.innerWidth > 1100 ? smoothScroll() : null
+    window.addEventListener('scroll', e => e.preventDefault)
   })
 
   return (
