@@ -2,6 +2,8 @@ import styles from './styles.scss'
 import Xaragosa from '../../../../images/Xaragosa.png'
 import Dictionary from '../../../../images/TypeDictionary.png'
 import Heelys from '../../../../images/Heelys.png'
+import adobe from '../../../../images/AdobeIcon.svg'
+import photoshop from '../../../../images/PhotoshopIcon.svg'
 
 const Data = () => {
   let heading = 'Featured Works'
@@ -15,8 +17,27 @@ const Data = () => {
       project: 'Art Piece',
       type: 'PS',
       color: styles.adobePS,
-      name: 'Xaragosa'
-    },
+      Inner: [
+        {
+          title: 'Xaragosa the Dragon',
+          para:
+            'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed dianonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostr exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea.',
+          type: 'Photo Manipulation',
+          button: 'See PDF',
+          icons: [
+            {
+              prime: adobe,
+              secondary: [photoshop, photoshop, photoshop]
+            },
+            {
+              prime: adobe,
+              secondary: [photoshop, photoshop, photoshop]
+            }
+          ]
+        }
+      ]
+    }
+    /*
     {
       index: 2,
       image: Dictionary,
@@ -38,7 +59,7 @@ const Data = () => {
       color: styles.reactJS,
 
       name: 'Heelys'
-    }
+    }*/
   ]
 
   return {

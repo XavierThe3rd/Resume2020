@@ -1,0 +1,26 @@
+@import '../../../sass/settings.scss';
+@import '../../../sass/generics.scss';
+@import '../../../sass/tools.scss';
+
+.info {
+    @include dimensions(50%, 100%, 0);
+    padding: 50px;
+    .line {
+        @include border($slateFoil, 1px 0 0 0);
+        margin: 20px 0;
+    }
+    h2 {
+        @include fontSettings($slateFoil, 42px, 300, 1);
+    }
+    h3 {
+        @include fontSettings($slateFoil, 36px, 300, 1);
+    }
+    p {
+        @include fontSettings($slateFoil, 24px, 300, 1.5); 
+    }
+    button {
+        @include dimensions(30%, 50px, 5px);
+        @include fontSettings($slateFoil, 26px, 300, 1);
+        @include border($slateFoil, 1px);
+    }
+}
