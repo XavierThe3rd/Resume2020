@@ -21,6 +21,10 @@ export default class SmoothScroll {
   }
 
   normalizeWheelDelta = e => {
+<<<<<<< HEAD
+=======
+    //console.log(-e.detail + 100 / (this.speed / 50))
+>>>>>>> 7250151122338c0908622e9d445c4174cb08ea5f
     if (e.detail) {
       if (e.wheelDelta)
         return (

@@ -3,6 +3,8 @@ import styles from '../Apps/sass/settings.scss'
 import Xaragosa from '../../images/Xaragosa.png'
 import Dictionary from '../../images/TypeDictionary.png'
 import Heelys from '../../images/Heelys.png'
+import adobe from '../../images/AdobeIcon.svg'
+import photoshop from '../../images/PhotoshopIcon.svg'
 
 let structure = {
   cardData: [
@@ -14,7 +16,40 @@ let structure = {
       project: 'Art Piece',
       type: 'PS',
       color: styles.adobePS,
-      name: 'Xaragosa'
+
+      Inner: [
+        {
+          title: 'Xaragosa the Dragon',
+          para:
+            'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed dianonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostr exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea.',
+          type: 'Photo Manipulation',
+          button: 'See PDF',
+          pictures: [
+            {
+              index: 1,
+              pic: Xaragosa
+            },
+            {
+              index: 2,
+              pic: Xaragosa
+            },
+            {
+              index: 3,
+              pic: Xaragosa
+            }
+          ],
+          icons: [
+            {
+              prime: adobe,
+              secondary: [photoshop, photoshop, photoshop]
+            },
+            {
+              prime: adobe,
+              secondary: [photoshop, photoshop, photoshop]
+            }
+          ]
+        }
+      ]
     },
     {
       index: 2,
@@ -24,8 +59,39 @@ let structure = {
       project: 'Booklet Piece',
       type: 'ID',
       color: styles.adobeID,
-
-      name: 'Dictionary'
+      Inner: [
+        {
+          title: 'Type Dictionary',
+          para:
+            'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed dianonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostr exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea.',
+          type: 'Photo Manipulation',
+          button: 'See PDF',
+          pictures: [
+            {
+              index: 1,
+              pic: Xaragosa
+            },
+            {
+              index: 2,
+              pic: Xaragosa
+            },
+            {
+              index: 3,
+              pic: Xaragosa
+            }
+          ],
+          icons: [
+            {
+              prime: adobe,
+              secondary: [photoshop, photoshop, photoshop]
+            },
+            {
+              prime: adobe,
+              secondary: [photoshop, photoshop, photoshop]
+            }
+          ]
+        }
+      ]
     },
     {
       index: 3,
@@ -35,8 +101,39 @@ let structure = {
       project: 'Web App',
       type: 'JS',
       color: styles.reactJS,
-
-      name: 'Heelys'
+      Inner: [
+        {
+          title: 'Xaragosa the Dragon',
+          para:
+            'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed dianonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostr exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea.',
+          type: 'Photo Manipulation',
+          button: 'See PDF',
+          pictures: [
+            {
+              index: 1,
+              pic: Xaragosa
+            },
+            {
+              index: 2,
+              pic: Xaragosa
+            },
+            {
+              index: 3,
+              pic: Xaragosa
+            }
+          ],
+          icons: [
+            {
+              prime: adobe,
+              secondary: [photoshop, photoshop, photoshop]
+            },
+            {
+              prime: adobe,
+              secondary: [photoshop, photoshop, photoshop]
+            }
+          ]
+        }
+      ]
     },
 
     {
@@ -47,7 +144,39 @@ let structure = {
       project: 'Art Piece',
       type: 'PS',
       color: styles.adobePS,
-      name: 'Xaragosa'
+      Inner: [
+        {
+          title: 'Xaragosa the Dragon',
+          para:
+            'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed dianonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostr exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea.',
+          type: 'Photo Manipulation',
+          button: 'See PDF',
+          pictures: [
+            {
+              index: 1,
+              pic: Xaragosa
+            },
+            {
+              index: 2,
+              pic: Xaragosa
+            },
+            {
+              index: 3,
+              pic: Xaragosa
+            }
+          ],
+          icons: [
+            {
+              prime: adobe,
+              secondary: [photoshop, photoshop, photoshop]
+            },
+            {
+              prime: adobe,
+              secondary: [photoshop, photoshop, photoshop]
+            }
+          ]
+        }
+      ]
     },
     {
       index: 5,
@@ -57,8 +186,39 @@ let structure = {
       project: 'Booklet Piece',
       type: 'ID',
       color: styles.adobeID,
-
-      name: 'Dictionary'
+      Inner: [
+        {
+          title: 'Xaragosa the Dragon',
+          para:
+            'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed dianonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostr exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea.',
+          type: 'Photo Manipulation',
+          button: 'See PDF',
+          pictures: [
+            {
+              index: 1,
+              pic: Xaragosa
+            },
+            {
+              index: 2,
+              pic: Xaragosa
+            },
+            {
+              index: 3,
+              pic: Xaragosa
+            }
+          ],
+          icons: [
+            {
+              prime: adobe,
+              secondary: [photoshop, photoshop, photoshop]
+            },
+            {
+              prime: adobe,
+              secondary: [photoshop, photoshop, photoshop]
+            }
+          ]
+        }
+      ]
     },
     {
       index: 6,
@@ -68,9 +228,41 @@ let structure = {
       project: 'Web App',
       type: 'JS',
       color: styles.reactJS,
-
-      name: 'Heelys'
-    },
+      Inner: [
+        {
+          title: 'Xaragosa the Dragon',
+          para:
+            'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed dianonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostr exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea.',
+          type: 'Photo Manipulation',
+          button: 'See PDF',
+          pictures: [
+            {
+              index: 1,
+              pic: Xaragosa
+            },
+            {
+              index: 2,
+              pic: Xaragosa
+            },
+            {
+              index: 3,
+              pic: Xaragosa
+            }
+          ],
+          icons: [
+            {
+              prime: adobe,
+              secondary: [photoshop, photoshop, photoshop]
+            },
+            {
+              prime: adobe,
+              secondary: [photoshop, photoshop, photoshop]
+            }
+          ]
+        }
+      ]
+    }
+    /*
     {
       index: 7,
       image: Xaragosa,
@@ -265,7 +457,7 @@ let structure = {
       color: styles.reactJS,
 
       name: 'Heelys'
-    }
+    }*/
   ]
 }
 

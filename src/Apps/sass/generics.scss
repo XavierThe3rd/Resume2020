@@ -54,6 +54,7 @@
 .flx-c-c {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .flx-e {
     display: flex;
@@ -118,6 +119,13 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
+}
+
+.column-b-s {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .flx-c-c {

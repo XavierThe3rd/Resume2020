@@ -42,7 +42,11 @@ const Text = () => {
   }
 
   const Para = props => {
-    return <p className="p">{props.children}</p>
+    return (
+      <p className="p" style={props.Styles}>
+        {props.children}
+      </p>
+    )
   }
 
   const Link = props => {

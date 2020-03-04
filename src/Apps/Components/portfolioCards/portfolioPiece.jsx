@@ -3,8 +3,9 @@ import ProjectCard from './portfolioCards.jsx'
 import PieceInfo from './portfolioInfo.jsx'
 
 const ProjectPiece = props => {
-  const [infoState, setInfo] = useState(false)
-  const [displayState, setDisplay] = useState(false)
+  let { data, count, setCount } = props
+  const [infoState, setInfo] = useState(true)
+  const [displayState, setDisplay] = useState(true)
   return (
     <div key={props.Index} className={props.OuterClass}>
       <ProjectCard
@@ -28,8 +29,11 @@ const ProjectPiece = props => {
       />
       {infoState ? (
         <PieceInfo
+          count={count}
+          setCount={setCount}
           Name={props.Name}
           Class={`${displayState ? `info_on` : `info_off`}`}
+          data={data}
           Click={() =>
             setDisplay(false) | setTimeout(() => setInfo(false), 600)
           }

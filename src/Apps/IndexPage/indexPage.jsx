@@ -1,5 +1,5 @@
 import React from 'react'
-import FeaturedWork from './FeaturedWork/FeaturedWork.jsx'
+import FeaturedWork from './FeaturedWork/featured-container'
 import Specializations from './Specializations/Specializations.jsx'
 import ContentBox from '../Components/Generics/content-box/contentBox.jsx'
 import text from '../Components/Generics/text-elms/text-elms.jsx'
