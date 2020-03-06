@@ -30,12 +30,7 @@ const Index = () => {
       </ContentBox>
       <Specializations Class="holders" />
       <FeaturedWork Class="holders" />
-      <ContentBox
-        Class="holders box"
-        Background={
-          'linear-gradient(306deg, rgba(97,0,255,1) 0%, rgba(255,38,67,1) 100%)'
-        }
-      >
+      <ContentBox Class="holders box">
         <text.Title>Interned At...</text.Title>
         <img src={Qintel} alt="none" />
         <text.Para>

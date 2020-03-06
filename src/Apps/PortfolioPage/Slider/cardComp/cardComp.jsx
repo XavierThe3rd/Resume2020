@@ -1,5 +1,5 @@
 import React from 'react'
-import ProjectPiece from '../../../Components/portfolioCards/portfolioPiece.jsx'
+import ProjectPiece from '../../../Components/portfolio/portfolioPiece.jsx'
 import styles from './styles.scss'
 
 const CardComp = ({
@@ -10,7 +10,17 @@ const CardComp = ({
   outStateR,
   outStateL,
   inStateR,
-  inStateL
+  inStateL,
+  count,
+  setCount,
+  setOutL,
+  setOutR,
+  setInL,
+  setInR,
+  inner,
+  setPic,
+  pic,
+  setInner
 }) => {
   return (
     <div
@@ -32,6 +42,17 @@ const CardComp = ({
               Type={hit.type}
               Color={hit.color}
               Name={hit.name}
+              inner={inner}
+              data={hit.Inner}
+              setInner={setInner}
+              setOutL={setOutL}
+              setOutR={setOutR}
+              setInL={setInL}
+              setInR={setInR}
+              count={count}
+              setCount={setCount}
+              pic={pic}
+              setPic={setPic}
             />
           )
         }

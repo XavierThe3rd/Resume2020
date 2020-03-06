@@ -1,12 +1,23 @@
 import React from 'react'
 import styles from './styles.scss'
-import ProjectPiece from '../../Components/portfolioCards/portfolioPiece.jsx'
+import ProjectPiece from '../../Components/portfolio/portfolioPiece.jsx'
 import get from './data.js'
 import text from '../../Components/Generics/text-elms/text-elms.jsx'
 import Button from '../../Components/Generics/button/button.jsx'
 
 const FeaturedWork = props => {
-  let { data, setData, count, setCount } = props
+  let {
+    data,
+    setData,
+    pic,
+    setPic,
+    setOutL,
+    setOutR,
+    setInL,
+    setInR,
+    inner,
+    setInner
+  } = props
   return (
     <div className={`featured column ${props.Class}`}>
       <text.Title Color={styles.conColor}>{get.heading}</text.Title>
@@ -25,8 +36,10 @@ const FeaturedWork = props => {
                 Type={hit.type}
                 Color={hit.color}
                 Name={hit.name}
-                count={count}
-                setCount={setCount}
+                pic={pic}
+                setPic={setPic}
+                inner={inner}
+                setInner={setInner}
               />
             )
           }

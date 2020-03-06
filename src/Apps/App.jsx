@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { hot } from 'react-hot-loader'
 //import './Apps/sass/generics.scss'
 import Header from './Header/header-container'
-import Canvas from './Components/canvas/canvas.jsx'
+import Canvas from './Components/Canvas/canvas.jsx'
 import Footer from './Footer/footer.jsx'
 import Index from './IndexPage/indexPage.jsx'
 import About from './aboutPage/aboutPage.jsx'
@@ -37,13 +37,12 @@ const App = props => {
 
   useEffect(() => {
     window.innerWidth > 1100 ? smoothScroll() : null
-    window.addEventListener('scroll', e => e.preventDefault)
   })
 
   return (
     <Router>
-      <Canvas />
       <Header smoothScroll={smoothScroll}></Header>
+      <Canvas />
       <Switch>
         <Route exact path="/Resume/Home" component={Index} />
         <Route path="/Resume/About" component={About} />

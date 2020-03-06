@@ -1,7 +1,5 @@
 import React from 'react'
 import './styles.scss'
-import adobe from '../../../../../images/AdobeIcon.svg'
-import photoshop from '../../../../../images/PhotoshopIcon.svg'
 import Mediums from '../mediums/mediums.jsx'
 
 const Info = ({ data }) => {

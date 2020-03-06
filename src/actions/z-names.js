@@ -26,7 +26,9 @@ export const SET_OUTL = 'SET_OUTL'
 export const SET_INR = 'SET_INR'
 export const SET_INL = 'SET_INL'
 export const SET_COUNT = 'SET_COUNT'
+export const SET_PIC = 'SET_PIC'
 export const SET_DATA = 'SET_DATA'
+export const SET_INNER = 'SET_INNER'
 
 export const SET_PEN_DATA = 'SET_PEN_DATA'
 

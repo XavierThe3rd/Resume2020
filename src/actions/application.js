@@ -5,7 +5,7 @@ import SmoothScroll from '../utilities/scrollin'
 let get =
   window.innerWidth > 1700
     ? new SmoothScroll({ speed: 200, smooth: 12 })
-    : new SmoothScroll({ speed: 400, smooth: 10 })
+    : new SmoothScroll({ speed: 200, smooth: 12 })
 
 export const setPos = data => {
   return {

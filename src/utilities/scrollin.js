@@ -21,10 +21,6 @@ export default class SmoothScroll {
   }
 
   normalizeWheelDelta = e => {
-<<<<<<< HEAD
-=======
-    //console.log(-e.detail + 100 / (this.speed / 50))
->>>>>>> 7250151122338c0908622e9d445c4174cb08ea5f
     if (e.detail) {
       if (e.wheelDelta)
         return (
@@ -44,7 +40,7 @@ export default class SmoothScroll {
     }
     e.preventDefault()
     let delta = this.normalizeWheelDelta(e)
-    this.posi += -delta * 200
+    this.posi += -delta * this.speed
     this.posi = Math.max(
       0,
       Math.min(this.posi, this.target.scrollHeight - this.target.clientHeight)

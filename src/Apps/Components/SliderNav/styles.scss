@@ -1,6 +1,6 @@
-@import '../../../sass/generics.scss';
-@import '../../../sass/settings.scss';
-@import '../../../sass/tools.scss';
+@import '../../sass/generics.scss';
+@import '../../sass/settings.scss';
+@import '../../sass/tools.scss';
 
 .button_holder {
     width: 300px;
@@ -46,3 +46,19 @@
     .inp-off {background: $primePurple}
     .inp-on {background: $primePink}
 }
+
+.pic-button_holder {
+    @include border($slateFoil, 1px 0 1px 0);
+    padding: 10px 0;
+    width: 100%;
+    button{
+        @include dimensions(80px, 60px, 5px);
+        overflow: hidden;
+        img {
+            width: 100px
+        }
+    }
+}
+
+.img-off {box-shadow: $pureBlack 0 2px 3px 0px;}
+.img-on {box-shadow: $primeOrange 0 3px 8px 1px;}

@@ -1,22 +1,28 @@
 import React from 'react'
 import './styles.scss'
 import SVG from 'react-inlinesvg'
-import Arrow from '../../../../../images/Arrow.svg'
+import Arrow from '../../../../images/Arrow.svg'
 
 const SliderNav = ({
   count,
   setCount,
+  setPic,
   setOutL,
   setOutR,
   setInL,
   setInR,
-  Total
+  Total,
+  inner,
+  pic,
+  data
 }) => {
   let countProp = (typ, a, b) => {
     setOutR(a)
     setOutL(b)
     //scrollView.current.scrollIntoView({ behavior: 'smooth' })
-    setTimeout(() => setCount(typ), 400)
+    setTimeout(() => {
+      setCount(typ)
+    }, 400)
     setTimeout(() => {
       setOutR(false)
       setInR(a)
@@ -29,7 +35,23 @@ const SliderNav = ({
     }, 800)
   }
 
-  return (
+  return inner ? (
+    <div className={`pic-button_holder flx-e-c`}>
+      {data.map(hit =>
+        hit.pictures.map(hit => {
+          return (
+            <button
+              value={hit.index}
+              className={`${pic + 1 === hit.index + 1 ? 'img-on' : 'img-off'}`}
+              onClick={e => setPic(hit.index)}
+            >
+              <img src={hit.pic} />
+            </button>
+          )
+        })
+      )}
+    </div>
+  ) : (
     <div className="button_holder flx-b-c">
       <button
         onClick={() => {
@@ -41,7 +63,7 @@ const SliderNav = ({
       {Total.map(hit => {
         return (
           <input
-            value={hit}
+            value={hit + 1}
             type="button"
             className={count === hit ? 'inp-on' : 'inp-off'}
             onClick={e => countProp(Number(e.currentTarget.value), false, true)}

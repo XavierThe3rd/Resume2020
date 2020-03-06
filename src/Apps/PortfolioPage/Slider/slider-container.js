@@ -5,7 +5,9 @@ import {
   setOutL,
   setInR,
   setInL,
-  setCount
+  setCount,
+  setInner,
+  setPic
 } from '../../../actions/slider'
 import { setCardData } from '../../../actions/card-data'
 import { setMobile } from '../../../actions/mobile'
@@ -20,7 +22,9 @@ const mapStateToProps = state => {
     inStateL: state.slider.inStateL,
     mobileState: state.mobile.mobileState,
     count: state.slider.count,
-    data: state.setCardData.cardData
+    data: state.setCardData.cardData,
+    inner: state.slider.inner,
+    pic: state.slider.pic
   }
 }
 
@@ -31,7 +35,9 @@ const mapDispatchToProps = {
   setInL: setInL,
   setMobile: setMobile,
   setCount: setCount,
-  setData: setCardData
+  setData: setCardData,
+  setInner: setInner,
+  setPic
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Slider)

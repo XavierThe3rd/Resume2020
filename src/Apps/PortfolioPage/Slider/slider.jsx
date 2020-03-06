@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-expressions */
 import './styles.scss'
 import React, { useEffect } from 'react'
-import SliderNav from './SliderNav/sliderNav.jsx'
+import SliderNav from '../../Components/SliderNav/sliderNav.jsx'
 import { onResize } from '../../../utilities/globalUtilities'
 import CardComp from './cardComp/cardComp.jsx'
 import ScrollComp from './cardComp/scrollComp.jsx'
@@ -22,8 +22,12 @@ const Slider = props => {
     setMobile,
     setCount,
     count,
+    setPic,
+    pic,
     data,
-    setData
+    setData,
+    inner,
+    setInner
   } = props
 
   let val = data.map(hit => hit.index)
@@ -51,6 +55,16 @@ const Slider = props => {
                   outStateL={outStateL}
                   inStateR={inStateR}
                   inStateL={inStateL}
+                  setInner={setInner}
+                  inner={inner}
+                  setOutL={setOutL}
+                  setOutR={setOutR}
+                  setInL={setInL}
+                  setInR={setInR}
+                  count={count}
+                  setCount={setCount}
+                  pic={pic}
+                  setPic={setPic}
                 />
               )
           })

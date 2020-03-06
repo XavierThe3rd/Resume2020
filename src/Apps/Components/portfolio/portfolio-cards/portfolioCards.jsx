@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-expressions */
 import React, { useState, useRef, useEffect } from 'react'
-import Arrow from '../../../../images/Arrow.svg'
-import styles from './styles/styles.scss'
+import Arrow from '../../../../../images/Arrow.svg'
+import styles from './styles.scss'
 import SVG from 'react-inlinesvg'
 
 const ProjectCard = props => {

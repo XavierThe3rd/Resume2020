@@ -1,10 +1,10 @@
-@import '../../../sass/settings.scss';
-@import '../../../sass/generics.scss';
-@import '../../../sass/tools.scss';
+@import '../../../../sass/settings.scss';
+@import '../../../../sass/generics.scss';
+@import '../../../../sass/tools.scss';
 
 .info {
-    @include dimensions(50%, 100%, 0);
-    padding: 50px;
+    @include dimensions(50%, inherit, 0);
+    padding: 75px 50px 50px;
     .line {
         @include border($slateFoil, 1px 0 0 0);
         margin: 20px 0;
