@@ -1,0 +1,66 @@
+@import '../../styles/generics.css';
+@import '../../styles/settings.css';
+@import '../../styles/tools.css';
+
+.button_holder {
+    width: 300px;
+    margin: 20px auto 0;
+    button {
+        margin: 10px;
+        size: 100px 50px;
+
+        svg {
+            size: 50px;
+            .cls-1{
+                fill: var(--primePink);
+                transition: all 0.15s linear;
+            }
+        }
+        &:hover {
+            svg .cls-1{
+                fill: var(--primeOrange);
+                box-shadow: var(--primeOrange) 0px 1px 10px 0px;          
+            }
+        }
+        &:nth-child(1) {
+            svg {
+                transform: rotate(90deg)
+            }
+        }
+        &:last-child {
+            svg {
+                transform: rotate(-90deg)
+            }
+        }
+    }
+
+    input {
+        size: 20px;
+        border-radius: 10px;
+        transition: all 0.15s linear;
+        margin: 0px 10px;
+        color: transparent;
+        &:hover {
+            background: var(--primeOrange);
+        }
+    }
+    .inp-off {background: var(--primePurple)}
+    .inp-on {background: var(--primePink)}
+}
+
+.pic-button_holder {
+    border: 1px 0 1px 0 /solid/ var(--slateFoil);
+    padding: 10px 0;
+    width: 100%;
+    button{
+        size: 80px 60px;
+        border-radius: 5px;
+        overflow: hidden;
+        img {
+            width: 100px
+        }
+    }
+}
+
+.img-off {box-shadow: var(--pureBlack) 0 2px 3px 0px;}
+.img-on {box-shadow: var(--primeOrange) 0 3px 8px 1px;}

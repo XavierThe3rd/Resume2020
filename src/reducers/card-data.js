@@ -1,5 +1,5 @@
 import { SET_DATA } from '../actions/z-names'
-import styles from '../Apps/sass/settings.scss'
+import styles from '../Apps/styles/settings.css'
 import Xaragosa from '../../images/Xaragosa.png'
 import Dictionary from '../../images/TypeDictionary.png'
 import Heelys from '../../images/Heelys.png'

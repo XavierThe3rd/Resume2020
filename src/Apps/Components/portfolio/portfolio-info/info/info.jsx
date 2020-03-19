@@ -1,18 +1,33 @@
 import React from 'react'
-import './styles.scss'
-import Mediums from '../mediums/mediums.jsx'
+import SVG from 'react-inlinesvg'
+import './styles.css'
+
+const block = 'info'
 
 const Info = ({ data }) => {
   return data.map(hit => (
-    <div className={`info column`}>
+    <div className={`${block}`}>
       <h2>{hit.title}</h2>
-      <span className={`line`}></span>
+      <span className={`${block}_line`}></span>
       <p>{hit.para}</p>
-      <span className={`line`}></span>
+      <span className={`${block}_line`}></span>
       <h3>{hit.type}</h3>
-      <Mediums Icon={hit.icons} />
-      <span className={`line`}></span>
-      <button className={`flx-c-c`}>{hit.button}</button>
+      <div style={{ display: 'flex' }}>
+        {hit.icons.map(hit => (
+          <div className={`${block}_mediums`}>
+            <span>
+              <SVG src={hit.prime} />
+            </span>
+            <span>
+              {hit.secondary.map(hit => (
+                <SVG src={hit} />
+              ))}
+            </span>
+          </div>
+        ))}
+      </div>
+      <span className={`${block}_line`}></span>
+      <button>{hit.button}</button>
     </div>
   ))
 }

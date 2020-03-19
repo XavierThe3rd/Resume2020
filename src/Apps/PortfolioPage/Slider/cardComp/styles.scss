@@ -4,24 +4,24 @@
 
 .port_holder .port_wrap {
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
 
     .port_card_holder {
-        margin: 20px;
+        //margin: 20px;
         .port_card_set {
-            @include dimensions(300px, 425px, 10px);
+            @include dimensions(100%, 425px, 0px);
             h3 { @include fontSettings($pureWhite, 26px, 400, 1.25) }
             p { @include fontSettings($pureWhite, 26px, 300, 1.25) }
             h4 { @include fontSettings($primeOrange, 20px, 400, 1) } 
             h2 { @include fontSettings($pureWhite, 40px, 200, 1.1) }
         }
     }
-    
+
     @media(max-width: 1720px) { 
         .port_card_holder {
-            margin: 10px;
+            //margin: 10px;
             .port_card_set {
-                @include dimensions(270px, 350px, 10px);
+                @include dimensions(100%, 350px, 0px);
                 .inner_text span { padding: 10px 20px }
                 p { font-size: 22px }
                 h4 { font-size: 18px } 
@@ -34,8 +34,8 @@
         .port_card_holder {
             margin: 0;
             .port_card_set {
-                @include dimensions(100%, 350px, 5px 5px 0 0px);
-                margin: 0 0 80px;
+                @include dimensions(100%, 350px, 0 0px);
+                margin: 0 0 56px;
                 h2 { font-size: 56px }
                 h3 { font-size: 36px }
                 p { font-size: 32px }
@@ -47,8 +47,8 @@
     @media(max-width: 600px) {
         .port_card_holder {
             .port_card_set {
-                @include dimensions(100%, 350px, 5px 5px 0 0px);
-                margin: 0 0 80px;
+                @include dimensions(100%, 350px, 0px);
+                margin: 0 0 60px;
                 h2 { font-size: 48px }
                 h3 { font-size: 32px }
                 p { font-size: 24px }

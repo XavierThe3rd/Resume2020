@@ -1,0 +1,68 @@
+@import '../../styles/settings.css';
+@import '../../styles/generics.css';
+@import '../../styles/tools.css';
+
+.nav-down {transform: translateY(0)}
+.nav-up {transform: translateY(-70px)}
+
+.nav {
+    mix-blend-mode: difference;
+    @apply --flx-b-c;
+    transition: all 0.35s linear;
+    position: fixed 0 0 * *;
+    width: 100%;
+    z-index: 5;
+    &_page {
+        transition: all 0.35s linear;
+        @mixin fontSettings var(--pureWhite), 32px, 600, 1;
+        position: fixed 0 * * 0;
+    }
+    &_button {
+        position: fixed * 0 * *;
+        align-self: start
+    }
+    &_svg {
+        width: 300px;
+        z-index: 5;
+    }
+    &_screen {
+        border: 0 0 1px 0 / solid / var(--borderGrey);
+        box-shadow: var(--pureBlack) 0 2px 4px 0px;
+        background: var(--navColor);
+        size: 100% 144px;
+        position: absolute -72px 0 * *;
+        &::before {
+            content: '';
+            position: absolute -52px * * *;
+            background: var(--primeBackground);
+            size: 100% 52px;
+        }
+    }
+
+    @media(--laptop-s) { 
+        mix-blend-mode: normal;  
+        z-index: 5;
+        &_svg { align-self: flex-start }
+        &_button {
+            position: relative;
+            margin: auto 0;
+        }
+        &_page {
+            position: relative;
+        }    
+    }
+    @media(--mobile) { 
+        &_svg { width: 250px }
+    } 
+
+    &_on {
+        transform: translateX(-100%);
+    }
+
+    &_off {
+        transform: translateX(0%);
+    }
+}
+
+
+

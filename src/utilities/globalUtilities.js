@@ -1,12 +1,20 @@
-export const onResize = (props, wid) => {
-  ;['resize', 'load'].forEach(event =>
-    window.addEventListener(event, () => {
-      window.innerWidth >= wid ? props.setMobile(false) : props.setMobile(true)
-    })
-  )
-  window.addEventListener('load', () => {
-    window.location.pathname === '/Resume/Home'
-      ? props.setHome(true)
-      : props.setHome(false)
-  })
+import { useEffect } from 'react'
+
+const useWindowEvent = (event, callback) => {
+  useEffect(() => {
+    window.addEventListener(event, callback)
+    return () => window.removeEventListener(event, callback)
+  }, [event, callback])
+}
+
+export const handleScroll = callback => {
+  return useWindowEvent('scroll', callback)
+}
+
+export const handleResize = callback => {
+  return useWindowEvent('resize', callback)
+}
+
+export const handleLoad = callback => {
+  return useWindowEvent('load', callback)
 }

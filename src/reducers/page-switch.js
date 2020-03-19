@@ -1,11 +1,4 @@
-import {
-  SET_INDEX,
-  SET_ABOUT,
-  SET_PORT,
-  SET_BARS,
-  SET_LOAD,
-  SET_LINKCLASS
-} from '../actions/z-names'
+import { SET_BARS, SET_LOAD, SET_LINKCLASS, SET_LINK_DATA } from '../actions/z-names'
 import barA from '../../images/BarA.svg'
 import barB from '../../images/BarB.svg'
 import barC from '../../images/BarC.svg'
@@ -21,87 +14,88 @@ const structure = {
   linkclass: false,
   bars: [barA, barB, barC, barD, barE, TheX],
 
-  index: [
+  linkData: [
     {
-      ind: 1,
-      tag: 'ABOUT',
-      ref: '/Resume/About',
-      cls: 'about'
+      loc: '/Resume/Home',
+      heading: 'HOME',
+      data: [
+        {
+          ind: 1,
+          tag: 'ABOUT',
+          ref: '/Resume/About',
+          cls: 'about'
+        },
+        {
+          ind: 2,
+          tag: 'PORTFOLIO',
+          ref: '/Resume/Portfolio',
+          cls: 'port'
+        },
+        {
+          ind: 3,
+          tag: 'CONTACT',
+          ref: '#',
+          cls: 'contact'
+        }
+      ]
     },
     {
-      ind: 2,
-      tag: 'PORTFOLIO',
-      ref: '/Resume/Portfolio',
-      cls: 'port'
+      loc: '/Resume/About',
+      heading: 'ABOUT',
+      data: [
+        {
+          ind: 1,
+          tag: 'HOME',
+          ref: '/Resume/Home',
+          cls: 'home'
+        },
+        {
+          ind: 2,
+          tag: 'PORTFOLIO',
+          ref: '/Resume/Portfolio',
+          cls: 'port'
+        },
+        {
+          ind: 3,
+          tag: 'CONTACT',
+          ref: '#',
+          cls: 'contact'
+        }
+      ]
     },
     {
-      ind: 3,
-      tag: 'CONTACT',
-      ref: '#',
-      cls: 'contact'
-    }
-  ],
-  about: [
-    {
-      ind: 1,
-      tag: 'HOME',
-      ref: '/Resume/Home',
-      cls: 'home'
-    },
-    {
-      ind: 2,
-      tag: 'PORTFOLIO',
-      ref: '/Resume/Portfolio',
-      cls: 'port'
-    },
-    {
-      ind: 3,
-      tag: 'CONTACT',
-      ref: '#',
-      cls: 'contact'
-    }
-  ],
-  port: [
-    {
-      ind: 1,
-      tag: 'HOME',
-      ref: '/Resume/Home',
-      cls: 'home'
-    },
-    {
-      ind: 2,
-      tag: 'ABOUT',
-      ref: '/Resume/About',
-      cls: 'about'
-    },
-    {
-      ind: 3,
-      tag: 'CONTACT',
-      ref: '#',
-      cls: 'contact'
+      loc: '/Resume/Portfolio',
+      heading: 'PORTFOLIO',
+      data: [
+        {
+          ind: 1,
+          tag: 'HOME',
+          ref: '/Resume/Home',
+          cls: 'home'
+        },
+        {
+          ind: 2,
+          tag: 'ABOUT',
+          ref: '/Resume/About',
+          cls: 'about'
+        },
+        {
+          ind: 3,
+          tag: 'CONTACT',
+          ref: '#',
+          cls: 'contact'
+        }
+      ]
     }
   ]
 }
 
 const pageSwitch = (state = structure, action) => {
   switch (action.type) {
-    case SET_INDEX:
+    case SET_LINK_DATA:
       return {
         ...state,
-        index: structure.index,
-        indexState: action.payload
-      }
-    case SET_ABOUT:
-      return {
-        ...state,
-        about: structure.about,
-        aboutState: action.payload
-      }
-    case SET_PORT:
-      return {
-        ...state,
-        port: structure.port,
-        portState: action.payload
+        linkData: structure.linkData
       }
     case SET_LOAD:
       return {

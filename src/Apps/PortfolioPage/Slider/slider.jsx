@@ -31,9 +31,9 @@ const Slider = props => {
   } = props
 
   let val = data.map(hit => hit.index)
-  let total = Number.isInteger(val.length / 6)
-    ? val.slice(0, val.length / 6)
-    : val.slice(0, val.length / 6 + 1)
+  let total = Number.isInteger(val.length / 8)
+    ? val.slice(0, val.length / 8)
+    : val.slice(0, val.length / 8 + 1)
 
   useEffect(() => {
     onResize(props, 1000)
@@ -42,14 +42,14 @@ const Slider = props => {
   return (
     <div /*style={{ height: 10442 }}*/>
       <div className={`port_holder column ${props.Class}`}>
-        <text.Title>My Works</text.Title>
+        {/*<text.Title>My Works</text.Title>*/}
         {!mobileState ? (
           val.map(hit => {
             if (count === hit)
               return (
                 <CardComp
-                  dec={[hit * 6 - 5]}
-                  inc={hit * 6}
+                  dec={[hit * 8 - 7]}
+                  inc={hit * 8}
                   data={data}
                   outStateR={outStateR}
                   outStateL={outStateL}

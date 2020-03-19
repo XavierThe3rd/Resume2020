@@ -1,17 +1,13 @@
 import React from 'react'
-import './styles.scss'
+import ReactFitText from 'react-fittext'
+import './styles.css'
 
 const Text = () => {
   const Title = props => {
     return (
-      <h1
-        className={`h1 ${props.Class}`}
-        style={{
-          color: props.Color
-        }}
-      >
-        {props.children}
-      </h1>
+      <span className={'h1'}>
+        <h1>{props.children}</h1>
+      </span>
     )
   }
 
@@ -55,12 +51,7 @@ const Text = () => {
       cursor: 'pointer'
     }
     return (
-      <li
-        style={list_styles}
-        id={props.Id}
-        className={`li ${props.Class}`}
-        key={props.Key}
-      >
+      <li style={list_styles} id={props.Id} className={`li ${props.className}`} key={props.Key}>
         <a href={props.Ref} value={props.Value} onClick={props.click}>
           {props.children}
         </a>

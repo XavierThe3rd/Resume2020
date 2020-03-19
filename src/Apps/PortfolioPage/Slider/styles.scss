@@ -2,8 +2,7 @@
 
 .port_holder {
     margin: 0px 0 0;
-    background: $primeBackOpac;
-    //@include border($borderLight, 1px);
+
 
     .switch_holder {
         height: 50%;
@@ -11,7 +10,7 @@
 
     .port_wrap {
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-between;
     }
 
  

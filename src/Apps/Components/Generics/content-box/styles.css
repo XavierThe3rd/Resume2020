@@ -1,0 +1,19 @@
+@import '../../../styles/generics.css';
+@import '../../../styles/settings.css';
+@import '../../../styles/tools.css';
+
+
+.box {
+	@apply --col;
+	width: 100%;
+	padding: * var(--grid1\6);
+
+	@media(--laptop-m) {
+		padding: * var(--grid1\12);
+	}
+
+	@media(--mobile){
+		padding: 0 var(--grid1\24);
+	}
+}
+

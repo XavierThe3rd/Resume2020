@@ -2,15 +2,11 @@ import {
   SET_HTAG,
   SET_HOME,
   SET_SCROLL,
-  SET_MOVE,
   SET_OPAC,
-  SET_ZINDEX,
   SET_STEP,
   SET_NAV,
   SET_NAVCLASS,
-  SET_DIST,
-  LAST_SCROLL,
-  NEXT_SCROLL
+  SET_DIST
 } from '../actions/z-names'
 
 const structure = {
@@ -20,10 +16,8 @@ const structure = {
   tohome: true,
   scroll: false,
   move: false,
-  step: false,
-  dist: 0,
-  last: 0,
-  next: 0
+  step: true,
+  dist: 0
 }
 
 const header = (state = structure, action) => {
@@ -48,25 +42,10 @@ const header = (state = structure, action) => {
         ...state,
         tohome: action.payload
       }
-    case SET_MOVE:
-      return {
-        ...state,
-        move: action.payload
-      }
     case SET_SCROLL:
       return {
         ...state,
         scroll: action.payload
-      }
-    case SET_OPAC:
-      return {
-        ...state,
-        opac: action.payload
-      }
-    case SET_ZINDEX:
-      return {
-        ...state,
-        zind: action.payload
       }
     case SET_STEP:
       return {
@@ -77,16 +56,6 @@ const header = (state = structure, action) => {
       return {
         ...state,
         dist: action.payload
-      }
-    case LAST_SCROLL:
-      return {
-        ...state,
-        last: action.payload
-      }
-    case NEXT_SCROLL:
-      return {
-        ...state,
-        next: action.payload
       }
 
     default:

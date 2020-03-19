@@ -1,0 +1,70 @@
+@import '../../../../styles/settings.css';
+@import '../../../../styles/generics.css';
+@import '../../../../styles/tools.css';
+
+.info {
+    @apply --col;
+    size: 50% inherit;
+    padding: 50px 20px 0;
+    &_line {
+        border: 1px 0 0 0 /solid/ var(--pureBlack);
+        margin: 20px 0;
+    }
+    h2 {
+        @mixin fontSettings var(--pureBlack), var(--h2tag), 400, 1;
+    }
+    h3 {
+        @mixin fontSettings var(--pureBlack), var(--h3tag), 400, 1;
+    }
+    p {
+        @mixin fontSettings var(--pureBlack), var(--ptag), 300, 1.5; 
+    }
+    button {
+        @apply --flx-c-c;
+        size: 50% 50px;
+        border-radius: 5px;
+        border: 1px /solid/ var(--pureBlack);
+        @mixin fontSettings var(--pureBlack), 26px, 300, 1;
+
+        &:hover {
+            color: var(--primeOrange);
+            border-color: var(--primeOrange);
+        }
+    }
+    &_mediums {
+        @apply --flx;
+        margin: 20px 0;
+        width: 150px;
+        span {
+            height: 75px;
+            &:nth-child(1) {
+                @apply --flx;
+                svg {
+                    height: 75px;
+                    margin: 0 2.5px 0 0;
+                }
+            }
+            &:nth-child(2) {
+                @apply --column-b-s;
+                flex-wrap: wrap;
+                svg {
+                    height: 35px;
+                    margin: 0 2.5px;
+                }
+            }
+        }
+    }
+
+    @media (--ipad-l) {
+        size: 100% 725px;
+        padding: 20px 0;
+    }
+}
+
+/*@media (--ipad-l) {
+    size: 100% 1000px;
+    padding: 0;
+    button {
+        position: absolute 560px * * 0;
+    }
+}*/

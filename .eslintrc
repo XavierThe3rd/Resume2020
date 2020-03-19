@@ -20,9 +20,10 @@
     },
     "rules": {
         "prettier/prettier": ["error", {
+            "printWidth": 100,
             "semi": false,
             "singleQuote": true,
-            "bracketSpacing": true,
+            "bracketSpacing": true
         }, { "withNodeModules":false }],
         //"no-undef": 2,
         "no-unreachable": 2,

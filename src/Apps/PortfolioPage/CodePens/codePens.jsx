@@ -8,7 +8,7 @@ import text from '../../Components/Generics/text-elms/text-elms.jsx'
 const CodePens = props => {
   const { data, clazz, setClass } = props
   return (
-    <ContentBox Background={styles.primeBackground} Class={`${props.Class}`}>
+    <ContentBox Class={`${props.Class}`}>
       <text.Title>CodePens</text.Title>
       {data.map(hit => {
         return (

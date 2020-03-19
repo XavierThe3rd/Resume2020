@@ -1,22 +1,24 @@
-import React from 'react'
-import './styles.scss'
-import SVG from 'react-inlinesvg'
 import Info from './info/info.jsx'
 import Pictures from './pictures/pictures.jsx'
-import Close from '../../../../../images/Close.svg'
+import React from 'react'
+import './styles.css'
+import OverflowScrolling from 'react-overflow-scrolling'
 
-const PieceInfo = ({ Name, Click, Class, data, pic, setPic, inner }) => {
+let block = 'specifications'
+
+const ProjectSpecs = props => {
+  let { Name, data, pic, setPic } = props
   return (
-    <section className={`info_holder fix flx-c-c ${Class}`}>
-      <div className={`port_info flx-b`}>
-        <button onClick={Click} className={`close abs`}>
-          <SVG src={Close} />
-        </button>
+    <section ref={props.Ref} className={`${block} ${props.className}`}>
+      <span className={`${block}_slider`} />
+      <span className={`${block}_slider`} />
+
+      <div className={`${block}_holder`}>
         <Info data={data} />
-        <Pictures data={data} pic={pic} setPic={setPic} inner={inner} />
+        <Pictures data={data} pic={pic} setPic={setPic} />
       </div>
     </section>
   )
 }
 
-export default PieceInfo
+export default ProjectSpecs

@@ -1,8 +1,6 @@
 export default class SmoothScroll {
   constructor(options) {
     Object.assign(this, options)
-    this.speed = this.speed
-    this.smooth = this.smooth
     this.moving = false
     this.target =
       document.scrollingElement ||
@@ -22,25 +20,22 @@ export default class SmoothScroll {
 
   normalizeWheelDelta = e => {
     if (e.detail) {
-      if (e.wheelDelta)
-        return (
-          (e.wheelDelta / e.detail / (this.speed / 4)) * (e.detail > 0 ? 1 : -1)
-        )
-      else return -e.detail / (this.speed / 50)
-    } else return e.wheelDelta / this.speed
+      if (e.wheelDelta) return (e.wheelDelta / e.detail / (200 / 4)) * (e.detail > 0 ? 1 : -1)
+      else return -e.detail / (200 / 40)
+    } else return e.wheelDelta / 200
   }
 
   scrolled1(e) {
     let update = () => {
       this.posi2 = 0
       this.moving = true
-      let delta = (this.posi - this.target.scrollTop) / this.smooth
-      this.target.scrollTop += (this.posi - this.target.scrollTop) / this.smooth
+      let delta = (this.posi - this.target.scrollTop) / 12
+      this.target.scrollTop += (this.posi - this.target.scrollTop) / 12
       Math.abs(delta) > 1 ? requestFrame(update) : (this.moving = false)
     }
     e.preventDefault()
     let delta = this.normalizeWheelDelta(e)
-    this.posi += -delta * this.speed
+    this.posi += -delta * 200
     this.posi = Math.max(
       0,
       Math.min(this.posi, this.target.scrollHeight - this.target.clientHeight)
@@ -52,14 +47,13 @@ export default class SmoothScroll {
     let update = () => {
       this.moving = true
       this.posi = 0
-      let delta = (this.posi2 - this.target.scrollTop) / this.smooth
-      this.target.scrollTop +=
-        (this.posi2 - this.target.scrollTop) / this.smooth
+      let delta = (this.posi2 - this.target.scrollTop) / 12
+      this.target.scrollTop += (this.posi2 - this.target.scrollTop) / 12
       Math.abs(delta) > 1 ? requestFrame(update) : (this.moving = false)
     }
     e.preventDefault()
     let delta = this.normalizeWheelDelta(e)
-    this.posi2 += -delta * this.speed
+    this.posi2 += -delta * 200
     this.posi2 = Math.max(
       0,
       Math.min(this.posi2, this.target.scrollHeight - this.target.clientHeight)
@@ -68,7 +62,10 @@ export default class SmoothScroll {
   }
 
   switchScroll() {
-    if (this.bool === false) {
+    if (window.pageYOffset > document.body.scrollHeight - 2000) {
+      window.removeEventListener('wheel', this.scrolled1, { passive: false })
+      window.removeEventListener('wheel', this.scrolled2, { passive: false })
+    } else if (this.bool === false) {
       this.bool = true
       if (typeof InstallTrigger !== 'undefined') {
         window.removeEventListener('DOMMouseScroll', this.scrolled1, {
@@ -78,7 +75,6 @@ export default class SmoothScroll {
         window.removeEventListener('wheel', this.scrolled1, { passive: false })
       }
       setTimeout(() => {
-        window.scrollTo(0, 0)
         if (typeof InstallTrigger !== 'undefined') {
           window.addEventListener('DOMMouseScroll', this.scrolled2, {
             passive: false
@@ -99,7 +95,6 @@ export default class SmoothScroll {
         window.removeEventListener('wheel', this.scrolled2, { passive: false })
       }
       setTimeout(() => {
-        window.scrollTo(0, 0)
         if (typeof InstallTrigger !== 'undefined') {
           window.addEventListener('DOMMouseScroll', this.scrolled1, {
             passive: false

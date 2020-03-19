@@ -3,7 +3,7 @@ charset = utf-8
 
 [*.{md, js, jsx, json, scss, css}]
 indent_style = space
-indent_size = 6
+indent_size = 8
 
 [{package.json, .babelrc,.eslintrc.json,.stylelintrc}]
 indent_style = space

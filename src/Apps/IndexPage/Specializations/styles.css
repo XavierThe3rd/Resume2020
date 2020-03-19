@@ -1,0 +1,10 @@
+@import '../../styles/settings.css';
+@import '../../styles/generics.css';
+@import '../../styles/tools.css';
+
+.specialization {
+    @apply --col;
+    &_wrapper {
+        @apply --wrp-c;
+    }
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-import './styles.scss'
+import './styles.css'
 import SVG from 'react-inlinesvg'
 import Arrow from '../../../../images/Arrow.svg'
 

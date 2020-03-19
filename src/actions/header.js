@@ -1,16 +1,11 @@
 import {
   SET_HTAG,
   SET_HOME,
-  SET_MOVE,
   SET_SCROLL,
-  SET_OPAC,
-  SET_ZINDEX,
   SET_STEP,
   SET_NAV,
   SET_NAVCLASS,
-  SET_DIST,
-  LAST_SCROLL,
-  NEXT_SCROLL
+  SET_DIST
 } from '../actions/z-names'
 
 export const setHtag = newKey => {
@@ -27,31 +22,10 @@ export const setHome = newKey => {
   }
 }
 
-export const setMove = newKey => {
-  return {
-    type: SET_MOVE,
-    payload: newKey
-  }
-}
-
 export const setScroll = newKey => {
   return {
     type: SET_SCROLL,
     payload: newKey
-  }
-}
-
-export const setOpac = newKey => {
-  return {
-    type: SET_OPAC,
-    payload: newKey
-  }
-}
-
-export const setZ = newBool => {
-  return {
-    type: SET_ZINDEX,
-    payload: newBool
   }
 }
 
@@ -79,20 +53,6 @@ export const setClass = newBool => {
 export const setDist = newBool => {
   return {
     type: SET_DIST,
-    payload: newBool
-  }
-}
-
-export const setLast = newBool => {
-  return {
-    type: LAST_SCROLL,
-    payload: newBool
-  }
-}
-
-export const setNext = newBool => {
-  return {
-    type: NEXT_SCROLL,
     payload: newBool
   }
 }

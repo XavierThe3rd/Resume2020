@@ -1,32 +1,25 @@
 import React from 'react'
-import styles from './styles.scss'
-import ProjectPiece from '../../Components/portfolio/portfolioPiece.jsx'
-import get from './data.js'
+import ProjectPiece from '../../Components/portfolio/port-piece-holder'
 import text from '../../Components/Generics/text-elms/text-elms.jsx'
 import Button from '../../Components/Generics/button/button.jsx'
+import './styles.css'
+import ContentBox from '../../Components/Generics/content-box/contentBox.jsx'
+import ReactFitText from 'react-fittext'
+
+let block = 'featured'
 
 const FeaturedWork = props => {
-  let {
-    data,
-    setData,
-    pic,
-    setPic,
-    setOutL,
-    setOutR,
-    setInL,
-    setInR,
-    inner,
-    setInner
-  } = props
+  let { data, setData, pic, setPic, setOutL, setOutR, setInL, setInR } = props
   return (
-    <div className={`featured column ${props.Class}`}>
-      <text.Title Color={styles.conColor}>{get.heading}</text.Title>
-      <div className="featured_holder flex">
+    <ContentBox className={`${block} ${props.className}`}>
+      <ReactFitText compressor={1.57}>
+        <text.Title>Featured Works</text.Title>
+      </ReactFitText>
+      <div className={`${block}_holder`}>
         {data.map(hit => {
-          if (hit.index < 4) {
+          if (hit.index < 5) {
             return (
               <ProjectPiece
-                Class={`featured_card_set`}
                 data={hit.Inner}
                 Index={hit.index}
                 Image={hit.image}
@@ -38,20 +31,13 @@ const FeaturedWork = props => {
                 Name={hit.name}
                 pic={pic}
                 setPic={setPic}
-                inner={inner}
-                setInner={setInner}
               />
             )
           }
         })}
       </div>
-      <Button
-        Click={() => console.log('button was clicked')}
-        Color={styles.conColor}
-      >
-        Learn More!
-      </Button>
-    </div>
+      <Button Click={() => console.log('button was clicked')}>Learn More!</Button>
+    </ContentBox>
   )
 }
 

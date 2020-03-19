@@ -1,10 +1,12 @@
-/* eslint-disable no-unused-expressions */
-import React, { useEffect, useRef } from 'react'
-import './navstyles.scss'
-import NavButton from '../../Components/nav-button/navButton.jsx'
-import Loader from '../Loader/loader-container'
-import { onResize } from '../../../utilities/globalUtilities'
+import React, { useCallback, useEffect } from 'react'
 import SVG from 'react-inlinesvg'
+import NavButton from '../../Components/nav-button/navButton.jsx'
+import { navScroll } from './nav-utilities'
+import logo from '../../../../images/Logo.svg'
+import { handleScroll } from '../../../utilities/globalUtilities'
+import './styles.css'
+
+const block = `nav`
 
 const Navigation = props => {
   let {
@@ -12,77 +14,69 @@ const Navigation = props => {
     navState,
     setClass,
     classState,
-    setMobile,
-    mobileState,
-    zind,
+    setScroll,
     scroll,
+    setMove,
     move,
-    setHtag,
-    setHome,
     tohome,
-    setZ,
     opac,
     htag,
-    step
+    setLast,
+    setNext,
+    dist,
+    setDist,
+    button,
+    setButton,
+    btNav,
+    setBtNav
   } = props
 
-  useEffect(() => onResize(props, 1150))
+  const callscroll = useCallback(() => navScroll(props), [props])
+  handleScroll(callscroll)
 
-  let openNav = () => {
-    if (navState === false) {
-      setZ(5)
-      setNav(true)
-      setTimeout(() => setClass(true), 50)
-    } else if (navState === true) {
-      setClass(false)
-      setTimeout(() => {
-        setNav(false)
-        if (window.innerWidth >= 1150) setZ(0)
-      }, 1000)
-    }
-  }
+  let resize = window.innerWidth
 
   return (
     <nav
-      className={`navi flx-b-c fix
-            ${`${scroll ? `nav-up` : `nav-down`}`}
+      className={`${block} ${props.className}
+            ${`${!scroll || !btNav ? `nav-down` : `nav-up`}`}
         `}
-      style={{ zIndex: mobileState ? 5 : zind }}
     >
-      {mobileState ? (
-        <SVG
-          className={`nav_svg`}
-          src={'../../../images/Logo.svg'}
-          style={{ opacity: tohome ? 0 - opac : 1 }}
-        />
+      {resize < 1030 ? (
+        <SVG className={`${block}_svg`} src={logo} style={{ opacity: tohome ? -opac : 1 }} />
       ) : (
         <h1
-          className="page"
-          style={{
-            zIndex: zind + 1,
-            opacity: opac
-          }}
+          className={`${block}_page ${move ? `${block}_on` : `${block}_off`}`}
+          style={{ opacity: navState ? 1 : opac }}
         >
           {htag}
         </h1>
       )}
-      {mobileState ? (
-        <span
-          className="screen abs max-w"
-          id="screenId"
-          style={{ opacity: tohome ? -opac : 1 }}
-        />
-      ) : null}
-
+      {resize < 1030 ? <span className={`${block}_screen`} /> : null}
       <NavButton
-        Class={`nav ${move ? 'button-on' : 'button-off'}`}
-        Click={openNav}
+        button={button}
+        setButton={setButton}
+        move={move}
+        setMove={setMove}
+        Class={`${block}_button`}
+        Click={() => {
+          if (btNav === true) {
+            setButton(!button)
+            if (navState === false) {
+              setNav(true)
+              setTimeout(() => setClass(true), 50)
+            } else if (navState === true) {
+              setClass(false)
+              setTimeout(() => setNav(false), 1000)
+            }
+          } else {
+            setButton(!button)
+            setBtNav(true)
+          }
+        }}
       />
     </nav>
   )
 }
 
 export default Navigation
-
-/*this.state.setUl ? `list-out`: 'list-in'*/
-//this.loadTime

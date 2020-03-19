@@ -1,0 +1,26 @@
+@import '../../styles/tools.css';
+@import '../../styles/settings.css';
+@import '../../styles/generics.css';
+
+
+.featured {
+    @apply --col;
+    width: 100%;
+
+    &_holder {
+        @apply --flx-b;
+    }
+
+
+    @media(--laptop-m) {
+        &_holder{ @apply --wrp-b }; 
+     }
+    @media(--ipad-l) {
+        &_holder { @apply --col }; 
+    }
+    @media(--ipad-s){
+        &_holder {
+            justify-content: center;
+        }
+    }
+}

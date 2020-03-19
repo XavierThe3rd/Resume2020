@@ -1,13 +1,11 @@
 import React from 'react'
-import './styles.scss'
+import './styles.css'
+
+let block = 'button'
 
 const Button = props => {
   return (
-    <button
-      className="button flx-c-c"
-      onClick={props.Click}
-      style={props.Style}
-    >
+    <button className={`${block}`} onClick={props.Click} style={props.style}>
       {props.children}
     </button>
   )

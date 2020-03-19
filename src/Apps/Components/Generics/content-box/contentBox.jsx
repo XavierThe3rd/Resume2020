@@ -1,17 +1,11 @@
-import './styles.scss'
+import './styles.css'
 import React from 'react'
 
-const ContentBox = props => {
-  let intro_styles = {
-    alignItems: props.Align,
-    background: props.Background,
-    position: props.Pos,
-    height: props.Height,
-    margin: props.Margin
-  }
+let block = 'box'
 
+const ContentBox = props => {
   return (
-    <div className={`column ${props.Class}`} style={intro_styles}>
+    <div className={`${block} ${props.className}`} style={props.style}>
       {props.children}
     </div>
   )

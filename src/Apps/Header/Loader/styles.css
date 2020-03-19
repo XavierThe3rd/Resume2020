@@ -1,0 +1,81 @@
+@import '../../styles/settings.css';
+@import '../../styles/generics.css';
+@import '../../styles/tools.css';
+
+
+:root {
+    --outerGrid: var(--grid1\6);
+    --centerGrid: var(--grid1\3);
+    @media (--laptop-m) {
+        --outerGrid: var(--grid1\12);
+        --centerGrid: var(--grid5\12);
+    }
+    @media (--mobile) {
+        --outerGrid: var(--grid1\24);
+        --centerGrid: var(--grid11\24);
+    }
+}
+
+
+.loader {
+    @apply --flx;
+    size: 100% 100%;
+    position: fixed 0 * * 0;
+    z-index: 4;
+    &_svg {
+        position: fixed 0 0 0 0;
+        margin: auto;
+    }
+    &_slider {
+        &:nth-child(n + 1) { border: 0 1px 0 0 /solid/ var(--borderGrey)}
+        &:nth-child(odd) { align-self: flex-end}
+        background: var(--pureWhite);
+        &:nth-child(1), &:nth-child(4) { 
+            width: var(--outerGrid);   
+        }
+        &:nth-child(2), &:nth-child(3){
+            @apply --col;
+            width: var(--centerGrid);
+            background: var(--pureWhite);
+            /*---------important---------*/
+            li {
+                mix-blend-mode: difference;
+                &:nth-child(1) { margin: 300px 0 0 0 }
+                a { @mixin fontSettings var(--pureWhite), 52px, 400, 2.5 };
+                &:hover a { color: var(--primeOrange) }
+
+                @media(--mobile) {
+                    background: var(--pureWhite);
+                    mix-blend-mode: normal;
+                    border: 0 0px 1px 0 /solid/ var(--pureBlack);
+                    margin: 0 0 0 3px;
+                    &:nth-child(1) { 
+                        border: 1px 0px 1px 0 /solid/ var(--pureBlack);
+                        margin: 150px 0 0; 
+                    }
+                    a { @mixin fontSettings var(--pureBlack), 30px, 400, 2.5 };
+                }
+            }
+            /*---------important---------*/
+        }
+    }
+
+    /*-----------------------------Loading Animation-----------------------------*/
+
+    @for $i from 1 to 5 {
+        &_svg {
+            transition: all 0.5s ease-in-out;
+            &:nth-child($i) { width: 300px }
+            &:nth-child(6) { width: 170px }
+        }
+        &-out {
+            opacity: 0;
+            transform: rotate(0deg);
+        }
+        &-on {
+            opacity: 1;
+            &:nth-child($i) { transform: rotate(72deg * $i);      
+            }
+        }
+    }
+}

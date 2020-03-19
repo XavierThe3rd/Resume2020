@@ -1,26 +1,37 @@
 import React from 'react'
-import './styles.scss'
-import SliderNav from '../../../SliderNav/sliderNav.jsx'
+import './styles.css'
 
-const Pictures = ({ data, pic, setPic, inner }) => {
-  //let val
+const block = 'pictures'
 
-  console.log(pic)
-  //let total = Array.from(Array(val).keys())
+const Pictures = ({ data, pic, setPic }) => {
   return (
-    <div className={`picture_holder column--e`}>
+    <div className={`${block}`}>
       {data.map(hit =>
         hit.pictures.map(hit => {
           if (hit.index === pic) {
             return (
-              <span className={`flx-c-c`}>
+              <span className={`${block}_holder`}>
                 <img className={``} src={hit.pic} />
               </span>
             )
           }
         })
       )}
-      <SliderNav pic={pic} setPic={setPic} data={data} inner={inner} />
+      <div className={` ${block}_slider`}>
+        {data.map(hit =>
+          hit.pictures.map(hit => {
+            return (
+              <button
+                value={hit.index}
+                className={`${pic + 1 === hit.index + 1 ? 'img-on' : 'img-off'}`}
+                onClick={e => setPic(hit.index)}
+              >
+                <img src={hit.pic} />
+              </button>
+            )
+          })
+        )}
+      </div>
     </div>
   )
 }

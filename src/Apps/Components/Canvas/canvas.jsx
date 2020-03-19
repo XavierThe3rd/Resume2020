@@ -1,30 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React from 'react'
+import './styles.css'
 
-//import SVG from 'react-inlinesvg'
-/*
-import Dragon from '../../../../images/Dragon.svg'
-import BigRock from '../../../../images/BigRock.svg'
-import MiddleRock from '../../../../images/MiddleRock.svg'
-import SmallRock from '../../../../images/SmallRock.svg'
-import GearW from '../../../../images/GearWholeWire.svg'
-import GearH from '../../../../images/GearHalfWire.svg'
-import GearQ from '../../../../images/GearQuarterWire.svg'
-import GearQS from '../../../../images/GearQuarterWireS.svg'
-*/
-//import inferno from '../../../../images/Inferno.png'
-import './styles.scss'
-/*this.state = { loadedItems: [] }
-}  onLoad(feedItem) {
-  this.setState(({ loadedItems }) => {
-    //return { loadedItems: loadedItems.concat(feedItem) }*/
+let block = 'grid'
 
 const Canvas = () => {
   return (
-    <section className="grid_line fix flex">
-      <span />
-      <span />
-      <span />
-      <span />
+    <section className={`${block}`}>
+      {[1, 2, 3].map(() => (
+        <span className={`${block}_line`} />
+      ))}
     </section>
   )
 }

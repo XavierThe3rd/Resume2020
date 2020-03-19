@@ -1,55 +1,61 @@
-import React, { useState } from 'react'
-import './styles.scss'
-import ProjectCard from './portfolio-cards/portfolioCards.jsx'
-import PieceInfo from './portfolio-info/portfolioInfo.jsx'
+import React, { useState, useEffect } from 'react'
+import './styles.css'
+import ProjectCard from './portfolio-cards/port-card-container'
+import ProjectSpecs from './portfolio-info/portfolioInfo.jsx'
+
+let block = 'piece'
+let defaulter = e => e.preventDefault()
 
 const ProjectPiece = props => {
-  let { data, pic, setPic, setInner, inner } = props
-  const [infoState, setInfo] = useState(false)
-  const [displayState, setDisplay] = useState(false)
+  let { data, pic, setPic, setBtNav, btNav, setButton, button } = props
+  let [info, setInfo] = useState(false)
+  let [display, setDisplay] = useState(false)
+
+  useEffect(() => {
+    if (btNav === true) {
+      setPic(1)
+      setBtNav(true)
+      setDisplay(false)
+      setTimeout(() => setInfo(false), 700)
+      /*document.querySelector('body').removeEventListener('touchmove', defaulter, {
+        passive: false
+      })*/
+    }
+  })
+
   return (
-    <div key={props.Index} className={props.OuterClass}>
-      {infoState ? (
+    <div key={props.Index} className={`${block} ${props.OuterClass}`}>
+      {info ? (
         <span
-          className={`lightbox fix ${displayState ? `light-on` : `light-off`}`}
+          className={`${block}_lightbox ${display ? `${block}-light_on` : `${block}-light_off`}`}
         ></span>
       ) : null}
       <ProjectCard
-        Class={props.Class}
         Image={props.Image}
         Title={props.Title}
         Desc={props.Desc}
         Project={props.Project}
         Type={props.Type}
         Color={props.Color}
-        Click={() =>
-          window.innerWidth > 1065
-            ? setInfo(true) |
-              setInner(true) |
-              setTimeout(() => setDisplay(true), 10)
-            : null
-        }
-        Click2={() =>
-          window.innerWidth < 1065
-            ? setInfo(true) |
-              setInner(true) |
-              setTimeout(() => setDisplay(true), 10)
-            : null
-        }
+        Click={() => {
+          setBtNav(false)
+          setButton(!button)
+          setTimeout(() => {
+            setInfo(true)
+            setTimeout(() => setDisplay(true), 10)
+            /*document.querySelector('body').addEventListener('touchmove', defaulter, {
+              passive: false
+            })*/
+          }, 10)
+        }}
       />
-      {infoState ? (
-        <PieceInfo
+      {info ? (
+        <ProjectSpecs
           pic={pic}
-          inner={inner}
           setPic={setPic}
           Name={props.Name}
-          Class={`${displayState ? `info_on` : `info_off`}`}
+          className={`${display ? `${block}-info_on` : `${block}-info_off`}`}
           data={data}
-          Click={() => {
-            setPic(1)
-            setDisplay(false)
-            setTimeout(() => setInfo(false) | setInner(false), 600)
-          }}
         />
       ) : null}
     </div>

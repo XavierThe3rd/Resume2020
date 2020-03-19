@@ -11,15 +11,13 @@ import CodePens from './CodePens/codepens-container'
 const Portfolio = () => {
   return (
     <section>
-      <ContentBox Height={38} Background={styles.gradientColor}></ContentBox>
-      <Slider Class="holders" />
-      <ContentBox Class="holders box">
+      <Slider Class="port_holders" />
+      <ContentBox Class="holders h-a">
         <text.Title>GitHub</text.Title>
         <text.Para>Wish to see my github repositories?</text.Para>
         <Button>Click Here!</Button>
       </ContentBox>
       <CodePens Class="holders" />
-      <ContentBox Height={1} Background={styles.gradientColor}></ContentBox>
     </section>
   )
 }

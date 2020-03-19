@@ -1,0 +1,46 @@
+@custom-media --desktop-s ( max-width: 1720px );
+@custom-media --laptop-l ( max-width: 1650px );
+@custom-media --laptop-m ( max-width: 1350px );
+@custom-media --laptop-s ( max-width: 1150px );
+@custom-media --ipad-l ( max-width: 1030px );
+@custom-media --ipad-s ( max-width: 770px );
+@custom-media --mobile ( max-width: 600px );
+
+@define-mixin placement $width, $top, $left {
+    width: $width;
+    top: $top;
+    left: $left;
+}
+
+@define-mixin dimensions $width, $height, $rad {
+    width: $width;
+    height: $height;
+    border-radius: $rad;
+}
+
+
+@define-mixin border $color, $size {
+    border-color: $color;
+    box-sizing: border-box;
+    border-width: $size;
+    border-style: solid;
+}
+
+@define-mixin fontSettings $color, $size, $weight, $line {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $line;
+}
+
+@define-mixin gearSettings $widheight, $rot, $margin {
+    width: $widheight;
+    height: $widheight;
+    transform: rotate($rot);
+    margin: $margin;
+}
+
+/*@define-define-mixin square $dimension {
+    width: $dimension;
+    height: $dimension;
+}*/

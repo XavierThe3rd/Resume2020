@@ -1,0 +1,24 @@
+@import '../styles/settings.css';
+@import '../styles/generics.css';
+@import '../styles/tools.css';
+
+.index {
+    &_holder {
+        padding: 100px *;
+        margin: 100px *;
+    }
+    &_image {
+        width: var(--grid1\2);
+        margin: * * 55px;
+    }
+    @media(--mobile) {
+        &_holder {
+            padding: 75px *;
+            margin: 0px *;
+        }
+        &_image {
+            width: 100%;
+        }
+    }
+}
+

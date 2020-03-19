@@ -1,0 +1,19 @@
+@import '../../../styles/generics.css';
+@import '../../../styles/settings.css';
+@import '../../../styles/tools.css';
+
+.button {
+    @apply --flx-c-c;
+    cursor: pointer;
+    margin: 40px * *;
+    size: var(--grid1\4) 75px;
+    border-radius: 5px;
+    border: 2px /solid/ var(--pureWhite);
+    @mixin fontSettings var(--pureWhite), 36px, 600, 1;
+    &:hover { background: $primeOrange }
+
+    @media(--ipad-s){
+        size: var(--grid1\2) 60px;
+        font-size: 24px;
+    }
+}

@@ -1,0 +1,89 @@
+@import '../../styles/settings.css';
+@import '../../styles/generics.css';
+@import '../../styles/tools.css';
+
+.heading {
+    @apply --col;
+    width: 100%;
+    position: fixed * * * 0;
+    padding: 0 var(--grid1\6);
+    z-index: -1;
+    &_svg {
+        width: 75%;
+        margin: 0 0 0 -10px;
+    }
+
+    &_sub {
+        margin: 50px 0 0 0;
+        h1 {
+            padding: 5px 25%;
+            &:nth-child(1) {
+                @mixin fontSettings var(--pureWhite), 2.1vw, 300, 1.25;
+            }
+            &:nth-child(2) {
+                @mixin fontSettings var(--primePink), 2vw, 300, 1.25;
+                width: 75%;         
+            }
+        }
+    }
+    @media (--laptop-l) {
+        &_sub {
+            margin: 25px 0px 0 0px;
+            h1 {
+                position: relative;
+                margin: 5px 0;
+            }
+        }
+    }
+    @media (--laptop-m) {
+        padding: 0 var(--grid1\12);
+        &_sub {
+            width: 50%;
+            h1 {
+                padding: 5px 0;
+                &:nth-child(1) {
+                    font-size: 2.7vw;
+                }
+                &:nth-child(2) {
+                    font-size: 2.5vw;
+                    width: 50%;  
+                }
+            }
+        }
+    }
+    @media (--ipad-l) {
+        &_sub {
+            margin: 20px 0px 0 0px;
+            h1 {
+                position: relative;
+                padding:0;
+                width: 100%;
+            }
+        }
+    }
+    @media (--ipad-s) {
+        &_sub h1 {
+            margin: 5px 0;
+            width: 100%;
+        }  
+    }
+    @media (--mobile) {
+        &_svg {
+            width: 100%;
+            margin: 0px;
+        }
+        &_sub {
+            width: 100%;
+            margin: 25px 0px 0 0px;
+            h1 {
+                margin: 5px auto;
+                text-align: center;
+                &:nth-child(1) { font-size: 28px }
+                &:nth-child(2) {
+                    font-size: 28px;
+                    width: 100%;                      
+                }
+            }
+        }
+    }
+}
