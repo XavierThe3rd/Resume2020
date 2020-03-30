@@ -1,0 +1,45 @@
+@import './animations.css';
+
+.spec {
+    @apply --col;
+    background: var(--primePink);
+    overflow: hidden;
+    size: 49.5% 300px;
+    margin: 2px;
+    &_holder {
+        size: 100%;
+        @apply --flx-c-c;
+        position: relative;
+    }
+    &_title {
+        @apply --flx-c-c;
+         z-index: 3;
+        h2 {
+            @mixin fontSettings var(--pureWhite), var(--h2tag), 300, 1;
+            margin: * 12px * *;
+        }
+        svg { width: 50px }
+    }
+    &_screen { 
+        size: 60em 30em;
+        position: absolute * 0 -20px *;
+        background: var(--linearFadeTL);
+    }
+    &_text p {
+        @mixin fontSettings var(--pureWhite), var(--ptag), 400, 1.25;
+        padding: 20px; 
+        position: absolute;      
+    }
+    @media(--laptop-l){ &_text p { padding: 25px } }
+    @media(--ipad-l) { size: 100% 250px }
+    @media(--ipad-s) { 
+        size: 100% 200px;
+        &_text p {
+            /*font-size: 20px;*/
+            padding: 20px;
+        }
+    }
+    @media(--mobile){ size: 100% 200px }
+}
+
+

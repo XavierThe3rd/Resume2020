@@ -1,0 +1,17 @@
+@import '../../../styles/generics.css';
+@import '../../../styles/settings.css';
+@import '../../../styles/tools.css';
+
+
+.portwrap {
+    @apply --wrp;
+    &_cards {
+        &:nth-child(even) {
+            margin-top: 425px;
+            @media(--desktop-s) { margin-top: 350px }
+            @media(--laptop-l) { margin-top: 300px }
+            @media(--laptop-m) { margin: 2px * }
+        }
+        @media(--laptop-m) { margin: 2px * }
+    }
+}

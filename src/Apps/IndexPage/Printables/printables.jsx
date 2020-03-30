@@ -1,39 +1,40 @@
-import React, {useState} from 'react'
-import Option from '../../Components/Options/options.jsx'
-import comps from '../../Components/U-Components/u-components.jsx'
-import styles from './styles.scss'
-import get from './data.js'
+import React, { useState } from 'react'
+import Option from '../../Components/options/option-container'
+import text from '../../Components/Generics/text-elms/text-elms.jsx'
+import Embeder from '../../Components/Generics/embeder/embeder.jsx'
+import './styles.css'
+import ContentBox from '../../Components/Generics/content-box/contentBox.jsx'
+import ReactFitText from 'react-fittext'
 
-const Printables = (props) => {
-    const [widthState, setWidth] = useState(true)
+const block = 'prints'
 
-    window.addEventListener('load', ()=>{
-        setWidth(window.innerWidth)
-    });
-    window.addEventListener('resize', () => {
-        setWidth(window.innerWidth)
-    });
-    return (
-        <div className={`prints column ${props.Class}`}>
-            <comps.Title Color={styles.pureWhite}>{get.heading}</comps.Title>
-                {get.options.map(hit => {
-                    return (
-                    <Option Key={hit.index} Title={hit.title}>
-                    {widthState > 1085 ? <comps.Embed
-                        Type={`application/pdf`}
-                        Emb={`application/x-google-chrome-pdf`}
-                        Search={hit.search}
-                        Stream={`chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/acc42426-e295-44bc-aac1-101442fb80bd`}
-                    /> : <comps.Link too={hit.search}>{hit.name}</comps.Link>}
-                    </Option>
-                    
-                    )
-                })}
-              
-        </div>
-    )
+const Printables = props => {
+  const { setOption, option, data } = props
+  let Resize = () => (window.innerWidth > 1030 ? 1.88 : 1.15)
+  let [size, setSize] = useState(Resize)
+
+  return (
+    <ContentBox
+      Size={() => setSize(Resize)}
+      id={props.id}
+      className={`${block} ${props.className}`}
+    >
+      <ReactFitText compressor={size}>
+        <text.Title>Printed Documents</text.Title>
+      </ReactFitText>
+      {data.map(hit => {
+        return (
+          <Option
+            Key={hit.index}
+            Title={hit.title}
+            setOption={setOption}
+            option={option}
+            Search={hit.search}
+          />
+        )
+      })}
+    </ContentBox>
+  )
 }
 
 export default Printables
-
-

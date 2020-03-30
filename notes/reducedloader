@@ -1,0 +1,93 @@
+/* eslint-disable no-unused-expressions */
+import React, { useEffect, useState, useRef } from 'react'
+import './linkstyles.scss'
+import { Link } from 'react-router-dom'
+import { toLoad } from './utils'
+import SVG from 'react-inlinesvg'
+
+const Loader = props => {
+  let {
+    setNav,
+    setClass,
+    setHtag,
+    setIndex,
+    setAbout,
+    setPort,
+    index,
+    about,
+    port,
+    indexState,
+    aboutState,
+    portState,
+    setHome,
+    setLoad,
+    load,
+    setLClass,
+    linkclass,
+    bars
+  } = props
+
+  return load
+    ? bars.map(hit => {
+        return (
+          <SVG
+            src={hit}
+            className={`load fix ${linkclass ? `load-on` : `load-out`}`}
+            style={{
+              left: 0,
+              right: 0,
+              top: 0,
+              bottom: 0,
+              width: 300,
+              zIndex: 6,
+              margin: 'auto'
+            }}
+          />
+        )
+      })
+    : indexState
+    ? index.map(hit => {
+        return (
+          <li key={hit.ind}>
+            <Link
+              to={hit.ref}
+              className={hit.cls}
+              onClick={e => toLoad(e, props)}
+            >
+              {hit.tag}
+            </Link>
+          </li>
+        )
+      })
+    : aboutState
+    ? about.map(hit => {
+        return (
+          <li key={hit.ind}>
+            <Link
+              to={hit.ref}
+              className={hit.cls}
+              onClick={e => toLoad(e, props)}
+            >
+              {hit.tag}
+            </Link>
+          </li>
+        )
+      })
+    : portState
+    ? port.map(hit => {
+        return (
+          <li key={hit.ind}>
+            <Link
+              to={hit.ref}
+              className={hit.cls}
+              onClick={e => toLoad(e, props)}
+            >
+              {hit.tag}
+            </Link>
+          </li>
+        )
+      })
+    : null
+}
+
+export default Loader

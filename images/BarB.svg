@@ -1,1 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 161.01 161.01"><defs><linearGradient id="b" x1="34.22" y1="14.11" x2="126.8" y2="14.11" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#880cd3"/><stop offset="1" stop-color="#a615a8"/></linearGradient></defs><title>Asset 28</title><circle cx="80.51" cy="80.51" r="80.51" style="fill:none"/><path d="M43.47,28.21a62.27,62.27,0,0,1,74.07,0l9.26-12.94a77.8,77.8,0,0,0-92.58,0Z" style="fill:url(#b)"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 160.91 160.91">
+  <defs>
+    <linearGradient id="A2" x1="124.66" y1="60.35" x2="160.77" y2="60.35" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#880cd3"/>
+      <stop offset="1" stop-color="#a615a8"/>
+    </linearGradient>
+  </defs>
+  <title>Asset 9</title>
+  <g>
+    <path d="M128.13,16.32,124.66,21a74.29,74.29,0,0,1,26.53,81.61l5.54,1.75A77.8,77.8,0,0,0,128.13,16.32Z" style="fill: url(#A2)"/>
+    <rect width="160.91" height="160.91" style="fill: none"/>
+  </g>
+</svg>

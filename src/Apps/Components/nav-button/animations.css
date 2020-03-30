@@ -1,0 +1,62 @@
+.nav-button {
+    @define-mixin buttonAnimations $anim1, $anim2, $anim3 {
+        .nav-button_bar {
+            animation-duration: 0.35s;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+            &:nth-child(1) {animation-name: $anim1}
+            &:nth-child(2) {animation-name: $anim2}
+            &:nth-child(3) {animation-name: $anim3}
+        }    
+    } 
+    &-close { @mixin buttonAnimations top-out, mid-out, bot-out }; 
+    &-open { @mixin buttonAnimations top-in, mid-in, bot-in }; 
+    &-off { transform: translateX(0px) }
+    &-on{ transform: translateX(100px);
+        @media(max-width: 1350px) { transform: translateX(75px) }
+    }
+}
+
+
+@keyframes rotOuter{
+    from{ transform: rotate(0deg) }
+    to{ transform: rotate(360deg) }
+}
+@keyframes rotInner{
+    from{ transform: rotate(0deg)translate(12.5%, 12.5%) }
+    to{ transform: rotate(-360deg)translate(12.5%, 12.5%) }
+}
+
+@keyframes top-in {
+    0%{transform: translateY(0)}
+    50%{transform: translateY(13px)}
+    100%{opacity: 0}
+}
+@keyframes mid-in {
+    0%{transform: translateY(0)}
+    50%{transform: translateY(0px)}
+    100%{transform: rotate(45deg)}
+}
+@keyframes bot-in {
+    0%{transform: translateY(0)}
+    50%{transform: translateY(-13px)}
+    100%{transform: rotate(-45deg)translate(10px, -9px)}
+}
+@keyframes top-out {
+    0%{
+        transform: translateY(13px);
+        opacity: 0;
+    }
+    50%{transform: translateY(13px)}
+    100%{transform: translateY(0)}
+}
+@keyframes mid-out {
+    0%{transform: rotate(45deg)}
+    50%{transform: rotate(0)}
+    100%{transform: translateY(0)}
+}
+@keyframes bot-out {
+    0%{transform: rotate(-45deg)translate(10px, -9px)}
+    50%{transform: rotate(0) translateY(-13px)}
+    100%{transform: translateY(0)}
+}

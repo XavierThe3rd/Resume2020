@@ -1,0 +1,93 @@
+@import '../styles/settings.css';
+@import '../styles/generics.css';
+@import '../styles/tools.css';
+
+.footer{
+    border: 1px 0px 0px 0px /solid/ var(--borderLight);
+    @apply --col;
+    padding: 0px var(--grid1\6) 25px;
+    h1 { margin: 150px 0 40px}
+    h2 { margin: 20px 0 }
+    li {
+        margin: 20px 0 20px;
+        svg {
+            width: 30px;
+            fill: var(--pureWhite);
+        }
+        &:hover {
+            a {color: var(--primeOrange)}
+            svg {fill: var(--primeOrange)}
+        }
+    }
+    &_holder {
+        @apply --flx;
+        justify-content: space-between;
+    }
+
+    &_form {
+        @apply --col; 
+        width: 50%; 
+    }
+
+    &_direct {
+        @apply --col-b;
+        width: 50%;
+        align-items: flex-end;
+        div { align-items: flex-end } 
+        z-index:4;
+    }
+
+    &_logo { width: 600px }
+    &_notes {
+        width: 100%;
+        margin-top: 100px;
+        padding: 20px 0;
+        text-align: center;
+        border: 3px 0 0 /solid/ var(--pureWhite);
+        @mixin fontSettings var(--pureWhite), 22px, 300, 1.5;
+    }
+
+    @media(--laptop-l) {
+        &_logo { width: 450px }
+    }
+    @media(--laptop-m) {
+        padding: 0 var(--grid1\12) 75px;
+    }
+    @media(--laptop-s) {
+        &_logo { width: 400px }
+    }
+    @media(--ipad-l) {
+        &_logo { width: 300px }
+    }
+    @media(--mobile){
+        padding: 20px 20px;
+        h1 { margin: 50px 0 0 }
+        li { margin: 10px 0}
+
+        &_holder {
+            justify-content: space-evenly;
+            flex-direction: column;
+        }
+        &_form {
+            width: 100%;
+            h2 { margin: 10px 0 }
+            button {width: 50%}
+        }
+        &_direct {
+            width: 100%;
+            align-items: flex-start;
+            h2 { margin: 65px 0 30px }
+            div { 
+                @apply --col;
+                align-items: flex-start 
+            }
+        }
+        &_logo {
+            @apply col--e;
+            width: 100%;
+            margin: 20px 0;
+        }
+        span { margin-top: 30px }
+    }
+}
+

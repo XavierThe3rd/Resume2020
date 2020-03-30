@@ -1,0 +1,33 @@
+{
+    "root": true,
+    "parser": "babel-eslint",
+    "plugins": [
+        "prettier"
+    ],
+    "settings": {
+        "react": {
+            "version": "999.999.999"
+        }
+    },
+    "env": {
+        "browser": true,
+        "es6": true,
+        //"node": true
+    },
+    "globals": {
+        "VERSION": true,
+        "API_URL": true
+    },
+    "rules": {
+        "prettier/prettier": ["error", {
+            "printWidth": 80,
+            "semi": false,
+            "singleQuote": true,
+            "bracketSpacing": true
+        }, { "withNodeModules":false }],
+        //"no-undef": 2,
+        "no-unreachable": 2,
+        "no-unused": 0,
+        "no-console": 0
+    }
+}

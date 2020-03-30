@@ -1,0 +1,46 @@
+@import '../../styles/settings.css';
+@import '../../styles/generics.css';
+@import '../../styles/tools.css';
+
+.form {
+    @apply --col; 
+    width: 50%; 
+    &_text { z-index: 4}
+    &_thanks {
+        @apply --flx-c-c;
+        size: 100% 408px; 
+        @media(--mobile) {
+            height: 308px;
+        }
+    }
+    &-on {
+        animation: toState 5s forwards linear;
+    } 
+}
+
+@keyframes toState {
+    0% { 
+        opacity: 1;
+        transform: scale(1, 1)
+    }
+    5% {
+        opacity: 0; 
+        transform: scale(1, 0)
+    }
+    10% { 
+        opacity: 1;
+        transform: scale(1, 1)
+    }
+    90% {
+        opacity: 1;
+        transform: scale(1, 1)
+    }
+    95% {
+        opacity: 0;
+        transform: scale(1, 0)
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1, 1)
+    }
+}

@@ -1,0 +1,30 @@
+@import '../styles/settings.css';
+@import '../styles/generics.css';
+@import '../styles/tools.css';
+
+.ind {
+    padding: 50px * *;
+    &_holder {
+        &:nth-child(1), &:nth-child(4) {padding: 100px *};
+        &:nth-child(2), &:nth-child(5) {padding: 200px *};
+        &:nth-child(3) { padding: 200px * 100px}
+        &:nth-child(4) p { 
+            width: 75%;
+        }
+        
+    }
+    &_image {
+        width: var(--grid1\2);
+        margin: * * 55px;
+    }
+    @media(--ipad-l) {
+        &_holder {
+            padding: 100px *;
+            margin:  0;
+        }
+        &_image {
+            width: 100%;
+        }
+    }
+}
+

@@ -1,0 +1,33 @@
+import React from 'react'
+import './styles.css'
+import { Link } from 'react-router-dom'
+
+let block = 'button'
+
+const Button = props => {
+  const { setCursor } = props
+  return (
+    <Link
+      to={props.to}
+      className={`${block}`}
+      onMouseEnter={() => setCursor(true)}
+      onMouseLeave={() => setCursor(false)}
+      onClick={props.Click}
+      type={props.type}
+      style={props.style}
+    >
+      <svg
+        className={`${block}_arc`}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 239.9 239.9"
+      >
+        <circle cx="120" cy="120" r="118.5" />
+      </svg>
+      <span className={`${block}_inner ${props.className}`}>
+        {props.children}
+      </span>
+    </Link>
+  )
+}
+
+export default Button
