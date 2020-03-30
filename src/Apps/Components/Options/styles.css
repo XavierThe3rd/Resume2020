@@ -1,0 +1,72 @@
+@import '../../styles/generics.css';
+@import '../../styles/settings.css';
+@import '../../styles/tools.css';
+
+.option {
+    @apply --col;
+    width: 100%;
+    border: 1px 0 /solid/ var(--primeBack);
+    background: linear-gradient(306deg, rgba(97,0,255,1) 0%, rgba(255,38,67,1) 100%);
+    transition: all 0.15s linear;
+    z-index: 3;
+    &_button {
+        @apply --flx-b-c;
+        width: 100%;
+        z-index: 4;
+        padding: * 40px * 80px;
+        h3, svg { transition: all 0.1s linear }
+        svg { 
+            fill: var(--pureWhite);
+            size: 40px 65px;
+            padding: 0;
+        }
+    }
+
+    &_docs {
+        width: 99.7%;
+        transition: all 0.35s linear;
+    }
+
+    &:hover {
+        h3 { color: var(--primeOrange) };
+        svg { fill: var(--primeOrange) };   
+    }
+    @media (--mobile) {
+        &_button {
+            padding: * 15px *;
+            svg { 
+                size: 30px 50px;
+            }
+        }
+        
+    }
+    &-off svg { transform: rotate(0deg) }
+    &-on svg { transform: rotate(180deg) }
+
+    &-in { animation: openFrame 0.5s forwards linear }
+    &-out { animation: closeFrame 0.35s forwards linear }
+}
+
+@keyframes openFrame {
+    0% {
+        opacity: 0;
+        height: 0; 
+    }
+    25% {
+        height: 1000px;
+    }
+    100%{
+        opacity: 1;
+        height: 1000px;  
+    }
+}
+@keyframes closeFrame {
+    0% {
+        opacity: 1;
+        height: 1000px; 
+    }
+    to{
+        opacity: 0;
+        height: 0;
+    }
+}

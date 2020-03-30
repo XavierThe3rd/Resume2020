@@ -1,0 +1,45 @@
+@import '../../../../styles/settings.css';
+@import '../../../../styles/generics.css';
+@import '../../../../styles/tools.css';
+
+.pictures {
+    @apply --col--e;
+    width: 50%;
+    z-index:5;
+    &_holder {
+        @apply --flx-c-c;
+        size: 100% 800px;
+        overflow: hidden;
+        margin: * * 10px;
+        border: 0 0 1px /solid/ var(--pureBlack);
+        background: var(--pureWhite);
+        img {
+            size: initial 500px;
+            margin: * * 0px;
+        }
+    }
+    &_slider {
+        @apply --flx-e-c;
+        padding: 10px * 60px;
+        width: 100%;
+        button{
+            size: 80px 60px;
+            border-radius: 5px;
+            overflow: hidden;
+            img {
+                width: 100px;
+            }
+        }
+    }
+    @media (--ipad-l) {
+        size: auto 600px;
+        &_holder img {
+            size: auto 100%;
+            margin: 0;
+            padding: * * 50px;
+        }
+    }
+}
+
+.img-off {box-shadow: var(--pureBlack) 0 2px 3px 0px;}
+.img-on {box-shadow: var(--primeOrange) 0 3px 8px 1px;}

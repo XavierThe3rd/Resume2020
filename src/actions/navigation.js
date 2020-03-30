@@ -1,15 +1,15 @@
-import {SET_NAV, SET_NAVCLASS} from '../actions/z-names'
+import { SET_MOVE, SET_OPAC_NAV } from '../actions/z-names'
 
-export const setNav = (newBool) => {
-    return {
-        type: SET_NAV,
-        payload: newBool
-    }
+export const setMove = newKey => {
+  return {
+    type: SET_MOVE,
+    payload: newKey
+  }
 }
 
-export const setClass = (newBool) => {
-    return {
-        type: SET_NAVCLASS,
-        payload: newBool
-    }
+export const setOpacNav = newKey => {
+  return {
+    type: SET_OPAC_NAV,
+    payload: newKey
+  }
 }

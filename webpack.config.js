@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 const path = require("path");
 const webpack = require("webpack");
 const webpackMerge = require("webpack-merge");
@@ -17,7 +18,8 @@ module.exports = ({ mode } = { mode: "production" }) => {
             devServer: {
                 hot: true,
                 open: true,
-                historyApiFallback: true           
+                historyApiFallback: true,
+                //port: 9000           
             },
             output: {
                 publicPath: "/",
@@ -30,7 +32,17 @@ module.exports = ({ mode } = { mode: "production" }) => {
                     {
                         test: /\.(js|jsx)$/,
                         exclude: /node_modules/,
-                        loader: "babel-loader"
+                        use: [
+                            {
+                                loader: "babel-loader"
+                            },
+                            {                              
+                                //test: /\.(woff|woff2|eot|ttf|otf|png|svg|pdf)$/, 
+                                loader: 'eslint-loader',
+                                options: {fix: true}                        
+                            }
+                        ]
+                        
                     },                
                     {
                     test: /\.json$/,
@@ -39,8 +51,7 @@ module.exports = ({ mode } = { mode: "production" }) => {
                     { 
                     test: /\.(woff|woff2|eot|ttf|otf)$/, 
                     loader: 'url-loader?limit=100000' 
-
-                    }
+                    },
                 ],
                 
             },

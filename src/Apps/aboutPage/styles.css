@@ -1,0 +1,44 @@
+@import '../styles/settings.css';
+@import '../styles/tools.css';
+@import '../styles/generics.css';
+
+
+.about {
+    &:nth-child(1) { padding: * * 150px }
+    &:nth-child(2) { 
+        border: 1px 0px 0px 0px /solid/ #c4c4c7;
+        padding: 150px *;
+    }
+
+    &_holder {
+        float: left;
+        @apply --col;
+    }
+    &_image {
+        float: right;
+        width: var(--grid1\2);
+        margin: * * 0px 10px;
+    }
+    &_line { 
+        position: absolute;
+        width: 100%;
+        border: 1px 0 0 /solid/ var(--borderGrey) 
+    }
+    &_text {
+        width: 100%;
+        h1 { 
+            font-size: 4rem;
+            margin: 50px * * *;
+        }
+    }
+
+    @media(--ipad-s) {
+        &:nth-child(1) { padding: * * 50px }
+        &:nth-child(2) { padding: 50px * }
+
+        &_image { 
+            width: 100%;
+            margin: 52px 0;
+        }
+    }
+}

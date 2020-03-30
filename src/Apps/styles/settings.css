@@ -1,0 +1,97 @@
+@import './tools.css';
+
+:root {
+    --primePurple: #6100ff;
+    --halfPurple: #6200ff8c;
+    --primePink: #ff2643;
+    --primeOrange: #fb965e;
+    --cherrySoda:  #9f0000;
+    --clearBack: #ffffff57;
+    --adobePS: #00c8ff;
+    --adobeID: #ff3f94;
+    --reactJS: #ffca28;
+    --offWhite: #f8f5ff;
+    --whiteBack: #ccc9d3;
+    --borderGrey: #36363a;
+    --slateFoil: #2c3038;
+    --primeBack: #051323;
+    --primeGrey: #051323;
+    --pureBlack: #000000;
+    --pureWhite: #e1e1eb;
+    --navColor: #111114;
+    --primeBackground: #17171c;
+    --primeBackOpac: #17171c;
+    --borderLight: #242427;
+    --offBack: #101013;
+    --gridLine: #242427;
+
+    --boxColor: #e1e1eb;
+    --h1Color: #000000;
+    --pColor: #000000;
+
+    /*--boxColor: #ffffff;
+    --h1Color: #000000;
+    --pColor: #000000;*/
+
+    --gradientColor: linear-gradient(306deg, rgba(97,0,255,1) 0%, rgba(255,38,67,1) 100%);
+    --linearFade : linear-gradient(0deg, rgba(97,0,255,1) 15%, rgba(97,0,255,0) 100%);
+    @media (--laptop-m) {
+        --linearFade : linear-gradient(0deg, rgba(97,0,255,1) 25%, rgba(97,0,255,0) 100%);
+    }
+    --linearFadeTL : linear-gradient(325deg, rgb(97, 0, 255) 10%, rgba(97, 0, 255, 0) 80%);
+
+    --bkColor: #ffffff;
+    --conColor: #e1e1eb;
+
+
+
+    --grid1\2: 49.99%; 
+
+    --grid1\3: 33.33333%;
+
+    --grid1\4: 25%;
+
+    --grid1\6: 16.666667%; 
+    --grid5\6: 83.33333%;
+
+    --grid1\12: 8.33333%; 
+    --grid5\12: 41.666667%; 
+    --grid11\12: 91.666667%;
+
+    --grid1\24: 4.1666667%; 
+    --grid11\24: 45.833333%;
+    --grid23\24: 95.833333%;
+
+    --gridEigth: 12.5%;
+
+    --ptag: 1.65rem;
+    --h2tag: 48px;
+    --h3tag: 40px;
+    @media(--desktop-s) { 
+        --ptag: 1.65rem;
+        --h2tag: 42px;
+        --h3tag: 36px;
+    }
+    @media(--laptop-l) { 
+        --ptag: 1.6rem;
+        --h2tag: 32px;
+        --h3tag: 28px;
+    }
+    @media(--laptop-m) { 
+        --ptag: 1.5rem;
+    }
+    @media(--mobile) { 
+        --ptag: 22px;
+    }
+    /*@media(--desktop-s) { --pTag: 26px }*/
+}
+
+
+:export { gradientColor: var(--gradientColor); }
+:export { primeOrange: var(--primeOrange); }
+:export { adobePS: var(--adobePS); }
+:export { adobeID: var(--adobeID); }
+:export { reactJS: var(--reactJS); }
+:export { boxColor: var(--boxColor); }
+:export { h1Color: var(--h1Color); }
+:export { pColor: var(--pColor); }

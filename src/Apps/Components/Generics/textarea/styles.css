@@ -1,0 +1,38 @@
+@import '../../../styles/generics.css';
+@import '../../../styles/settings.css';
+@import '../../../styles/tools.css';
+
+.txtholder {
+    @apply --col;
+    width: 100%;
+    margin: 20px 0;
+    z-index: 4;
+
+    &_label {
+        @apply --flx--c;
+        @mixin fontSettings var(--pureWhite), 28px, 400, 1;
+        width: 50%;
+    }
+
+    &_textarea {
+        size: 100% 300px;
+        border: 3px /solid/ var(--pureWhite);
+        border-radius: 10px;
+        margin: 20px 0;
+        padding: 25px;
+        @mixin fontSettings var(--pureWhite), 20px, 300, 1.5;
+
+        &:focus {
+            border-color: var(--primeOrange);
+            color: var(--primeOrange);
+        }
+    }
+    @media(max-width: 600px) {
+        height: 200px;
+        label { font-size: 22px }
+        textarea { 
+            font-size: 18px;
+            height: 200px;
+        }
+    }
+}

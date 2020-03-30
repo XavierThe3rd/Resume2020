@@ -1,0 +1,17 @@
+@import '../styles/settings.css';
+@import '../styles/tools.css';
+@import '../styles/generics.css';
+
+
+.portfolio {
+    &_holder {
+
+    }
+    &_github {
+        padding: 100px *;
+        margin: 100px *;
+    }
+    &_code {
+        margin: * * 100px;
+    }
+}

@@ -1,0 +1,55 @@
+@import '../../styles/settings.css';
+@import '../../styles/generics.css';
+@import '../../styles/tools.css';
+@import './animations.css';
+
+.nav-button {
+    @apply --flx-c-c;
+    z-index: 5;
+    transition: all 0.35s ease-in-out;
+    @media(max-width: 1150px) {
+        size: 42px 32px;
+        padding: 0;
+    }
+    &_hamburger {
+        @apply --col-b-c;
+        size: 42px 32px;
+        position: absolute;
+
+    }
+
+    &_bar {
+        size: 45px 5px;
+        &:nth-child(n+2) {background: var(--pureWhite)}
+    }
+
+    &_arc {
+        animation: rotCircle 3s infinite linear;
+        width: 100px;
+        stroke: var(--pureWhite);
+        @media(max-width: 1350px) { width: 75px } 
+        @media(max-width: 1150px) { display: none }
+
+        circle, path{
+            fill: none;
+            stroke-miterlimit: 10;
+            stroke-width: 3px;
+            transform-origin: 50% 50%;
+        }
+        circle{
+            stroke-dasharray: 150,15,70,60,100,30;
+            animation: rotOuter 6s infinite linear;
+        } 
+        path{
+            stroke-dasharray: 100,15,50,50,70,20;
+            animation: rotInner 6s infinite linear;
+        }
+    } 
+    
+    /*&:hover{
+        span { background: var(--primeOrange) }
+        svg circle, svg path, svg polygon, svg rect{
+            stroke: var(--primeOrange);  
+        }
+    }*/
+}

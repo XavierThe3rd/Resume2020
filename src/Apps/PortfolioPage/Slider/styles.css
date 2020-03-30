@@ -1,0 +1,48 @@
+@import '../../styles/settings.css';
+@import'../../styles/generics.css';
+@import'../../styles/tools.css';
+
+.port {  
+    @apply --wrp; 
+    &_holder {
+        width: 100%;
+        border: 0 0 1px 0 /solid/ var(--borderGrey);
+    }
+    @media(--laptop-m) { 
+        @apply --col;
+    }
+    @media(--laptop-s) { margin: 50px * * }
+    @define-mixin fader $opac, $name, $d1, $d2, $d3, $d4{
+        opacity: $opac;
+        animation: $name 0.35s forwards ease-in-out;
+        &:nth-child(1) {animation-delay: $d1}
+        &:nth-child(2) {animation-delay: $d2}
+        &:nth-child(3) {animation-delay: $d3}
+        &:nth-child(4) {animation-delay: $d4}
+    }
+    &_in { @mixin fader 0, fade-in, 0s, 0.15s, 0.3s, 0.45s };
+    &_out { @mixin fader 1, fade-out, 0.45s, 0.3s, 0.15s, 0s };
+}  
+
+
+@keyframes fade-out {
+    from{ 
+        transform: translateY(0px);
+        opacity: 1
+    }
+    to{ 
+        transform: translateY(100px);
+        opacity: 0
+    }
+}
+
+@keyframes fade-in {
+    from{ 
+        transform: translateY(100px);
+        opacity: 0
+    }
+    to{ 
+        transform: translateY(0px);
+        opacity: 1
+    }
+}

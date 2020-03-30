@@ -1,0 +1,30 @@
+@import '../../styles/generics.css';
+@import '../../styles/settings.css';
+@import '../../styles/tools.css';
+
+
+@define-mixin hoverCard $transScreen, $transTitle, $transText, $opacTitle, $opacPara {
+    .spec { 
+        &_screen { transform: $transScreen }      
+        &_title {
+            transform: translateY($transTitle);
+            opacity: $opacTitle;
+        }
+        &_text {
+            opacity: $opacPara;
+            transform: scale($transText);
+        }  
+    }
+}
+.spec {
+    &_screen, &_title, &_text {
+        transition: all 0.35s linear;
+    }
+    @mixin hoverCard translate(0%, 0%)rotate(0deg), 0px, 0.85, 1, 0;
+}
+
+.spec:hover {
+    @mixin hoverCard translate(75%, 40%)rotate(-35deg), 95px, 1, 0, 1;
+}
+
+

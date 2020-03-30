@@ -1,0 +1,41 @@
+@import '../../../styles/generics.css';
+@import '../../../styles/settings.css';
+@import '../../../styles/tools.css';
+
+
+.h1 {
+    width:50%;
+    margin: * * 40px;
+    @media(--mobile) {
+        margin: * * 20px;
+        width: 100%;
+    }
+}
+
+.h2 {
+    @mixin fontSettings var(--pureWhite), 40px, 300, 1;
+    @media(--mobile) {
+        font-size: 32px;
+    }
+}
+
+.h3 { 
+    @mixin fontSettings var(--pureWhite), 32px, 300, 1;
+}
+
+.p {
+    @mixin fontSettings var(--pureWhite), var(--ptag), 400, 1.75;
+}
+
+
+.li {
+    a  { 
+        @mixin fontSettings var(--pureWhite), 32px, 300, 1; 
+        cursor: none;
+    }
+    @media(--ipad-l) {
+       a { 
+           font-size: 24px; 
+        } 
+    }
+}

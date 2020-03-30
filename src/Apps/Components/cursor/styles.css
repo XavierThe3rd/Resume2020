@@ -1,0 +1,63 @@
+@import '../../styles/settings.css';
+@import '../../styles/generics.css';
+@import '../../styles/tools.css';
+
+.cursor {
+    //border: 1px /solid/ var(--borderGrey);
+    @apply --flx-c-c;
+    position: fixed;
+    size: 12px;
+    border-radius: 100%;
+    background-color: var(--boxColor);
+    z-index: 9999999999;
+    -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform-origin: center center;
+    pointer-events: none;
+    mix-blend-mode: difference; 
+
+    /*&_point {
+        size: 12px;
+        border-radius: 100%;
+        position: absolute;
+        background-color: var(--pureWhite);
+    }
+
+    &_arc {
+        animation: rotCircle 3s infinite linear;
+        width: 15px;
+        stroke: var(--pureWhite);
+
+        circle, path{
+            fill: none;
+            stroke-miterlimit: 10;
+            stroke-width: 3px;
+            transform-origin: 50% 50%;
+        }
+        circle{
+            stroke-dasharray: 150,15,70,60,100,30;
+            animation: rotOuter 6s infinite linear;
+        } 
+        path{
+            stroke-dasharray: 100,15,50,50,70,20;
+            animation: rotInner 6s infinite linear;
+        }
+    } */
+
+    &-on {
+        animation: cursorOver 0.25s forwards ease-out;
+    }
+    &-off {
+        animation: cursorOut 0.25s forwards ease-out;
+    }
+}
+
+@keyframes cursorOver {
+    0%{ transform: scale(1) }
+    100%{ transform: scale(5) } 
+}
+
+@keyframes cursorOut {
+    from{ transform: scale(5) }
+    to{ transform: scale(1) } 
+}

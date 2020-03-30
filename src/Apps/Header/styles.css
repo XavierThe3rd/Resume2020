@@ -1,0 +1,99 @@
+@import '../styles/settings.css';
+@import '../styles/generics.css';
+@import '../styles/tools.css';
+
+.index{
+    height: 100%;
+    &_heading { margin: 300px 0 0 }
+    &_nav {
+        h1 { margin: 200px 0 0 var(--grid1\6) }
+        button { margin: 200px var(--grid1\6) 0 0 }
+    }
+    @media(--laptop-m) {
+        &_heading { margin: 250px 0 0 0 }
+        &_nav { 
+            h1 { margin: 175px 0 0 var(--grid1\12) }
+            button { margin: 175px var(--grid1\12) 0 0 }
+        }
+    }
+    @media(--laptop-s) {
+        &_heading { margin: 150px 0 0 0 }
+        &_nav {
+            h1 { margin: 20px 0 0 var(--grid1\12) }
+            button { margin: 20px var(--grid1\12) 0 0 }
+        }
+    }
+    @media(--ipad-l) { 
+        &_nav {
+            svg { 
+                margin: 20px 0 0 var(--grid1\24) 
+            }
+            button { margin: 20px var(--grid1\24) 0 0 } 
+        }
+    }
+}
+
+.other {
+    height: 275px;
+    border: 0 0 1px 0 /solid/ var(--borderGrey);
+    &_heading { 
+        margin: 135px 0 0 0; 
+        svg { width: 50% }
+    }
+    &_nav {
+        h1 { margin: 75px 0 0 var(--grid1\6) }
+        button { margin: 75px var(--grid1\6) 0 0 }
+    }
+    @media(--laptop-m) {
+        &_nav {
+            h1 { margin: 75px 0 0 var(--grid1\12) }
+            button { margin: 75px var(--grid1\12) 0 0 }
+        }
+    }
+    @media(--laptop-s) {
+        &_nav {
+            h1 { margin: 20px 0 0 var(--grid1\12) }
+            button { margin: 20px var(--grid1\12) 0 0 }
+        }
+    }
+    @media(--ipad-l) {
+        height: 72px;
+        svg { 
+            margin: 20px 0 0 var(--grid1\24) 
+        }
+        button { margin: 20px var(--grid1\24) 0 0 } 
+    }
+    @media(--mobile){ height: 48px } 
+}
+
+/*------------------------------Navigation Animation------------------------------*/
+
+@define-mixin navTransitions $delay, $add, $num, $trans, $scale, $opac, $height, $delay {
+    .index, .other {
+        &_loader {
+            span {
+                height: $height;
+                &:nth-child(1) {transition: all 0.35s linear}
+                &:nth-child(3) {transition: all 0.35s linear 0.35s}
+                &:nth-child(4) {transition: all 0.35s linear}
+            }
+            ul{
+                transition: all 0.2s linear 0.35s;
+                height: $height;
+                top:0;
+                li{
+                    transform: translateY($trans) scale(1, $scale);
+                    opacity: $opac;
+                    @for $i from 1 to 3 {
+                        &:nth-child($i) {
+                            transition: all 0.15s linear ($add + (0.1 * $i)) * $num;
+                        }
+                    }
+                } 
+            }
+        }
+    }
+}
+
+.nav-off { @mixin navTransitions 0.45s, -0.4, -1s, -50px, 0.75, 0, 0, 0s };
+.nav-on { @mixin navTransitions 0s, 0.5, 1s, 0px, 1, 1, 100%, 0.5s };

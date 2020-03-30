@@ -1,0 +1,100 @@
+@import './animations.css';
+
+:root {
+    --height: 425px;
+    @media(--desktop-s) { 
+        --height: 350px;
+    }
+    @media(--laptop-l) { 
+        --height: 300px;  
+    }
+    @media(--laptop-m) { 
+        --height: 400px;
+    }
+}
+
+.project {
+    @apply --col-e;
+    margin: 0px;
+    overflow: hidden;
+    position: relative;
+    height: var(--height);
+
+    &_picture {
+        @apply --flx--e;
+        size: 100%;
+        z-index: 0;
+        overflow: hidden;
+        position: absolute;
+        padding: 0px 0 60px;
+        span {
+            @apply --flx;
+            z-index: 1;
+            padding: 0 20px;
+            position: absolute * 0 0;
+            background: var(--linearFade);
+        }
+        img {
+            width: 150%;
+            position: absolute 0 * * -50px;
+        }
+    }
+
+    &_text {
+        @apply --col-e;
+        z-index: 1;
+        h2{
+            z-index: 4;
+            margin: 0 20px 0px 20px;
+            @mixin fontSettings var(--pureWhite), 40px, 200, 1.1;
+        }
+        span {
+            @apply --col;
+            padding: 0 20px;
+            width: 100%;
+            
+            background: var(--primePurple);
+            p {
+                @mixin fontSettings var(--pureWhite), inherit, 300, 1.25;
+                border: 0 0 1px /solid/ var(--pureWhite);
+                padding: 15px *;
+            }
+            h4{
+                @mixin fontSettings var(--primeOrange), 20px, 400, 1; 
+                padding: 15px * *;
+            }
+        }
+    }
+    
+    &_medium {
+        @apply --row-b;
+        width: 100%;
+        padding: 10px 20px;
+        align-items: center;
+        background: var(--primePurple);
+        z-index:0;      
+    }
+
+    h3 { 
+        font-weight: 400; 
+    }
+
+
+    
+    @media(--laptop-m) { 
+        h2 { 
+            width: 50%;
+            margin: 0 140px 0px 20px
+        }
+    };
+    @media(--ipad-l) {
+        margin: * * 0px; 
+        overflow: visible; 
+    }
+    @media(--mobile){ 
+        h2{ 
+            width: 75%;
+        }
+    };
+}
+

@@ -1,0 +1,73 @@
+@import './settings.css';
+
+
+@font-face {
+	font-family: 'proxima_nova_rgregular';
+	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot');
+	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.woff') format('woff'),
+		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.ttf') format('truetype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'proxima_nova_rgbold';
+	src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot');
+	src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.woff') format('woff'),
+		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.ttf') format('truetype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.svg#proxima_nova_rgbold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+    font-family: 'Azonix';
+    font-style: normal;
+    src: url('./fonts/Azonix.otf'); /* IE9 Compat Modes */
+    src: local('Azonix'), local('Azonix'),
+         url('./fonts/Azonix.otf') format('opentype'), /* IE6-IE8 */
+  }
+
+div, span, section, main, h1, h2, h3, h4, p, a, button, ul, nav, option, input, label, textarea {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: "Azonix", "Catamaran", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    margin: 0;
+}
+
+h2, h3, h4, button, label, input, span {
+    font-family: 'open sans', "Catamaran", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    margin: 0;
+}
+
+p, a, input, textarea {
+    font-family: "open sans", "Catamaran", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    margin: 0; 
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, button, label, input, span, p {
+    color: var(--pureWhite);
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+button, input, textarea{
+    border: none;
+    outline: none;
+    background: none;
+    resize: none;
+    cursor: none;
+    padding:0;
+}
