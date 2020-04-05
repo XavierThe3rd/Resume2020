@@ -75,7 +75,10 @@ const Form = props => {
           ))
         )}
       </div>
-      <Button Click={() => getData(props)}> Submit </Button>
+      <Button Class={`${block}_button`} Click={() => getData(props)}>
+        {' '}
+        Submit{' '}
+      </Button>
     </form>
   )
 }

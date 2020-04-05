@@ -1,5 +1,6 @@
 import React from 'react'
 import SVG from 'react-inlinesvg'
+import Button from '../../../Generics/button/button-container'
 import './styles.css'
 
 const block = 'info'
@@ -27,12 +28,22 @@ const Info = ({ data, setCursor }) => {
         ))}
       </div>
       <span className={`${block}_line`}></span>
-      <button
+      <a
+        className={`button ${block}_button`}
+        href={hit.button}
+        target="_blank"
         onMouseEnter={() => setCursor(true)}
         onMouseLeave={() => setCursor(false)}
       >
-        {hit.button}
-      </button>
+        <svg
+          className={`button_arc ${block}_arc`}
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 239.9 239.9"
+        >
+          <circle cx="120" cy="120" r="118.5" />
+        </svg>
+        <span className={`button_inner ${block}_inner`}>See Content!</span>
+      </a>
     </div>
   ))
 }

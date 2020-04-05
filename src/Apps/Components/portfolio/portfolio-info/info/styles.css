@@ -19,21 +19,9 @@
     p {
         @mixin fontSettings var(--pureBlack), var(--ptag), 300, 1.5; 
     }
-    button {
-        @apply --flx-c-c;
-        size: 50% 50px;
-        border-radius: 5px;
-        border: 1px /solid/ var(--pureBlack);
-        @mixin fontSettings var(--pureBlack), 26px, 300, 1;
-
-        /*&:hover {
-            color: var(--primeOrange);
-            border-color: var(--primeOrange);
-        }*/
-    }
     &_mediums {
         @apply --flx;
-        margin: 20px 0;
+        margin: 20px 20px 0 0;
         width: 150px;
         span {
             height: 75px;
@@ -54,7 +42,12 @@
             }
         }
     }
-
+    &_button { margin: 0px * * * }
+    &_inner { 
+        background: var(--pureBlack);
+        color: var(--pureWhite);
+    }
+    &_arc { stroke: var(--pureBlack) }
     @media (--ipad-l) {
         size: 100% 725px;
         padding: 20px 0;

@@ -9,6 +9,7 @@
     --clearBack: #ffffff57;
     --adobePS: #00c8ff;
     --adobeID: #ff3f94;
+    --adobeAI: #ff7c00;
     --reactJS: #ffca28;
     --offWhite: #f8f5ff;
     --whiteBack: #ccc9d3;
@@ -81,7 +82,7 @@
         --ptag: 1.5rem;
     }
     @media(--mobile) { 
-        --ptag: 22px;
+        --ptag: 1.2rem;
     }
     /*@media(--desktop-s) { --pTag: 26px }*/
 }
@@ -91,6 +92,7 @@
 :export { primeOrange: var(--primeOrange); }
 :export { adobePS: var(--adobePS); }
 :export { adobeID: var(--adobeID); }
+:export { adobeAI: var(--adobeAI); }
 :export { reactJS: var(--reactJS); }
 :export { boxColor: var(--boxColor); }
 :export { h1Color: var(--h1Color); }

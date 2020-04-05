@@ -50,6 +50,9 @@
             position: relative;
         }    
     }
+    @media(--ipad-l) {
+        mix-blend-mode: normal;
+    }
     @media(--mobile) { 
         &_svg { width: 250px }
     } 

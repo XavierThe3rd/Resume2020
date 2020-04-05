@@ -56,12 +56,7 @@ const Navigation = props => {
           {htag}
         </h1>
       )}
-      {resize < 1030 ? (
-        <span
-          className={`${block}_screen`}
-          style={{ opacity: tohome ? -opac : 1 }}
-        />
-      ) : null}
+      {resize < 1030 ? <span className={`${block}_screen`} /> : null}
       <NavButton
         button={button}
         setButton={setButton}

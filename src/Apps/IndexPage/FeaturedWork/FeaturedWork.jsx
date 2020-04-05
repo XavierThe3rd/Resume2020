@@ -22,7 +22,8 @@ const FeaturedWork = props => {
     setStep,
     smoothScroll,
     setOpac,
-    setHtag
+    setHtag,
+    setCursor
   } = props
   let Resize = () => (window.innerWidth > 1030 ? 1.57 : 1)
   let [size, setSize] = useState(Resize)

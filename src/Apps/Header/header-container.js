@@ -8,6 +8,7 @@ import {
   setStep,
   setNav
 } from '../../actions/header.js'
+import { setMove } from '../../actions/navigation.js'
 import { setButton } from '../../actions/globals'
 
 const mapStateToProps = state => {
@@ -29,7 +30,8 @@ const mapDispatchToProps = {
   setStep: setStep,
   setNav: setNav,
   setClass: setClass,
-  setButton: setButton
+  setButton: setButton,
+  setMove: setMove
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header)

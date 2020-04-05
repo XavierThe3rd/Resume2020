@@ -50,52 +50,27 @@ const Slider = props => {
   return (
     <ContentBox
       Size={() => setSize(Resize)}
-      className={`${block} ${props.Class}`}
+      className={`${block} ${props.Class} client`}
     >
-      {size === 1616 ? (
-        <div className={`${block}_holder`} style={{ height: size }}>
-          <CardComp data={data} pic={pic} setPic={setPic} dec={1} inc={4} />
-        </div>
-      ) : null}
       {total.map(hit => {
-        if (size === 1616 && hit > 1) {
-          return (
-            <div className={`${block}_holder`} style={{ height: size }}>
-              {scrollState > hit * size - (size + 600) ? (
-                <CardComp
-                  data={data}
-                  pic={pic}
-                  setPic={setPic}
-                  dec={
-                    size === 1616 ? (hit > 1 ? hit * 4 - 3 : null) : hit * 4 - 3
-                  }
-                  inc={size === 1616 ? (hit > 1 ? hit * 4 : null) : hit * 4}
-                />
-              ) : null}
-            </div>
-          )
-        } else if (size !== 1616) {
-          return (
-            <div className={`${block}_holder`} style={{ height: size }}>
-              {scrollState > hit * size - (size + size / 2) ? (
-                <CardComp
-                  className={`${
-                    outState > hit * size - (size + size / 2)
-                      ? `${block}_in`
-                      : `${block}_out`
-                  }`}
-                  data={data}
-                  pic={pic}
-                  setPic={setPic}
-                  dec={
-                    size === 1616 ? (hit > 1 ? hit * 4 - 3 : null) : hit * 4 - 3
-                  }
-                  inc={size === 1616 ? (hit > 1 ? hit * 4 : null) : hit * 4}
-                />
-              ) : null}
-            </div>
-          )
-        }
+        return (
+          <div className={`${block}_holder`} style={{ height: size }}>
+            {scrollState > hit * size - (size + size / 2) ? (
+              <CardComp
+                className={`${
+                  outState > hit * size - (size + size / 2)
+                    ? `${block}_in`
+                    : `${block}_out`
+                }`}
+                data={data}
+                pic={pic}
+                setPic={setPic}
+                dec={hit * 4 - 3}
+                inc={hit * 4}
+              />
+            ) : null}
+          </div>
+        )
       })}
     </ContentBox>
   )

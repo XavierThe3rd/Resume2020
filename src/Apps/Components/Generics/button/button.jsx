@@ -9,7 +9,9 @@ const Button = props => {
   return (
     <Link
       to={props.to}
-      className={`${block}`}
+      href={props.href}
+      target={props.target}
+      className={`${block} ${props.Class}`}
       onMouseEnter={() => setCursor(true)}
       onMouseLeave={() => setCursor(false)}
       onClick={props.Click}

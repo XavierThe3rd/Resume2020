@@ -56,6 +56,7 @@ const Loader = props => {
                           onClick={() => {
                             setOpac(1)
                             setStep(true)
+                            setScroll(true)
                             setCursor(false)
                             hit.tag === 'CONTACT'
                               ? document
@@ -69,7 +70,9 @@ const Loader = props => {
                             setTimeout(() => setClass(false), 1250)
                             setTimeout(() => {
                               smoothScroll()
-                              setScroll(false) | setButton(false)
+                              setScroll(false)
+                              setButton(false)
+                              setScroll(false)
                               window.location.pathname === '/Resume/Home'
                                 ? setHome(true)
                                 : setHome(false)

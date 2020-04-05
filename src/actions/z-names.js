@@ -31,6 +31,7 @@ export const SET_BUTTON_NAV = 'SET_BUTTON_NAV'
 export const SET_BUTTON_SPEC = 'SET_BUTTON_SPEC'
 
 export const SET_SMOOTH = 'SET_SMOOTH'
+export const SET_SMOOTH_STATE = 'SET_SMOOTH_STATE'
 export const SET_CURSOR = 'SET_CURSOR'
 
 export const SET_ABOUT_DATA = 'SET_ABOUT_DATA'
