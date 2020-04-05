@@ -8,7 +8,7 @@ const structure = {
     {
       index: 1,
       title: 'Resume',
-      search: PDF,
+      search: 'http://xavierthe3rd.epizy.com/ArtDirectory/PaperResume.pdf',
       name: 'Test Resume File Here',
       clazz: false
     },

@@ -3,7 +3,7 @@ import ContentBox from '../Components/Generics/content-box/contentBox.jsx'
 import text from '../Components/Generics/text-elms/text-elms.jsx'
 import Button from '../Components/Generics/button/button-container'
 import Slider from './Slider/slider-container'
-import CodePens from './CodePens/codepens-container'
+//import CodePens from './CodePens/codepens-container'
 import ReactFitText from 'react-fittext'
 import styles from './styles.css'
 
@@ -30,11 +30,16 @@ const Portfolio = () => {
         <text.Para style={{ color: styles.pColor }}>
           Wish to see my github repositories?
         </text.Para>
-        <Button style={{ color: styles.pColor, borderColor: styles.pColor }}>
+        <Button
+          style={{ color: styles.pColor, borderColor: styles.pColor }}
+          Click={() =>
+            window.open('https://github.com/XavierThe3rd?tab=repositories')
+          }
+        >
           Click Here!
         </Button>
       </ContentBox>
-      <CodePens className={`${block}_code`} />
+      {/*<CodePens className={`${block}_code`} />*/}
     </section>
   )
 }

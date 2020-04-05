@@ -9,13 +9,17 @@
     &_thanks {
         @apply --flx-c-c;
         size: 100% 408px; 
-        @media(--mobile) {
-            height: 308px;
-        }
     }
     &-on {
         animation: toState 5s forwards linear;
-    } 
+    }
+    &_button { margin-top: 0px }
+    @media(--mobile) { 
+        width: 100%;
+        h2 { margin: 10px 0 }
+        &_thanks { height: 308px }
+        &_button { margin-top: -50px }   
+    }
 }
 
 @keyframes toState {

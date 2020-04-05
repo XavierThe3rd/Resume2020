@@ -12,7 +12,7 @@ let get = new SmoothScroll()
 export const smoothScroll = () => {
   return {
     type: SET_SMOOTH,
-    payload: get.switchScroll()
+    payload: get.switchState()
   }
 }
 

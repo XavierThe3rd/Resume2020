@@ -11,11 +11,13 @@ import {
 } from '../../../actions/header'
 import { setLClass, setLoad } from '../../../actions/page-switch'
 import { setOpacHeading } from '../../../actions/heading'
+import { smoothScroll, setCursor } from '../../../actions/globals'
 
 const mapStateToProps = state => {
   return {
     data: state.setCardData.cardData,
-    pic: state.slider.pic
+    pic: state.slider.pic,
+    smoothScroll: smoothScroll
   }
 }
 
@@ -29,7 +31,8 @@ const mapDispatchToProps = {
   setHome: setHome,
   setStep: setStep,
   setOpac: setOpacHeading,
-  setHtag: setHtag
+  setHtag: setHtag,
+  setCursor: setCursor
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(FeaturedWork)

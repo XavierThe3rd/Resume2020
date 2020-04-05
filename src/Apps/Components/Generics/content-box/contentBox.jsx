@@ -12,6 +12,7 @@ const ContentBox = props => {
       className={`${block} ${props.className}`}
       id={props.id}
       style={props.style}
+      ref={props.ref}
     >
       {props.children}
     </div>

@@ -24,11 +24,6 @@
         justify-content: space-between;
     }
 
-    &_form {
-        @apply --col; 
-        width: 50%; 
-    }
-
     &_direct {
         @apply --col-b;
         width: 50%;
@@ -68,11 +63,6 @@
             justify-content: space-evenly;
             flex-direction: column;
         }
-        &_form {
-            width: 100%;
-            h2 { margin: 10px 0 }
-            button {width: 50%}
-        }
         &_direct {
             width: 100%;
             align-items: flex-start;
@@ -87,7 +77,7 @@
             width: 100%;
             margin: 20px 0;
         }
-        span { margin-top: 30px }
+        &_notes { margin-top: 30px }
     }
 }
 

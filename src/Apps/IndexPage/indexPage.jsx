@@ -4,7 +4,7 @@ import FeaturedWork from './FeaturedWork/featured-container'
 import Specializations from './Specializations/spec-container'
 import ContentBox from '../Components/Generics/content-box/contentBox.jsx'
 import text from '../Components/Generics/text-elms/text-elms.jsx'
-import Printables from './Printables/printables-container'
+//import Printables from './Printables/printables-container'
 import Qintel from '../../../images/QintelLogo.png'
 import Button from '../Components/Generics/button/button-container'
 import styles from './styles.css'
@@ -87,7 +87,7 @@ const Index = props => {
           Learn More!
         </Button>
       </ContentBox>
-      <Printables className={`${block}_holder`} />
+      {/*<Printables className={`${block}_holder`} />*/}
     </section>
   )
 }

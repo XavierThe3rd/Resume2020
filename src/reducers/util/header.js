@@ -12,7 +12,14 @@ import {
 const structure = {
   navState: false,
   classState: false,
-  htag: 'HOME',
+  htag:
+    window.location.pathname === '/Resume/Home'
+      ? 'HOME'
+      : window.location.pathname === '/Resume/Portfolio'
+      ? 'PORTFOLIO'
+      : window.location.pathname === '/Resume/About'
+      ? 'ABOUT'
+      : null,
   tohome: true,
   scroll: false,
   move: false,

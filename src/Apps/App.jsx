@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useCallback } from 'react'
 import Cursor from './Components/cursor/cursor-container'
 import Header from './Header/header-container'
 import Canvas from './Components/Canvas/canvas.jsx'
@@ -8,6 +8,7 @@ import Portfolio from './PortfolioPage/portfolioPage.jsx'
 import About from './aboutPage/about-container'
 import { createBrowserHistory } from 'history'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { handleLoad } from '../util/globalUtilities'
 import './styles/Apps.css'
 
 const appHistory = createBrowserHistory()
@@ -15,12 +16,11 @@ const appHistory = createBrowserHistory()
 const App = props => {
   const { smoothScroll } = props
 
-  appHistory.push('/Resume/Home')
-  window.scrollTo(0, 0)
-
-  useEffect(() => {
-    window.innerWidth > 1030 ? smoothScroll() : null
-  })
+  let load = useCallback(() => {
+    appHistory.push(window.location.pathname)
+    if (window.innerWidth > 1030) smoothScroll()
+  }, [smoothScroll])
+  handleLoad(load)
 
   return (
     <Router>

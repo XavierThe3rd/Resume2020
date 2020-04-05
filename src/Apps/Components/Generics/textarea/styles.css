@@ -28,7 +28,7 @@
         }
     }
     @media(max-width: 600px) {
-        height: 200px;
+        height: 300px;
         label { font-size: 22px }
         textarea { 
             font-size: 18px;
