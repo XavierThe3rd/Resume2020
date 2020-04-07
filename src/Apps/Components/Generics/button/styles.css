@@ -9,14 +9,12 @@
     z-index: 4;
     size: 200px;
     text-align:center;
-    mix-blend-mode: difference;
     &_inner {
         @apply --flx-c-c;
-        mix-blend-mode: difference;
         size: 190px;
         border-radius: 100%;
-        background: var(--pureWhite);
-        @mixin fontSettings var(--pureBlack), 36px, 600, 1;
+        background: #c9c9ca;
+        @mixin fontSettings var(--primeBackground), 36px, 600, 1;
     }
     &_arc {
         opacity: 0;

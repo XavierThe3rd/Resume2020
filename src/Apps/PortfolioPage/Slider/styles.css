@@ -2,11 +2,12 @@
 @import'../../styles/generics.css';
 @import'../../styles/tools.css';
 
-.port {  
+.port { 
+    //background: var(--pureWhite);
     @apply --wrp; 
     &_holder {
         width: 100%;
-        border: 0 0 1px 0 /solid/ var(--borderGrey);
+        //border: 0 0 1px 0 /solid/ var(--borderGrey);
     }
     @media(--laptop-m) { 
         @apply --col;

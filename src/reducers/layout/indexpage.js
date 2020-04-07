@@ -4,10 +4,10 @@ const structure = {
   indexData: {
     introTitle: 'Providing Versatility',
     introPara:
-      'Based in the city of pittsburgh, for the past 2 years I have been aquiring my degree in Graphic Design while also accumulating a vast knowledge of front-end & backend programming skills on my own accord. Now finished I look forward to finally providing my skills to you and your company.',
+      'My name is Thomas Xavier Grasso the 3rd, and for the past two years, I have been acquiring my degree in Graphic Design while also accumulating a vast knowledge of front-end & backend programming skills on my own time. Now that I’ve graduated, I look forward to providing my expertise to you and your company. My skill set is expansive in what I can contribute from graphic design to front-end development to UX/UI design.',
     internTitle: 'Interned At',
     internPara:
-      'Qintel provided excellent experience in the field of graphic desing aquiring skills of a wide variety from report design to programming to other off hand skills such as analytical work.'
+      'Qintel provided excellent experience in the field of graphic design, acquiring skills of a wide variety from report design to programming to other off-hand skills such as analytical work.'
   }
 }
 

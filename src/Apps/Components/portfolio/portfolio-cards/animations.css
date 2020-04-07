@@ -1,6 +1,6 @@
+@import '../../../styles/tools.css';
 @import '../../../styles/settings.css';
 @import '../../../styles/generics.css';
-@import '../../../styles/tools.css';
 
 @define-mixin hover $s-height, $t-height, $t-opac, $delay, $ease {
     .project {

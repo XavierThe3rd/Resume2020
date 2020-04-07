@@ -1,9 +1,8 @@
-@import './tools.css';
 
 :root {
-    --primePurple: #6100ff;
+    --primePurple: #6600ff;
     --halfPurple: #6200ff8c;
-    --primePink: #ff2643;
+    --primePink: #cc3333;
     --primeOrange: #fb965e;
     --cherrySoda:  #9f0000;
     --clearBack: #ffffff57;
@@ -25,66 +24,48 @@
     --borderLight: #242427;
     --offBack: #101013;
     --gridLine: #242427;
-
     --boxColor: #e1e1eb;
     --h1Color: #000000;
     --pColor: #000000;
-
-    /*--boxColor: #ffffff;
-    --h1Color: #000000;
-    --pColor: #000000;*/
-
     --gradientColor: linear-gradient(306deg, rgba(97,0,255,1) 0%, rgba(255,38,67,1) 100%);
-    --linearFade : linear-gradient(0deg, rgba(97,0,255,1) 15%, rgba(97,0,255,0) 100%);
-    @media (--laptop-m) {
-        --linearFade : linear-gradient(0deg, rgba(97,0,255,1) 25%, rgba(97,0,255,0) 100%);
+    --linearFade : linear-gradient(0deg, rgba(102,0,255,1) 15%, rgba(102,0,255,0) 100%);
+    @media (max-width: 1350px) {
+        --linearFade : linear-gradient(0deg, rgba(102,0,255,1) 25%, rgba(102,0,255,0) 100%);
     }
-    --linearFadeTL : linear-gradient(325deg, rgb(97, 0, 255) 10%, rgba(97, 0, 255, 0) 80%);
-
+    --linearFadeTL : linear-gradient(325deg, rgb(102,0,255) 10%, rgba(102, 0, 255, 0) 80%);
     --bkColor: #ffffff;
     --conColor: #e1e1eb;
-
-
-
-    --grid1\2: 49.99%; 
-
-    --grid1\3: 33.33333%;
-
-    --grid1\4: 25%;
-
-    --grid1\6: 16.666667%; 
-    --grid5\6: 83.33333%;
-
-    --grid1\12: 8.33333%; 
-    --grid5\12: 41.666667%; 
-    --grid11\12: 91.666667%;
-
-    --grid1\24: 4.1666667%; 
-    --grid11\24: 45.833333%;
-    --grid23\24: 95.833333%;
-
-    --gridEigth: 12.5%;
-
     --ptag: 1.65rem;
     --h2tag: 48px;
     --h3tag: 40px;
-    @media(--desktop-s) { 
+    @media(max-width: 1720px) { 
         --ptag: 1.65rem;
         --h2tag: 42px;
         --h3tag: 36px;
     }
-    @media(--laptop-l) { 
+    @media(max-width: 1650px ) { 
         --ptag: 1.6rem;
         --h2tag: 32px;
         --h3tag: 28px;
     }
-    @media(--laptop-m) { 
+    @media(max-width: 1350px) { 
         --ptag: 1.5rem;
     }
-    @media(--mobile) { 
+    @media(max-width: 600px) { 
         --ptag: 1.2rem;
     }
-    /*@media(--desktop-s) { --pTag: 26px }*/
+    --grid1-2: 50%; 
+    --grid1-3: 33.33333%;
+    --grid1-4: 25%;
+    --grid1-6: 16.666667%; 
+    --grid5-6: 83.3%;
+    --grid1-12: 8.33333%; 
+    --grid5-12: 41.666667%; 
+    --grid11-12: 91.666667%;
+    --grid1-24: 4.1666667%; 
+    --grid11-24: 45.833333%;
+    --grid23-24: 95.833333%;
+    --gridEigth: 12.5%;
 }
 
 
@@ -97,3 +78,5 @@
 :export { boxColor: var(--boxColor); }
 :export { h1Color: var(--h1Color); }
 :export { pColor: var(--pColor); }
+:export { primeBackground: var(--primeBackground); }
+:export { pureWhite: var(--pureWhite); }

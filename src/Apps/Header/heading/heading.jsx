@@ -4,7 +4,6 @@ import SVG from 'react-inlinesvg'
 import './styles.css'
 import logo from '../../../../images/Logo.svg'
 import { handleLoad, handleScroll } from '../../../util/globalUtilities'
-import { setHome } from '../../../actions/header'
 
 const block = `heading`
 
@@ -34,7 +33,9 @@ const Heading = props => {
   return step ? (
     <div className={`${block} ${props.className}`}>
       <span id={`spanId`} style={{ opacity: opac }}>
-        <SVG src={logo} className={`${block}_svg`} />
+        {resize > 1030 || tohome ? (
+          <SVG src={logo} className={`${block}_svg`} />
+        ) : null}
         {tohome ? (
           <div className={`${block}_sub`}>
             <h1>Providing Bold Intuitive Design and Programming</h1>

@@ -1,4 +1,4 @@
-import { SET_LOAD, SET_LINKCLASS, SET_BARS } from '../actions/z-names'
+import { SET_LOAD, SET_LINKCLASS } from '../actions/z-names'
 
 export const setLoad = newKey => {
   return {
@@ -10,13 +10,6 @@ export const setLoad = newKey => {
 export const setLClass = newKey => {
   return {
     type: SET_LINKCLASS,
-    payload: newKey
-  }
-}
-
-export const setBars = newKey => {
-  return {
-    type: SET_BARS,
     payload: newKey
   }
 }

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268.1 268.1">
+  <g>
+    <circle cx="134" cy="134" r="133.8" style="fill: none;stroke: #ee3248;stroke-miterlimit: 10;stroke-width: 0.5px;stroke-dasharray: 150,12,24,36,100,60"/>
+    <circle cx="134" cy="134" r="76.9" style="fill: none;stroke: #ee3248;stroke-miterlimit: 10;stroke-width: 0.5px;stroke-dasharray: 75,12,24,36,100,60"/>
+    <circle cx="134" cy="134" r="66.4" style="fill: none;stroke: #ee3248;stroke-miterlimit: 10;stroke-width: 0.5px;stroke-dasharray: 75,12,24,36,100,60"/>
+    <g>
+      <g>
+        <circle cx="144.6" cy="17.9" r="13.6" style="fill: #ee3248"/>
+        <circle cx="134" cy="134" r="37.9" style="fill: #ee3248"/>
+        <circle cx="188.2" cy="81.7" r="7.7" style="fill: #ee3248"/>
+      </g>
+      <g>
+        <circle cx="123.4" cy="250.2" r="13.6" style="fill: #ee3248"/>
+        <circle cx="79.9" cy="186.4" r="7.7" style="fill: #ee3248"/>
+      </g>
+    </g>
+  </g>
+</svg>

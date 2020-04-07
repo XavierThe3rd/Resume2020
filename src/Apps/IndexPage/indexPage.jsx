@@ -1,21 +1,15 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react'
+import React, { useState } from 'react'
 import SVG from 'react-inlinesvg'
 import FeaturedWork from './FeaturedWork/featured-container'
 import Specializations from './Specializations/spec-container'
 import ContentBox from '../Components/Generics/content-box/contentBox.jsx'
 import text from '../Components/Generics/text-elms/text-elms.jsx'
-//import Printables from './Printables/printables-container'
 import Qintel from '../../../images/QintelLogo.png'
 import Button from '../Components/Generics/button/button-container'
 import styles from './styles.css'
 import Versitile from '../../../images/Versitile.svg'
 import ReactFitText from 'react-fittext'
 import { toPage } from '../../util/globalFunctions'
-import {
-  handleScroll,
-  handleLoad,
-  handleResize
-} from '../../util/globalUtilities'
 
 let block = 'ind'
 
@@ -31,7 +25,11 @@ const Index = props => {
     setCursor,
     setOpac,
     setHtag,
-    index
+    setOpacNav,
+    index,
+    setMove,
+    setDist,
+    setScroll
   } = props
   let ResizeA = () => (window.innerWidth > 1030 ? 2 : 1.12)
   let ResizeB = () => (window.innerWidth > 1030 ? 1.24 : 1.215)
@@ -47,17 +45,18 @@ const Index = props => {
       >
         <SVG className={`${block}_image`} src={Versitile} />
         <ReactFitText compressor={sizeA}>
-          <text.Title style={{ color: styles.pColor }}>
+          <text.Title style={{ color: styles.primeBackground }}>
             {index.introTitle}
           </text.Title>
         </ReactFitText>
-        <text.Para style={{ color: styles.pColor }}>
+        <text.Para style={{ color: styles.primeBackground }}>
           {index.introPara}
         </text.Para>
         <Button
           to={'/Resume/About'}
-          style={{ color: styles.pColor, borderColor: styles.pColor }}
-          Click={() => toPage(props, 'ABOUT', '/Resume/About', 0)}
+          stroke={styles.primeBackground}
+          color={styles.pureWhite}
+          Click={() => toPage(props, 'ABOUT', '/Resume/About')}
         >
           Learn More!
         </Button>
@@ -71,23 +70,23 @@ const Index = props => {
         style={{ background: styles.boxColor }}
       >
         <ReactFitText compressor={sizeB}>
-          <text.Title style={{ color: styles.pColor }}>
+          <text.Title style={{ color: styles.primeBackground }}>
             {index.internTitle}
           </text.Title>
         </ReactFitText>
         <img Class={`${block}_image`} src={Qintel} alt="none" />
-        <text.Para style={{ color: styles.pColor }}>
+        <text.Para style={{ color: styles.primeBackground }}>
           {index.internPara}
         </text.Para>
         <Button
           to={'/Resume/About'}
-          style={{ color: styles.pColor, borderColor: styles.pColor }}
-          Click={() => toPage(props, 'ABOUT', '/Resume/About', 3000)}
+          stroke={styles.primeBackground}
+          color={styles.pureWhite}
+          Click={() => toPage(props, 'ABOUT', '/Resume/About')}
         >
           Learn More!
         </Button>
       </ContentBox>
-      {/*<Printables className={`${block}_holder`} />*/}
     </section>
   )
 }

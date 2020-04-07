@@ -7,10 +7,10 @@ module.exports = {
       path: [path.resolve(__dirname, 'node_modules')]
     }),
     require('postcss-modular-scale'),
-    require('postcss-cssnext'),
     require('postcss-mixins'),
     require('postcss-for'),
     require('postcss-each'),
+    require('postcss-cssnext'),
     require('postcss-nested'),
     require('postcss-short'),
     require('postcss-automath')

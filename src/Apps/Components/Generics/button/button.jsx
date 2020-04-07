@@ -16,16 +16,18 @@ const Button = props => {
       onMouseLeave={() => setCursor(false)}
       onClick={props.Click}
       type={props.type}
-      style={props.style}
     >
       <svg
         className={`${block}_arc`}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 239.9 239.9"
       >
-        <circle cx="120" cy="120" r="118.5" />
+        <circle cx="120" cy="120" r="118.5" style={{ stroke: props.stroke }} />
       </svg>
-      <span className={`${block}_inner ${props.className}`}>
+      <span
+        className={`${block}_inner ${props.className}`}
+        style={{ background: props.stroke, color: props.color }}
+      >
         {props.children}
       </span>
     </Link>

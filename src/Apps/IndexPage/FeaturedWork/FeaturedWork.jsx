@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import ProjectPiece from '../../Components/portfolio/port-piece-holder'
 import text from '../../Components/Generics/text-elms/text-elms.jsx'
 import Button from '../../Components/Generics/button/button-container'
-import './styles.css'
+import styles from './styles.css'
 import ContentBox from '../../Components/Generics/content-box/contentBox.jsx'
 import ReactFitText from 'react-fittext'
 import { toPage } from '../../../util/globalFunctions'
@@ -23,7 +23,11 @@ const FeaturedWork = props => {
     smoothScroll,
     setOpac,
     setHtag,
-    setCursor
+    setCursor,
+    setOpacNav,
+    setMove,
+    setScroll,
+    setDist
   } = props
   let Resize = () => (window.innerWidth > 1030 ? 1.57 : 1)
   let [size, setSize] = useState(Resize)
@@ -60,6 +64,8 @@ const FeaturedWork = props => {
       </div>
       <Button
         className={`${block}_button`}
+        stroke={styles.pureWhite}
+        color={styles.primeBackground}
         to={`/Resume/Portfolio`}
         Click={() => toPage(props, 'Portfolio', '/Resume/Portfolio', 0)}
       >

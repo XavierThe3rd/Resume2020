@@ -1,4 +1,3 @@
-export const SET_MOBILE = 'SET_MOBILE'
 export const SET_STEP = 'SET_STEP'
 
 export const SET_NAV = 'SET_NAV'
@@ -13,19 +12,13 @@ export const SET_NAV_BUTTON = 'SET_NAV_BUTTON'
 
 export const SET_LINK_DATA = 'SET_LINK_DATA'
 export const SET_HOME = 'SET_HOME'
-export const SET_BARS = 'SET_BARS'
 export const SET_LOAD = 'SET_LOAD'
 export const SET_LINKCLASS = 'SET_LINKCLASS'
 export const SET_DIST = 'SET_DIST'
 
-export const SET_COUNT = 'SET_COUNT'
 export const SET_PIC = 'SET_PIC'
 export const SET_DATA = 'SET_DATA'
 export const SET_INNER = 'SET_INNER'
-
-export const SET_PEN_DATA = 'SET_PEN_DATA'
-
-export const SET_PDF = 'SET_PDF'
 
 export const SET_BUTTON_NAV = 'SET_BUTTON_NAV'
 export const SET_BUTTON_SPEC = 'SET_BUTTON_SPEC'

@@ -6,16 +6,24 @@
     @apply --col--e;
     width: 50%;
     z-index:5;
-    &_holder {
+    &_screen {
         @apply --flx-c-c;
+        position: absolute auto;
+        margin: auto;
+        size: 100% 700px;
+        background: var(--pureWhite);
+    }
+    &_load { width: 50% }
+    &_holder {
+        @apply --flx;
+        overflow-x: scroll;
         size: 100% 800px;
-        overflow: hidden;
         margin: * * 10px;
         border: 0 0 1px /solid/ var(--pureBlack);
         background: var(--pureWhite);
         img {
             size: initial 500px;
-            margin: * * 0px;
+            margin: auto;
         }
     }
     &_slider {

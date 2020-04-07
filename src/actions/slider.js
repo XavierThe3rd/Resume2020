@@ -1,11 +1,4 @@
-import { SET_COUNT, SET_PIC, SET_INNER } from '../actions/z-names'
-
-export const setCount = numb => {
-  return {
-    type: SET_COUNT,
-    payload: numb
-  }
-}
+import { SET_PIC, SET_INNER } from '../actions/z-names'
 
 export const setPic = numb => {
   return {

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Heading from './heading/heading-container'
 import Navigation from './navigation/nav-container'
 import Loader from './Loader/loader-container'
@@ -20,7 +20,6 @@ const Header = props => {
     setStep,
     classState,
     navState,
-    mobileState,
     button,
     setButton
   } = props

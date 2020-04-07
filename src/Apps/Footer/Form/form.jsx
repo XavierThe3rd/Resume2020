@@ -75,7 +75,12 @@ const Form = props => {
           ))
         )}
       </div>
-      <Button Class={`${block}_button`} Click={() => getData(props)}>
+      <Button
+        Class={`${block}_button`}
+        Click={() => getData(props)}
+        stroke={styles.pureWhite}
+        color={styles.primeBackground}
+      >
         {' '}
         Submit{' '}
       </Button>

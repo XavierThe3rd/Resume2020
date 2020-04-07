@@ -14,21 +14,24 @@ const ProjectPiece = props => {
     btNav,
     setButton,
     button,
-    setCursor
+    setCursor,
+    setMove,
+    move
   } = props
   let [info, setInfo] = useState(false)
   let [display, setDisplay] = useState(false)
   let pieceRef = useRef()
-
   useEffect(() => {
     if (btNav === true) {
       setPic(1)
+      window.pageYOffset < 50 && window.innerWidth > 1030
+        ? setMove(false)
+        : null
       setBtNav(true)
       setDisplay(false)
       setTimeout(() => setInfo(false), 700)
     }
   })
-
   return (
     <div
       ref={pieceRef}
@@ -53,6 +56,9 @@ const ProjectPiece = props => {
           pieceRef.current.classList.remove('port_in')
           setBtNav(false)
           setButton(!button)
+          window.pageYOffset < 50 && window.innerWidth > 1030
+            ? setMove(true)
+            : null
           setTimeout(() => {
             setInfo(true)
             setTimeout(() => setDisplay(true), 10)

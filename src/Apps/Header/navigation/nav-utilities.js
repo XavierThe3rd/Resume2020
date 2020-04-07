@@ -3,7 +3,7 @@ let ns = 0
 
 export const navScroll = props => {
   props.setDist(window.pageYOffset)
-  props.setOpac(1 - props.dist / 200)
+  props.setOpacNav(1 - props.dist / 200)
 
   let mobileScroll = pagey => {
     if (window.pageYOffset > pagey) {

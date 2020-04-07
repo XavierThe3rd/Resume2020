@@ -14,7 +14,7 @@
         
     }
     &_image {
-        width: var(--grid1\2);
+        width: var(--grid1-2);
         margin: * * 55px;
     }
     @media(--ipad-l) {

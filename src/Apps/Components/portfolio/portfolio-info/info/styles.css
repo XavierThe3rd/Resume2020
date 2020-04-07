@@ -47,7 +47,23 @@
         background: var(--pureBlack);
         color: var(--pureWhite);
     }
-    &_arc { stroke: var(--pureBlack) }
+    &_arc {
+        opacity: 0;
+        transition: all 0.2s linear;
+        animation: rotCircle 3s infinite linear;
+        width: 200px;
+        stroke: var(--pureBlack);
+        position: absolute;
+
+        circle{
+            stroke-dasharray: 150,15,70,60,100,30;
+            animation: rotOuter 6s infinite linear;
+            fill: none;
+            stroke-miterlimit: 10;
+            stroke-width: 3px;
+            transform-origin: 50% 50%;
+        } 
+    }
     @media (--ipad-l) {
         size: 100% 725px;
         padding: 20px 0;

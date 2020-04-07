@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactFitText from 'react-fittext'
 import './styles.css'
 
 const Text = () => {

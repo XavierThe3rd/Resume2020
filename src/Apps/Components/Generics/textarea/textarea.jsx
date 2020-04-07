@@ -6,8 +6,8 @@ const block = 'txtholder'
 const TextArea = props => {
   let { setCursor } = props
   return (
-    <div className={`${block} ${props.className}`}>
-      <label className={`${block}_label`}>{props.children}</label>
+    <label className={`${block}`}>
+      {props.children}
       <textarea
         name={props.name}
         onChange={props.onChange}
@@ -17,7 +17,7 @@ const TextArea = props => {
       >
         {props.Thanks}
       </textarea>
-    </div>
+    </label>
   )
 }
 

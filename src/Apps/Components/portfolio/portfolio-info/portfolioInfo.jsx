@@ -1,8 +1,7 @@
+import React from 'react'
 import Info from './info/info.jsx'
 import Pictures from './pictures/pictures.jsx'
-import React from 'react'
 import './styles.css'
-import OverflowScrolling from 'react-overflow-scrolling'
 
 let block = 'specifications'
 

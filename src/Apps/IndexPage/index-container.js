@@ -9,7 +9,9 @@ import {
 } from '../../actions/header'
 import { setLClass, setLoad } from '../../actions/page-switch'
 import { smoothScroll, setCursor } from '../../actions/globals'
+import { setOpacNav, setMove } from '../../actions/navigation.js'
 import { setOpacHeading } from '../../actions/heading'
+import { setDist, setScroll } from '../../actions/header'
 
 const mapStateToProps = state => {
   return {
@@ -28,7 +30,11 @@ const mapDispatchToProps = {
   smoothScroll: smoothScroll,
   setOpac: setOpacHeading,
   setHtag: setHtag,
-  setCursor: setCursor
+  setCursor: setCursor,
+  setOpacNav: setOpacNav,
+  setMove: setMove,
+  setDist: setDist,
+  setScroll: setScroll
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Index)

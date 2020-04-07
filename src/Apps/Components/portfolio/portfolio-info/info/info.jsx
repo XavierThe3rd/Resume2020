@@ -36,13 +36,13 @@ const Info = ({ data, setCursor }) => {
         onMouseLeave={() => setCursor(false)}
       >
         <svg
-          className={`button_arc ${block}_arc`}
+          className={`${block}_arc`}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 239.9 239.9"
         >
           <circle cx="120" cy="120" r="118.5" />
         </svg>
-        <span className={`button_inner ${block}_inner`}>See Content!</span>
+        <span className={`${block}_inner button_inner`}>See Content!</span>
       </a>
     </div>
   ))

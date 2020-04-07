@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 from flask_cors import  CORS, cross_origin
 from flask_mail import Mail, Message
 
-app = Flask(__name__, static_folder="./Resume", template_folder="./public")
+app = Flask(__name__, static_folder="../Resume", template_folder="../public")
 CORS(app)
 cross_origin()
 

@@ -3,30 +3,25 @@
 @import '../../../styles/tools.css';
 
 .inpholder {
+    @apply --flx--e;
     margin: 20px 0;
-    width: 100%;
+    size: 100% 52px;
     z-index: 4;
-
-    &_label {
-        @apply --flx--c;
+    h4 {
         position: absolute;
+        margin: -10px 0 0;
         @mixin fontSettings var(--pureWhite), 28px, 400, 1;
-        height:  52px;
     }
+    
     &_input {
         @mixin fontSettings var(--pureWhite), 24px, 300, 1;
         border: 0 0 3px 0 /solid/ var(--pureWhite);
         padding: 0 0 0 150px;
         size: 100% 52px;
-        float: right;
 
         &:focus {
             border-color: var(--primeOrange);
             color: var(--primeOrange);
-
-            ~label {
-                color: var(--primeOrange)
-            }
         }
     }
     @media(max-width: 600px) {

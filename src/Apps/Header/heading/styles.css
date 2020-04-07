@@ -6,11 +6,10 @@
     @apply --col;
     width: 100%;
     position: fixed * * * 0;
-    padding: 0 var(--grid1\6);
+    padding: 0 var(--grid1-6);
     z-index: -1;
     &_svg {
         width: 75%;
-        margin: 0 0 0 -10px;
     }
 
     &_sub {
@@ -36,7 +35,7 @@
         }
     }
     @media (--laptop-m) {
-        padding: 0 var(--grid1\12);
+        padding: 0 var(--grid1-12);
         &_sub {
             h1 {
                 &:nth-child(1) {
@@ -51,7 +50,6 @@
     @media (--ipad-l) {
         &_svg {
             width: 100%;
-            margin: 0 0 0 -10px;
         }
         &_sub {
             margin: 20px 0px 0 0px;

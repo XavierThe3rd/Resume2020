@@ -1,15 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import text from '../Components/Generics/text-elms/text-elms.jsx'
-import Input from '../Components/Generics/input/input-container'
-import TextArea from '../Components/Generics/textarea/textarea-container'
 import SVG from 'react-inlinesvg'
 import ReactFitText from 'react-fittext'
-//import { createBrowserHistory } from 'history'
 import './styles.css'
 import Form from './Form/form-container'
 
 const block = 'footer'
-//const appHistory = createBrowserHistory()
 
 const Footer = props => {
   let { data } = props
@@ -21,13 +17,15 @@ const Footer = props => {
       <div className={`${block}_holder`}>
         <Form data={data} />
         <div className={`${block}_direct`}>
-          <div>
+          <div className={`${block}_links`}>
             <text.Header>{data.contactD}</text.Header>
-            {data.links.map(hit => (
-              <text.Link>
-                {hit.title} <SVG src={hit.icon} />
-              </text.Link>
-            ))}
+            <ul>
+              {data.links.map(hit => (
+                <text.Link>
+                  {hit.title} <SVG src={hit.icon} />
+                </text.Link>
+              ))}
+            </ul>
           </div>
           <div className={`${block}_logo`}>
             <SVG src={data.Logo} />

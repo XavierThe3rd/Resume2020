@@ -4,12 +4,13 @@
 
 
 .portfolio {
+    //: var(--primeBackground);
+    //box-shadow:var(--primePurple) 0 -4px 35px 6px;
     &_holder {
-
+        padding: 0px * 0px;
     }
     &_github {
         padding: 100px *;
-        margin: 100px *;
     }
     &_code {
         margin: * * 100px;

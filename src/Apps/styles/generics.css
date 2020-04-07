@@ -72,6 +72,11 @@
         justify-content: center;
         align-items: center;
     }
+    --flx-b-e: {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
 
     --flx--e: {
         display: flex;

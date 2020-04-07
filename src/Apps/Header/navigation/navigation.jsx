@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react'
+import React, { useCallback } from 'react'
 import SVG from 'react-inlinesvg'
 import NavButton from '../../Components/nav-button/navbutton-container'
 import { navScroll } from './nav-utilities'

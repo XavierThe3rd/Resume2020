@@ -19,12 +19,7 @@ const Cursor = ({ cursorState, setCursor }) => {
     <div
       className={`${block} ${cursorState ? `${block}-on` : `${block}-off`}`}
       style={{ left: x, top: y }}
-    >
-      {/*<svg className={`${block}_arc`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 239.9 239.9">
-        <circle cx="120" cy="120" r="118.5" />
-      </svg>
-  <span className={`${block}_point`} />*/}
-    </div>
+    ></div>
   )
 }
 export default Cursor

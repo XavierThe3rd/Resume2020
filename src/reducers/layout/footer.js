@@ -18,7 +18,7 @@ const structure = {
         name: 'email'
       },
       {
-        title: 'Subject',
+        title: 'Subject :',
         name: 'subject'
       }
     ],

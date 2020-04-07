@@ -4,15 +4,15 @@
 
 
 :root {
-    --outerGrid: var(--grid1\6);
-    --centerGrid: var(--grid1\3);
+    --outerGrid: var(--grid1-6);
+    --centerGrid: var(--grid1-3);
     @media (--laptop-m) {
-        --outerGrid: var(--grid1\12);
-        --centerGrid: var(--grid5\12);
+        --outerGrid: var(--grid1-12);
+        --centerGrid: var(--grid5-12);
     }
     @media (--mobile) {
-        --outerGrid: var(--grid1\24);
-        --centerGrid: var(--grid11\24);
+        --outerGrid: var(--grid1-24);
+        --centerGrid: var(--grid11-24);
     }
 }
 
@@ -22,7 +22,9 @@
     size: 100% 100%;
     position: fixed 0 * * 0;
     z-index: 5;
-    &_svg {
+    &_loadin {
+        transition: all 0.5s linear;
+        size: 75%;
         position: fixed 0 0 0 0;
         margin: auto;
     }
@@ -66,20 +68,12 @@
 
     /*-----------------------------Loading Animation-----------------------------*/
 
-    @for $i from 1 to 5 {
-        &_svg {
-            transition: all 0.5s ease-in-out;
-            &:nth-child($i) { width: 300px }
-            &:nth-child(6) { width: 170px }
-        }
-        &-out {
-            opacity: 0;
-            transform: rotate(0deg);
-        }
-        &-on {
-            opacity: 1;
-            &:nth-child($i) { transform: rotate(72deg * $i);      
-            }
+
+    &-out {
+        opacity: 0;
+    }
+    &-on {
+        opacity: 1; 
         }
     }
-}
+    

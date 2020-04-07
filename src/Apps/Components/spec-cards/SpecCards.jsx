@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import SVG from 'react-inlinesvg'
-import { onResize } from '../../../util/globalUtilities'
 import './styles.css'
 
 let block = 'spec'

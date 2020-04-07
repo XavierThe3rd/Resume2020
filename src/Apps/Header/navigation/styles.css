@@ -16,6 +16,7 @@
         transition: all 0.35s linear;
         @mixin fontSettings var(--pureWhite), 32px, 600, 1;
         position: fixed 0 * * 0;
+        z-index: 4;
     }
     &_button {
         position: fixed * 0 * *;

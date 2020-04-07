@@ -1,15 +1,4 @@
-import {
-  SET_BARS,
-  SET_LOAD,
-  SET_LINKCLASS,
-  SET_LINK_DATA
-} from '../../actions/z-names'
-import barA from '../../../images/BarA.svg'
-import barB from '../../../images/BarB.svg'
-import barC from '../../../images/BarC.svg'
-import barD from '../../../images/BarD.svg'
-import barE from '../../../images/BarE.svg'
-import TheX from '../../../images/TheX.svg'
+import { SET_LOAD, SET_LINKCLASS, SET_LINK_DATA } from '../../actions/z-names'
 
 const structure = {
   indexState: true,
@@ -17,7 +6,6 @@ const structure = {
   portState: false,
   load: false,
   linkclass: false,
-  bars: [barA, barB, barC, barD, barE, TheX],
 
   linkData: [
     {
@@ -111,11 +99,6 @@ const pageSwitch = (state = structure, action) => {
       return {
         ...state,
         linkclass: action.payload
-      }
-    case SET_BARS:
-      return {
-        ...state,
-        bars: structure.bars
       }
 
     default:

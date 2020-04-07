@@ -4,10 +4,10 @@
 
 
 .about {
-    &:nth-child(1) { padding: * * 150px }
+    &:nth-child(1) { padding: * * 100px }
     &:nth-child(2) { 
         border: 1px 0px 0px 0px /solid/ #c4c4c7;
-        padding: 150px *;
+        padding: 100px *;
     }
 
     &_holder {
@@ -16,8 +16,8 @@
     }
     &_image {
         float: right;
-        width: var(--grid1\2);
-        margin: * * 0px 10px;
+        width: var(--grid1-2);
+        margin: * * 0px 20px;
     }
     &_line { 
         position: absolute;
@@ -39,6 +39,11 @@
         &_image { 
             width: 100%;
             margin: 52px 0;
+        }
+        &_text {
+            h1 { 
+                font-size: 3rem;
+            }
         }
     }
 }

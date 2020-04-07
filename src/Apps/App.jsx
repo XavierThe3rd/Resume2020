@@ -1,4 +1,5 @@
-import React, { useEffect, useCallback } from 'react'
+import './styles/Apps.css'
+import React, { useCallback } from 'react'
 import Cursor from './Components/cursor/cursor-container'
 import Header from './Header/header-container'
 import Canvas from './Components/Canvas/canvas.jsx'
@@ -9,7 +10,6 @@ import About from './aboutPage/about-container'
 import { createBrowserHistory } from 'history'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { handleLoad } from '../util/globalUtilities'
-import './styles/Apps.css'
 
 const appHistory = createBrowserHistory()
 

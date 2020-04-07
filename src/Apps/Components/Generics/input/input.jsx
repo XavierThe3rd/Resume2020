@@ -6,7 +6,8 @@ const block = 'inpholder'
 const Input = props => {
   let { setCursor } = props
   return (
-    <div className={`${block}`}>
+    <label className={`${block}`}>
+      <h4>{props.children}</h4>
       <input
         className={`${block}_input`}
         type="text"
@@ -18,8 +19,7 @@ const Input = props => {
         onMouseEnter={() => setCursor(true)}
         onMouseLeave={() => setCursor(false)}
       />
-      <label className={`${block}_label`}>{props.children}</label>
-    </div>
+    </label>
   )
 }
 

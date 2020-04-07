@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './styles.css'
+import Loading from '../../../loading/loading.jsx'
 
 const block = 'pictures'
 
 const Pictures = ({ data, pic, setPic, setCursor }) => {
+  let [loadState, setLoad] = useState(false)
+
   return (
     <div className={`${block}`}>
       {data.map(hit =>
@@ -11,7 +14,16 @@ const Pictures = ({ data, pic, setPic, setCursor }) => {
           if (hit.index === pic) {
             return (
               <span className={`${block}_holder`}>
-                <img className={``} src={hit.pic} />
+                {loadState ? null : (
+                  <div className={`${block}_screen`}>
+                    <Loading className={`${block}_load`} />
+                  </div>
+                )}
+                <img
+                  className={``}
+                  src={hit.pic}
+                  onLoad={() => setLoad(true)}
+                />
               </span>
             )
           }
@@ -30,7 +42,8 @@ const Pictures = ({ data, pic, setPic, setCursor }) => {
                 onMouseLeave={() => setCursor(false)}
                 onClick={e => setPic(hit.index)}
               >
-                <img src={hit.pic} />
+                {loadState ? null : <Loading />}
+                <img src={hit.pic} onLoad={() => setLoad(true)} />
               </button>
             )
           })

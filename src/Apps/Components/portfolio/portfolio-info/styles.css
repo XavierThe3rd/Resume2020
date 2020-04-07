@@ -3,15 +3,15 @@
 @import '../../../styles/tools.css';
 
 :root {
-    --pad: var(--grid1\6);
-    --wid: var(--grid1\3);
+    --pad: var(--grid1-6);
+    --wid: var(--grid1-3);
     @media (--laptop-m) {
-        --pad: var(--grid1\12);
+        --pad: var(--grid1-12);
         --wid: 41.7%;
     }
     @media (--mobile) {
-        --pad: var(--grid1\24);
-        --wid: var(--grid11\24);
+        --pad: var(--grid1-24);
+        --wid: var(--grid11-24);
     }
 }
 

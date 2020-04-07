@@ -5,9 +5,16 @@
 .footer{
     border: 1px 0px 0px 0px /solid/ var(--borderLight);
     @apply --col;
-    padding: 0px var(--grid1\6) 25px;
+    padding: 0px var(--grid1-6) 25px;
+    &_links { 
+        text-align: end;
+        ul { margin: 50px * * *}
+    }
     h1 { margin: 150px 0 40px}
-    h2 { margin: 20px 0 }
+    h2 { 
+        font-weight: 600;
+        margin: 20px 0;
+    }
     li {
         margin: 20px 0 20px;
         svg {
@@ -46,7 +53,7 @@
         &_logo { width: 450px }
     }
     @media(--laptop-m) {
-        padding: 0 var(--grid1\12) 75px;
+        padding: 0 var(--grid1-12) 75px;
     }
     @media(--laptop-s) {
         &_logo { width: 400px }
@@ -58,7 +65,10 @@
         padding: 20px 20px;
         h1 { margin: 50px 0 0 }
         li { margin: 10px 0}
-
+        &_links { 
+            text-align: start;
+            ul {margin: 0 * 50px} 
+        }
         &_holder {
             justify-content: space-evenly;
             flex-direction: column;

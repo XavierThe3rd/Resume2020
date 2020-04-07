@@ -16,7 +16,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
   setDist: setDist,
   setMove: setMove,
-  setOpac: setOpacNav,
+  setOpacNav: setOpacNav,
   setBtNav: setBtNav
 }
 

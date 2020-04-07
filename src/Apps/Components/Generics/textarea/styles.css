@@ -7,12 +7,7 @@
     width: 100%;
     margin: 20px 0;
     z-index: 4;
-
-    &_label {
-        @apply --flx--c;
-        @mixin fontSettings var(--pureWhite), 28px, 400, 1;
-        width: 50%;
-    }
+    @mixin fontSettings var(--pureWhite), 28px, 400, 1;
 
     &_textarea {
         size: 100% 300px;

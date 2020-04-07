@@ -1,0 +1,48 @@
+@import '../../styles/settings.css';
+@import '../../styles/generics.css';
+@import '../../styles/tools.css';
+
+
+.loading {
+    &_origin { transform-origin: 50% 50% }
+    &_ballz { 
+        animation: rotBallz 1s infinite ease-out;
+        circle { fill: var(--primePink) }
+    }
+    &_path {
+        fill: none;
+        stroke: var(--primePink);
+        stroke-miterlimit: 10;
+        stroke-width: 0.5px;
+        &:nth-child(1) { 
+            animation: rotIn 1s infinite linear; 
+            stroke-dasharray: 150,12,24,36,100,60;
+        }
+        &:nth-child(2) { 
+            animation: rotIn 1s infinite linear;
+            stroke-dasharray: 75,12,24,36,100,60; 
+        }
+        &:nth-child(3) { 
+            animation: rotOut 1s infinite linear;
+            stroke-dasharray: 150,12,24,36,100,60;
+        }  
+    }
+}
+
+@keyframes rotOut {
+    from{ transform: rotate(0deg) }
+    to{ transform: rotate(360deg) }
+}
+@keyframes rotIn {
+    from{ transform: rotate(0deg) }
+    to{ transform: rotate(-360deg) }
+}
+
+@keyframes rotBallz {
+    0%{ transform: rotate(0deg) }
+    50%{ transform: rotate(360deg) }
+    70%{ transform: rotate(300deg) }
+    90%{ transform: rotate(360deg) }
+    95%{ transform: rotate(345deg) }
+    100%{ transform: rotate(360deg) }
+}

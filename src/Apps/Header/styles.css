@@ -6,29 +6,29 @@
     height: 100%;
     &_heading { margin: 300px 0 0 }
     &_nav {
-        h1 { margin: 200px 0 0 var(--grid1\6) }
-        button { margin: 200px var(--grid1\6) 0 0 }
+        h1 { margin: 200px 0 0 var(--grid1-6) }
+        button { margin: 200px var(--grid1-6) 0 0 }
     }
     @media(--laptop-m) {
         &_heading { margin: 250px 0 0 0 }
         &_nav { 
-            h1 { margin: 175px 0 0 var(--grid1\12) }
-            button { margin: 175px var(--grid1\12) 0 0 }
+            h1 { margin: 175px 0 0 var(--grid1-12) }
+            button { margin: 175px var(--grid1-12) 0 0 }
         }
     }
     @media(--laptop-s) {
         &_heading { margin: 150px 0 0 0 }
         &_nav {
-            h1 { margin: 20px 0 0 var(--grid1\12) }
-            button { margin: 20px var(--grid1\12) 0 0 }
+            h1 { margin: 20px 0 0 var(--grid1-12) }
+            button { margin: 20px var(--grid1-12) 0 0 }
         }
     }
     @media(--ipad-l) { 
         &_nav {
             svg { 
-                margin: 20px 0 0 var(--grid1\24) 
+                margin: 20px 0 0 var(--grid1-24) 
             }
-            button { margin: 20px var(--grid1\24) 0 0 } 
+            button { margin: 20px var(--grid1-24) 0 0 } 
         }
     }
 }
@@ -38,30 +38,33 @@
     border: 0 0 1px 0 /solid/ var(--borderGrey);
     &_heading { 
         margin: 135px 0 0 0; 
-        svg { width: 50% }
+        svg { 
+            width: 50%;
+            margin: 0 auto ;
+        }
     }
     &_nav {
-        h1 { margin: 75px 0 0 var(--grid1\6) }
-        button { margin: 75px var(--grid1\6) 0 0 }
+        h1 { margin: 75px 0 0 var(--grid1-6) }
+        button { margin: 75px var(--grid1-6) 0 0 }
     }
     @media(--laptop-m) {
         &_nav {
-            h1 { margin: 75px 0 0 var(--grid1\12) }
-            button { margin: 75px var(--grid1\12) 0 0 }
+            h1 { margin: 75px 0 0 var(--grid1-12) }
+            button { margin: 75px var(--grid1-12) 0 0 }
         }
     }
     @media(--laptop-s) {
         &_nav {
-            h1 { margin: 20px 0 0 var(--grid1\12) }
-            button { margin: 20px var(--grid1\12) 0 0 }
+            h1 { margin: 20px 0 0 var(--grid1-12) }
+            button { margin: 20px var(--grid1-12) 0 0 }
         }
     }
     @media(--ipad-l) {
         height: 72px;
-        svg { 
-            margin: 20px 0 0 var(--grid1\24) 
+        &_nav svg { 
+            margin: 20px 0 0 var(--grid1-24) 
         }
-        button { margin: 20px var(--grid1\24) 0 0 } 
+        button { margin: 20px var(--grid1-24) 0 0 } 
     }
     @media(--mobile){ height: 48px } 
 }

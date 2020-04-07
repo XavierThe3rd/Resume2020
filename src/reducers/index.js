@@ -4,8 +4,6 @@ import index from './layout/indexpage'
 import about from './layout/aboutpage'
 import special from './layout/specializations'
 import setCardData from './layout/card-data'
-import setPenData from './layout/codepen'
-import setPdfs from './layout/pdfs'
 import footerdata from './layout/footer'
 
 import navigation from './util/navigation'
@@ -23,8 +21,6 @@ export default combineReducers({
   navigation,
   slider,
   setCardData,
-  setPenData,
-  setPdfs,
   index,
   about,
   special,
