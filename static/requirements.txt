@@ -1,4 +1,4 @@
 Click==7.0
-Flask==1.1.1
+Flask==1.0
 Flask-Cors==3.0.8
 Flask-Mail==0.9.1
