@@ -72,7 +72,7 @@ const Loader = props => {
                             setButton(false)
                             setScroll(false)
                             setOpacNav(1)
-                            window.location.pathname === '/Resume/Home'
+                            window.location.pathname === '/resume/home'
                               ? setHome(true)
                               : setHome(false)
                           }, 1500)

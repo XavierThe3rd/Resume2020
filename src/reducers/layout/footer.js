@@ -5,7 +5,7 @@ import Phone from '../../../images/PhoneIcon.svg'
 
 const structure = {
   footdata: {
-    path: '/Resume/Contact',
+    path: '/resume/contact',
     Title: 'Contact...',
     contactF: 'Contact Form',
     inputs: [

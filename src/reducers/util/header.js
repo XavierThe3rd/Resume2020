@@ -13,11 +13,11 @@ const structure = {
   navState: false,
   classState: false,
   htag:
-    window.location.pathname === '/Resume/Home'
+    window.location.pathname === '/resume/home'
       ? 'HOME'
-      : window.location.pathname === '/Resume/Portfolio'
+      : window.location.pathname === '/resume/portfolio'
       ? 'PORTFOLIO'
-      : window.location.pathname === '/Resume/About'
+      : window.location.pathname === '/resume/about'
       ? 'ABOUT'
       : null,
   tohome: true,

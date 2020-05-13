@@ -4,12 +4,13 @@ import FeaturedWork from './FeaturedWork/featured-container'
 import Specializations from './Specializations/spec-container'
 import ContentBox from '../Components/Generics/content-box/contentBox.jsx'
 import text from '../Components/Generics/text-elms/text-elms.jsx'
-import Qintel from '../../../images/QintelLogo.png'
 import Button from '../Components/Generics/button/button-container'
 import styles from './styles.css'
 import Versitile from '../../../images/Versitile.svg'
 import ReactFitText from 'react-fittext'
 import { toPage } from '../../util/globalFunctions'
+
+let Qintel = './images/QintelLogo.png'
 
 let block = 'ind'
 
@@ -53,15 +54,14 @@ const Index = props => {
           {index.introPara}
         </text.Para>
         <Button
-          to={'/Resume/About'}
+          to={'/resume/about'}
           stroke={styles.primeBackground}
           color={styles.pureWhite}
-          Click={() => toPage(props, 'ABOUT', '/Resume/About')}
+          Click={() => toPage(props, 'ABOUT', '/resume/about')}
         >
           Learn More!
         </Button>
       </ContentBox>
-
       <Specializations className={`${block}_holder`} />
       <FeaturedWork className={`${block}_holder`} />
       <ContentBox
@@ -79,10 +79,10 @@ const Index = props => {
           {index.internPara}
         </text.Para>
         <Button
-          to={'/Resume/About'}
+          to={'/resume/about'}
           stroke={styles.primeBackground}
           color={styles.pureWhite}
-          Click={() => toPage(props, 'ABOUT', '/Resume/About')}
+          Click={() => toPage(props, 'ABOUT', '/resume/about')}
         >
           Learn More!
         </Button>

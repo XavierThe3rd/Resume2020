@@ -17,7 +17,8 @@
         @mixin fontSettings var(--pureBlack), var(--h3tag), 400, 1;
     }
     p {
-        @mixin fontSettings var(--pureBlack), var(--ptag), 300, 1.5; 
+        @mixin fontSettings var(--pureBlack), 1.05rem, 400, 1.5;
+        text-align: justify; 
     }
     &_mediums {
         @apply --flx;

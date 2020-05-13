@@ -1,0 +1,23 @@
+@import '../styles/settings.css';
+@import '../styles/tools.css';
+@import '../styles/generics.css';
+
+
+.login {
+    @apply --flx-c-c;
+    size: 100%;
+
+    &_holder {
+        @apply --col;
+        border-radius: 13px;
+        background: var(--slateFoil);
+        padding: 50px 100px;
+        h1 { 
+            margin: 0px 0 10px;
+            @mixin fontSettings var(--primePink), 2rem, 200, 1.5; 
+        }
+
+        form { @apply --col;}
+        label {padding: 0; }
+    }
+}

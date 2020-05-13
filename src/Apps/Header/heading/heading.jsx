@@ -22,7 +22,7 @@ const Heading = props => {
 
   const callback = useCallback(() => headScroll(props), [props])
   const callload = useCallback(() => {
-    window.location.pathname === '/Resume/Home' ? setHome(true) : setHome(false)
+    window.location.pathname === '/resume/home' ? setHome(true) : setHome(false)
     window.scrollTo(0, 0)
     setStep(true)
   }, [props])

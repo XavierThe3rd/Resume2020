@@ -9,73 +9,73 @@ const structure = {
 
   linkData: [
     {
-      loc: '/Resume/Home',
+      loc: '/resume/home',
       heading: 'HOME',
       data: [
         {
           ind: 1,
           tag: 'ABOUT',
-          ref: '/Resume/About',
+          ref: '/resume/about',
           cls: 'about'
         },
         {
           ind: 2,
           tag: 'PORTFOLIO',
-          ref: '/Resume/Portfolio',
+          ref: '/resume/portfolio',
           cls: 'portfol'
         },
         {
           ind: 3,
           tag: 'CONTACT',
-          ref: '/Resume/Home',
+          ref: '/resume/home',
           cls: 'contact'
         }
       ]
     },
     {
-      loc: '/Resume/About',
+      loc: '/resume/about',
       heading: 'ABOUT',
       data: [
         {
           ind: 1,
           tag: 'HOME',
-          ref: '/Resume/Home',
+          ref: '/resume/home',
           cls: 'home'
         },
         {
           ind: 2,
           tag: 'PORTFOLIO',
-          ref: '/Resume/Portfolio',
+          ref: '/resume/portfolio',
           cls: 'portfol'
         },
         {
           ind: 3,
           tag: 'CONTACT',
-          ref: '/Resume/About',
+          ref: '/resume/about',
           cls: 'contact'
         }
       ]
     },
     {
-      loc: '/Resume/Portfolio',
+      loc: '/resume/portfolio',
       heading: 'PORTFOLIO',
       data: [
         {
           ind: 1,
           tag: 'HOME',
-          ref: '/Resume/Home',
+          ref: '/resume/home',
           cls: 'home'
         },
         {
           ind: 2,
           tag: 'ABOUT',
-          ref: '/Resume/About',
+          ref: '/resume/about',
           cls: 'about'
         },
         {
           ind: 3,
           tag: 'CONTACT',
-          ref: '/Resume/Portfolio',
+          ref: '/resume/portfolio',
           cls: 'contact'
         }
       ]

@@ -11,7 +11,7 @@ const structure = {
       title: 'Creativity',
       image: LightBulb,
       para:
-        'I provide creativity that breaks the box of thought, where my ideas can expand on basic concepts and find new and exciting ways to present even the most basic of information.'
+        'I provide expansive creativity, where my ideas can expand on basic concepts and find new and exciting ways to present even the most basic of information.'
     },
     {
       index: 2,

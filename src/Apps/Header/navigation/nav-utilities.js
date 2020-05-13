@@ -8,9 +8,9 @@ export const navScroll = props => {
   let mobileScroll = pagey => {
     if (window.pageYOffset > pagey) {
       if (props.dist >= ls) props.setScroll(true)
-      else if (props.dist > ns) props.setScroll(false)
+      else if (props.dist < ns) props.setScroll(false)
       setTimeout(() => (ls = props.dist), 100)
-      setTimeout(() => (ns = props.dist - 50), 100)
+      setTimeout(() => (ns = props.dist - 25), 100)
     }
   }
 

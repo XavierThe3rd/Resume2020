@@ -1,9 +1,13 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useState } from 'react'
 import SVG from 'react-inlinesvg'
 import NavButton from '../../Components/nav-button/navbutton-container'
 import { navScroll } from './nav-utilities'
 import logo from '../../../../images/Logo.svg'
-import { handleScroll } from '../../../util/globalUtilities'
+import {
+  handleScroll,
+  handleResize,
+  handleLoad
+} from '../../../util/globalUtilities'
 import './styles.css'
 
 const block = `nav`
@@ -31,10 +35,16 @@ const Navigation = props => {
     setBtNav
   } = props
 
+  let [sizeA, setSizeA] = useState()
+
   const callscroll = useCallback(() => navScroll(props), [props])
   handleScroll(callscroll)
 
   let resize = window.innerWidth
+
+  let call = useCallback(() => setSizeA(resize), [])
+  handleResize(call)
+  handleLoad(call)
 
   return (
     <nav
@@ -42,7 +52,7 @@ const Navigation = props => {
             ${`${!scroll || !btNav ? `nav-down` : `nav-up`}`}
         `}
     >
-      {resize < 1030 ? (
+      {sizeA < 1030 ? (
         <SVG
           className={`${block}_svg`}
           src={logo}
@@ -56,7 +66,7 @@ const Navigation = props => {
           {htag}
         </h1>
       )}
-      {resize < 1030 ? <span className={`${block}_screen`} /> : null}
+      {sizeA < 1030 ? <span className={`${block}_screen`} /> : null}
       <NavButton
         button={button}
         setButton={setButton}

@@ -6,6 +6,10 @@
     @apply --col--e;
     width: 50%;
     z-index:5;
+    &_wrap, &_loading { 
+        @apply --col-c-c;
+        size: 100%;
+    }
     &_screen {
         @apply --flx-c-c;
         position: absolute auto;
@@ -14,28 +18,37 @@
         background: var(--pureWhite);
     }
     &_load { width: 50% }
+    &_sprite { 
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        size: 100%;
+        margin: auto;
+    }
+    
     &_holder {
         @apply --flx;
-        overflow-x: scroll;
-        size: 100% 800px;
+        background: var();
+        size: 100% 700px;
         margin: * * 10px;
         border: 0 0 1px /solid/ var(--pureBlack);
-        background: var(--pureWhite);
-        img {
-            size: initial 500px;
-            margin: auto;
-        }
+        background: #d8d8de;
     }
     &_slider {
         @apply --flx-e-c;
         padding: 10px * 60px;
         width: 100%;
         button{
+            background: var(--primeBackground);
+            box-shadow: var(--pureBlack) 0 2px 3px 0px;
             size: 80px 60px;
             border-radius: 5px;
             overflow: hidden;
             img {
                 width: 100px;
+            }
+            &:focus {
+                mix-blend-mode: difference;
             }
         }
     }
@@ -48,6 +61,3 @@
         }
     }
 }
-
-.img-off {box-shadow: var(--pureBlack) 0 2px 3px 0px;}
-.img-on {box-shadow: var(--primeOrange) 0 3px 8px 1px;}

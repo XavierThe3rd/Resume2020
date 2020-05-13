@@ -63,7 +63,7 @@ li {
     list-style: none;
 }
 
-button, input, textarea{
+button, input, textarea, form, label {
     border: none;
     outline: none;
     background: none;

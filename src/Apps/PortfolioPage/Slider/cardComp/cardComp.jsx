@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useCallback, useEffect } from 'react'
 import ProjectPiece from '../../../Components/portfolio/port-piece-holder'
+import { handleLoad } from '../../../../util/globalUtilities'
 import './styles.css'
 
 const block = 'portwrap'
@@ -12,10 +13,17 @@ const CardComp = ({
   setCount,
   setPic,
   pic,
-  className
+  className,
+  setReq,
+  req
 }) => {
   return (
-    <div className={`${block}`}>
+    <form
+      method={`post`}
+      action={`/resume/cover`}
+      onSubmit={e => e.preventDefault()}
+      className={`${block}`}
+    >
       {data.map(hit => {
         if (hit.index >= dec && hit.index <= inc) {
           return (
@@ -38,7 +46,7 @@ const CardComp = ({
           )
         }
       })}
-    </div>
+    </form>
   )
 }
 

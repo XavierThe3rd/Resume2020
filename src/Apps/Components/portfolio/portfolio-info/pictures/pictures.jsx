@@ -1,32 +1,26 @@
-import React, { useState } from 'react'
-import './styles.css'
+import React, { useCallback, useEffect } from 'react'
+import styles from './styles.css'
 import Loading from '../../../loading/loading.jsx'
+import { EMPTY } from 'rxjs'
 
 const block = 'pictures'
 
 const Pictures = ({ data, pic, setPic, setCursor }) => {
-  let [loadState, setLoad] = useState(false)
-
   return (
     <div className={`${block}`}>
       {data.map(hit =>
         hit.pictures.map(hit => {
-          if (hit.index === pic) {
-            return (
-              <span className={`${block}_holder`}>
-                {loadState ? null : (
-                  <div className={`${block}_screen`}>
-                    <Loading className={`${block}_load`} />
-                  </div>
-                )}
-                <img
-                  className={``}
-                  src={hit.pic}
-                  onLoad={() => setLoad(true)}
-                />
-              </span>
-            )
-          }
+          return hit.index === pic ? (
+            <span className={`${block}_holder`}>
+              <div
+                className={`${block}_sprite ${block}_spritebut`}
+                style={{
+                  backgroundImage: `url(` + hit.picture + `)`,
+                  boxShadow: `black inset 0 0 4px 0px`
+                }}
+              />
+            </span>
+          ) : null
         })
       )}
       <div className={` ${block}_slider`}>
@@ -42,8 +36,13 @@ const Pictures = ({ data, pic, setPic, setCursor }) => {
                 onMouseLeave={() => setCursor(false)}
                 onClick={e => setPic(hit.index)}
               >
-                {loadState ? null : <Loading />}
-                <img src={hit.pic} onLoad={() => setLoad(true)} />
+                <div
+                  className={`${block}_sprite`}
+                  style={{
+                    backgroundImage: `url(` + hit.picture + `)`,
+                    backgroundSize: `cover`
+                  }}
+                />
               </button>
             )
           })

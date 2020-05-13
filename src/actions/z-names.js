@@ -18,6 +18,8 @@ export const SET_DIST = 'SET_DIST'
 
 export const SET_PIC = 'SET_PIC'
 export const SET_DATA = 'SET_DATA'
+export const SET_REQ = 'SET_REQ'
+export const SET_REQ2 = 'SET_REQ2'
 export const SET_INNER = 'SET_INNER'
 
 export const SET_BUTTON_NAV = 'SET_BUTTON_NAV'
@@ -39,3 +41,6 @@ export const SET_MESSAGE = 'SET_MESSAGE'
 export const SET_MORE = 'SET_MORE'
 export const SET_SENT = 'SET_SENT'
 export const SET_THANKS = 'SET_THANKS'
+
+export const SET_KEY = 'SET_KEY'
+export const SET_SECRET = 'SET_SECRET'

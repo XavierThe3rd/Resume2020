@@ -81,8 +81,7 @@ const Form = props => {
         stroke={styles.pureWhite}
         color={styles.primeBackground}
       >
-        {' '}
-        Submit{' '}
+        Submit
       </Button>
     </form>
   )

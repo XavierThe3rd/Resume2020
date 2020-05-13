@@ -1,0 +1,81 @@
+import React, { useCallback, useEffect } from 'react'
+import './styles.css'
+import Loading from '../../../loading/loading.jsx'
+
+const block = 'pictures'
+
+const Pictures = ({ data, pic, setPic, setCursor, req, setReq }) => {
+  let request = new XMLHttpRequest()
+
+  let loadPics = useCallback(() => {
+    data.map(hit =>
+      hit.pictures.map(get => {
+        request.open('GET', get.picture, true)
+        request.send()
+        setTimeout(() => {
+          if (request.status === 403) {
+            req < 6 ? setReq(req - 0.05) : setReq(req)
+          } else if (req < 7) {
+            setReq(req + 1)
+          }
+        }, 500)
+      })
+    )
+  }, [request, loadPics, req, setReq])
+
+  setTimeout(() => loadPics(), 500)
+
+  return (
+    <div className={`${block}`}>
+      {data.map(hit =>
+        hit.pictures.map(hit => {
+          return (
+            <span className={`${block}_holder`}>
+              {req > 0 ? (
+                <div
+                  className={`${block}_sprite ${block}_spritebut`}
+                  style={{
+                    opacity: hit.index === pic ? 1 : 0,
+                    backgroundImage: `url(` + hit.picture + `)`
+                  }}
+                />
+              ) : (
+                <div className={`${block}_screen`}>
+                  <Loading className={`${block}_load`} />
+                </div>
+              )}
+            </span>
+          )
+        })
+      )}
+      <div className={` ${block}_slider`}>
+        {data.map(hit =>
+          hit.pictures.map(hit => {
+            return (
+              <button
+                value={hit.index}
+                className={`${
+                  pic + 1 === hit.index + 1 ? 'img-on' : 'img-off'
+                }`}
+                onMouseEnter={() => setCursor(true)}
+                onMouseLeave={() => setCursor(false)}
+                onClick={e => setPic(hit.index)}
+              >
+                {req >= hit.index ? (
+                  <div
+                    className={`${block}_sprite`}
+                    style={{ backgroundImage: `url(` + hit.picture + `)` }}
+                  />
+                ) : (
+                  <Loading />
+                )}
+              </button>
+            )
+          })
+        )}
+      </div>
+    </div>
+  )
+}
+
+export default Pictures

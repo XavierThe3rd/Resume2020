@@ -1,7 +1,9 @@
-import { SET_INNER, SET_PIC } from '../../actions/z-names'
+import { SET_INNER, SET_PIC, SET_REQ, SET_REQ2 } from '../../actions/z-names'
 
 const structure = {
   pic: 1,
+  req: 1,
+  req2: 1,
   inner: false,
   data: []
 }
@@ -12,6 +14,16 @@ const slider = (state = structure, action) => {
       return {
         ...state,
         pic: action.payload
+      }
+    case SET_REQ:
+      return {
+        ...state,
+        req: action.payload
+      }
+    case SET_REQ2:
+      return {
+        ...state,
+        req2: action.payload
       }
     case SET_INNER:
       return {

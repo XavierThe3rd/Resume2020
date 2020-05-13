@@ -50,7 +50,9 @@ export default class SmoothScroll {
   switchState() {
     this.posi = this.target.scrollTop
     typeof InstallTrigger !== 'undefined'
-      ? this.eventType('DOMMouseScroll')
+      ? window.innerWidth > 1700
+        ? this.eventType('DOMMouseScroll')
+        : null
       : this.eventType('wheel')
   }
 }

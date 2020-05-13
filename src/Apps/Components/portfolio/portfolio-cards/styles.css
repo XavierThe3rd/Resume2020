@@ -27,17 +27,22 @@
         overflow: hidden;
         position: absolute;
         padding: 0px 0 60px;
-        span {
-            @apply --flx;
-            z-index: 1;
-            padding: 0 20px;
-            position: absolute * 0 0;
-            background: var(--linearFade);
-        }
-        img {
-            width: 150%;
-            position: absolute 0 * * -50px;
-        }
+    }
+
+    &_screen {
+        @apply --flx;
+        z-index: 1;
+        padding: 0 20px;
+        position: absolute * 0 0;
+        background: var(--linearFade);
+    }
+
+    &_sprite { 
+        background-size: cover;
+        background-repeat: no-repeat;
+        size: 150%;
+        position: absolute 0 * * -50px;
+        margin: auto;
     }
 
     &_text {

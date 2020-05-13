@@ -16,6 +16,8 @@ const ProjectPiece = props => {
     button,
     setCursor,
     setMove,
+    setReq,
+    req,
     move
   } = props
   let [info, setInfo] = useState(false)
@@ -24,6 +26,7 @@ const ProjectPiece = props => {
   useEffect(() => {
     if (btNav === true) {
       setPic(1)
+      setReq(0)
       window.pageYOffset < 50 && window.innerWidth > 1030
         ? setMove(false)
         : null
@@ -32,6 +35,7 @@ const ProjectPiece = props => {
       setTimeout(() => setInfo(false), 700)
     }
   })
+
   return (
     <div
       ref={pieceRef}
@@ -49,6 +53,7 @@ const ProjectPiece = props => {
         Image={props.Image}
         Title={props.Title}
         Desc={props.Desc}
+        data={data}
         Project={props.Project}
         Type={props.Type}
         Color={props.Color}
@@ -68,6 +73,9 @@ const ProjectPiece = props => {
       {info ? (
         <ProjectSpecs
           pic={pic}
+          req={req}
+          data={data}
+          setReq={setReq}
           setPic={setPic}
           setCursor={setCursor}
           Name={props.Name}

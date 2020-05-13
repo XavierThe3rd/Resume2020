@@ -6,6 +6,7 @@ import special from './layout/specializations'
 import setCardData from './layout/card-data'
 import footerdata from './layout/footer'
 
+import login from './util/login'
 import navigation from './util/navigation'
 import pageSwitch from './util/page-switch'
 import header from './util/header'
@@ -26,5 +27,6 @@ export default combineReducers({
   special,
   footerdata,
   footer,
-  globals
+  globals,
+  login
 })

@@ -63,6 +63,7 @@
     "stylelint": "^13.2.1",
     "stylelint-config-standard": "^20.0.0",
     "webfontloader": "^1.6.28",
+    "webpack-merge": "^4.2.2",
     "webpack-vendor-chunk-plugin": "^1.0.0"
   },
   "scripts": {
@@ -70,7 +71,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "webpack": "webpack",
-    "start": "webpack-dev-server --hot --host 192.168.1.23",
+    "start": "webpack-dev-server --hot --host 192.168.2.103",
     "dev": "webpack-dev-server --mode development",
     "prod": "npm run webpack -- --env.mode production",
     "watch": "webpack --progress -d --config webpack.config.js --watch"
@@ -119,6 +120,6 @@
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.8",
     "webpack-dev-server": "^3.8.0",
-    "webpack-merge": "^4.2.2"
+    "webpack-hot-middleware": "^2.25.0"
   }
 }

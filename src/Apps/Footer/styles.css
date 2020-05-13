@@ -10,7 +10,7 @@
         text-align: end;
         ul { margin: 50px * * *}
     }
-    h1 { margin: 150px 0 40px}
+    h1 { margin: 250px 0 40px}
     h2 { 
         font-weight: 600;
         margin: 20px 0;
@@ -39,7 +39,7 @@
         z-index:4;
     }
 
-    &_logo { width: 600px }
+    &_logo { width: 100% }
     &_notes {
         width: 100%;
         margin-top: 100px;

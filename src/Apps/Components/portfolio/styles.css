@@ -24,7 +24,7 @@
        margin-top: 22em;
     }*/
     @media(--laptop-m) {
-        width: 50%;
+        width: 49.5%;
         &:nth-child(2), &:nth-child(3), &:nth-child(4) {
             margin-top: 2px;
         }

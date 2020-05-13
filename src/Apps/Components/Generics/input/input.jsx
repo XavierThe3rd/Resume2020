@@ -13,7 +13,6 @@ const Input = props => {
         type="text"
         ref={props.ref}
         name={props.name}
-        value={props.value}
         onChange={props.onChange}
         autoComplete="off"
         onMouseEnter={() => setCursor(true)}

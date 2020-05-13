@@ -9,9 +9,12 @@ const ProjectCard = props => {
   let wind = window.innerWidth
 
   return (
-    <div className={`${block}`}>
+    <div className={`${block}`} onLoad={props.onLoad}>
       <div className={`${block}_picture`}>
-        <img src={props.Image} alt="none" />
+        <div
+          className={`${block}_sprite`}
+          style={{ backgroundImage: `url(` + props.Image + `)` }}
+        />
         <span className={`${block}_screen`} />
       </div>
       <div className={`${block}_text`}>

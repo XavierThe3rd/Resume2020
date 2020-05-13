@@ -31,6 +31,7 @@ const FeaturedWork = props => {
   } = props
   let Resize = () => (window.innerWidth > 1030 ? 1.57 : 1)
   let [size, setSize] = useState(Resize)
+
   return (
     <ContentBox
       Size={() => setSize(Resize)}
@@ -66,8 +67,8 @@ const FeaturedWork = props => {
         className={`${block}_button`}
         stroke={styles.pureWhite}
         color={styles.primeBackground}
-        to={`/Resume/Portfolio`}
-        Click={() => toPage(props, 'Portfolio', '/Resume/Portfolio', 0)}
+        to={`/resume/portfolio`}
+        Click={() => toPage(props, 'Portfolio', '/resume/portfolio', 0)}
       >
         See More!
       </Button>
